@@ -13,18 +13,34 @@ struct pmw3610_listener_config {
     uint32_t right;
 };
 
+
 static int pmw3610_listener_binding_pressed(struct zmk_behavior_binding *binding,
                                            struct zmk_behavior_binding_event event) {
+    if (!binding || !binding->param1) {
+        LOG_ERR("Invalid binding or parameter");
+        return ZMK_BEHAVIOR_OPAQUE;
+    }
     const struct pmw3610_listener_config *config = (const struct pmw3610_listener_config *)binding->param1;
-    // Example: send the "up" key
+    if (!config->up) {
+        LOG_ERR("Invalid or uninitialized 'up' key in config");
+        return ZMK_BEHAVIOR_OPAQUE;
+    }
     zmk_hid_press(config->up);
     return ZMK_BEHAVIOR_OPAQUE;
 }
 
+
 static int pmw3610_listener_binding_released(struct zmk_behavior_binding *binding,
                                             struct zmk_behavior_binding_event event) {
+    if (!binding || !binding->param1) {
+        LOG_ERR("Invalid binding or parameter");
+        return ZMK_BEHAVIOR_OPAQUE;
+    }
     const struct pmw3610_listener_config *config = (const struct pmw3610_listener_config *)binding->param1;
-    // Example: release the "up" key
+    if (!config->up) {
+        LOG_ERR("Invalid or uninitialized 'up' key in config");
+        return ZMK_BEHAVIOR_OPAQUE;
+    }
     zmk_hid_release(config->up);
     return ZMK_BEHAVIOR_OPAQUE;
 }
