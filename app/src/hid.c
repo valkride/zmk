@@ -477,35 +477,3 @@ struct zmk_hid_consumer_report *zmk_hid_get_consumer_report(void) { return &cons
 struct zmk_hid_mouse_report *zmk_hid_get_mouse_report(void) { return &mouse_report; }
 
 #endif // IS_ENABLED(CONFIG_ZMK_POINTING)
-
-// Structure to store incoming system stats
-struct system_stats_report {
-    uint8_t cpu_usage;
-    uint8_t ram_usage;
-    uint8_t disk_usage;
-    uint8_t gpu_usage;
-};
-
-// Variables to store the last received system stats
-static uint8_t last_cpu_usage = 0;
-static uint8_t last_ram_usage = 0;
-static uint8_t last_disk_usage = 0;
-static uint8_t last_gpu_usage = 0;
-
-// Function to process HID output reports from the host (PC)
-void process_hid_output_report(uint8_t *report_data) {
-    struct system_stats_report *stats = (struct system_stats_report *)report_data;
-    last_cpu_usage = stats->cpu_usage;
-    last_ram_usage = stats->ram_usage;
-    last_disk_usage = stats->disk_usage;
-    last_gpu_usage = stats->gpu_usage;
-}
-
-// HID report descriptor for system stats output report
-const struct zmk_hid_report_descriptor system_stats_report_descriptor = {
-    .usage_page = HID_USAGE_PAGE_VENDOR,
-    .usage = HID_USAGE_VENDOR,
-    .report_id = 1,
-    .size = sizeof(struct system_stats_report),
-    .type = HID_REPORT_OUTPUT
-};
