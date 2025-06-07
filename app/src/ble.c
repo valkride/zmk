@@ -20,6 +20,7 @@
 #include <zephyr/bluetooth/uuid.h>
 #include <zephyr/bluetooth/gatt.h>
 #include <zephyr/bluetooth/hci_types.h>
+#include <system_stats.h>
 
 #if IS_ENABLED(CONFIG_SETTINGS)
 
@@ -36,6 +37,8 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/split/bluetooth/uuid.h>
 #include <zmk/event_manager.h>
 #include <zmk/events/ble_active_profile_changed.h>
+
+#include "../src/hid.c" // For struct system_stats_report
 
 #if IS_ENABLED(CONFIG_ZMK_BLE_PASSKEY_ENTRY)
 #include <zmk/events/keycode_state_changed.h>
@@ -812,5 +815,26 @@ static int zmk_ble_listener(const zmk_event_t *eh) {
 ZMK_LISTENER(zmk_ble, zmk_ble_listener);
 ZMK_SUBSCRIPTION(zmk_ble, zmk_keycode_state_changed);
 #endif /* IS_ENABLED(CONFIG_ZMK_BLE_PASSKEY_ENTRY) */
+
+// Handler for incoming HID output/feature reports (system stats)
+static ssize_t write_system_stats_report(struct bt_conn *conn, const struct bt_gatt_attr *attr,
+                                         const void *buf, uint16_t len, uint16_t offset, uint8_t flags) {
+    if (len < sizeof(struct system_stats_report)) {
+        return BT_GATT_ERR(BT_ATT_ERR_INVALID_ATTRIBUTE_LEN);
+    }
+    const struct system_stats_report *stats = (const struct system_stats_report *)buf;
+    // TODO: Call your OLED update or other processing function here
+    // update_oled(stats->cpu_usage, stats->ram_usage, stats->disk_usage, stats->gpu_usage);
+    return len;
+}
+
+// Add a GATT characteristic for the system stats HID output report
+BT_GATT_SERVICE_DEFINE(system_stats_svc,
+    BT_GATT_PRIMARY_SERVICE(BT_UUID_DECLARE_16(0x1812)), // HID Service UUID
+    BT_GATT_CHARACTERISTIC(BT_UUID_DECLARE_16(0x2C52), // Example custom UUID for output report
+        BT_GATT_CHRC_WRITE | BT_GATT_CHRC_WRITE_WITHOUT_RESP,
+        BT_GATT_PERM_WRITE_ENCRYPT,
+        NULL, write_system_stats_report, NULL),
+);
 
 SYS_INIT(zmk_ble_init, APPLICATION, CONFIG_ZMK_BLE_INIT_PRIORITY);
