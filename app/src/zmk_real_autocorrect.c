@@ -3,7 +3,19 @@
  * Simple and working autocorrect for "teh" -> "the"
  */
 
-#include <zephyr/kernel.h>
+#include <zep// Initialize autocorrect
+static int zmk_autocorrect_init(const struct device *dev) {
+    LOG_INF("🔥 SIMPLE AUTOCORRECT ACTIVE!");
+    LOG_INF("📝 Will fix: teh -> the");
+    
+    // Initialize work item
+    k_work_init(&correction_work, correction_work_handler);
+    
+    memset(last_chars, 0, sizeof(last_chars));
+    correction_in_progress = false;
+    
+    return 0;
+}.h>
 #include <zephyr/init.h>
 #include <zephyr/logging/log.h>
 #include <string.h>
@@ -31,40 +43,35 @@ static char key_to_char(zmk_key_t key) {
     return 0;
 }
 
-// Send keycode events to simulate backspace and typing
+// Send keycode events using the correct ZMK API
 static void send_backspace() {
-    struct zmk_keycode_state_changed *ev = new_zmk_keycode_state_changed();
-    ev->keycode = HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE;
-    ev->state = true;
-    ev->timestamp = k_uptime_get();
-    raise_zmk_keycode_state_changed(*ev);
-    k_msleep(50);
+    int64_t timestamp = k_uptime_get();
     
-    ev->state = false;
-    ev->timestamp = k_uptime_get();
-    raise_zmk_keycode_state_changed(*ev);
-    k_msleep(50);
+    // Press backspace
+    raise_zmk_keycode_state_changed_from_encoded(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE, true, timestamp);
+    k_msleep(20);
+    
+    // Release backspace  
+    raise_zmk_keycode_state_changed_from_encoded(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE, false, timestamp + 20);
+    k_msleep(20);
 }
 
 static void send_key(zmk_key_t key) {
-    struct zmk_keycode_state_changed *ev = new_zmk_keycode_state_changed();
-    ev->keycode = key;
-    ev->state = true;
-    ev->timestamp = k_uptime_get();
-    raise_zmk_keycode_state_changed(*ev);
-    k_msleep(50);
+    int64_t timestamp = k_uptime_get();
     
-    ev->state = false;
-    ev->timestamp = k_uptime_get();
-    raise_zmk_keycode_state_changed(*ev);
-    k_msleep(50);
+    // Press key
+    raise_zmk_keycode_state_changed_from_encoded(key, true, timestamp);
+    k_msleep(20);
+    
+    // Release key
+    raise_zmk_keycode_state_changed_from_encoded(key, false, timestamp + 20);
+    k_msleep(20);
 }
 
-// Perform "teh " -> "the " correction
-static void fix_teh_typo() {
-    if (correction_in_progress) return;
-    correction_in_progress = true;
-    
+// Work item for performing correction asynchronously
+static struct k_work correction_work;
+
+static void correction_work_handler(struct k_work *work) {
     LOG_INF("🔥 AUTOCORRECT: teh -> the");
     
     // Send 4 backspaces to delete "teh "
@@ -78,11 +85,20 @@ static void fix_teh_typo() {
     send_key(HID_USAGE_KEY_KEYBOARD_E);
     send_key(HID_USAGE_KEY_KEYBOARD_SPACEBAR);
     
-    // Clear buffer
+    // Clear buffer and reset flag
     memset(last_chars, 0, sizeof(last_chars));
     correction_in_progress = false;
     
     LOG_INF("✅ Correction complete!");
+}
+
+// Trigger correction
+static void fix_teh_typo() {
+    if (correction_in_progress) return;
+    correction_in_progress = true;
+    
+    // Schedule the correction work
+    k_work_submit(&correction_work);
 }
 
 // Add character and check for "teh " pattern
