@@ -14,8 +14,31 @@
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
-// Simple tracking for "teh " pattern
-static char buffer[5] = {0};  // Track last 4 chars
+// Correction table with different word lengths
+struct correction {
+    const char* typo;
+    const char* fix;
+    int typo_len;
+};
+
+static const struct correction corrections[] = {
+    {"teh", "the", 3},          // 3 letters
+    {"adn", "and", 3},          // 3 letters  
+    {"yuo", "you", 3},          // 3 letters
+    {"hte", "the", 3},          // 3 letters
+    {"fo", "of", 2},            // 2 letters
+    {"taht", "that", 4},        // 4 letters
+    {"thsi", "this", 4},        // 4 letters
+    {"frmo", "from", 4},        // 4 letters
+    {"whcih", "which", 5},      // 5 letters
+    {"recieve", "receive", 7}   // 7 letters
+};
+
+#define NUM_CORRECTIONS (sizeof(corrections) / sizeof(corrections[0]))
+#define MAX_WORD_LEN 8  // Longest typo is 7 chars + space
+
+// Buffer to track recent characters
+static char buffer[MAX_WORD_LEN] = {0};
 static bool fixing = false;
 
 // Convert key to char
@@ -32,30 +55,41 @@ static void send_key_event(zmk_key_t key, bool pressed) {
     raise_zmk_keycode_state_changed_from_encoded(key, pressed, k_uptime_get());
 }
 
-// Perform the correction
-static void do_correction(void) {
+// Type a string character by character
+static void type_string(const char* str) {
+    for (int i = 0; str[i] != '\0'; i++) {
+        char c = str[i];
+        zmk_key_t key = 0;
+        
+        if (c >= 'a' && c <= 'z') {
+            key = HID_USAGE_KEY_KEYBOARD_A + (c - 'a');
+        }
+        
+        if (key != 0) {
+            send_key_event(key, true);
+            send_key_event(key, false);
+            k_msleep(10);
+        }
+    }
+}
+
+// Perform the correction for any word
+static void do_correction(const struct correction* corr) {
     if (fixing) return;
     fixing = true;
     
-    LOG_INF("AUTOCORRECT: teh -> the");
+    LOG_INF("AUTOCORRECT: %s -> %s", corr->typo, corr->fix);
     
-    // Delete only "teh" (3 backspaces) - leave the space
-    for (int i = 0; i < 3; i++) {
+    // Delete the typo (typo_len backspaces) - leave the space
+    for (int i = 0; i < corr->typo_len; i++) {
         send_key_event(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE, true);
         k_msleep(10);
         send_key_event(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE, false);
         k_msleep(10);
     }
     
-    // Type "the" (without space - the original space is still there)
-    send_key_event(HID_USAGE_KEY_KEYBOARD_T, true);
-    send_key_event(HID_USAGE_KEY_KEYBOARD_T, false);
-    k_msleep(10);
-    send_key_event(HID_USAGE_KEY_KEYBOARD_H, true);
-    send_key_event(HID_USAGE_KEY_KEYBOARD_H, false);
-    k_msleep(10);
-    send_key_event(HID_USAGE_KEY_KEYBOARD_E, true);
-    send_key_event(HID_USAGE_KEY_KEYBOARD_E, false);
+    // Type the correction (without space - original space is still there)
+    type_string(corr->fix);
     
     // Reset
     memset(buffer, 0, sizeof(buffer));
@@ -72,12 +106,25 @@ int zmk_autocorrect_keyboard_press(zmk_key_t key) {
     if (c == 0) return 0;
     
     // Shift buffer and add new char
-    memmove(buffer, buffer + 1, 3);
-    buffer[3] = c;
+    memmove(buffer, buffer + 1, MAX_WORD_LEN - 1);
+    buffer[MAX_WORD_LEN - 1] = c;
     
-    // Check for "teh " when space is pressed
-    if (c == ' ' && strncmp(buffer, "teh ", 4) == 0) {
-        do_correction();
+    // Check for corrections when space is pressed
+    if (c == ' ') {
+        for (int i = 0; i < NUM_CORRECTIONS; i++) {
+            const struct correction* corr = &corrections[i];
+            int check_len = corr->typo_len + 1; // typo + space
+            
+            // Check if buffer ends with "typo "
+            if (check_len <= MAX_WORD_LEN) {
+                int start_pos = MAX_WORD_LEN - check_len;
+                if (strncmp(&buffer[start_pos], corr->typo, corr->typo_len) == 0 && 
+                    buffer[MAX_WORD_LEN - 1] == ' ') {
+                    do_correction(corr);
+                    return 0;
+                }
+            }
+        }
     }
     
     return 0;
