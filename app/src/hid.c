@@ -11,6 +11,9 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/hid.h>
 #include <dt-bindings/zmk/modifiers.h>
 
+// Autocorrect function declaration
+int zmk_autocorrect_keyboard_press(zmk_key_t key);
+
 static struct zmk_hid_keyboard_report keyboard_report = {
 
     .report_id = ZMK_HID_REPORT_ID_KEYBOARD, .body = {.modifiers = 0, ._reserved = 0, .keys = {0}}};
@@ -295,6 +298,10 @@ int zmk_hid_keyboard_press(zmk_key_t code) {
     if (code >= HID_USAGE_KEY_KEYBOARD_LEFTCONTROL && code <= HID_USAGE_KEY_KEYBOARD_RIGHT_GUI) {
         return zmk_hid_register_mod(code - HID_USAGE_KEY_KEYBOARD_LEFTCONTROL);
     }
+    
+    // Call autocorrect before processing the key
+    zmk_autocorrect_keyboard_press(code);
+    
     select_keyboard_usage(code);
     return 0;
 };
