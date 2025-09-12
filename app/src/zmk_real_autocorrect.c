@@ -39,15 +39,15 @@ static void do_correction(void) {
     
     LOG_INF("AUTOCORRECT: teh -> the");
     
-    // Delete "teh " (4 backspaces)
-    for (int i = 0; i < 4; i++) {
+    // Delete only "teh" (3 backspaces) - leave the space
+    for (int i = 0; i < 3; i++) {
         send_key_event(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE, true);
         k_msleep(10);
         send_key_event(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE, false);
         k_msleep(10);
     }
     
-    // Type "the "
+    // Type "the" (without space - the original space is still there)
     send_key_event(HID_USAGE_KEY_KEYBOARD_T, true);
     send_key_event(HID_USAGE_KEY_KEYBOARD_T, false);
     k_msleep(10);
@@ -56,9 +56,6 @@ static void do_correction(void) {
     k_msleep(10);
     send_key_event(HID_USAGE_KEY_KEYBOARD_E, true);
     send_key_event(HID_USAGE_KEY_KEYBOARD_E, false);
-    k_msleep(10);
-    send_key_event(HID_USAGE_KEY_KEYBOARD_SPACEBAR, true);
-    send_key_event(HID_USAGE_KEY_KEYBOARD_SPACEBAR, false);
     
     // Reset
     memset(buffer, 0, sizeof(buffer));
