@@ -11,8 +11,8 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/hid.h>
 #include <dt-bindings/zmk/modifiers.h>
 
-// Autocorrect function declaration
-int zmk_autocorrect_keyboard_press(zmk_key_t key);
+// Autocorrect function declaration - made weak to avoid linker issues
+__attribute__((weak)) int zmk_autocorrect_keyboard_press(zmk_key_t key) { return 0; }
 
 static struct zmk_hid_keyboard_report keyboard_report = {
 
