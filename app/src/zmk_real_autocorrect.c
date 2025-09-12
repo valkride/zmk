@@ -12,26 +12,25 @@
 #include <zmk/events/keycode_state_changed.h>
 #include <dt-bindings/zmk/keys.h>
 
-LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
-
-// Correction table with different word lengths
+// Correction table with multiple typos per word
 struct correction {
-    const char* typo;
+    const char* typo1;
+    const char* typo2;
     const char* fix;
-    int typo_len;
+    int typo1_len;
+    int typo2_len;
 };
 
 static const struct correction corrections[] = {
-    {"teh", "the", 3},          // 3 letters
-    {"adn", "and", 3},          // 3 letters  
-    {"yuo", "you", 3},          // 3 letters
-    {"hte", "the", 3},          // 3 letters
-    {"fo", "of", 2},            // 2 letters
-    {"taht", "that", 4},        // 4 letters
-    {"thsi", "this", 4},        // 4 letters
-    {"frmo", "from", 4},        // 4 letters
-    {"whcih", "which", 5},      // 5 letters
-    {"recieve", "receive", 7}   // 7 letters
+    {"teh", "hte", "the", 3, 3},           // the
+    {"adn", "nad", "and", 3, 3},           // and  
+    {"yuo", "ouy", "you", 3, 3},           // you
+    {"fo", "ov", "of", 2, 2},              // of
+    {"taht", "thta", "that", 4, 4},        // that
+    {"thsi", "tihs", "this", 4, 4},        // this
+    {"frmo", "form", "from", 4, 4},        // from
+    {"whcih", "wich", "which", 5, 4},      // which
+    {"recieve", "recive", "receive", 7, 6} // receive
 };
 
 #define NUM_CORRECTIONS (sizeof(corrections) / sizeof(corrections[0]))
@@ -74,14 +73,12 @@ static void type_string(const char* str) {
 }
 
 // Perform the correction for any word
-static void do_correction(const struct correction* corr) {
+static void do_correction_typed(const char* fix_word, int typo_len) {
     if (fixing) return;
     fixing = true;
     
-    LOG_INF("AUTOCORRECT: %s -> %s", corr->typo, corr->fix);
-    
     // Delete the typo (typo_len backspaces) - leave the space
-    for (int i = 0; i < corr->typo_len; i++) {
+    for (int i = 0; i < typo_len; i++) {
         send_key_event(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE, true);
         k_msleep(10);
         send_key_event(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE, false);
@@ -89,13 +86,11 @@ static void do_correction(const struct correction* corr) {
     }
     
     // Type the correction (without space - original space is still there)
-    type_string(corr->fix);
+    type_string(fix_word);
     
     // Reset
     memset(buffer, 0, sizeof(buffer));
     fixing = false;
-    
-    LOG_INF("Correction done");
 }
 
 // Track keystrokes
@@ -113,14 +108,25 @@ int zmk_autocorrect_keyboard_press(zmk_key_t key) {
     if (c == ' ') {
         for (int i = 0; i < NUM_CORRECTIONS; i++) {
             const struct correction* corr = &corrections[i];
-            int check_len = corr->typo_len + 1; // typo + space
             
-            // Check if buffer ends with "typo "
-            if (check_len <= MAX_WORD_LEN) {
-                int start_pos = MAX_WORD_LEN - check_len;
-                if (strncmp(&buffer[start_pos], corr->typo, corr->typo_len) == 0 && 
+            // Check typo1
+            int check_len1 = corr->typo1_len + 1; // typo + space
+            if (check_len1 <= MAX_WORD_LEN) {
+                int start_pos1 = MAX_WORD_LEN - check_len1;
+                if (strncmp(&buffer[start_pos1], corr->typo1, corr->typo1_len) == 0 && 
                     buffer[MAX_WORD_LEN - 1] == ' ') {
-                    do_correction(corr);
+                    do_correction_typed(corr->fix, corr->typo1_len);
+                    return 0;
+                }
+            }
+            
+            // Check typo2
+            int check_len2 = corr->typo2_len + 1; // typo + space
+            if (check_len2 <= MAX_WORD_LEN) {
+                int start_pos2 = MAX_WORD_LEN - check_len2;
+                if (strncmp(&buffer[start_pos2], corr->typo2, corr->typo2_len) == 0 && 
+                    buffer[MAX_WORD_LEN - 1] == ' ') {
+                    do_correction_typed(corr->fix, corr->typo2_len);
                     return 0;
                 }
             }
@@ -132,7 +138,6 @@ int zmk_autocorrect_keyboard_press(zmk_key_t key) {
 
 // Initialize
 static int autocorrect_init(const struct device *dev) {
-    LOG_INF("Autocorrect initialized: teh -> the");
     memset(buffer, 0, sizeof(buffer));
     fixing = false;
     return 0;
