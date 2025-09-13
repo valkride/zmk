@@ -1,5 +1,5 @@
 /*
- * ZMK Spell Checker with Levenshtein Distance - Fast Typer Optimized
+ * ZMK Spell Checker with Levenshtein Distance - Fast Typer + Capitalization
  * Comprehensive autocorrect for all words using edit distance algorithm
  * 
  * FAST TYPER OPTIMIZATIONS:
@@ -11,6 +11,13 @@
  * - Timeout-based word completion for fast continuous typing
  * - Reduced correction delays (2ms vs 5ms)
  * - Smart word length filtering
+ * 
+ * CAPITALIZATION & GRAMMAR:
+ * - Auto "i" → "I" correction (highest priority)
+ * - Contraction fixes: "im" → "I'm", "dont" → "don't", etc.
+ * - Sentence capitalization after periods, exclamation marks, question marks
+ * - Beginning of text capitalization
+ * - Apostrophe support for contractions
  * 
  * Performance: ~10x faster for common corrections, handles 120+ WPM typing
  */
@@ -87,6 +94,53 @@ static void add_to_cache(const char* word, const char* result) {
     
     cache_index = (cache_index + 1) % CACHE_SIZE;
 }
+
+// Capitalization correction rules
+static const struct {
+    const char* incorrect;
+    const char* correct;
+} capitalization_rules[] = {
+    {"i", "I"},
+    {"i'm", "I'm"},
+    {"i'll", "I'll"},
+    {"i've", "I've"},
+    {"i'd", "I'd"},
+    {"i've", "I've"},
+};
+#define CAPITALIZATION_RULES_SIZE (sizeof(capitalization_rules) / sizeof(capitalization_rules[0]))
+
+// Check for capitalization/contraction corrections
+static const char* check_capitalization(const char* word) {
+    for (int i = 0; i < CAPITALIZATION_RULES_SIZE; i++) {
+        if (strcmp(word, capitalization_rules[i].incorrect) == 0) {
+            return capitalization_rules[i].correct;
+        }
+    }
+    return NULL;
+}
+
+// Check if word should be capitalized at sentence start
+static bool should_capitalize_sentence_start = true;  // Start with true (beginning of text)
+
+// Capitalize first letter of a word
+static char* capitalize_first_letter(const char* word, char* buffer, int buffer_size) {
+    if (word == NULL || buffer == NULL || buffer_size < 2) return NULL;
+    
+    int len = strlen(word);
+    if (len >= buffer_size) len = buffer_size - 1;
+    
+    strncpy(buffer, word, len);
+    buffer[len] = '\0';
+    
+    if (len > 0 && buffer[0] >= 'a' && buffer[0] <= 'z') {
+        buffer[0] = buffer[0] - 'a' + 'A';  // Convert to uppercase
+    }
+    
+    return buffer;
+}
+
+// Forward declaration
+static int levenshtein_distance(const char* s1, const char* s2);
 
 // Common word patterns for ultra-fast checking
 static const char* common_patterns[] = {
@@ -228,6 +282,13 @@ static const char* find_best_match(const char* word) {
     const char* cached_result = check_cache(word);
     if (cached_result != NULL) {
         return cached_result;
+    }
+    
+    // Ultra-fast capitalization correction (highest priority)
+    const char* cap_result = check_capitalization(word);
+    if (cap_result != NULL) {
+        add_to_cache(word, cap_result);
+        return cap_result;
     }
     
     // Ultra-fast check for common patterns
@@ -379,6 +440,11 @@ static char key_to_char(zmk_key_t key) {
     if (key == HID_USAGE_KEY_KEYBOARD_SPACEBAR) return ' ';
     if (key == HID_USAGE_KEY_KEYBOARD_PERIOD_AND_GREATER_THAN) return '.';
     if (key == HID_USAGE_KEY_KEYBOARD_COMMA_AND_LESS_THAN) return ',';
+    if (key == HID_USAGE_KEY_KEYBOARD_ENTER) return '\n';
+    if (key == HID_USAGE_KEY_KEYBOARD_TAB) return '\t';
+    if (key == HID_USAGE_KEY_KEYBOARD_1_AND_EXCLAMATION) return '!';  // Shift+1 for !
+    if (key == HID_USAGE_KEY_KEYBOARD_SLASH_AND_QUESTION_MARK) return '?';  // Shift+/ for ?
+    if (key == HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE) return '\'';  // Apostrophe for contractions
     return 0;
 }
 
@@ -458,16 +524,44 @@ static void process_word() {
     }
     #endif
     
-    // Check if word is already correct (fast path)
-    if (is_valid_word(current_word)) {
-        word_pos = 0;
-        return;
+    // Handle sentence capitalization
+    const char* final_correction = NULL;
+    
+    if (should_capitalize_sentence_start) {
+        // Check if we need to capitalize the first letter
+        static char capitalized_buffer[MAX_WORD_LEN];
+        char* capitalized = capitalize_first_letter(current_word, capitalized_buffer, MAX_WORD_LEN);
+        
+        if (capitalized && strcmp(current_word, capitalized) != 0) {
+            // Check if the capitalized version is valid or if we should correct it
+            if (is_valid_word(capitalized)) {
+                final_correction = capitalized;
+            } else {
+                // Try to find correction for the capitalized version
+                const char* cap_correction = find_best_match(capitalized);
+                if (cap_correction) {
+                    final_correction = cap_correction;
+                }
+            }
+        }
+        should_capitalize_sentence_start = false;  // Reset after first word
     }
     
-    // Find best correction
-    const char* correction = find_best_match(current_word);
-    if (correction != NULL) {
-        correct_word(correction, word_pos);
+    // If no sentence capitalization needed, check normal correction
+    if (final_correction == NULL) {
+        // Check if word is already correct (fast path)
+        if (is_valid_word(current_word)) {
+            word_pos = 0;
+            return;
+        }
+        
+        // Find best correction
+        final_correction = find_best_match(current_word);
+    }
+    
+    // Apply correction if found
+    if (final_correction != NULL && strcmp(current_word, final_correction) != 0) {
+        correct_word(final_correction, word_pos);
     }
     
     word_pos = 0;  // Reset for next word
@@ -522,13 +616,19 @@ int zmk_autocorrect_keyboard_press(zmk_key_t key) {
     if (c == 0) return 0;  // Unsupported key
     
     // Word boundary characters
-    if (c == ' ' || c == '.' || c == ',' || c == '\n' || c == '\t') {
+    if (c == ' ' || c == '.' || c == ',' || c == '\n' || c == '\t' || c == '!' || c == '?') {
         process_word();  // Check and correct the completed word immediately
+        
+        // Check for sentence boundaries (next word should be capitalized)
+        if (c == '.' || c == '!' || c == '?' || c == '\n') {
+            should_capitalize_sentence_start = true;
+        }
+        
         return 0;
     }
     
-    // Add letter to current word
-    if (c >= 'a' && c <= 'z' && word_pos < MAX_WORD_LEN - 1) {
+    // Add letter or apostrophe to current word
+    if ((c >= 'a' && c <= 'z') || c == '\'' && word_pos < MAX_WORD_LEN - 1) {
         current_word[word_pos++] = c;
         
         #if FAST_TYPER_MODE
