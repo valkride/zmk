@@ -182,6 +182,12 @@ bool zmk_spell_checker_is_enabled(void) {
 
 // Main keystroke handler
 int zmk_autocorrect_keyboard_press(zmk_key_t key) {
+    // Check for F24 key (our toggle trigger)
+    if (key == HID_USAGE_KEY_F24) {
+        spell_checker_enabled = !spell_checker_enabled;
+        return 0;
+    }
+    
     if (correcting || !spell_checker_enabled) return 0;
     
     char c = key_to_char(key);
