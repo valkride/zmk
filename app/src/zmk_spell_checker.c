@@ -11,9 +11,13 @@
 #include <zmk/event_manager.h>
 #include <zmk/events/keycode_state_changed.h>
 #include <dt-bindings/zmk/keys.h>
+#include <zmk/spell_checker.h>
 #include "spell_dictionary.h"
 #define MAX_WORD_LEN 15
 #define MAX_EDIT_DISTANCE 2  // Allow up to 2 character errors
+
+// Global enable/disable flag
+static bool spell_checker_enabled = true;
 
 // Buffer for word extraction
 static char current_word[MAX_WORD_LEN] = {0};
@@ -165,9 +169,19 @@ static void process_word() {
     word_pos = 0;  // Reset for next word
 }
 
+// Toggle function for enabling/disabling spell checker
+void zmk_spell_checker_toggle(void) {
+    spell_checker_enabled = !spell_checker_enabled;
+}
+
+// Get current state
+bool zmk_spell_checker_is_enabled(void) {
+    return spell_checker_enabled;
+}
+
 // Main keystroke handler
 int zmk_autocorrect_keyboard_press(zmk_key_t key) {
-    if (correcting) return 0;
+    if (correcting || !spell_checker_enabled) return 0;
     
     char c = key_to_char(key);
     if (c == 0) return 0;  // Unsupported key

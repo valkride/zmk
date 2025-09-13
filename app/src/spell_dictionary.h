@@ -1,17 +1,13 @@
 #ifndef SPELL_DICTIONARY_H
 #define SPELL_DICTIONARY_H
 
-// Common English words dictionary for spell checking
-// Organized by frequency of use for better performance
+
 static const char* const dictionary[] = {
-    // Most common words (1-50)
     "the", "be", "to", "of", "and", "a", "in", "that", "have", "i",
     "it", "for", "not", "on", "with", "he", "as", "you", "do", "at",
     "this", "but", "his", "by", "from", "they", "we", "say", "her", "she",
     "or", "an", "will", "my", "one", "all", "would", "there", "their", "what",
     "so", "up", "out", "if", "about", "who", "get", "which", "go", "me",
-    
-    // Common words (51-150)
     "when", "make", "can", "like", "time", "no", "just", "him", "know", "take",
     "people", "into", "year", "your", "good", "some", "could", "them", "see", "other",
     "than", "then", "now", "look", "only", "come", "its", "over", "think", "also",
@@ -22,8 +18,6 @@ static const char* const dictionary[] = {
     "through", "before", "try", "may", "why", "come", "each", "still", "large", "must",
     "big", "group", "those", "often", "run", "important", "until", "children", "side", "feet",
     "car", "mile", "night", "walk", "white", "sea", "began", "grow", "took", "river",
-    
-    // Additional common words (151-300)
     "four", "carry", "state", "once", "book", "hear", "stop", "without", "second", "later",
     "miss", "idea", "enough", "eat", "face", "watch", "far", "indian", "really", "almost",
     "let", "above", "girl", "sometimes", "mountain", "cut", "young", "talk", "soon", "list",
@@ -34,8 +28,6 @@ static const char* const dictionary[] = {
     "short", "better", "best", "however", "low", "hours", "black", "products", "happened", "whole",
     "measure", "remember", "early", "waves", "reached", "listen", "wind", "rock", "space", "covered",
     "fast", "several", "hold", "himself", "toward", "five", "step", "morning", "passed", "vowel",
-    
-    // More words (301-400)
     "true", "hundred", "against", "pattern", "numeral", "table", "north", "slowly", "money", "map",
     "farm", "pulled", "draw", "voice", "seen", "cold", "cried", "plan", "notice", "south",
     "sing", "war", "ground", "fall", "king", "town", "i'll", "unit", "figure", "certain",
@@ -46,8 +38,6 @@ static const char* const dictionary[] = {
     "wheels", "full", "force", "blue", "object", "decide", "surface", "behind", "special", "clear",
     "tail", "produce", "fact", "street", "inch", "multiply", "nothing", "course", "stay", "wheel",
     "full", "force", "blue", "object", "decide", "surface", "behind", "special", "clear", "tail",
-    
-    // Final words (401-500)
     "produce", "fact", "street", "inch", "multiply", "nothing", "course", "stay", "wheel", "full",
     "basic", "smell", "valley", "nor", "double", "seat", "continue", "block", "chart", "hat",
     "sell", "success", "company", "subtract", "event", "particular", "deal", "swim", "term", "opposite",
