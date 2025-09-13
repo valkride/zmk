@@ -2,7 +2,7 @@
 #define DICT_I_H
 
 static const char* const dict_i[] = {
-    "i", "ice", "idea", "ideal", "identify", "identity", "if", "ignore", "ill", "illegal",
+    "i", "ice", "idea", "ideal", "identify", "identity", "if", "ignore", "ill", "illegal", "is",
     "image", "imagination", "imagine", "immediate", "immediately", "impact", "implement", "imply", "importance", "important",
     "impose", "impossible", "improve", "improvement", "in", "incentive", "inch", "incident", "include", "including",
     "income", "incorporate", "increase", "indeed", "independent", "index", "indicate", "indication", "individual", "industrial",

@@ -508,11 +508,43 @@ static void correct_word(const char* correct_word, int typo_len) {
     correcting = false;
 }
 
+// Most common English words that should NEVER be corrected
+static const char* protected_words[] = {
+    "the", "be", "to", "of", "and", "a", "in", "that", "have", "it", 
+    "for", "not", "on", "with", "he", "as", "you", "do", "at", "this",
+    "but", "his", "by", "from", "they", "we", "say", "her", "she", "or",
+    "an", "will", "my", "one", "all", "would", "there", "their", "what",
+    "so", "up", "out", "if", "about", "who", "get", "which", "go", "me",
+    "when", "make", "can", "like", "time", "no", "just", "him", "know",
+    "take", "people", "into", "year", "your", "good", "some", "could", "them",
+    "see", "other", "than", "then", "now", "look", "only", "come", "its",
+    "over", "think", "also", "back", "after", "use", "two", "how", "our",
+    "work", "first", "well", "way", "even", "new", "want", "because", "any",
+    "these", "give", "day", "most", "us", "is", "was", "are", "been", "has", "had", "were"
+};
+#define PROTECTED_WORDS_SIZE (sizeof(protected_words) / sizeof(protected_words[0]))
+
+// Check if word is in protected list
+static bool is_protected_word(const char* word) {
+    for (int i = 0; i < PROTECTED_WORDS_SIZE; i++) {
+        if (strcmp(word, protected_words[i]) == 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
 // Process completed word
 static void process_word() {
     if (word_pos == 0) return;  // Empty word
     
     current_word[word_pos] = '\0';  // Null terminate
+    
+    // NEVER correct the most common English words
+    if (is_protected_word(current_word)) {
+        word_pos = 0;
+        return;
+    }
     
     // Special case: always correct standalone "i" to "I" (before length check)
     if (word_pos == 1 && current_word[0] == 'i') {
