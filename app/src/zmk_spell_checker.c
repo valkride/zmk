@@ -436,14 +436,29 @@ static void type_string(const char* str) {
     for (int i = 0; str[i] != '\0'; i++) {
         char c = str[i];
         zmk_key_t key = 0;
+        bool need_shift = false;
         
         if (c >= 'a' && c <= 'z') {
             key = HID_USAGE_KEY_KEYBOARD_A + (c - 'a');
+        } else if (c >= 'A' && c <= 'Z') {
+            key = HID_USAGE_KEY_KEYBOARD_A + (c - 'A');
+            need_shift = true;
         }
         
         if (key != 0) {
+            // Press shift if needed for uppercase
+            if (need_shift) {
+                send_key_event(HID_USAGE_KEY_KEYBOARD_LEFTSHIFT, true);
+            }
+            
             send_key_event(key, true);
             send_key_event(key, false);
+            
+            // Release shift if used
+            if (need_shift) {
+                send_key_event(HID_USAGE_KEY_KEYBOARD_LEFTSHIFT, false);
+            }
+            
             #if FAST_TYPER_MODE
             k_msleep(2);  // Reduced delay for faster correction
             #else
@@ -599,20 +614,11 @@ int zmk_autocorrect_keyboard_press(zmk_key_t key) {
     
     // Word boundary characters
     if (c == ' ' || c == '.' || c == ',' || c == '\n' || c == '\t' || c == '!' || c == '?') {
-        // Check if this is a standalone "i" before processing
-        bool was_standalone_i = (word_pos == 1 && current_word[0] == 'i');
-        
         process_word();  // Check and correct the completed word immediately
         
         // Check for sentence boundaries (next word should be capitalized)
         if (c == '.' || c == '!' || c == '?' || c == '\n') {
             should_capitalize_sentence_start = true;
-        }
-        
-        // If we corrected "i" to "I", we need to add the space manually since correction consumed it
-        if (was_standalone_i && c == ' ') {
-            send_key_event(HID_USAGE_KEY_KEYBOARD_SPACEBAR, true);
-            send_key_event(HID_USAGE_KEY_KEYBOARD_SPACEBAR, false);
         }
         
         return 0;
