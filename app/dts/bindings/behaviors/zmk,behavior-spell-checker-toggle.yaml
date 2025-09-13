@@ -2,4 +2,7 @@ description: Spell Checker Toggle behavior
 
 compatible: "zmk,behavior-spell-checker-toggle"
 
-include: one_param.yaml
+properties:
+  "#binding-cells":
+    type: int
+    const: 0
