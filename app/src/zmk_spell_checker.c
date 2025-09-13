@@ -14,7 +14,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/hid_usage.h>
 #include <zmk/spell_checker.h>
-#include "spell_dictionary.h"
+#include "Dictionary/spell_dictionary_map.h"
 #define MAX_WORD_LEN 15
 #define MAX_EDIT_DISTANCE 2  // Allow up to 2 character errors
 
@@ -67,14 +67,20 @@ static const char* find_best_match(const char* word) {
     int best_distance = MAX_EDIT_DISTANCE + 1;
     const char* best_match = NULL;
     
-    for (int i = 0; i < DICTIONARY_SIZE; i++) {
-        int distance = levenshtein_distance(word, dictionary[i]);
-        if (distance <= MAX_EDIT_DISTANCE && distance < best_distance) {
-            best_distance = distance;
-            best_match = dictionary[i];
-            
-            // Perfect match found
-            if (distance == 0) break;
+    // Get dictionary for the first letter of the word
+    const dictionary_entry_t* dict_entry = get_dictionary_for_letter(word[0]);
+    
+    if (dict_entry && dict_entry->words) {
+        // Search only words starting with the same letter
+        for (size_t i = 0; i < dict_entry->size; i++) {
+            int distance = levenshtein_distance(word, dict_entry->words[i]);
+            if (distance <= MAX_EDIT_DISTANCE && distance < best_distance) {
+                best_distance = distance;
+                best_match = dict_entry->words[i];
+                
+                // Perfect match found
+                if (distance == 0) break;
+            }
         }
     }
     
@@ -83,9 +89,15 @@ static const char* find_best_match(const char* word) {
 
 // Check if word exists in dictionary (exact match)
 static bool is_valid_word(const char* word) {
-    for (int i = 0; i < DICTIONARY_SIZE; i++) {
-        if (strcmp(word, dictionary[i]) == 0) {
-            return true;
+    // Get dictionary for the first letter of the word
+    const dictionary_entry_t* dict_entry = get_dictionary_for_letter(word[0]);
+    
+    if (dict_entry && dict_entry->words) {
+        // Search only words starting with the same letter
+        for (size_t i = 0; i < dict_entry->size; i++) {
+            if (strcmp(word, dict_entry->words[i]) == 0) {
+                return true;
+            }
         }
     }
     return false;
