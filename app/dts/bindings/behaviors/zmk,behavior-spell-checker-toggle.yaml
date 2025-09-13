@@ -6,3 +6,6 @@ properties:
   "#binding-cells":
     type: int
     const: 0
+  label:
+    type: string
+    deprecated: true
