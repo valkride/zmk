@@ -16,21 +16,23 @@
 struct correction {
     const char* typo1;
     const char* typo2;
+    const char* typo3;
     const char* fix;
     int typo1_len;
     int typo2_len;
+    int typo3_len;
 };
 
 static const struct correction corrections[] = {
-    {"teh", "hte", "the", 3, 3},           // the
-    {"adn", "nad", "and", 3, 3},           // and  
-    {"yuo", "ouy", "you", 3, 3},           // you
-    {"fo", "ov", "of", 2, 2},              // of
-    {"taht", "thta", "that", 4, 4},        // that
-    {"thsi", "tihs", "this", 4, 4},        // this
-    {"frmo", "form", "from", 4, 4},        // from
-    {"whcih", "wich", "which", 5, 4},      // which
-    {"recieve", "recive", "receive", 7, 6} // receive
+    {"teh", "hte", "tthe", "the", 3, 3, 4},        // the
+    {"adn", "nad", "andd", "and", 3, 3, 4},        // and  
+    {"yuo", "ouy", "youu", "you", 3, 3, 4},        // you
+    {"fo", "ov", "off", "of", 2, 2, 3},            // of
+    {"taht", "thta", "tath", "that", 4, 4, 4},     // that
+    {"thsi", "tihs", "thiss", "this", 4, 4, 5},    // this
+    {"frmo", "form", "fomr", "from", 4, 4, 4},     // from
+    {"whcih", "wich", "whch", "which", 5, 4, 4},   // which
+    {"recieve", "recive", "receve", "receive", 7, 6, 6} // receive
 };
 
 #define NUM_CORRECTIONS (sizeof(corrections) / sizeof(corrections[0]))
@@ -127,6 +129,17 @@ int zmk_autocorrect_keyboard_press(zmk_key_t key) {
                 if (strncmp(&buffer[start_pos2], corr->typo2, corr->typo2_len) == 0 && 
                     buffer[MAX_WORD_LEN - 1] == ' ') {
                     do_correction_typed(corr->fix, corr->typo2_len);
+                    return 0;
+                }
+            }
+            
+            // Check typo3
+            int check_len3 = corr->typo3_len + 1; // typo + space
+            if (check_len3 <= MAX_WORD_LEN) {
+                int start_pos3 = MAX_WORD_LEN - check_len3;
+                if (strncmp(&buffer[start_pos3], corr->typo3, corr->typo3_len) == 0 && 
+                    buffer[MAX_WORD_LEN - 1] == ' ') {
+                    do_correction_typed(corr->fix, corr->typo3_len);
                     return 0;
                 }
             }
