@@ -2,7 +2,7 @@
 #define DICT_X_H
 
 static const char* const dict_x[] = {
-    "x", "xbox", "xerox", "xml", "xray" 
+    "x", "xbox", "xerox", "xml", "xray", "xenophobia", "xylophone" 
 };
 
 #define DICT_X_SIZE (sizeof(dict_x) / sizeof(dict_x[0]))

@@ -3,7 +3,9 @@
 
 static const char* const dict_q[] = {
     "qualify", "quality", "quantity", "quarter", "quarterly", "queen", "quest", "question", "questionnaire", "quick",
-    "quickly", "quiet", "quietly", "quit", "quite", "quiz", "quota", "quote",
+    "quickly", "quiet", "quietly", "quit", "quite", "quiz", "quota", "quote", "quadrant", "quail",
+    "quake", "qualification", "quantify", "quantum", "quarantine", "quart", "quarterback", "quartz", "queasy", "query",
+    "quiche", "quicksand", "quilt", "quintet", "quirky", "quiver", "quotation",
     // Words with apostrophes
     "quality's", "quarter's", "queen's", "question's", "quiz's", "quote's"
 };

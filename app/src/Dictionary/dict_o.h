@@ -9,7 +9,15 @@ static const char* const dict_o[] = {
     "operator", "opinion", "opponent", "opportunity", "oppose", "opposite", "option", "or", "orange", "order",
     "ordinary", "organic", "organization", "organize", "orientation", "origin", "original", "originally", "other", "otherwise",
     "ought", "our", "ourselves", "out", "outcome", "outdoor", "outer", "outline", "outlook", "output",
-    "outside", "outstanding", "over", "overall", "overcome", "overlook", "owe", "own", "owner", "ownership",
+    "outside", "outstanding", "over", "overall", "overcome", "overlook", "owe", "own", "owner", "ownership", "oatmeal",
+    "obedience", "obedient", "obituary", "obscure", "obsolete", "obstacle", "obstruct", "occupation", "occurrence", "octopus",
+    "odometer", "offender", "offering", "offline", "offspring", "oilfield", "ointment", "oldness", "olive", "omelet",
+    "ominous", "omission", "onboard", "oncoming", "oneself", "onion", "onset", "opacity", "opener", "openness",
+    "opera", "operational", "operative", "optimize", "optional", "orbit", "orchard", "orchestra", "ordeal", "orderly",
+    "ore", "organism", "organizer", "oriental", "orphan", "orthodox", "oscillate", "ostrich", "outbreak", "outbound",
+    "outcast", "outgoing", "outlaw", "outlet", "outlines", "outpost", "outrage", "outreach", "outright", "outset",
+    "outward", "oval", "ovation", "oven", "overcast", "overflow", "overhead", "overlap", "overlay", "overload",
+    "overnight", "overseas", "oversight", "overtime", "overview", "overwhelm", "owl", "oxygen",
     // Words with apostrophes
     "object's", "office's", "officer's", "oil's", "operation's", "opinion's", "opportunity's", "order's", "organization's", "origin's",
     "outcome's", "outlook's", "owner's"

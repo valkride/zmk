@@ -2,7 +2,8 @@
 #define DICT_Z_H
 
 static const char* const dict_z[] = {
-    "zero", "zip", "zone", "zones", "zoo", "zoom",
+    "zero", "zip", "zone", "zones", "zoo", "zoom", "zap", "zebra", "zest", "zigzag",
+    "zinc", "zipper", "zodiac", "zombie", "zoning", "zucchini",
     // Words with apostrophes
     "zone's", "zoo's"
 };
