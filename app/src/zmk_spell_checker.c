@@ -11,62 +11,7 @@
 #include <zmk/event_manager.h>
 #include <zmk/events/keycode_state_changed.h>
 #include <dt-bindings/zmk/keys.h>
-
-// Common English words dictionary (top 500 most used words)
-static const char* dictionary[] = {
-    "the", "be", "to", "of", "and", "a", "in", "that", "have", "i",
-    "it", "for", "not", "on", "with", "he", "as", "you", "do", "at",
-    "this", "but", "his", "by", "from", "they", "we", "say", "her", "she",
-    "or", "an", "will", "my", "one", "all", "would", "there", "their", "what",
-    "so", "up", "out", "if", "about", "who", "get", "which", "go", "me",
-    "when", "make", "can", "like", "time", "no", "just", "him", "know", "take",
-    "people", "into", "year", "your", "good", "some", "could", "them", "see", "other",
-    "than", "then", "now", "look", "only", "come", "its", "over", "think", "also",
-    "back", "after", "use", "two", "how", "our", "work", "first", "well", "way",
-    "even", "new", "want", "because", "any", "these", "give", "day", "most", "us",
-    "is", "was", "are", "been", "has", "had", "were", "said", "each", "which",
-    "do", "does", "did", "will", "would", "could", "should", "may", "might", "must",
-    "shall", "can", "cannot", "could", "should", "would", "might", "may", "need", "dare",
-    "ought", "used", "am", "is", "are", "was", "were", "be", "being", "been",
-    "have", "has", "had", "having", "do", "does", "did", "doing", "done", "get",
-    "got", "gotten", "go", "goes", "went", "going", "gone", "come", "comes", "came",
-    "coming", "take", "takes", "took", "taking", "taken", "make", "makes", "made", "making",
-    "see", "sees", "saw", "seeing", "seen", "know", "knows", "knew", "knowing", "known",
-    "think", "thinks", "thought", "thinking", "say", "says", "said", "saying", "tell",
-    "tells", "told", "telling", "ask", "asks", "asked", "asking", "work", "works",
-    "worked", "working", "try", "tries", "tried", "trying", "use", "uses", "used",
-    "using", "find", "finds", "found", "finding", "give", "gives", "gave", "giving",
-    "given", "play", "plays", "played", "playing", "run", "runs", "ran", "running",
-    "move", "moves", "moved", "moving", "live", "lives", "lived", "living", "believe",
-    "believes", "believed", "believing", "hold", "holds", "held", "holding", "bring",
-    "brings", "brought", "bringing", "happen", "happens", "happened", "happening", "write",
-    "writes", "wrote", "writing", "written", "sit", "sits", "sat", "sitting", "stand",
-    "stands", "stood", "standing", "lose", "loses", "lost", "losing", "pay", "pays",
-    "paid", "paying", "meet", "meets", "met", "meeting", "include", "includes", "included",
-    "including", "continue", "continues", "continued", "continuing", "set", "sets", "setting",
-    "learn", "learns", "learned", "learning", "change", "changes", "changed", "changing",
-    "lead", "leads", "led", "leading", "understand", "understands", "understood", "understanding",
-    "watch", "watches", "watched", "watching", "follow", "follows", "followed", "following",
-    "stop", "stops", "stopped", "stopping", "create", "creates", "created", "creating",
-    "speak", "speaks", "spoke", "speaking", "spoken", "read", "reads", "reading", "add",
-    "adds", "added", "adding", "spend", "spends", "spent", "spending", "grow", "grows",
-    "grew", "growing", "grown", "open", "opens", "opened", "opening", "walk", "walks",
-    "walked", "walking", "win", "wins", "won", "winning", "offer", "offers", "offered",
-    "offering", "remember", "remembers", "remembered", "remembering", "love", "loves", "loved",
-    "loving", "consider", "considers", "considered", "considering", "appear", "appears", "appeared",
-    "appearing", "buy", "buys", "bought", "buying", "wait", "waits", "waited", "waiting",
-    "serve", "serves", "served", "serving", "die", "dies", "died", "dying", "send",
-    "sends", "sent", "sending", "expect", "expects", "expected", "expecting", "build",
-    "builds", "built", "building", "stay", "stays", "stayed", "staying", "fall", "falls",
-    "fell", "falling", "fallen", "cut", "cuts", "cutting", "reach", "reaches", "reached",
-    "reaching", "kill", "kills", "killed", "killing", "remain", "remains", "remained",
-    "remaining", "suggest", "suggests", "suggested", "suggesting", "raise", "raises", "raised",
-    "raising", "pass", "passes", "passed", "passing", "sell", "sells", "sold", "selling",
-    "require", "requires", "required", "requiring", "report", "reports", "reported", "reporting",
-    "decide", "decides", "decided", "deciding", "pull", "pulls", "pulled", "pulling"
-};
-
-#define DICT_SIZE (sizeof(dictionary) / sizeof(dictionary[0]))
+#include "spell_dictionary.h"
 #define MAX_WORD_LEN 15
 #define MAX_EDIT_DISTANCE 2  // Allow up to 2 character errors
 
@@ -116,7 +61,7 @@ static const char* find_best_match(const char* word) {
     int best_distance = MAX_EDIT_DISTANCE + 1;
     const char* best_match = NULL;
     
-    for (int i = 0; i < DICT_SIZE; i++) {
+    for (int i = 0; i < DICTIONARY_SIZE; i++) {
         int distance = levenshtein_distance(word, dictionary[i]);
         if (distance <= MAX_EDIT_DISTANCE && distance < best_distance) {
             best_distance = distance;
@@ -132,7 +77,7 @@ static const char* find_best_match(const char* word) {
 
 // Check if word exists in dictionary (exact match)
 static bool is_valid_word(const char* word) {
-    for (int i = 0; i < DICT_SIZE; i++) {
+    for (int i = 0; i < DICTIONARY_SIZE; i++) {
         if (strcmp(word, dictionary[i]) == 0) {
             return true;
         }
