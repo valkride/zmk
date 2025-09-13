@@ -504,6 +504,12 @@ static void process_word() {
     }
     #endif
     
+    // Special case: always correct standalone "i" to "I"
+    if (word_pos == 1 && current_word[0] == 'i') {
+        correct_word("I");
+        return;
+    }
+    
     // Handle sentence capitalization
     const char* final_correction = NULL;
     
@@ -585,11 +591,8 @@ int zmk_autocorrect_keyboard_press(zmk_key_t key) {
     if (correcting || !spell_checker_enabled) return 0;
     
     #if FAST_TYPER_MODE
-    // Update timing for timeout processing
+    // Update timing for potential future features (keeping for compatibility)
     last_keypress_time = k_uptime_get();
-    
-    // Cancel any pending timeout work
-    k_work_cancel_delayable(&timeout_work);
     #endif
     
     char c = key_to_char(key);
@@ -611,10 +614,8 @@ int zmk_autocorrect_keyboard_press(zmk_key_t key) {
     if ((c >= 'a' && c <= 'z') || c == '\'' && word_pos < MAX_WORD_LEN - 1) {
         current_word[word_pos++] = c;
         
-        #if FAST_TYPER_MODE
-        // Schedule timeout processing for fast typers (no explicit word boundary)
-        k_work_schedule(&timeout_work, K_MSEC(TYPING_TIMEOUT_MS));
-        #endif
+        // Note: Timeout-based correction removed to prevent interrupting typing flow
+        // Only correct when explicit word boundaries (space, punctuation) are hit
     }
     
     return 0;
