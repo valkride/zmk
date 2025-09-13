@@ -12,6 +12,7 @@
 #include <zmk/event_manager.h>
 #include <zmk/events/keycode_state_changed.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/hid_usage.h>
 #include <zmk/spell_checker.h>
 #include "spell_dictionary.h"
 #define MAX_WORD_LEN 15
@@ -183,7 +184,7 @@ bool zmk_spell_checker_is_enabled(void) {
 // Main keystroke handler
 int zmk_autocorrect_keyboard_press(zmk_key_t key) {
     // Check for F24 key (our toggle trigger)
-    if (key == HID_USAGE_KEY_F24) {
+    if (key == HID_USAGE_KEY_KEYBOARD_F24) {
         spell_checker_enabled = !spell_checker_enabled;
         return 0;
     }
