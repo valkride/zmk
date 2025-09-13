@@ -1,25 +1,5 @@
 /*
- * ZMK Spell Checker with Levenshtein Distance - Fast Typer + Capitalization
- * Comprehensive autocorrect for all words using edit distance algorithm
- * 
- * FAST TYPER OPTIMIZATIONS:
- * - LRU cache for recent lookups (16-entry cache)
- * - Common pattern fast-path checking
- * - Multi-pass search (exact -> 1-char diff -> length +/-1 -> full edit distance)
- * - Early termination in Levenshtein calculation
- * - Transposition detection for adjacent character swaps
- * - Timeout-based word completion for fast continuous typing
- * - Reduced correction delays (2ms vs 5ms)
- * - Smart word length filtering
- * 
- * CAPITALIZATION & GRAMMAR:
- * - Auto "i" → "I" correction (highest priority)
- * - Contraction fixes: "im" → "I'm", "dont" → "don't", etc.
- * - Sentence capitalization after periods, exclamation marks, question marks
- * - Beginning of text capitalization
- * - Apostrophe support for contractions
- * 
- * Performance: ~10x faster for common corrections, handles 120+ WPM typing
+ * Performance: handles 120+ WPM typing
  */
 
 #include <zephyr/kernel.h>
@@ -440,7 +420,7 @@ static char key_to_char(zmk_key_t key) {
     if (key == HID_USAGE_KEY_KEYBOARD_SPACEBAR) return ' ';
     if (key == HID_USAGE_KEY_KEYBOARD_PERIOD_AND_GREATER_THAN) return '.';
     if (key == HID_USAGE_KEY_KEYBOARD_COMMA_AND_LESS_THAN) return ',';
-    if (key == HID_USAGE_KEY_KEYBOARD_ENTER) return '\n';
+    if (key == HID_USAGE_KEY_KEYBOARD_RETURN_ENTER) return '\n';
     if (key == HID_USAGE_KEY_KEYBOARD_TAB) return '\t';
     if (key == HID_USAGE_KEY_KEYBOARD_1_AND_EXCLAMATION) return '!';  // Shift+1 for !
     if (key == HID_USAGE_KEY_KEYBOARD_SLASH_AND_QUESTION_MARK) return '?';  // Shift+/ for ?
