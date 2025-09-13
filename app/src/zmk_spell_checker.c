@@ -599,11 +599,20 @@ int zmk_autocorrect_keyboard_press(zmk_key_t key) {
     
     // Word boundary characters
     if (c == ' ' || c == '.' || c == ',' || c == '\n' || c == '\t' || c == '!' || c == '?') {
+        // Check if this is a standalone "i" before processing
+        bool was_standalone_i = (word_pos == 1 && current_word[0] == 'i');
+        
         process_word();  // Check and correct the completed word immediately
         
         // Check for sentence boundaries (next word should be capitalized)
         if (c == '.' || c == '!' || c == '?' || c == '\n') {
             should_capitalize_sentence_start = true;
+        }
+        
+        // If we corrected "i" to "I", we need to add the space manually since correction consumed it
+        if (was_standalone_i && c == ' ') {
+            send_key_event(HID_USAGE_KEY_KEYBOARD_SPACEBAR, true);
+            send_key_event(HID_USAGE_KEY_KEYBOARD_SPACEBAR, false);
         }
         
         return 0;
