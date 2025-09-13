@@ -23,11 +23,24 @@ static const char* const dict_f[] = {
     "follower", "foolish", "footstep", "forbid", "forecast", "foreground", "forehead", "forensic", "foresight", "forklift",
     "formality", "formatter", "formula", "fortress", "fortunate", "fountain", "fracture", "fragment", "franchise", "frankness",
     "fraternity", "fraudulent", "freelance", "freezer", "friction", "frightening", "frontier", "frostbite", "frugal", "frustrate",
-    "fulfillment", "fulltime", "functional", "fundraising", "furious", "fusion",
-    // Words with apostrophes
-    "face's", "fact's", "factory's", "family's", "fan's", "farm's", "father's", "fear's", "feature's", "field's",
-    "film's", "finger's", "fire's", "fish's", "flight's", "floor's", "flower's", "food's", "foot's", "force's",
-    "forest's", "form's", "friend's", "front's", "fruit's", "function's", "future's"
+    "fulfillment", "fulltime", "functional", "fundraising", "furious", "fusion", "fable", "fabric", "facade", "facet",
+    "factor", "factory", "faculty", "fade", "fail", "faint", "fairy", "faith", "fake", "fall",
+    "false", "fame", "family", "famine", "famous", "fanfare", "fantasy", "fare", "farewell", "fascinate",
+    "fashion", "fast", "fatal", "fate", "fatigue", "fault", "favor", "fawn", "fax", "feast",
+    "feat", "feather", "federal", "fee", "feeble", "feed", "feel", "female", "fence", "fender",
+    "ferment", "fern", "ferry", "fertile", "festival", "fetch", "fever", "fiber", "fiction", "field",
+    "fierce", "fiesta", "fifteen", "fifty", "fight", "figure", "file", "fill", "filter", "final",
+    "finance", "find", "fine", "finger", "finish", "finite", "fire", "firm", "first", "fish",
+    "fist", "fit", "five", "fix", "flag", "flame", "flank", "flap", "flash", "flat",
+    "flaw", "flee", "fleet", "flesh", "flex", "flight", "flip", "float", "flock", "flood",
+    "floor", "flour", "flow", "flower", "flu", "fluid", "flush", "fly", "foam", "focus",
+    "fog", "foil", "fold", "folk", "follow", "fond", "font", "food", "fool", "foot",
+    "for", "forbid", "force", "ford", "fore", "forest", "forge", "forget", "fork", "form",
+    "fort", "forth", "fortune", "forty", "forum", "fossil", "foster", "found", "four", "fowl",
+    "fox", "fraction", "fragile", "frame", "fraud", "free", "freeze", "freight", "fresh", "friar",
+    "friday", "friend", "fright", "fringe", "frog", "from", "front", "frost", "frown", "frozen",
+    "fruit", "fry", "fuel", "full", "fun", "fund", "funeral", "funny", "fur", "furnace",
+    "furniture", "fury", "fuse", "fuss", "fuzzy",
 };
 
 #define DICT_F_SIZE (sizeof(dict_f) / sizeof(dict_f[0]))

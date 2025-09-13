@@ -14,10 +14,21 @@ static const char* const dict_g[] = {
     "goodness", "gorgeous", "gospel", "gossip", "governance", "graceful", "gradient", "graduation", "grammar", "grandchild",
     "grandeur", "grandparent", "granite", "graphics", "grassland", "gratitude", "graveyard", "gravity", "greatness", "greenhouse",
     "greeting", "gridlock", "grievance", "grilled", "grinder", "grocery", "grooming", "grouping", "guardian", "guidance",
-    "guidelines", "guilty", "guitar", "gunshot", "gymnasium",
-    // Words with apostrophes
-    "game's", "garden's", "gate's", "generation's", "girl's", "goal's", "god's", "government's", "grade's", "grandfather's",
-    "grandmother's", "ground's", "group's", "growth's", "guard's", "guest's", "guide's", "guy's"
+    "guidelines", "guilty", "guitar", "gunshot", "gymnasium", "gable", "gadget", "gain", "galaxy", "gale",
+    "gallop", "gamble", "game", "gang", "gap", "garage", "garbage", "garden", "garland", "garlic",
+    "garment", "garrison", "gas", "gasp", "gate", "gather", "gauge", "gaze", "gear", "gem",
+    "gender", "gene", "general", "generate", "generic", "generous", "gentle", "genuine", "geography", "geology",
+    "geometry", "germ", "gesture", "get", "ghost", "giant", "gift", "giggle", "gill", "ginger",
+    "giraffe", "girl", "give", "glad", "glance", "gland", "glare", "glass", "glaze", "gleam",
+    "glen", "glide", "glimpse", "globe", "gloom", "glory", "gloss", "glove", "glow", "glue",
+    "goal", "goat", "goblet", "god", "gold", "golf", "gone", "good", "goose", "gorge",
+    "gospel", "gossip", "govern", "gown", "grab", "grace", "grade", "grain", "grand", "grant",
+    "grape", "graph", "grasp", "grass", "grave", "gravel", "gray", "graze", "grease", "great",
+    "greed", "green", "greet", "grid", "grief", "grill", "grim", "grin", "grind", "grip",
+    "groan", "grocer", "groom", "groove", "gross", "ground", "group", "grove", "grow", "growl",
+    "growth", "grub", "grudge", "grunt", "guard", "guess", "guest", "guide", "guild", "guilt",
+    "guitar", "gulf", "gull", "gulp", "gum", "gun", "gush", "gust", "gut", "guy",
+    "gym", "gypsy",
 };
 
 #define DICT_G_SIZE (sizeof(dict_g) / sizeof(dict_g[0]))

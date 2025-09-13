@@ -25,12 +25,30 @@ static const char* const dict_b[] = {
     "boarding", "boastful", "bonfire", "bookcase", "bookmark", "bookstore", "bootstrap", "botanical", "boundary", "boutique",
     "boyfriend", "bracelet", "bracket", "brainstorm", "breakdown", "breakfast", "breakthrough", "breathless", "brewery", "briefcase",
     "broadcast", "brochure", "brotherhood", "brownie", "buffalo", "builder", "bulletin", "bumper", "bundle", "burglar",
-    "butterfly", "buyout", "buzzer",
-    // Words with apostrophes
-    "baby's", "back's", "ball's", "band's", "bank's", "bar's", "base's", "battle's", "beach's", "bear's",
-    "bed's", "beer's", "bell's", "belt's", "bench's", "bike's", "bird's", "bit's", "block's", "blood's",
-    "boat's", "body's", "book's", "boss's", "bottle's", "box's", "boy's", "brain's", "branch's", "brand's",
-    "bread's", "bridge's", "brother's", "building's", "business's", "button's", "buyer's"
+    "butterfly", "buyout", "buzzer", "babble", "backdrop", "backfire", "backlog", "backup", "backwards", "backyard",
+    "bacteria", "badger", "baffle", "bailout", "bakehouse", "balanced", "balcony", "ballot", "bamboo", "bandana",
+    "bandwidth", "banishment", "bankroll", "bankruptcy", "baptism", "barbarian", "barcode", "bargain", "barge",
+    "barista", "barley", "barnyard", "barometric", "barracks", "barricade", "bartender", "baseline", "basket", "bastard",
+    "battalion", "battered", "battlefield", "beacon", "beagle", "beaker", "bearing", "beatnik", "bedrock",
+    "beehive", "beetroot", "befriend", "beggar", "behemoth", "belated", "belfry", "believer", "bellhop", "bellows",
+    "beloved", "beneath", "benefactor", "benevolent", "benzine", "beret", "bestow", "betray", "beverage", "beware",
+    "bewitch", "bias", "bicycle", "bidding", "bifocal", "bigfoot", "bigotry", "bikini", "billboard", "billiard",
+    "binding", "biodegradable", "biography", "biology", "birch", "birdhouse", "birthmark", "birthplace", "biscuit", "bistro",
+    "bizarre", "blackberry", "blackboard", "blackmail", "blackout", "bladder", "blameless", "blanch", "blandish", "blasphemy",
+    "blaster", "blazer", "bleach", "bleachers", "blender", "bless", "blight", "blindfold", "blink", "blissful",
+    "blister", "blitz", "bloated", "blockage", "blogger", "bloodshed", "bloodstream", "blossom", "blouse", "blowfish",
+    "blueprint", "blunder", "blunt", "blurry", "blush", "boar", "boarding", "boast", "boater", "bobsled",
+    "bodily", "bodyguard", "boiling", "boldface", "bolster", "bombshell", "bondage", "bonnet", "bookend", "bookkeeper",
+    "booklet", "bookmark", "bookshelf", "bookstore", "boom", "boomerang", "boost", "bootleg", "borough", "botanical",
+    "bother", "boulevard", "bouncer", "boundary", "bouquet", "boutique", "bowling", "boxcar", "boxer", "boycott",
+    "brace", "bracket", "bragging", "brainstorm", "bramble", "branding", "brandy", "brass", "bravery", "brazen",
+    "breadth", "breakdown", "breakeven", "breakthrough", "breakup", "breathe", "breeze", "brewery", "bribery", "bridal",
+    "briefing", "brighten", "brilliant", "brimstone", "brink", "bristle", "brittle", "broadband", "broadcast", "broccoli",
+    "brochure", "broiler", "bronco", "bronze", "broomstick", "browbeat", "browser", "bruise", "brunch", "brunette",
+    "brutal", "bubble", "buckle", "bucolic", "buddhist", "budgetary", "buffalo", "buffet", "bugger", "bulge",
+    "bulldozer", "bulletin", "bullfrog", "bullion", "bullseye", "bumble", "bundle", "bunker", "buoyant", "burden",
+    "bureau", "burglar", "burial", "burlap", "burnout", "burrow", "busboy", "bushel", "bustle", "butcher",
+    "butler", "buttercup", "buttermilk", "button", "buttress", "buzzing", "bypass"
 };
 
 #define DICT_B_SIZE (sizeof(dict_b) / sizeof(dict_b[0]))

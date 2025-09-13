@@ -17,10 +17,21 @@ static const char* const dict_o[] = {
     "ore", "organism", "organizer", "oriental", "orphan", "orthodox", "oscillate", "ostrich", "outbreak", "outbound",
     "outcast", "outgoing", "outlaw", "outlet", "outlines", "outpost", "outrage", "outreach", "outright", "outset",
     "outward", "oval", "ovation", "oven", "overcast", "overflow", "overhead", "overlap", "overlay", "overload",
-    "overnight", "overseas", "oversight", "overtime", "overview", "overwhelm", "owl", "oxygen",
-    // Words with apostrophes
-    "object's", "office's", "officer's", "oil's", "operation's", "opinion's", "opportunity's", "order's", "organization's", "origin's",
-    "outcome's", "outlook's", "owner's"
+    "overnight", "overseas", "oversight", "overtime", "overview", "overwhelm", "owl", "oxygen", "oar", "oat",
+    "oak", "oaf", "odd", "ode", "oft", "ogh", "ohm", "oil", "old", "one", "opt",
+    "orb", "ore", "our", "out", "owe", "owl", "own", "oaks", "oars", "oath", "oats",
+    "obey", "odds", "odes", "ogre", "ohms", "oils", "oily", "oink", "okra", "olds",
+    "omen", "omit", "once", "ones", "only", "onyx", "oops", "ooze", "opal", "open",
+    "opts", "oral", "orbs", "orca", "ores", "orgy", "ours", "oust", "outs", "oval",
+    "oven", "over", "owed", "owes", "owls", "owns", "oxen", "oxes", "object", "obtain",
+    "occupy", "occurs", "oceans", "octane", "octave", "office", "offset", "olives", "online", "opaque",
+    "opened", "opener", "openly", "oppose", "option", "oracle", "orange", "orchid", "orders", "ordeal",
+    "organs", "orient", "origin", "orphan", "others", "ounces", "ousted", "outlet", "output", "outrun",
+    "outers", "outing", "owning", "oxygen", "oyster", "ozone", "object", "obtain", "occupy", "occurs",
+    "oceans", "octane", "octave", "office", "offset", "olives", "online", "opaque", "opened", "opener",
+    "openly", "oppose", "option", "oracle", "orange", "orchid", "orders", "ordeal", "organs", "orient",
+    "origin", "orphan", "others", "ounces", "ousted", "outlet", "output", "outrun", "outers", "outing",
+    "owning", "oxygen", "oyster", "ozone",
 };
 
 #define DICT_O_SIZE (sizeof(dict_o) / sizeof(dict_o[0]))

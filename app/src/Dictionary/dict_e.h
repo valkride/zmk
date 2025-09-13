@@ -28,11 +28,25 @@ static const char* const dict_e[] = {
     "epilogue", "equality", "equation", "escalate", "essential", "ethernet", "etiquette", "evaluation", "evangelist", "evaporation",
     "everyday", "evolution", "exaggerate", "excavation", "excellence", "excitement", "execution", "exemption", "exhaustion", "expedition",
     "expertise", "expiration", "exploitation", "exploration", "exportation", "exposition", "extraction", "extravaganza", "eyebrow", "eyeglasses",
-    "eyelashes",
-    // Words with apostrophes
-    "each's", "ear's", "earth's", "economy's", "edge's", "education's", "effect's", "effort's", "election's", "employee's",
-    "end's", "energy's", "engine's", "environment's", "error's", "event's", "everyone's", "example's", "experience's", "expert's",
-    "eye's"
+    "eyelashes", "eagle", "earnest", "earphone", "earring", "earthworm", "easel", "eastern", "eatery", "eavesdrop",
+    "ebony", "eccentric", "echo", "eclipse", "ecology", "economist", "ecstasy", "edible", "edifice", "editing",
+    "educator", "eerie", "effective", "effervescent", "efficient", "eggplant", "eggshell", "eighty", "either", "eject",
+    "elaborate", "elastic", "elbow", "elder", "elect", "electric", "electron", "elegant", "element", "elephant",
+    "elevate", "eleven", "eligible", "elite", "eloquent", "elude", "emancipate", "embargo", "embark", "embarrass",
+    "embellish", "emblem", "embrace", "emerald", "emerge", "emigrant", "emit", "emotion", "emperor", "emphasize",
+    "empire", "employ", "empower", "empty", "emulate", "enable", "enact", "enamel", "enchant", "enclose",
+    "encounter", "encourage", "endanger", "endorse", "endure", "enemy", "energize", "enforce", "engage", "engine",
+    "engrave", "enhance", "enigma", "enjoy", "enlarge", "enlist", "enormous", "enrich", "enroll", "ensemble",
+    "ensure", "entangle", "enter", "entertain", "entire", "entitle", "entity", "entrance", "entrap", "entry",
+    "envelope", "envious", "environ", "envy", "epic", "epidemic", "episode", "epitome", "epoch", "equator",
+    "equip", "era", "erase", "erect", "erode", "errand", "error", "erupt", "escape", "escort",
+    "establish", "estate", "estimate", "eternal", "ethics", "ethnic", "eternity", "eucalyptus", "euphoria", "evacuate",
+    "evade", "even", "evening", "event", "ever", "evict", "evidence", "evil", "evoke", "evolve",
+    "exact", "exalt", "exam", "example", "exceed", "excel", "except", "excerpt", "excess", "exchange",
+    "excite", "exclude", "excuse", "execute", "exercise", "exert", "exhale", "exhibit", "exile", "exist",
+    "exit", "exodus", "exotic", "expand", "expect", "expel", "expense", "expert", "expire", "explain",
+    "explode", "exploit", "explore", "export", "expose", "express", "extend", "extent", "exterior", "external",
+    "extinct", "extra", "extract", "extreme", "exude", "eyeball", "eyelet", "eyelid", "eyesight", "eyewitness",
 };
 
 #define DICT_E_SIZE (sizeof(dict_e) / sizeof(dict_e[0]))

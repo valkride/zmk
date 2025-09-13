@@ -17,11 +17,19 @@ static const char* const dict_h[] = {
     "hibernate", "hierarchy", "highway", "hiking", "hillside", "hindrance", "histogram", "hobbies", "hockey", "holistic",
     "homemade", "homework", "honeymoon", "hoodie", "hopeless", "horizontal", "horrible", "hostage", "hostname", "hotdog",
     "household", "housekeeper", "housework", "however", "hugging", "humorous", "hurricane", "hurried", "hybrid", "hydraulic",
-    "hygiene", "hyperlink", "hypnosis",
+    "hygiene", "hyperlink", "hypnosis", "habitat", "hack", "hail", "hair", "half", "hall", "halt",
+    "ham", "hammer", "hand", "handle", "hang", "happen", "happy", "harbor", "hard", "harm",
+    "harvest", "hash", "hat", "hate", "haul", "have", "hawk", "hay", "hazard", "head",
+    "heal", "heap", "hear", "heart", "heat", "heavy", "hedge", "heel", "height", "heir",
+    "held", "hell", "helm", "help", "hemp", "hen", "herb", "herd", "here", "hero",
+    "hide", "high", "hike", "hill", "hint", "hip", "hire", "his", "hit", "hive",
+    "hoard", "hoax", "hobby", "hockey", "hold", "hole", "holy", "home", "honey", "hood",
+    "hoof", "hook", "hoop", "hope", "horn", "horse", "hose", "host", "hot", "hotel",
+    "hour", "house", "how", "howl", "hub", "hue", "hug", "huge", "hull", "hum",
+    "human", "humble", "humid", "humor", "hump", "hunch", "hundred", "hung", "hunt", "hurl",
+    "hurry", "hurt", "hush", "husk", "hut", "hymn",
     // Words with apostrophes
-    "habit's", "hair's", "hand's", "hat's", "head's", "health's", "heart's", "help's", "her's", "hero's",
-    "hill's", "history's", "home's", "hope's", "horse's", "hospital's", "hotel's", "house's", "husband's", "he's",
-    "here's", "how's"
+    "he's", "here's", "how's"
 };
 
 #define DICT_H_SIZE (sizeof(dict_h) / sizeof(dict_h[0]))

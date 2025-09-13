@@ -42,11 +42,28 @@ static const char* const dict_p[] = {
     "privilege", "probable", "productivity", "proficiency", "programmer", "progressive", "projector", "prologue", "promising", "promptly",
     "pronunciation", "propaganda", "propeller", "prophecy", "prosecutor", "prosperity", "prosthetic", "protector", "prototype", "provider",
     "prowess", "proximity", "prudent", "pseudonym", "psychiatrist", "psychologist", "publisher", "pudding", "pulmonary", "punctual",
-    "pupil", "puppet", "purple", "pursuit", "pyramid",
-    // Words with apostrophes
-    "page's", "parent's", "part's", "party's", "path's", "patient's", "payment's", "people's", "person's", "phone's",
-    "picture's", "place's", "plan's", "plant's", "player's", "point's", "policy's", "position's", "power's", "president's",
-    "price's", "problem's", "product's", "program's", "project's", "property's", "purpose's"
+    "pupil", "puppet", "purple", "pursuit", "pyramid", "pad", "pal", "pan", "par", "pat",
+    "paw", "pax", "pay", "pea", "peg", "pen", "pep", "per", "pet", "pew", "pic",
+    "pie", "pig", "pin", "pip", "pit", "ply", "pod", "pop", "pot", "pox", "pro",
+    "pry", "pub", "pud", "pug", "pun", "pup", "pus", "put", "pac", "pad", "pal",
+    "pam", "pan", "pap", "par", "pas", "pat", "paw", "pax", "pay", "pea", "peg",
+    "pen", "pep", "per", "pet", "pew", "phi", "pic", "pie", "pig", "pin", "pip",
+    "pit", "pix", "ply", "pod", "pop", "pot", "pox", "pro", "pry", "pub", "pud",
+    "pug", "pun", "pup", "pus", "put", "pace", "pack", "pact", "page", "paid", "pain",
+    "pair", "pale", "palm", "pane", "pans", "papa", "park", "part", "pass", "past", "path",
+    "pave", "pawn", "pays", "peak", "pear", "peas", "peat", "peek", "peel", "peep", "peer",
+    "pelt", "pens", "pent", "perk", "pest", "pets", "pick", "pics", "pied", "pier", "pies",
+    "pike", "pile", "pill", "pine", "ping", "pink", "pins", "pint", "pipe", "pips", "piss",
+    "pits", "pity", "plan", "play", "plea", "plot", "plow", "ploy", "plug", "plum", "plus",
+    "pods", "poem", "poet", "poke", "pole", "poll", "polo", "pond", "pony", "pool", "poop",
+    "poor", "pope", "pops", "pore", "pork", "porn", "port", "pose", "post", "pots", "pour",
+    "pout", "pray", "prep", "prey", "prim", "prod", "prof", "prop", "pros", "prow", "prude",
+    "pubs", "puck", "puds", "puff", "pugs", "pull", "pulp", "puma", "pump", "puns", "punk",
+    "pups", "pure", "purl", "purr", "push", "puts", "putt", "pace", "pack", "pact", "page",
+    "paid", "pain", "pair", "pale", "palm", "pane", "pans", "papa", "park", "part", "pass",
+    "past", "path", "pave", "pawn", "pays", "peak", "pear", "peas", "peat", "peek", "peel",
+    "peep", "peer", "pelt", "pens", "pent", "perk", "pest", "pets", "pick", "pics", "pied",
+    "pier", "pies", "pike", "pile", "pill", "pine", "ping", "pink", "pins", "pint", "pipe",
 };
 
 #define DICT_P_SIZE (sizeof(dict_p) / sizeof(dict_p[0]))

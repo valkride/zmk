@@ -28,11 +28,29 @@ static const char* const dict_d[] = {
     "discussion", "dishwasher", "disinfectant", "dismantling", "disorder", "displacement", "disposition", "disruption", "dissertation", "distortion",
     "distribution", "disturb", "diversity", "dividend", "documentary", "dolphin", "domination", "donation", "doorbell", "dormitory",
     "dosage", "download", "downstairs", "downstream", "downtown", "drainage", "dramatic", "drawback", "dressing", "drilling",
-    "dropdown", "drowning", "drumstick", "duplicate", "duration", "dustbin", "dwelling", "dynamite",
+    "dropdown", "drowning", "drumstick", "duplicate", "duration", "dustbin", "dwelling", "dynamite", "dabble", "dagger",
+    "dairy", "daisy", "damage", "dampness", "dancing", "dandelion", "danger", "daredevil", "darkness", "darling",
+    "dashboard", "daughter", "daybreak", "daydream", "dazzle", "deacon", "deadline", "deadly", "deafness", "dealer",
+    "debate", "debris", "debut", "decay", "deceive", "decent", "decide", "decimal", "decline", "decorate",
+    "decrease", "dedicate", "deepen", "defeat", "defect", "defend", "deficit", "define", "deflate", "deform",
+    "degree", "delay", "delete", "deliberate", "delicate", "delight", "deliver", "demand", "democracy", "demon",
+    "demonstrate", "denial", "dense", "dental", "deny", "depart", "depend", "depict", "deploy", "deposit",
+    "depot", "depth", "deputy", "derive", "descend", "desert", "deserve", "design", "desire", "desk",
+    "despair", "despite", "dessert", "destiny", "destroy", "detail", "detect", "determine", "develop", "device",
+    "devote", "dew", "diabetes", "diagnose", "diagram", "dial", "diamond", "diary", "dice", "dictate",
+    "dictionary", "diet", "differ", "difficult", "dig", "digest", "digital", "dignity", "dilemma", "dim",
+    "dimension", "dine", "dinner", "dinosaur", "dioxide", "dip", "diploma", "direct", "dirt", "dirty",
+    "disagree", "disappear", "disaster", "disc", "discipline", "disco", "discover", "discuss", "disease", "dish",
+    "dismiss", "disorder", "display", "dispose", "dispute", "disrupt", "dissolve", "distance", "distant", "distinct",
+    "distribute", "district", "disturb", "ditch", "dive", "diverse", "divide", "divorce", "dizzy", "dock",
+    "doctor", "document", "dodge", "dogma", "dollar", "domain", "dome", "domestic", "dominate", "donate",
+    "donkey", "doom", "doorway", "dose", "double", "doubt", "dough", "dove", "dragon", "drain",
+    "drake", "drama", "drape", "drastically", "drawer", "drawing", "dream", "dress", "drift", "drill",
+    "drink", "drip", "drive", "drop", "drought", "drown", "drum", "drunk", "dual", "duck",
+    "dude", "due", "duel", "duke", "dull", "dumb", "dump", "dune", "dunk", "during",
+    "dusk", "dust", "duty", "dwarf", "dwell", "dye", "dynamic",
     // Words with apostrophes
-    "dad's", "data's", "daughter's", "day's", "death's", "decision's", "department's", "desk's", "device's", "difference's",
-    "dinner's", "director's", "doctor's", "dog's", "dollar's", "door's", "doubt's", "dream's", "driver's", "don't",
-    "doesn't", "didn't"
+    "don't", "doesn't", "didn't"
 };
 
 #define DICT_D_SIZE (sizeof(dict_d) / sizeof(dict_d[0]))

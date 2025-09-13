@@ -24,11 +24,17 @@ static const char* const dict_i[] = {
     "intellectual", "intelligent", "intensive", "interactive", "intercept", "interdisciplinary", "interference", "interior", "intermediate", "intermittent",
     "internship", "interrupt", "interstate", "interval", "intimacy", "intimate", "intimidate", "intricate", "intrigue", "intrinsic",
     "intuition", "invalid", "invariable", "inventor", "inventory", "investigator", "investor", "invisible", "invitation", "invoice",
-    "involuntary", "inward", "irritate",
+    "involuntary", "inward", "irritate", "ice", "icon", "idea", "ideal", "identify", "idle", "idol",
+    "igloo", "ignore", "ill", "illegal", "image", "imagine", "imitate", "immense", "immune", "impact",
+    "impair", "impart", "impeach", "impede", "impel", "imply", "import", "impose", "impress", "improve",
+    "impulse", "in", "inch", "income", "increase", "index", "indicate", "indigo", "indoors", "induce",
+    "infant", "infer", "infinite", "inflate", "inform", "inhale", "inherit", "inject", "injure", "ink",
+    "inn", "inner", "input", "insect", "insert", "inside", "insist", "inspect", "inspire", "install",
+    "instant", "instead", "instinct", "insult", "insure", "intact", "intake", "integer", "intend", "intense",
+    "intent", "inter", "into", "invade", "invent", "invest", "invite", "invoke", "involve", "iron",
+    "island", "isolate", "issue", "itch", "item", "ivory",
     // Words with apostrophes
-    "idea's", "image's", "impact's", "improvement's", "income's", "individual's", "industry's", "information's", "injury's", "insight's",
-    "instruction's", "interest's", "interview's", "investment's", "island's", "issue's", "item's", "it's", "I'm", "I'll",
-    "I've", "I'd", "isn't"
+    "it's", "I'm", "I'll", "I've", "I'd", "isn't"
 };
 
 #define DICT_I_SIZE (sizeof(dict_i) / sizeof(dict_i[0]))

@@ -33,12 +33,22 @@ static const char* const dict_t[] = {
     "transcript", "transient", "transplant", "traveler", "treachery", "treasure", "treaty", "trending", "trespass", "tricycle",
     "trigger", "trilogy", "trimming", "trinket", "triplet", "trophy", "tropical", "trucker", "trumpet", "trustee",
     "tsunami", "tubing", "tugboat", "tuition", "tulip", "tumble", "tumor", "tundra", "turbo", "turkey",
-    "turnip", "turquoise", "turtle", "tuxedo", "tweezers", "tycoon", "typeface", "typhoon", "tyranny",
+    "turnip", "turquoise", "turtle", "tuxedo", "tweezers", "tycoon", "typeface", "typhoon", "tyranny", "tab", "tack",
+    "tad", "tag", "tail", "taint", "tale", "tan", "tang", "tar", "tart", "taxi", "teak",
+    "teal", "tear", "tech", "ted", "tee", "tell", "temp", "ten", "tent", "test", "text",
+    "that", "thaw", "thee", "them", "then", "they", "thin", "this", "thud", "thug", "tick",
+    "tide", "tie", "tile", "till", "tilt", "time", "tin", "tip", "tire", "toad", "toe",
+    "toll", "tomb", "tone", "tool", "toot", "top", "tore", "torn", "toss", "tour", "tout",
+    "town", "toy", "tram", "trap", "tray", "tree", "trek", "trim", "trio", "trip", "true",
+    "tub", "tuck", "tuft", "tug", "tune", "turn", "tusk", "tutu", "twin", "two", "type",
+    "tall", "talk", "tame", "tank", "tape", "task", "team", "teen", "term", "than", "the",
+    "thick", "thing", "think", "third", "those", "three", "threw", "threw", "throw", "thumb", "thus",
+    "tiger", "tight", "timer", "title", "toast", "today", "token", "tooth", "torch", "total", "touch",
+    "tough", "towel", "tower", "track", "trade", "trail", "train", "trait", "trash", "treat", "trend",
+    "trial", "tribe", "trick", "tried", "truck", "truly", "trunk", "trust", "truth", "try", "tube",
+    "tunic", "turf", "twist", "typed",
     // Words with apostrophes
-    "table's", "team's", "teacher's", "technology's", "telephone's", "television's", "temperature's", "term's", "test's", "text's",
-    "theater's", "theory's", "thing's", "thought's", "threat's", "time's", "title's", "today's", "tomorrow's", "town's",
-    "trade's", "tradition's", "trail's", "travel's", "tree's", "trip's", "truck's", "truth's", "type's", "they're",
-    "there's", "that's", "they've", "they'll", "they'd"
+    "they're", "there's", "that's", "they've", "they'll", "they'd"
 };
 
 #define DICT_T_SIZE (sizeof(dict_t) / sizeof(dict_t[0]))

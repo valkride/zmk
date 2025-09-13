@@ -32,11 +32,25 @@ static const char* const dict_r[] = {
     "rinsing", "riot", "ripen", "ritual", "rivalry", "roadside", "roaming", "robbery", "robotic", "rocket",
     "rodent", "romance", "rooftop", "roommate", "rooster", "rotation", "rotten", "roundup", "router", "royalty",
     "rubber", "rubbish", "rugby", "ruler", "rumble", "rumor", "runaway", "runner", "runway", "rustic",
-    "rustling", "ruthless",
-    // Words with apostrophes
-    "race's", "radio's", "rain's", "range's", "rate's", "reaction's", "reason's", "record's", "region's", "relationship's",
-    "report's", "research's", "result's", "review's", "right's", "risk's", "river's", "road's", "role's", "room's",
-    "rule's"
+    "rustling", "ruthless", "rag", "ram", "ran", "rap", "rat", "raw", "ray", "red",
+    "rem", "rep", "rev", "rex", "rib", "rid", "rim", "rip", "rob", "rod", "roe",
+    "rom", "rot", "row", "rub", "rug", "rum", "run", "rut", "rye", "race", "rack",
+    "raft", "rage", "raid", "rail", "rain", "rake", "ramp", "rang", "rank", "rant", "rare",
+    "rasp", "rate", "rave", "rays", "raze", "read", "real", "reap", "rear", "reds", "reed",
+    "reef", "reel", "refs", "rein", "rely", "rend", "rent", "reps", "rest", "revs", "ribs",
+    "rice", "rich", "rick", "ride", "rids", "rife", "riff", "rift", "rigs", "rim", "rims",
+    "ring", "rink", "riot", "ripe", "rips", "rise", "risk", "rite", "ritz", "road", "roam",
+    "roan", "roar", "robe", "robs", "rock", "rode", "rods", "role", "roll", "romp", "roof",
+    "rook", "room", "root", "rope", "rose", "rosy", "rots", "rout", "rows", "rubs", "ruby",
+    "rude", "rugs", "ruin", "rule", "rump", "runs", "runt", "ruse", "rush", "rust", "ruts",
+    "race", "rack", "raft", "rage", "raid", "rail", "rain", "rake", "ramp", "rang", "rank",
+    "rant", "rare", "rasp", "rate", "rave", "rays", "raze", "read", "real", "reap", "rear",
+    "reds", "reed", "reef", "reel", "refs", "rein", "rely", "rend", "rent", "reps", "rest",
+    "revs", "ribs", "rice", "rich", "rick", "ride", "rids", "rife", "riff", "rift", "rigs",
+    "rims", "ring", "rink", "riot", "ripe", "rips", "rise", "risk", "rite", "road", "roam",
+    "roan", "roar", "robe", "robs", "rock", "rode", "rods", "role", "roll", "romp", "roof",
+    "rook", "room", "root", "rope", "rose", "rosy", "rots", "rout", "rows", "rubs", "ruby",
+    "rude", "rugs", "ruin", "rule", "rump", "runs", "runt", "ruse", "rush", "rust", "ruts",
 };
 
 #define DICT_R_SIZE (sizeof(dict_r) / sizeof(dict_r[0]))

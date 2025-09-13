@@ -14,9 +14,20 @@ static const char* const dict_u[] = {
     "unstable", "unstuck", "untidy", "untrue", "unveil", "unwanted", "unwrap", "upbeat", "upcoming", "upfront",
     "uphill", "upload", "upright", "upscale", "upside", "upstairs", "upstream", "uptown", "upward", "uranium",
     "urbanize", "urchin", "urgency", "urinary", "usable", "usage", "usher", "utensil", "utilize", "utmost",
-    "utter", "utterly",
-    // Words with apostrophes
-    "uncle's", "union's", "unit's", "university's", "user's"
+    "utter", "utterly", "ugh", "uhh", "ump", "umm", "una", "uns", "upo", "ups",
+    "urb", "urd", "urn", "use", "ute", "uts", "uvs", "ugh", "ugly", "ulna",
+     "uma", "umps","unco", "undo",
+    "unis", "unit", "unix", "uns", "unto", "upon", "urbs", "urds",
+    "urea", "urge", "uric", "urns", "used", "user", "uses", "utes",
+    "utils", "uvea", "ugly", "ulna", "umps",
+    "unco", "undo", "unis", "unit", "unix", "unto", "upon",
+    "urbs", "urds", "urea", "urge", "uric", "urns", "used", "user", "uses",
+    "utes", "uvea", "uvula", "ugly", "ulna", "ultra", "umbel", "umber",
+    "umiak", "umped", "unarm", "unary", "unbox", "uncap", "uncut", "undid", "unfed", "unfix",
+    "unhat", "unify", "union", "units", "unity", "unjam", "unlay", "unlet", "unman", "unmet",
+    "unpay", "unpen", "unrig", "unsay", "unset", "unsex", "until", "unwed",
+    "unwon", "upped", "upper", "ureal", "urged", "urger", "urges",
+    "urial", "urine", "usage", "users", "usher", "using", "usual", "usurp", "usury", "utter",
 };
 
 #define DICT_U_SIZE (sizeof(dict_u) / sizeof(dict_u[0]))

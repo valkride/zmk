@@ -28,11 +28,23 @@ static const char* const dict_m[] = {
     "monastery", "monetary", "monkey", "monopoly", "monster", "monument", "moonlight", "morale", "mortgage", "mosquito",
     "motherhood", "motionless", "motorcycle", "motto", "mould", "mounting", "mourning", "mouthful", "movable", "mozzarella",
     "muddy", "muffin", "multimedia", "multiplayer", "multiplication", "multitude", "mummy", "municipal", "mural", "murderer",
-    "murmur", "mushroom", "mustache", "mustard", "mutter", "mythology",
-    // Words with apostrophes
-    "machine's", "magazine's", "man's", "manager's", "market's", "marriage's", "master's", "material's", "mayor's", "meal's",
-    "meaning's", "measure's", "media's", "member's", "memory's", "message's", "method's", "mind's", "minute's", "mission's",
-    "model's", "moment's", "money's", "month's", "morning's", "mother's", "mountain's", "movie's", "music's", "mystery's"
+    "murmur", "mushroom", "mustache", "mustard", "mutter", "mythology", "mab", "mac", "mad", "mag",
+    "maid", "mail", "main", "make", "male", "mall", "malt", "mama", "mane", "many", "map",
+    "mare", "mark", "mars", "mart", "mash", "mask", "mass", "mast", "mate", "math", "maul",
+    "mayo", "maze", "meal", "mean", "meat", "meek", "meet", "meld", "melt", "memo", "mend",
+    "menu", "mere", "mesh", "mess", "mica", "mice", "mild", "mile", "milk", "mill", "mime",
+    "mina", "mind", "mine", "ming", "mink", "mint", "minx", "mire", "miss", "mist", "mitt",
+    "moan", "moat", "mock", "mode", "mold", "mole", "molt", "monk", "mood", "moon", "moor",
+    "moot", "mope", "more", "moss", "most", "moth", "move", "mown", "much", "muck", "mudd",
+    "muff", "mule", "mull", "mums", "munk", "muse", "mush", "musk", "must", "mute", "mutt",
+    "myth", "made", "mage", "magi", "maid", "make", "mall", "malt", "mama", "mane", "many",
+    "maps", "mare", "mark", "mars", "mart", "mash", "mask", "mass", "mast", "mate", "math",
+    "maul", "mayo", "maze", "meal", "mean", "meat", "meek", "meet", "meld", "melt", "memo",
+    "mend", "menu", "mere", "mesh", "mess", "mice", "mild", "mile", "milk", "mill", "mime",
+    "mind", "mine", "ming", "mink", "mint", "mire", "miss", "mist", "mitt", "moan", "moat",
+    "mock", "mode", "mold", "mole", "molt", "monk", "mood", "moon", "moor", "moot", "mope",
+    "more", "moss", "most", "moth", "move", "much", "muck", "muff", "mule", "mull", "mums",
+    "muse", "mush", "musk", "must", "mute", "mutt", "myth",
 };
 
 #define DICT_M_SIZE (sizeof(dict_m) / sizeof(dict_m[0]))

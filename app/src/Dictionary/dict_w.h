@@ -20,11 +20,22 @@ static const char* const dict_w[] = {
     "wilderness", "wildlife", "willpower", "windmill", "windshield", "windy", "wingspan", "winking", "wisdom", "wishful",
     "witchcraft", "withdrawal", "withstand", "wobbly", "womanhood", "wonderland", "woodland", "woodpecker", "wordplay", "workforce",
     "workload", "workman", "workout", "workspace", "workstation", "wormhole", "worship", "worthless", "worthy", "wounded",
-    "wrapping", "wreckage", "wrestler", "wrestling", "wrist", "wrongful",
+    "wrapping", "wreckage", "wrestler", "wrestling", "wrist", "wrongful", "wad", "wag", "wan", "wand",
+    "ward", "ware", "warp", "wart", "was", "wasp", "wax", "web", "wed", "wee", "weed",
+    "wick", "wid", "wig", "win", "wit", "woe", "wok", "woo", "wow", "yew", "zip",
+    "wary", "weak", "wean", "weap", "weft", "weld", "welt", "went", "wept", "were", "west",
+    "whey", "whim", "whip", "whiz", "wick", "wide", "wife", "wild", "wile", "will", "wilt",
+    "wimp", "wind", "wine", "wing", "wink", "wipe", "wire", "wise", "wish", "wisp", "with",
+    "wits", "wive", "woad", "woke", "wold", "wolf", "womb", "wood", "wool", "woop", "word",
+    "wore", "work", "worm", "worn", "wort", "wove", "wrap", "wren", "writ", "wry", "yard",
+    "warm", "warn", "wash", "wasp", "wave", "wavy", "waxy", "ways", "weak", "weal", "wear",
+    "weary", "weave", "wedge", "weedy", "weigh", "weird", "welsh", "wench", "whack", "whale",
+    "wheat", "wheel", "whelp", "whine", "whirl", "whisk", "white", "whole", "whomp", "whose",
+    "whoop", "wider", "widow", "width", "wield", "wimpy", "winch", "windy", "wiper", "wispy",
+    "witty", "wizen", "wodge", "womyn", "woody", "wordy", "world", "worry", "worse", "worst",
+    "worth", "would", "woven", "wrack", "wraps", "wrath", "wreck", "wring", "write", "wrote",
     // Words with apostrophes
-    "wage's", "wall's", "war's", "water's", "way's", "weapon's", "weather's", "web's", "wedding's", "week's",
-    "weight's", "wife's", "wind's", "window's", "winner's", "winter's", "woman's", "word's", "work's", "worker's",
-    "world's", "writer's", "we're", "we've", "we'll", "we'd", "won't", "wouldn't", "wasn't", "weren't",
+    "we're", "we've", "we'll", "we'd", "won't", "wouldn't", "wasn't", "weren't",
     "what's", "where's", "who's", "why's"
 };
 
