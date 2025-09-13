@@ -506,7 +506,7 @@ static void process_word() {
     
     // Special case: always correct standalone "i" to "I"
     if (word_pos == 1 && current_word[0] == 'i') {
-        correct_word("I");
+        correct_word("I", 1);  // Correcting 1 character: "i" -> "I"
         return;
     }
     
