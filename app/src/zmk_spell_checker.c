@@ -17,6 +17,7 @@
 #include "Dictionary/spell_dictionary_map.h"
 #define MAX_WORD_LEN 15
 #define MAX_EDIT_DISTANCE 2  // Allow up to 2 character errors
+#define FAST_TYPER_MODE 1    // Enable optimizations for fast typing
 
 // Global enable/disable flag
 static bool spell_checker_enabled = true;
@@ -25,6 +26,36 @@ static bool spell_checker_enabled = true;
 static char current_word[MAX_WORD_LEN] = {0};
 static int word_pos = 0;
 static bool correcting = false;
+
+#if FAST_TYPER_MODE
+// Cache for recent lookups (simple LRU cache)
+#define CACHE_SIZE 8
+static struct {
+    char word[MAX_WORD_LEN];
+    const char* result;
+    bool valid;
+} lookup_cache[CACHE_SIZE];
+static int cache_index = 0;
+
+// Check cache for recent lookup
+static const char* check_cache(const char* word) {
+    for (int i = 0; i < CACHE_SIZE; i++) {
+        if (lookup_cache[i].valid && strcmp(lookup_cache[i].word, word) == 0) {
+            return lookup_cache[i].result;
+        }
+    }
+    return NULL;
+}
+
+// Add to cache
+static void add_to_cache(const char* word, const char* result) {
+    strncpy(lookup_cache[cache_index].word, word, MAX_WORD_LEN - 1);
+    lookup_cache[cache_index].word[MAX_WORD_LEN - 1] = '\0';
+    lookup_cache[cache_index].result = result;
+    lookup_cache[cache_index].valid = true;
+    cache_index = (cache_index + 1) % CACHE_SIZE;
+}
+#endif
 
 // Levenshtein distance calculation
 static int min3(int a, int b, int c) {
@@ -39,6 +70,40 @@ static int levenshtein_distance(const char* s1, const char* s2) {
     if (abs(len1 - len2) > MAX_EDIT_DISTANCE) {
         return MAX_EDIT_DISTANCE + 1;
     }
+    
+    #if FAST_TYPER_MODE
+    // Fast path: check for single character differences first
+    if (len1 == len2) {
+        int diff_count = 0;
+        for (int i = 0; i < len1; i++) {
+            if (s1[i] != s2[i]) {
+                diff_count++;
+                if (diff_count > MAX_EDIT_DISTANCE) return MAX_EDIT_DISTANCE + 1;
+            }
+        }
+        return diff_count;
+    }
+    
+    // Fast path: check for single insertion/deletion
+    if (abs(len1 - len2) == 1) {
+        const char* shorter = (len1 < len2) ? s1 : s2;
+        const char* longer = (len1 < len2) ? s2 : s1;
+        int short_len = (len1 < len2) ? len1 : len2;
+        
+        int i = 0, j = 0, diff_count = 0;
+        while (i < short_len && j < short_len + 1) {
+            if (shorter[i] != longer[j]) {
+                diff_count++;
+                if (diff_count > MAX_EDIT_DISTANCE) return MAX_EDIT_DISTANCE + 1;
+                if (i == j) j++; // Skip character in longer string
+                else i++; // Skip character in shorter string
+            } else {
+                i++; j++;
+            }
+        }
+        return diff_count;
+    }
+    #endif
     
     // Use static array to avoid dynamic allocation
     static int matrix[MAX_WORD_LEN + 1][MAX_WORD_LEN + 1];
@@ -64,24 +129,68 @@ static int levenshtein_distance(const char* s1, const char* s2) {
 
 // Find best match in dictionary
 static const char* find_best_match(const char* word) {
+    #if FAST_TYPER_MODE
+    // Check cache first for fast repeat lookups
+    const char* cached_result = check_cache(word);
+    if (cached_result != NULL) {
+        return cached_result;
+    }
+    #endif
+    
     int best_distance = MAX_EDIT_DISTANCE + 1;
     const char* best_match = NULL;
+    int word_len = strlen(word);
     
     // Get dictionary for the first letter of the word
     const dictionary_entry_t* dict_entry = get_dictionary_for_letter(word[0]);
     
     if (dict_entry && dict_entry->words) {
-        // Search only words starting with the same letter
+        #if FAST_TYPER_MODE
+        // First pass: look for exact length matches (fastest check)
         for (size_t i = 0; i < dict_entry->size; i++) {
-            int distance = levenshtein_distance(word, dict_entry->words[i]);
-            if (distance <= MAX_EDIT_DISTANCE && distance < best_distance) {
-                best_distance = distance;
-                best_match = dict_entry->words[i];
-                
-                // Perfect match found
-                if (distance == 0) break;
+            const char* candidate = dict_entry->words[i];
+            int candidate_len = strlen(candidate);
+            
+            // Skip if length difference exceeds edit distance
+            if (abs(candidate_len - word_len) > MAX_EDIT_DISTANCE) continue;
+            
+            // Prioritize same length words for faster processing
+            if (candidate_len == word_len) {
+                int distance = levenshtein_distance(word, candidate);
+                if (distance <= MAX_EDIT_DISTANCE && distance < best_distance) {
+                    best_distance = distance;
+                    best_match = candidate;
+                    
+                    // Perfect match found
+                    if (distance == 0) return best_match;
+                }
             }
         }
+        
+        // Second pass: check different length words only if no same-length match
+        if (best_match == NULL) {
+        #endif
+            for (size_t i = 0; i < dict_entry->size; i++) {
+                const char* candidate = dict_entry->words[i];
+                int candidate_len = strlen(candidate);
+                
+                #if FAST_TYPER_MODE
+                // Skip same-length words (already checked)
+                if (candidate_len == word_len) continue;
+                #endif
+                
+                // Skip if length difference exceeds edit distance
+                if (abs(candidate_len - word_len) > MAX_EDIT_DISTANCE) continue;
+                
+                int distance = levenshtein_distance(word, candidate);
+                if (distance <= MAX_EDIT_DISTANCE && distance < best_distance) {
+                    best_distance = distance;
+                    best_match = candidate;
+                }
+            }
+        #if FAST_TYPER_MODE
+        }
+        #endif
     }
     
     return best_match;
@@ -93,12 +202,29 @@ static bool is_valid_word(const char* word) {
     const dictionary_entry_t* dict_entry = get_dictionary_for_letter(word[0]);
     
     if (dict_entry && dict_entry->words) {
-        // Search only words starting with the same letter
+        int word_len = strlen(word);
+        
+        #if FAST_TYPER_MODE
+        // Optimized search: first check length then compare
+        for (size_t i = 0; i < dict_entry->size; i++) {
+            const char* candidate = dict_entry->words[i];
+            
+            // Quick length check first (faster than full strcmp)
+            if (strlen(candidate) != word_len) continue;
+            
+            // Only do full comparison if lengths match
+            if (strcmp(word, candidate) == 0) {
+                return true;
+            }
+        }
+        #else
+        // Original implementation
         for (size_t i = 0; i < dict_entry->size; i++) {
             if (strcmp(word, dict_entry->words[i]) == 0) {
                 return true;
             }
         }
+        #endif
     }
     return false;
 }
@@ -132,7 +258,11 @@ static void type_string(const char* str) {
         if (key != 0) {
             send_key_event(key, true);
             send_key_event(key, false);
-            k_msleep(5);  // Faster typing
+            #if FAST_TYPER_MODE
+            k_msleep(2);  // Reduced delay for faster correction
+            #else
+            k_msleep(5);  // Original delay
+            #endif
         }
     }
 }
@@ -142,13 +272,23 @@ static void correct_word(const char* correct_word, int typo_len) {
     if (correcting) return;
     correcting = true;
     
-    // Delete the incorrect word
+    #if FAST_TYPER_MODE
+    // Faster deletion for quick typers
+    for (int i = 0; i < typo_len; i++) {
+        send_key_event(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE, true);
+        k_msleep(1);  // Minimal delay
+        send_key_event(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE, false);
+        k_msleep(1);  // Minimal delay
+    }
+    #else
+    // Original deletion speed
     for (int i = 0; i < typo_len; i++) {
         send_key_event(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE, true);
         k_msleep(5);
         send_key_event(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE, false);
         k_msleep(5);
     }
+    #endif
     
     // Type the correction
     type_string(correct_word);

@@ -15,7 +15,7 @@ static const char* const dict_z[] = {
     "zags", "zaire", "zarfs", "zayin", "zazen",
     "zeals", "zebec", "zebra", "zebus", "zeins", "zendo", "zeros",
     "zests", "zesty", "zetas", "zibet", "zilch",
-    "zincs", "zincy", "zines", "zings", "zingy",, "zinky", "zippy", "zitis",
+    "zincs", "zincy", "zines", "zings", "zingy", "zinky", "zippy", "zitis",
     "zloty", "zodiac", "zoeas", "zombi", "zonal",
     "zoned", "zoner", "zones", "zooid", "zooks", "zooms",
     "zorch", "zoril", "zorro", "zowie", "zulus",
