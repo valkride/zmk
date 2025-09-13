@@ -15,7 +15,7 @@
 #include <zmk/spell_checker.h>
 #include "Dictionary/spell_dictionary_map.h"
 #define MAX_WORD_LEN 15
-#define MAX_EDIT_DISTANCE 2  // Allow up to 2 character errors
+#define MAX_EDIT_DISTANCE 1  // Allow up to 1 character error (less aggressive)
 #define FAST_TYPER_MODE 1    // Enable optimizations for fast typing
 #define MIN_WORD_LENGTH 2    // Don't correct very short words
 #define TYPING_TIMEOUT_MS 500  // Consider word complete after this timeout
@@ -283,6 +283,17 @@ static const char* find_best_match(const char* word) {
     
     // Don't correct very short words
     if (word_len < MIN_WORD_LENGTH) {
+        return NULL;
+    }
+    
+    // Conservative approach: be very careful with longer words
+    // Longer words are more likely to be intentional/correct
+    if (word_len > 6) {
+        return NULL;  // Don't correct long words unless they're obvious typos
+    }
+    
+    // Don't correct words that start with uppercase (might be proper nouns)
+    if (word[0] >= 'A' && word[0] <= 'Z') {
         return NULL;
     }
     
@@ -555,13 +566,19 @@ static void process_word() {
             return;
         }
         
-        // Find best correction
-        final_correction = find_best_match(current_word);
+        // Only attempt correction for words that seem like typos
+        // Be more conservative: require at least 3 characters and obvious errors
+        if (word_pos >= 3) {
+            final_correction = find_best_match(current_word);
+        }
     }
     
-    // Apply correction if found
+    // Apply correction if found, but be extra conservative
     if (final_correction != NULL && strcmp(current_word, final_correction) != 0) {
-        correct_word(final_correction, word_pos);
+        // Double-check that the correction is actually better
+        if (strlen(final_correction) > 0 && !is_valid_word(current_word)) {
+            correct_word(final_correction, word_pos);
+        }
     }
     
     word_pos = 0;  // Reset for next word
