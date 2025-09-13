@@ -3,7 +3,7 @@
  * Custom behavior to toggle spell checker on/off from keymap
  */
 
-#define DT_DRV_COMPAT zmk_behavior_spell_checker_toggle
+#define DT_DRV_COMPAT zmk_behavior_spell_toggle
 
 #include <zephyr/device.h>
 #include <drivers/behavior.h>

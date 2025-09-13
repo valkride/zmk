@@ -6,6 +6,7 @@
 #include <zephyr/kernel.h>
 #include <zephyr/init.h>
 #include <string.h>
+#include <stdlib.h>
 #include <zmk/hid.h>
 #include <zmk/keys.h>
 #include <zmk/event_manager.h>
@@ -201,10 +202,11 @@ int zmk_autocorrect_keyboard_press(zmk_key_t key) {
 }
 
 // Initialize spell checker
-static int spell_checker_init(const struct device *dev) {
+static int spell_checker_init(void) {
     memset(current_word, 0, sizeof(current_word));
     word_pos = 0;
     correcting = false;
+    spell_checker_enabled = true;
     return 0;
 }
 
