@@ -75,17 +75,15 @@ static void add_to_cache(const char* word, const char* result) {
     cache_index = (cache_index + 1) % CACHE_SIZE;
 }
 
-// Capitalization correction rules
+// Capitalization correction rules (standalone "i" handled separately in process_word)
 static const struct {
     const char* incorrect;
     const char* correct;
 } capitalization_rules[] = {
-    {"i", "I"},
     {"i'm", "I'm"},
     {"i'll", "I'll"},
     {"i've", "I've"},
     {"i'd", "I'd"},
-    {"i've", "I've"},
 };
 #define CAPITALIZATION_RULES_SIZE (sizeof(capitalization_rules) / sizeof(capitalization_rules[0]))
 
@@ -490,6 +488,13 @@ static void process_word() {
     
     current_word[word_pos] = '\0';  // Null terminate
     
+    // Special case: always correct standalone "i" to "I" (before length check)
+    if (word_pos == 1 && current_word[0] == 'i') {
+        correct_word("I", 1);  // Correcting 1 character: "i" -> "I"
+        word_pos = 0;  // Reset word buffer after correction
+        return;
+    }
+    
     #if FAST_TYPER_MODE
     // For fast typers: don't correct very short words or incomplete fragments  
     if (word_pos < MIN_WORD_LENGTH || word_pos > MAX_WORD_LEN - 1) {
@@ -503,12 +508,6 @@ static void process_word() {
         return;
     }
     #endif
-    
-    // Special case: always correct standalone "i" to "I"
-    if (word_pos == 1 && current_word[0] == 'i') {
-        correct_word("I", 1);  // Correcting 1 character: "i" -> "I"
-        return;
-    }
     
     // Handle sentence capitalization
     const char* final_correction = NULL;
