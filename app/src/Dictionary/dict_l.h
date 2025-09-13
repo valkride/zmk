@@ -1,14 +1,23 @@
 #ifndef DICT_L_H
 #define DICT_L_H
 
-// Dictionary words starting with 'L'
 static const char* const dict_l[] = {
-    "like", "look", "looks", "looked", "looking", "long", "let", "lets", "learn", "learns", 
-    "learned", "learning", "leave", "leaves", "left", "leaving", "lead", "leads", "led", 
-    "leading", "live", "lives", "lived", "living", "love", "loves", "loved", "loving", 
-    "last", "later", "large", "less", "life", "little", "line", "lines", "list", "listen"
+    "lab", "labor", "laboratory", "lack", "ladder", "lady", "lake", "lamp", "land", "landscape",
+    "language", "lap", "large", "largely", "laser", "last", "late", "later", "latter", "laugh",
+    "launch", "law", "lawn", "lawyer", "lay", "layer", "lead", "leader", "leadership", "leading",
+    "leaf", "league", "lean", "learn", "learning", "lease", "least", "leather", "leave", "left",
+    "leg", "legal", "legislation", "legitimate", "length", "lens", "less", "lesson", "let", "letter",
+    "level", "liability", "liberal", "library", "license", "lie", "life", "lifetime", "lift", "light",
+    "like", "likely", "limit", "limitation", "limited", "line", "link", "lip", "list", "listen",
+    "literature", "little", "live", "living", "loan", "lobby", "local", "locate", "location", "lock",
+    "logic", "logical", "long", "look", "loop", "loose", "lose", "loss", "lost", "lot",
+    "loud", "love", "lovely", "low", "lower", "luck", "lucky", "lunch", "lung", "luxury",
+    // Words with apostrophes
+    "lab's", "lady's", "land's", "language's", "law's", "lawyer's", "leader's", "leaf's", "leg's", "letter's",
+    "level's", "library's", "life's", "light's", "line's", "list's", "location's", "look's", "loss's", "love's",
+    "let's"
 };
 
 #define DICT_L_SIZE (sizeof(dict_l) / sizeof(dict_l[0]))
 
-#endif // DICT_L_H
+#endif

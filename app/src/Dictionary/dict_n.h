@@ -1,13 +1,19 @@
 #ifndef DICT_N_H
 #define DICT_N_H
 
-// Dictionary words starting with 'N'
 static const char* const dict_n[] = {
-    "not", "no", "now", "new", "need", "needs", "needed", "needing", "never", "next", "name", 
-    "names", "named", "naming", "number", "numbers", "near", "night", "nights", "note", "notes", 
-    "noted", "nothing", "natural", "national", "nature", "north", "news"
+    "nail", "name", "narrative", "narrow", "nation", "national", "native", "natural", "naturally", "nature",
+    "navy", "near", "nearby", "nearly", "necessary", "neck", "need", "negative", "negotiate", "negotiation",
+    "neighbor", "neighborhood", "neither", "nerve", "nervous", "nest", "net", "network", "neutral", "never",
+    "nevertheless", "new", "news", "newspaper", "next", "nice", "night", "nine", "nineteen", "ninety",
+    "no", "nobody", "nod", "noise", "none", "noon", "nor", "normal", "normally", "north",
+    "northern", "nose", "not", "note", "nothing", "notice", "notion", "novel", "now", "nuclear",
+    "number", "numerous", "nurse", "nut",
+    // Words with apostrophes
+    "nail's", "name's", "nation's", "nature's", "neighbor's", "network's", "news's", "night's", "noise's", "note's",
+    "novel's", "number's", "nurse's"
 };
 
 #define DICT_N_SIZE (sizeof(dict_n) / sizeof(dict_n[0]))
 
-#endif // DICT_N_H
+#endif
