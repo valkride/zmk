@@ -2450,6 +2450,6 @@ static const char* const dict_t[] = {
     "tzutuhil"
 };
 
-static const size_t dict_t_size = sizeof(dict_t) / sizeof(dict_t[0]);
+static const size_t DICT_T_SIZE = sizeof(dict_t) / sizeof(dict_t[0]);
 
 #endif // DICT_T_H

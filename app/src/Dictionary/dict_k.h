@@ -615,6 +615,6 @@ static const char* const dict_k[] = {
     "kytoon", "kyu", "kyung", "kyurin", "kyurinish", "kyushu", "kyzyl"
 };
 
-static const size_t dict_k_size = sizeof(dict_k) / sizeof(dict_k[0]);
+static const size_t DICT_K_SIZE = sizeof(dict_k) / sizeof(dict_k[0]);
 
 #endif // DICT_K_H

@@ -1446,6 +1446,6 @@ static const char* const dict_i[] = {
     "izvestia", "izvozchik", "izy", "izyum", "izzak", "izzard", "izzards", "izzat", "izzy"
 };
 
-static const size_t dict_i_size = sizeof(dict_i) / sizeof(dict_i[0]);
+static const size_t DICT_I_SIZE = sizeof(dict_i) / sizeof(dict_i[0]);
 
 #endif // DICT_I_H

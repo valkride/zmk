@@ -1482,6 +1482,6 @@ static const char* const dict_n[] = {
     "nzbc"
 };
 
-static const size_t dict_n_size = sizeof(dict_n) / sizeof(dict_n[0]);
+static const size_t DICT_N_SIZE = sizeof(dict_n) / sizeof(dict_n[0]);
 
 #endif // DICT_N_H

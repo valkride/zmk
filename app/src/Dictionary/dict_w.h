@@ -1143,6 +1143,6 @@ static const char* const dict_w[] = {
     "wyvern", "wyverns"
 };
 
-static const size_t dict_w_size = sizeof(dict_w) / sizeof(dict_w[0]);
+static const size_t DICT_W_SIZE = sizeof(dict_w) / sizeof(dict_w[0]);
 
 #endif // DICT_W_H

@@ -3899,6 +3899,6 @@ static const char* const dict_p[] = {
     "pyxidium", "pyxie", "pyxies", "pyxis"
 };
 
-static const size_t dict_p_size = sizeof(dict_p) / sizeof(dict_p[0]);
+static const size_t DICT_P_SIZE = sizeof(dict_p) / sizeof(dict_p[0]);
 
 #endif // DICT_P_H

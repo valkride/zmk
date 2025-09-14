@@ -670,6 +670,6 @@ static const char* const dict_v[] = {
     "vying", "vyingly", "vyky", "vyner", "vyrene", "vyrnwy", "vyse", "vyshinsky", "vyvyan"
 };
 
-static const size_t dict_v_size = sizeof(dict_v) / sizeof(dict_v[0]);
+static const size_t DICT_V_SIZE = sizeof(dict_v) / sizeof(dict_v[0]);
 
 #endif // DICT_V_H

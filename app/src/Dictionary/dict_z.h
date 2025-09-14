@@ -184,6 +184,6 @@ static const char* const dict_z[] = {
     "zyzzogeton", "zyzzyva", "zyzzyvas", "zz", "zzt", "zzz"
 };
 
-static const size_t dict_z_size = sizeof(dict_z) / sizeof(dict_z[0]);
+static const size_t DICT_Z_SIZE = sizeof(dict_z) / sizeof(dict_z[0]);
 
 #endif // DICT_Z_H

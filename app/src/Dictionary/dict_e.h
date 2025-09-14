@@ -1633,6 +1633,6 @@ static const char* const dict_e[] = {
     "ezzard", "ezzo"
 };
 
-static const size_t dict_e_size = sizeof(dict_e) / sizeof(dict_e[0]);
+static const size_t DICT_E_SIZE = sizeof(dict_e) / sizeof(dict_e[0]);
 
 #endif // DICT_E_H

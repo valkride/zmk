@@ -2263,6 +2263,6 @@ static const char* const dict_u[] = {
     "uzzi", "uzzia", "uzziah", "uzzial", "uzziel"
 };
 
-static const size_t dict_u_size = sizeof(dict_u) / sizeof(dict_u[0]);
+static const size_t DICT_U_SIZE = sizeof(dict_u) / sizeof(dict_u[0]);
 
 #endif // DICT_U_H

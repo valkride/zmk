@@ -1571,6 +1571,6 @@ static const char* const dict_f[] = {
     "fz", "fzs"
 };
 
-static const size_t dict_f_size = sizeof(dict_f) / sizeof(dict_f[0]);
+static const size_t DICT_F_SIZE = sizeof(dict_f) / sizeof(dict_f[0]);
 
 #endif // DICT_F_H

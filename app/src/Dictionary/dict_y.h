@@ -175,6 +175,6 @@ static const char* const dict_y[] = {
     "yvette", "yvon", "yvonne", "yvonner", "yvor", "ywca", "ywha", "ywis", "yy"
 };
 
-static const size_t dict_y_size = sizeof(dict_y) / sizeof(dict_y[0]);
+static const size_t DICT_Y_SIZE = sizeof(dict_y) / sizeof(dict_y[0]);
 
 #endif // DICT_Y_H

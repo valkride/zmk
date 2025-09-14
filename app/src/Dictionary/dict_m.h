@@ -2454,6 +2454,6 @@ static const char* const dict_m[] = {
     "myzostomidae", "myzostomidan", "myzostomous", "mzee", "mzi", "mzungu"
 };
 
-static const size_t dict_m_size = sizeof(dict_m) / sizeof(dict_m[0]);
+static const size_t DICT_M_SIZE = sizeof(dict_m) / sizeof(dict_m[0]);
 
 #endif // DICT_M_H

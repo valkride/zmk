@@ -274,6 +274,6 @@ static const char* const dict_q[] = {
     "qy"
 };
 
-static const size_t dict_q_size = sizeof(dict_q) / sizeof(dict_q[0]);
+static const size_t DICT_Q_SIZE = sizeof(dict_q) / sizeof(dict_q[0]);
 
 #endif // DICT_Q_H

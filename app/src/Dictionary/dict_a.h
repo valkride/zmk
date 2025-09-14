@@ -2983,6 +2983,6 @@ static const char* const dict_a[] = {
     "azyme", "azymite", "azymous"
 };
 
-static const size_t dict_a_size = sizeof(dict_a) / sizeof(dict_a[0]);
+static const size_t DICT_A_SIZE = sizeof(dict_a) / sizeof(dict_a[0]);
 
 #endif // DICT_A_H

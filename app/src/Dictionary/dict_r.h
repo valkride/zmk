@@ -2094,6 +2094,6 @@ static const char* const dict_r[] = {
     "ryswick", "ryter", "rytidosis", "rytina", "ryukyu", "ryun", "ryunosuke", "ryurik"
 };
 
-static const size_t dict_r_size = sizeof(dict_r) / sizeof(dict_r[0]);
+static const size_t DICT_R_SIZE = sizeof(dict_r) / sizeof(dict_r[0]);
 
 #endif // DICT_R_H

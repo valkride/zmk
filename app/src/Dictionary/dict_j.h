@@ -414,6 +414,6 @@ static const char* const dict_j[] = {
     "jylland", "jymmye", "jymold", "jynginae", "jyngine", "jynx", "jyoti"
 };
 
-static const size_t dict_j_size = sizeof(dict_j) / sizeof(dict_j[0]);
+static const size_t DICT_J_SIZE = sizeof(dict_j) / sizeof(dict_j[0]);
 
 #endif // DICT_J_H

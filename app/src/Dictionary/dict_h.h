@@ -1796,6 +1796,6 @@ static const char* const dict_h[] = {
     "hystricomorphic", "hystrix", "hyte", "hythergraph", "hyzone", "hz"
 };
 
-static const size_t dict_h_size = sizeof(dict_h) / sizeof(dict_h[0]);
+static const size_t DICT_H_SIZE = sizeof(dict_h) / sizeof(dict_h[0]);
 
 #endif // DICT_H_H

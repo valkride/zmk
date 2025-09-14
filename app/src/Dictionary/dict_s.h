@@ -4852,6 +4852,6 @@ static const char* const dict_s[] = {
     "szewinska", "szigeti", "szilard", "szlachta", "szold", "szombathely", "szomorodni", "szopelka", "szymanowski"
 };
 
-static const size_t dict_s_size = sizeof(dict_s) / sizeof(dict_s[0]);
+static const size_t DICT_S_SIZE = sizeof(dict_s) / sizeof(dict_s[0]);
 
 #endif // DICT_S_H
