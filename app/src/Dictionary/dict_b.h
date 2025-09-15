@@ -1,67 +1,134 @@
 #ifndef DICT_B_H
 #define DICT_B_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+static const char* const dict_b[] = {
+    "b", "b'hoy", "b's", "b-", "b.a.", "b.c.", "b.d.", "b.e.",
+    "b.f.", "b.l.", "b.m.", "b.o.", "b.p.", "b.s.", "b.v.", "b/b",
+    "b/c", "b/d", "b/e", "b/f", "b/l", "b/o", "b/p", "b/r",
+    "b/s", "b/w", "b911", "ba", "baa", "baal", "baar", "baas",
+    "bab", "baba", "babb", "babe", "babe's", "babel's", "babi", "babies'-breath",
+    "babs", "babu", "baby", "baby's-breath", "baby's-slippers", "bac", "bacc", "bach",
+    "bach's", "bachelor's", "bachelor's-button", "bachelor's-buttons", "back", "backache's", "backbend's", "backbone's",
+    "backdrop's", "background's", "backlog's", "backpack's", "backplane's", "backpointer's", "backwater's", "backyard's",
+    "baco", "bact", "bad", "badb", "bade", "badger's", "badr", "bads",
+    "bae", "bae-", "baed", "bael", "baer", "baez", "baff", "bafo",
+    "baft", "bag", "bag's", "baga", "bagatelle's", "bage", "bagel's", "bagger's",
+    "bagh", "bago", "bagpipe's", "bagr", "bags", "bah", "baha'i", "baha'ullah",
+    "baho", "bahr", "baht", "bai", "bail", "bailiff's", "bain", "bais",
+    "bait", "baja", "bak", "baka", "bake", "bakery's", "baku", "bal",
+    "bal.", "bala", "balalaika's", "balcony's", "bald", "bale", "balf", "bali",
+    "balk", "ball", "ballad's", "ballast's", "ballerina's", "ballet's", "ballgown's", "ballot's",
+    "ballpark's", "ballplayer's", "ballroom's", "balm", "balm's", "balr", "bals", "balt",
+    "balu", "balustrade's", "bam", "bams", "ban", "ban's", "bana", "banana's",
+    "banc", "band", "bandit's", "bandstand's", "bandwagon's", "bane", "bang", "bangle's",
+    "bani", "banister's", "banjo's", "bank", "bankruptcy's", "bann", "banner's", "bans",
+    "banshee's", "bant", "bao", "baor", "bap", "bapt", "baptism's", "baptist's",
+    "baptistry's", "bar", "bar's", "bar-", "bar.", "bara", "barb", "barbarian's",
+    "barbell's", "bard", "bard's", "bare", "barf", "barfly's", "bari", "baritone's",
+    "bark", "barm", "barn", "barn's", "barnyard's", "barometer's", "baron's", "barony's",
+    "barr", "barrage's", "barrel's", "barricade's", "barrier's", "bars", "bart", "bartender's",
+    "baru", "bary", "bas", "basc", "base", "baseball's", "baseboard's", "baseline's",
+    "basement's", "bash", "basic's", "basin's", "bask", "basket's", "basketball's", "bass",
+    "bass's", "bassinet's", "bast", "bastard's", "bastion's", "bat", "bat's", "bate",
+    "bath", "bathrobe's", "bathroom's", "bathtub's", "baton's", "bats", "batt", "battalion's",
+    "battery's", "battlefield's", "battlefront's", "battleground's", "battlement's", "battleship's", "batz", "bau",
+    "bauble's", "baud", "bauk", "baul", "baum", "baun", "bav", "baw",
+    "bawd", "bawl", "bawn", "baws'nt", "bax", "baxy", "bay", "baya",
+    "bayh", "bayonet's", "bayou's", "bays", "bayz", "bazaar's", "baze", "bb",
+    "bba", "bbb", "bbc", "bbl", "bbl.", "bbls", "bbn", "bbs",
+    "bc", "bcbs", "bcc", "bcd", "bce", "bcf", "bch", "bche",
+    "bchs", "bcl", "bcm", "bcom", "bcp", "bcpl", "bcr", "bcs",
+    "bcwp", "bcws", "bd", "bd.", "bda", "bdc", "bdd", "bde",
+    "bdes", "bdf", "bdft", "bdl", "bdl.", "bdle", "bdls", "bdrm",
+    "bds", "bdsa", "bdt", "be", "be-", "bea", "beachhead's", "beacon's",
+    "bead", "beadle's", "beagle's", "beak", "beal", "beam", "bean", "bear",
+    "bear's-breech", "bear's-ear", "bear's-foot", "bear's-foots", "bear's-paw", "beat", "beatitude's", "beatnik's",
+    "beau", "beau's", "beauty's", "beav", "beaver's", "bebe", "bec", "beck",
+    "bed", "bed's", "bedbug's", "bedder's", "bede", "bedpost's", "bedrock's", "bedroom's",
+    "beds", "bedspread's", "bedspring's", "bedstead's", "bee", "beeb", "beef", "beehive's",
+    "beek", "been", "beep", "beer", "bees", "beet", "beet's", "beetle's",
+    "bef", "befit's", "beg", "bega", "beggar's-lice", "beggar's-tick", "beggar's-ticks", "beginner's",
+    "beginning's", "bego", "begs", "behl", "behm", "behn", "beid", "bein",
+    "beja", "beka", "bel", "bela", "beld", "belfry's", "belg", "belgian's",
+    "belief's", "belk", "bell", "bell's", "bellboy's", "belle's", "bellhop's", "belligerent's",
+    "bellwether's", "belly's", "bels", "belt", "bely", "bem", "bema", "beme",
+    "ben", "bena", "benchmark's", "bend", "bene", "benediction's", "benefactor's", "beng",
+    "beni", "benj", "benn", "beno", "bens", "bent", "benu", "benz",
+    "bep", "bequest's", "ber", "bere", "beret's", "berg", "beri", "berk",
+    "berl", "berm", "bern", "berry's", "bert", "bes", "bes-", "besa",
+    "bess", "best", "bestseller's", "bet", "bet's", "bet.", "beta", "bete",
+    "beth", "betra'ying", "bets", "bett", "betz", "bev", "beverage's", "bevy",
+    "bew", "bey", "beyo", "beys", "bf", "bfa", "bfd", "bfdc",
+    "bfhd", "bfr", "bfs", "bft", "bg", "bge", "bglr", "bgp",
+    "bh", "bha", "bhai", "bhar", "bhat", "bhc", "bhd", "bhil",
+    "bhl", "bhoy", "bhp", "bht", "bhut", "bi", "bi-", "bia",
+    "biak", "bias", "bib", "bib's", "bib.", "bibb", "bibi", "bibl",
+    "bible's", "bibliography's", "bibs", "bice", "bicep's", "bick", "bics", "bid",
+    "bid's", "bida", "bidder's", "bide", "bidi", "bids", "bie", "biel",
+    "bien", "bier", "biff", "big", "biga", "bigg", "bight's", "bigot's",
+    "bija", "bijection's", "bik", "bike", "bike's", "bikh", "bikini's", "bil",
+    "bile", "bilge's", "bili", "bilk", "bill", "billboard's", "bilo", "bim",
+    "bima", "bin", "bin's", "bin-", "bina", "bind", "bine", "bing",
+    "binh", "bini", "bink", "bino", "bins", "bint", "bio", "bio-",
+    "bioc", "biod", "biog", "biographer's", "biography's", "biol", "biologist's", "bion",
+    "bios", "biot", "biplane's", "bird", "bird's", "bird's-eye", "bird's-eyes", "bird's-foot",
+    "bird's-foots", "bird's-nest", "birdbath's", "biri", "birk", "birl", "birn", "biro",
+    "birr", "birt", "birthday's", "birthright's", "bis", "bis-", "biscuit's", "bise",
+    "bisection's", "bisector's", "bish", "bishop's", "bishop's-cap", "bishop's-weed", "bisk", "bison's",
+    "bisp", "bist", "bit", "bit's", "bitch's", "bite", "biti", "bito",
+    "bits", "bitt", "biu", "bivalve's", "biw-", "biwa", "bix", "bixa",
+    "biz", "bize", "bizz", "bk", "bk.", "bkcy", "bkg", "bkg.",
+    "bkgd", "bklr", "bkpr", "bkpt", "bks", "bks.", "bkt", "bl",
+    "bl.", "bla", "blab", "blackberry's", "blackbird's", "blackboard's", "blackjack's", "blackout's",
+    "blad", "bladder's", "blade's", "blae", "blah", "blam", "blan", "blas",
+    "blat", "blau", "blaw", "blay", "bld", "bldg", "bldr", "blds",
+    "ble", "blea", "bleb", "bled", "blee", "blemish's", "blen", "bleo",
+    "bler", "blet", "bleu", "blew", "blf", "blfe", "bli", "blim",
+    "blimp's", "blin", "blind-man's-buff", "blip", "blip's", "blit", "blitz's", "blizzard's",
+    "blk", "blk.", "bll", "blm", "blo", "blob", "blob's", "bloc",
+    "bloc's", "block's", "blockage's", "blok", "bloke's", "blond's", "blonde's", "bloodhound's",
+    "bloodstain's", "blot", "blot's", "blouse's", "blow", "bls", "blt", "blub",
+    "blue", "blueberry's", "bluebird's", "bluebonnet's", "blueprint's", "bluh", "blum", "blup",
+    "blur", "blur's", "blus", "blv", "blvd", "bly", "bm", "bma",
+    "bme", "bmed", "bmet", "bmg", "bmi", "bmj", "bmo", "bmoc",
+    "bmp", "bmr", "bms", "bmt", "bmus", "bmv", "bmw", "bn",
+    "bn.", "bnc", "bnet", "bnf", "bnfl", "bns", "bnu", "bo",
+    "bo's'n", "boa", "boardinghouse's", "boathouse's", "boatload's", "boatswain's", "boatyard's", "bob",
+    "bob's", "bobbin's", "bobolink's", "bobwhite's", "boc", "bod", "bodybuilder's", "bodyguard's",
+    "boe", "bof", "bog", "bog's", "boh", "bok", "bokm'", "bol",
+    "bolshevik's", "bom", "bon", "bonanza's", "bonfire's", "bonus's", "boo", "bookcase's",
+    "bookie's", "bookkeeper's", "booklet's", "bookseller's", "bookshelf's", "bookstore's", "boomerang's", "boomtown's",
+    "boor's", "bootlegger's", "bootstrap's", "bop", "boq", "bor", "bor'", "bordello's",
+    "borderland's", "bos", "bos'n", "bosom's", "bostonian's", "bot", "botanist's", "bottleneck's",
+    "bough's", "boulder's", "boulevard's", "boundary's", "bounty's", "bouquet's", "bout's", "bow",
+    "bowel's", "bowline's", "bowstring's", "box", "boxcar's", "boxtop's", "boy", "boy's",
+    "boyfriend's", "boz", "bp", "bp.", "bpa", "bpc", "bpe", "bph",
+    "bpi", "bps", "bpt", "br", "br'er", "br.", "bra", "bra's",
+    "bracelet's", "brae's", "brainchild's", "brainstem's", "brainstorm's", "bramble's", "brat's", "brazier's",
+    "brc", "bre", "breadboard's", "breadbox's", "breadwinner's", "breakdown's", "breakpoint's", "breakthrough's",
+    "breakwater's", "breastwork's", "breech's", "breeze's", "brewery's", "brg", "bri", "briar's",
+    "bricklayer's", "bride's", "bridesmaid's", "bridgehead's", "bridgework's", "briefcase's", "briefing's", "brig's",
+    "brigade's", "brigadier's", "briton's", "brl", "brm", "brn", "bro", "brochure's",
+    "bromide's", "bronchiole's", "brooch's", "broom's", "broomstick's", "brothel's", "brother's", "brow's",
+    "brownie's", "brr", "brs", "brt", "brushfire's", "brute's", "bs", "bsa",
+    "bsc", "bsd", "bse", "bsf", "bsh", "bsi", "bsj", "bsl",
+    "bsm", "bsn", "bso", "bsp", "bss", "bst", "bsw", "bt",
+    "bt.", "bte", "bth", "btl", "btn", "bto", "bts", "btu",
+    "btw", "bu", "bu.", "bub", "buck's-horn", "buckboard's", "bucket's", "bud",
+    "bud's", "buddy's", "buf", "buff's", "buffer's", "bufferrer's", "buffoon's", "bug",
+    "bug's", "bugger's", "buggy's", "bui", "buildup's", "bul", "bulb's", "bulkhead's",
+    "bull's-eye", "bull's-eyed", "bull's-eyes", "bulldog's", "bullet's", "bulletin's", "bullock's-heart", "bum",
+    "bum's", "bumblebee's", "bun", "bun's", "bungalow's", "bunion's", "bunker's", "bunkhouse's",
+    "bunkmate's", "bunny's", "bur", "bureau's", "bureaucracy's", "bureaucrat's", "burgess's", "burgher's",
+    "burglar's", "burglary's", "burr's", "burro's", "bus", "busboy's", "bushel's", "business's",
+    "bustard's", "but", "butcher's", "butcher's-broom", "butler's", "butt's", "butterfly's", "buttock's",
+    "buttonhole's", "buy", "buyer's", "buz", "buzzard's", "buzzword's", "bv", "bva",
+    "bvc", "bvd", "bve", "bvm", "bvt", "bvy", "bw", "bwc",
+    "bwg", "bwi", "bwm", "bwr", "bwt", "bwv", "bx", "bx.",
+    "bxs", "by", "by-", "bye", "bylaw's", "byline's", "byo", "byp",
+    "byproduct's", "bys", "bystander's", "byte's", "byu", "byword's", "byz", "bz"
+};
 
-// Maximum number of words estimated from txt file
-#define DICT_B_MAX_WORDS 24332
-#define DICT_B_TXT_PATH "Dictionary/dict_b.txt"
-
-// Global arrays for loaded words
-static char* dict_b_words[DICT_B_MAX_WORDS];
-static size_t dict_b_count = 0;
-
-// Function to load words from txt file
-static int load_dict_b_from_file(void) {
-    FILE* file = fopen(DICT_B_TXT_PATH, "r");
-    if (!file) {
-        return -1; // Failed to open file
-    }
-    
-    char buffer[256];
-    dict_b_count = 0;
-    
-    while (fgets(buffer, sizeof(buffer), file) && dict_b_count < DICT_B_MAX_WORDS) {
-        // Remove newline
-        size_t len = strlen(buffer);
-        if (len > 0 && buffer[len-1] == '\n') {
-            buffer[len-1] = '\0';
-        }
-        
-        // Allocate and copy word
-        if (strlen(buffer) > 0) {
-            dict_b_words[dict_b_count] = malloc(strlen(buffer) + 1);
-            if (dict_b_words[dict_b_count]) {
-                strcpy(dict_b_words[dict_b_count], buffer);
-                dict_b_count++;
-            }
-        }
-    }
-    
-    fclose(file);
-    return 0; // Success
-}
-
-// Function to free loaded words
-static void free_dict_b_words(void) {
-    for (size_t i = 0; i < dict_b_count; i++) {
-        if (dict_b_words[i]) {
-            free(dict_b_words[i]);
-            dict_b_words[i] = NULL;
-        }
-    }
-    dict_b_count = 0;
-}
-
-// Compatibility array pointer (points to loaded words)
-static const char* const* dict_b = (const char* const*)dict_b_words;
-static const size_t DICT_B_SIZE = DICT_B_MAX_WORDS; // Will be updated to actual count after loading
-
-// Getter function for actual count
-static size_t get_dict_b_size(void) {
-    return dict_b_count;
-}
+static const size_t DICT_B_SIZE = sizeof(dict_b) / sizeof(dict_b[0]);
 
 #endif // DICT_B_H

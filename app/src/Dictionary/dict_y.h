@@ -1,67 +1,59 @@
 #ifndef DICT_Y_H
 #define DICT_Y_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+static const char* const dict_y[] = {
+    "y", "y's", "y-", "y-end", "y-gun", "y.", "y.t.", "ya",
+    "yaba", "yabbi", "yabby", "yaboo", "yabu", "yacal", "yacc", "yacca",
+    "yacht", "yack", "yacks", "yacov", "yad", "yade", "yadim", "yael",
+    "yafa", "yaff", "yaffs", "yafo", "yager", "yagi", "yagis", "yagua",
+    "yah", "yahan", "yahoo", "yahve", "yahwe", "yair", "yaird", "yaje",
+    "yajna", "yak", "yaka", "yakan", "yaker", "yakin", "yakka", "yaks",
+    "yakut", "yalb", "yald", "yale", "yali", "yalla", "yalta", "yalu",
+    "yam", "yama", "yamel", "yamen", "yameo", "yami", "yamis", "yamp",
+    "yampa", "yamph", "yams", "yamun", "yan", "yana", "yanan", "yance",
+    "yancy", "yand", "yang", "yangs", "yank", "yanks", "yanky", "yann",
+    "yao", "yap", "yapa", "yaply", "yapok", "yapon", "yapp", "yappy",
+    "yaps", "yapur", "yaqui", "yar", "yarak", "yaray", "yarb", "yard",
+    "yard's", "yards", "yardstick's", "yare", "yarer", "yark", "yarke", "yarl",
+    "yarly", "yarm", "yarn", "yarn's", "yarns", "yaron", "yarr", "yarry",
+    "yarth", "yaru", "yas", "yasht", "yasna", "yassy", "yasu", "yasui",
+    "yasuo", "yat", "yate", "yates", "yati", "yauco", "yaud", "yauds",
+    "yauld", "yaup", "yaups", "yava", "yavar", "yaw", "yawed", "yawey",
+    "yawl", "yawls", "yawn", "yawns", "yawny", "yawp", "yawps", "yaws",
+    "yawy", "yay", "yaya", "yays", "yazd", "yazoo", "yb", "ycie",
+    "ycl", "yclad", "yd", "yday", "yds", "ye", "ye'se", "yea",
+    "yeah", "yean", "yeans", "year", "year's", "yeara", "yeard", "yearn",
+    "years", "yeas", "yeast", "yeast's", "yeat", "yeats", "yecch", "yech",
+    "yechs", "yechy", "yed", "yede", "yedo", "yee", "yeech", "yeel",
+    "yees", "yegg", "yeggs", "yeh", "yeisk", "yeld", "yelek", "yelk",
+    "yelks", "yell", "yells", "yelm", "yelp", "yelps", "yelt", "yemen",
+    "yen", "yenan", "yeni", "yens", "yenta", "yente", "yeo", "yeom",
+    "yep", "yeply", "yer", "yerb", "yerba", "yerd", "yere", "yerga",
+    "yerk", "yerks", "yermo", "yern", "yerth", "yerva", "yerxa", "yes",
+    "yese", "yeses", "yeso", "yesso", "yest", "yesty", "yet", "yeta",
+    "yetac", "yetah", "yeth", "yeti", "yetis", "yett", "yetta", "yetti",
+    "yetts", "yetty", "yeuk", "yeuks", "yeuky", "yeung", "yeven", "yew",
+    "yews", "yex", "yez", "yezd", "yezdi", "yezo", "yezzy", "yha",
+    "yhvh", "yhwh", "yi", "yid", "yids", "yigh", "yike", "yila",
+    "yill", "yilt", "yim", "yin", "yins", "yip", "yipe", "yips",
+    "yird", "yirk", "yirm", "yirn", "yirr", "yis", "yite", "yl",
+    "ylem", "ylla", "ym", "yma", "ymca", "ymha", "ymir", "yn",
+    "ynan", "yne", "ynes", "ynez", "yo", "yob", "yobi", "yobs",
+    "yock", "yod", "yode", "yodh", "yods", "yoe", "yoga", "yogh",
+    "yogi", "yoho", "yoi", "yok", "yoke", "yoke's", "yoko", "yoks",
+    "yoky", "yola", "yolk", "yolo", "yom", "yon", "yona", "yond",
+    "yong", "yoni", "yont", "yoo", "yook", "yoop", "yor", "yore",
+    "york", "yost", "yot", "yote", "you", "you'd", "you'll", "you're",
+    "you've", "youd", "youl", "youngster's", "youp", "your", "your'n", "yous",
+    "yow", "yowe", "yowl", "yows", "yowt", "yox", "yoy", "yoyo",
+    "yp", "ypvs", "yr", "yrbk", "yrs", "yrs.", "ys", "yser",
+    "yso", "yst", "yt", "ytd", "yu", "yuan", "yuca", "yuch",
+    "yuck", "yuft", "yug", "yuga", "yugo", "yuh", "yuit", "yuji",
+    "yuk", "yuke", "yuki", "yuks", "yul", "yule", "yum", "yuma",
+    "yun", "yung", "yup", "yuri", "yurt", "yus", "yutu", "yuu",
+    "yv", "yves", "yvon", "yvor", "ywca", "ywha", "ywis", "yy"
+};
 
-// Maximum number of words estimated from txt file
-#define DICT_Y_MAX_WORDS 1740
-#define DICT_Y_TXT_PATH "Dictionary/dict_y.txt"
-
-// Global arrays for loaded words
-static char* dict_y_words[DICT_Y_MAX_WORDS];
-static size_t dict_y_count = 0;
-
-// Function to load words from txt file
-static int load_dict_y_from_file(void) {
-    FILE* file = fopen(DICT_Y_TXT_PATH, "r");
-    if (!file) {
-        return -1; // Failed to open file
-    }
-    
-    char buffer[256];
-    dict_y_count = 0;
-    
-    while (fgets(buffer, sizeof(buffer), file) && dict_y_count < DICT_Y_MAX_WORDS) {
-        // Remove newline
-        size_t len = strlen(buffer);
-        if (len > 0 && buffer[len-1] == '\n') {
-            buffer[len-1] = '\0';
-        }
-        
-        // Allocate and copy word
-        if (strlen(buffer) > 0) {
-            dict_y_words[dict_y_count] = malloc(strlen(buffer) + 1);
-            if (dict_y_words[dict_y_count]) {
-                strcpy(dict_y_words[dict_y_count], buffer);
-                dict_y_count++;
-            }
-        }
-    }
-    
-    fclose(file);
-    return 0; // Success
-}
-
-// Function to free loaded words
-static void free_dict_y_words(void) {
-    for (size_t i = 0; i < dict_y_count; i++) {
-        if (dict_y_words[i]) {
-            free(dict_y_words[i]);
-            dict_y_words[i] = NULL;
-        }
-    }
-    dict_y_count = 0;
-}
-
-// Compatibility array pointer (points to loaded words)
-static const char* const* dict_y = (const char* const*)dict_y_words;
-static const size_t DICT_Y_SIZE = DICT_Y_MAX_WORDS; // Will be updated to actual count after loading
-
-// Getter function for actual count
-static size_t get_dict_y_size(void) {
-    return dict_y_count;
-}
+static const size_t DICT_Y_SIZE = sizeof(dict_y) / sizeof(dict_y[0]);
 
 #endif // DICT_Y_H

@@ -1,67 +1,134 @@
 #ifndef DICT_A_H
 #define DICT_A_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+static const char* const dict_a[] = {
+    "a", "a&m", "a&p", "a'", "a'asia", "a's", "a-", "a-1",
+    "a-be", "a-c", "a-ok", "a-v", "a.", "a.b.", "a.c.", "a.d.",
+    "a.f.", "a.g.", "a.h.", "a.i.", "a.l.", "a.m.", "a.n.", "a.p.",
+    "a.r.", "a.u.", "a.v.", "a.w.", "a/c", "a/f", "a/o", "a/p",
+    "a/v", "a1", "a4", "a5", "aa", "aaa", "aaaa", "aaal",
+    "aaas", "aae", "aaee", "aaf", "aag", "aah", "aahs", "aaii",
+    "aal", "aals", "aam", "aani", "aao", "aap", "aar", "aara",
+    "aarc", "aaron's-beard", "aarp", "aaru", "aas", "aau", "aaup", "aauw",
+    "aax", "ab", "ab-", "aba", "abac", "abad", "abas", "abay",
+    "abb", "abba", "abbe", "abbey's", "abbi", "abbot's", "abbr", "abby",
+    "abc", "abcs", "abd", "abdomen's", "abdu", "abduction's", "abductor's", "abe",
+    "abed", "abel", "abet", "abeu", "abey", "abfm", "abhc", "abi",
+    "abia", "abib", "abie", "ability's", "abir", "abit", "abiu", "abl",
+    "abl.", "able", "abls", "ably", "abm", "abn", "abo", "abode's",
+    "abolishment's", "aborigine's", "abortion's", "abos", "abow", "abox", "abp", "abpc",
+    "abr", "abr.", "abra", "abrasion's", "abri", "abs", "abs-", "absa",
+    "abscissa's", "absence's", "absentee's", "absi", "absorption's", "abstraction's", "abstractor's", "absurdity's",
+    "abt", "abu", "abut", "abutter's", "abv", "aby", "abye", "abys",
+    "abyss's", "ac", "ac-", "acaa", "acad", "academy's", "acal", "acas",
+    "acb", "acbl", "acc", "acc.", "acca", "acce", "accelerometer's", "acceptance's",
+    "acceptor's", "accession's", "accessor's", "accessory's", "accompaniment's", "accompanist's", "accomplishment's", "accordion's",
+    "accountant's", "accretion's", "accs", "acct", "accumulator's", "accusation's", "acd", "acda",
+    "ace", "ace's", "acea", "aced", "acer", "aces", "acey", "acf",
+    "acgi", "ach", "ache", "achievement's", "achy", "acid", "acie", "acis",
+    "ack", "acknowledgment's", "acl", "acle", "acls", "aclu", "acm", "acme",
+    "acne", "aco", "acof", "acol", "acop", "acor", "acorn's", "acp",
+    "acpt", "acquaintance's", "acquisition's", "acr-", "acra", "acre", "acre's", "acrobat's",
+    "acronym's", "acrv", "acs", "acse", "acsu", "act", "acta", "actg",
+    "acth", "action's", "activator's", "activist's", "activity's", "actor's", "actress's", "acts",
+    "actu", "actuator's", "acu", "acus", "acv", "acw", "acwa", "acwp",
+    "acy", "acyl", "ad", "ad-", "ada", "adad", "adah", "adai",
+    "adal", "adam", "adam's-needle", "adan", "adao", "adaptation's", "adar", "adat",
+    "adaw", "aday", "adb", "adc", "adci", "add", "add.", "adda",
+    "adder's-grass", "adder's-meat", "adder's-mouth", "adder's-mouths", "adder's-tongue", "addi", "addiction's", "addition's",
+    "additive's", "addn", "addr", "addressee's", "adds", "addu", "addy", "ade",
+    "adee", "adel", "aden", "ader", "adet", "adew", "adey", "adf",
+    "adherent's", "adhesive's", "adi", "adib", "adie", "adim", "adin", "adis",
+    "adit", "adiz", "adj", "adj.", "adjective's", "adjt", "adjudication's", "adjunct's",
+    "adjustment's", "adjustor's", "adm", "adm.", "admd", "admi", "administration's", "administrator's",
+    "admiral's", "admission's", "admonishment's", "admonition's", "adn", "adna", "adne", "ado",
+    "adod", "adolescent's", "adon", "adoption's", "ador", "adornment's", "ados", "adp",
+    "adp-", "adq-", "adry", "ads", "adsp", "adsr", "adt", "adult's",
+    "adulterer's", "adur", "adv", "adv.", "advancement's", "adverb's", "adversary's", "advertisement's",
+    "advisee's", "advisor's", "advt", "ady", "adz", "adze", "ae", "ae-",
+    "ae.", "aea", "aec", "aef", "aeon", "aeq", "aer", "aer-",
+    "aerial's", "aero", "aery", "aes", "aesc", "aesthetic's", "aet", "aet.",
+    "aeu", "af", "af-", "af.", "afa", "afam", "afar", "afb",
+    "afc", "afcc", "afd", "afer", "aff", "affa", "affair's", "affectation's",
+    "affection's", "affidavit's", "affinity's", "affirmation's", "affliction's", "afft", "affy", "afg",
+    "afge", "afgh", "afi", "afl", "afm", "afp", "afr", "afr-",
+    "afra", "afro", "afs", "afsc", "afsk", "aft", "afternoon's", "afuu",
+    "ag", "ag-", "aga", "agad", "agag", "agal", "agan", "agao",
+    "agar", "agas", "agau", "agaz", "agba", "agc", "agca", "agct",
+    "agcy", "agd", "age", "aged", "agee", "agen", "agency's", "agenda's",
+    "agent's", "ager", "ages", "aget", "aggi", "aggression's", "aggy", "agh",
+    "agha", "agib", "agin", "agio", "agit", "agitator's", "agl", "agla",
+    "agle", "agly", "agm", "agma", "agn", "agna", "agni", "agnostic's",
+    "ago", "agog", "agon", "agos", "agr", "agr.", "agra", "agre",
+    "agreement's", "ags", "agst", "agt", "agu", "agua", "ague", "agy",
+    "ah", "aha", "ahab", "ahaz", "ahe", "ahem", "ahet", "ahey",
+    "ahi", "ahir", "ahl", "aho", "ahom", "ahoy", "ahq", "ahs",
+    "ahsa", "aht", "ahu", "ahum", "ai", "aia", "aiaa", "aias",
+    "aic", "aicc", "aid", "aida", "aide", "aids", "aiea", "aiel",
+    "aif", "aih", "aik", "ail", "aila", "aile", "aili", "ailment's",
+    "ails", "aim", "aime", "aimo", "aims", "ain", "ain't", "aind",
+    "aine", "ains", "aint", "ainu", "aiod", "aion", "aips", "air",
+    "aira", "aire", "airfield's", "airlift's", "airlock's", "airn", "airplane's", "airport's",
+    "airs", "airship's", "airstrip's", "airt", "airway's", "airy", "ais", "ait",
+    "aix", "aj", "aja", "ajc", "ajo", "ak", "aka", "akc",
+    "ake", "akh", "ako", "aku", "al", "al-", "al.", "ala",
+    "alb", "alc", "alcohol's", "alcoholic's", "alcove's", "ald", "alderman's", "ale",
+    "alf", "alg", "algebra's", "algorithm's", "ali", "alibi's", "alien's", "alk",
+    "alkali's", "alkaloid's", "all", "all'antica", "all'italiana", "all'ottava", "allah's", "allegation's",
+    "allegiance's", "allegory's", "allegretto's", "allegro's", "allergy's", "alley's", "alleyway's", "alliance's",
+    "alligator's", "alliteration's", "allocator's", "allotment's", "allowance's", "alloy's", "allusion's", "alm",
+    "almanac's", "almond's", "aln", "alo", "alp", "alphabet's", "als", "alt",
+    "altar's", "alteration's", "altercation's", "alternator's", "alto's", "alu", "alumna's", "alw",
+    "aly", "am", "am.", "ama", "amalgam's", "amateur's", "amazon's", "amb",
+    "ambassador's", "ambiguity's", "ambition's", "ambulance's", "amc", "amd", "ame", "amendment's",
+    "america's", "american's", "ami", "amn't", "amo", "amoeba's", "amp", "ampersand's",
+    "amphibian's", "amphitheater's", "amplitude's", "ampoule's", "amr", "ams", "amt", "amu",
+    "amusement's", "amy", "an", "an'a", "an't", "an-", "an.", "ana",
+    "anabaptist's", "anachronism's", "anagram's", "analogue's", "analogy's", "analyst's", "anarchist's", "anc",
+    "ancestor's", "anchorage's", "and", "ane", "anecdote's", "anemometer's", "anesthetic's", "anf",
+    "ang", "angel's", "angel's-trumpet", "anh", "ani", "animal's", "animator's", "anion's",
+    "ankle's", "anl", "ann", "anniversary's", "announcement's", "annoyance's", "annulment's", "anode's",
+    "anomaly's", "another's", "ans", "ant", "ant's", "antagonist's", "anteater's", "antecedent's",
+    "antelope's", "antenna's", "anthem's", "anthropologist's", "antic's", "antidote's", "antigen's", "antipode's",
+    "antiquarian's", "antique's", "antitoxin's", "anu", "anvil's", "any", "anybody'd", "ao",
+    "aoa", "aob", "aol", "aop", "aoq", "aor", "aos", "aou",
+    "aow", "ap", "ap-", "apa", "apartment's", "apb", "apc", "ape",
+    "apg", "aph", "aphid's", "aphorism's", "api", "apj", "apl", "apm",
+    "apo", "apologist's", "apology's", "apostle's", "app", "apparition's", "appellant's", "appendage's",
+    "appendix's", "appetite's", "apple's", "appliance's", "applicant's", "application's", "applicator's", "appointee's",
+    "appointment's", "appraisal's", "apprehension's", "appropriator's", "approval's", "apr", "apricot's", "apron's",
+    "aps", "apt", "apu", "apx", "aq", "aql", "aqueduct's", "ar",
+    "ar'n't", "ar-", "ar.", "ara", "arab's", "arachnid's", "arb", "arbiter's",
+    "arbitrator's", "arbor's", "arc", "arcade's", "archaeologist's", "archangel's", "architect's", "architecture's",
+    "ard", "are", "area's", "aren't", "arena's", "arf", "arg", "argument's",
+    "ari", "aristocrat's", "ark", "arm", "armament's", "armchair's", "armpit's", "army's",
+    "arn", "aro", "arp", "arpeggio's", "arq", "arr", "arraignment's", "arrangement's",
+    "arrestor's", "arrival's", "arrowhead's", "ars", "arsenal's", "art", "art's", "arteriole's",
+    "artery's", "arthropod's", "artichoke's", "article's", "artifact's", "artisan's", "artist's", "aru",
+    "arv", "arx", "ary", "as", "as-", "asa", "asb", "asc",
+    "ascetic's", "ase", "asg", "ash", "ashtray's", "asi", "ask", "asm",
+    "asn", "aso", "asp", "aspect's", "aspersion's", "aspirant's", "aspiration's", "asr",
+    "ass", "ass's", "assailant's", "assassin's", "assemblage's", "assembly's", "assertion's", "assessment's",
+    "asset's", "assignee's", "assignment's", "assistant's", "associator's", "assortment's", "assumption's", "assurance's",
+    "ast", "aster's", "asterisk's", "asteroid's", "astronaut's", "astronomer's", "asu", "asv",
+    "asw", "asymptote's", "asz", "at", "at-", "at.", "ata", "atb",
+    "atc", "ate", "atf", "ath", "atheist's", "athlete's", "ati", "atk",
+    "atm", "atmosphere's", "atn", "ato", "atoll's", "atom's", "atp", "atr",
+    "atrocity's", "ats", "att", "attachment's", "attainment's", "attendance's", "attendant's", "attendee's",
+    "attention's", "attenuator's", "attic's", "attitude's", "attorney's", "attraction's", "attractor's", "atv",
+    "au", "aua", "auc", "auctioneer's", "aud", "audience's", "audiogram's", "audiologist's",
+    "audition's", "auditor's", "auf", "aug", "auger's", "auh", "aui", "auk",
+    "aul", "aum", "aun", "aunt's", "aup", "aura's", "aus", "author's",
+    "authority's", "authorization's", "auto's", "autobiography's", "autocrat's", "automobile's", "autonavigator's", "autopilot's",
+    "autumn's", "aux", "av", "av-", "av.", "ava", "avc", "avd",
+    "ave", "avenue's", "aversion's", "avg", "avi", "aviator's", "avm", "avn",
+    "avo", "avocation's", "aw", "aw-", "awa", "awb", "awd", "awe",
+    "awg", "awk", "awl", "awl's", "awm", "awn", "awning's", "awu",
+    "ax", "ax.", "axa", "axe", "axiom's", "axiomatization's", "axle's", "axolotl's",
+    "axon's", "ay", "ay-", "aye", "ayh", "aym", "ayn", "ayo",
+    "ayr", "ays", "ayu", "az", "az-", "azalea's", "azimuth's", "azo"
+};
 
-// Maximum number of words estimated from txt file
-#define DICT_A_MAX_WORDS 30849
-#define DICT_A_TXT_PATH "Dictionary/dict_a.txt"
-
-// Global arrays for loaded words
-static char* dict_a_words[DICT_A_MAX_WORDS];
-static size_t dict_a_count = 0;
-
-// Function to load words from txt file
-static int load_dict_a_from_file(void) {
-    FILE* file = fopen(DICT_A_TXT_PATH, "r");
-    if (!file) {
-        return -1; // Failed to open file
-    }
-    
-    char buffer[256];
-    dict_a_count = 0;
-    
-    while (fgets(buffer, sizeof(buffer), file) && dict_a_count < DICT_A_MAX_WORDS) {
-        // Remove newline
-        size_t len = strlen(buffer);
-        if (len > 0 && buffer[len-1] == '\n') {
-            buffer[len-1] = '\0';
-        }
-        
-        // Allocate and copy word
-        if (strlen(buffer) > 0) {
-            dict_a_words[dict_a_count] = malloc(strlen(buffer) + 1);
-            if (dict_a_words[dict_a_count]) {
-                strcpy(dict_a_words[dict_a_count], buffer);
-                dict_a_count++;
-            }
-        }
-    }
-    
-    fclose(file);
-    return 0; // Success
-}
-
-// Function to free loaded words
-static void free_dict_a_words(void) {
-    for (size_t i = 0; i < dict_a_count; i++) {
-        if (dict_a_words[i]) {
-            free(dict_a_words[i]);
-            dict_a_words[i] = NULL;
-        }
-    }
-    dict_a_count = 0;
-}
-
-// Compatibility array pointer (points to loaded words)
-static const char* const* dict_a = (const char* const*)dict_a_words;
-static const size_t DICT_A_SIZE = DICT_A_MAX_WORDS; // Will be updated to actual count after loading
-
-// Getter function for actual count
-static size_t get_dict_a_size(void) {
-    return dict_a_count;
-}
+static const size_t DICT_A_SIZE = sizeof(dict_a) / sizeof(dict_a[0]);
 
 #endif // DICT_A_H

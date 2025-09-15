@@ -1,67 +1,134 @@
 #ifndef DICT_C_H
 #define DICT_C_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+static const char* const dict_c[] = {
+    "c", "c's", "c.", "c.a.", "c.b.", "c.c.", "c.d.", "c.e.",
+    "c.f.", "c.g.", "c.h.", "c.i.", "c.m.", "c.o.", "c.p.", "c.r.",
+    "c.s.", "c.t.", "c/-", "c/a", "c/d", "c/f", "c/l", "c/m",
+    "c/n", "c/o", "c3", "ca", "ca'", "ca'-thro'", "ca'canny", "ca'ing-whale",
+    "ca.", "caa", "caam", "cab", "cab's", "caba", "cabbage's", "cabe",
+    "cabin's", "cabinet's", "cabs", "cac", "cac-", "caca", "cace", "cache's",
+    "caci", "cack", "cacm", "cad", "cadd", "cade", "cadi", "cads",
+    "cadv", "cady", "cae", "cae-", "caen", "caf", "cafe", "cafe's",
+    "caff", "cafh", "cag", "cage", "cagn", "cagr", "cagy", "cahn",
+    "cai", "caia", "caic", "caid", "cain", "cair", "cais", "cake",
+    "caky", "cal", "cal.", "calamity's", "calc", "calculator's", "cale", "calendar's",
+    "calf", "calf's-foot", "cali", "calk", "call", "calm", "calorie's", "calp",
+    "cals", "calv", "calx", "cam", "cama", "camb", "came", "camel's",
+    "camel's-hair", "camera's", "cami", "camm", "camp", "campus's", "cams", "can",
+    "can's", "can't", "can.", "cana", "canal's", "canary's", "canc", "cancellation's",
+    "cancer's", "cand", "candidate's", "candlestick's", "cane", "canf", "cank", "cann",
+    "canner's", "cannibal's", "cannister's", "cannon's", "canoe's", "canon's", "cans", "cant",
+    "canton's", "cantor's", "canvas's", "cany", "canyon's", "caon", "cap", "cap'n",
+    "cap's", "cap.", "capa", "capability's", "capacitor's", "cape", "caph", "capitalist's",
+    "capitol's", "capo", "capp", "caps", "capt", "caption's", "captive's", "captor's",
+    "car", "car's", "cara", "caravan's", "carb", "carbon's", "carcass's", "card",
+    "cardinality's", "care", "career's", "carf", "cari", "cark", "carl", "carn",
+    "carnival's", "caro", "carol's", "carolina's", "carp", "carpenter's", "carr", "carriage's",
+    "carrot's", "cars", "cart", "carton's", "cartoon's", "cartridge's", "cary", "cas",
+    "casa", "case", "casement's", "cash", "cashier's", "casi", "cask", "cask's",
+    "casket's", "cass", "casserole's", "cast", "cast's", "casu", "casualty's", "cat",
+    "cat's", "cat's-claw", "cat's-cradle", "cat's-ear", "cat's-eye", "cat's-eyes", "cat's-feet", "cat's-foot",
+    "cat's-head", "cat's-paw", "cat's-tail", "cat-o'-mountain", "cat-o'-nine-tails", "cat.", "catalyst's", "cate",
+    "category's", "caterpillar's", "cath", "cathedral's", "cathode's", "catholic's", "cati", "cato",
+    "cats", "catt", "catv", "caty", "cau", "cauf", "cauk", "caul",
+    "caum", "caup", "caus", "causation's", "causeway's", "cav", "cav.", "cava",
+    "cave", "caveat's", "cavern's", "cavity's", "cavu", "cavy", "caw", "cawk",
+    "cawl", "caws", "cay", "caye", "cays", "caz", "caza", "cb",
+    "cbc", "cbd", "cbds", "cbe", "cbel", "cbi", "cbr", "cbs",
+    "cbw", "cbx", "cc", "cc.", "cca", "ccc", "ccci", "ccd",
+    "ccds", "ccf", "cch", "cci", "ccid", "ccim", "ccip", "ccir",
+    "ccis", "cckw", "ccl", "ccls", "ccm", "ccnc", "ccny", "ccp",
+    "ccr", "ccrp", "ccs", "ccsa", "cct", "ccta", "cctv", "ccu",
+    "ccv", "ccw", "ccws", "cd", "cd.", "cda", "cdar", "cdb",
+    "cdc", "cdcf", "cdev", "cdf", "cdg", "cdi", "cdiz", "cdn",
+    "cdo", "cdp", "cdpr", "cdr", "cdr.", "cdre", "cds", "cdsf",
+    "cdt", "cdu", "ce", "cea", "cear", "ceb", "cebu", "cec",
+    "ceca", "cece", "ced", "cede", "cedi", "cee", "cees", "cef",
+    "cegb", "cei", "ceil", "ceiling's", "ceja", "cela", "cele", "celebrity's",
+    "cell", "cellar's", "cellist's", "cels", "celt", "cemetery's", "cen", "cen-",
+    "cen.", "cene", "cens", "census's", "cent", "center's", "centerpiece's", "centipede's",
+    "century's", "ceo", "cep", "cepa", "cepe", "ceps", "ceq", "cera",
+    "cere", "cereal's", "ceremony's", "cerf", "cern", "cero", "cert", "cery",
+    "cess", "cessation's", "cest", "cet", "cet-", "ceta", "cete", "ceti",
+    "ceto", "cev", "cevi", "ceyx", "cf", "cf.", "cfa", "cfb",
+    "cfc", "cfca", "cfd", "cfe", "cff", "cfh", "cfht", "cfi",
+    "cfl", "cfm", "cfo", "cfp", "cfr", "cfs", "cg", "cg.",
+    "cga", "cgct", "cge", "cgi", "cgm", "cgn", "cgs", "cgx",
+    "ch", "ch'an", "ch'in", "ch'ing", "ch'ing-yan", "ch.", "cha", "cha'ah",
+    "chaa", "chab", "chac", "chad", "chae", "chai", "chairperson's", "chak",
+    "chal", "chalice's", "cham", "chamberlain's", "championship's", "chan", "chandelier's", "channeller's",
+    "chanticleer's", "chao", "chap", "chap's", "chapel's", "chaplain's", "chapter's", "char",
+    "character's", "characteristic's", "characterization's", "chariot's", "charity's", "chas", "chasm's", "chat",
+    "chateau's", "chaw", "chay", "chb", "che", "cheb", "checkbook's", "checkpoint's",
+    "checksum's", "chee", "cheek's", "cheese's", "chef", "chef's", "chef-d'", "chef-d'oeuvre",
+    "chefs-d'oeuvre", "chem", "chemist's", "chen", "cher", "cherry's", "cherub's", "ches",
+    "chestnut's", "chet", "chev", "chew", "chez", "chg", "chg.", "chi",
+    "chia", "chickadee's", "chieftain's", "children's", "chime's", "chimney's", "chin's", "ching-t'u",
+    "chip's", "chipmunk's", "chloroplast's", "chm", "chn", "cho", "chock's", "chocolate's",
+    "choir's", "chopper's", "chord's", "chp", "chq", "chr", "christ's-thorn", "christian's",
+    "chronology's", "chs", "chu", "chuck's", "chuck-will's-widow", "chunk's", "churchyard's", "chute's",
+    "ci", "ci-", "cia", "cib", "cic", "cid", "cie", "cif",
+    "cig", "cigar's", "cigarette's", "cii", "cim", "cinder's", "cio", "cip",
+    "cipher's", "cir", "circuit's", "circumlocution's", "circumstance's", "circus's", "cis", "cistern's",
+    "cit", "citadel's", "citation's", "citizen's", "city's", "ciu", "civ", "civilian's",
+    "civilization's", "cj", "ck", "ckw", "cl", "cl.", "claimant's", "clam's",
+    "classmate's", "classroom's", "clause's", "clay's", "cle", "cleaner's", "clearance's", "clearing's",
+    "cleft's", "cli", "cliche's", "client's", "cliff's", "climate's", "clime's", "clinic's",
+    "clip's", "clipper's", "clipping's", "clique's", "clk", "clo", "cloak's", "clod's",
+    "clog's", "cloister's", "closure's", "clr", "cls", "clu", "club's", "clue's",
+    "clv", "cly", "cm", "cma", "cmc", "cmd", "cmf", "cmg",
+    "cmh", "cmi", "cml", "cms", "cmt", "cmu", "cmw", "cn",
+    "cn-", "cna", "cnc", "cnd", "cni", "cnm", "cnn", "cno",
+    "cnr", "cns", "co", "co-", "co.", "cob", "cobbler's", "cobweb's",
+    "coc", "cock's-comb", "cock's-foot", "cock's-head", "cocktail's", "coconut's", "cocoon's", "cod",
+    "codeword's", "codification's", "codifier's", "coe", "coefficient's", "coffee's", "coffer's", "coffin's",
+    "cog", "coh", "coi", "coincidence's", "col", "collaborator's", "colleague's", "collection's",
+    "collector's", "college's", "collision's", "colon's", "colonel's", "colonist's", "colony's", "colt's",
+    "colt's-tail", "column's", "com", "combatant's", "combination's", "combinator's", "comedian's", "comedy's",
+    "comet's", "comic's", "comma's", "command's", "commandant's", "commandment's", "commencement's", "commendation's",
+    "commentary's", "commentator's", "commitment's", "committee's", "commodity's", "commodore's", "commoner's", "communicant's",
+    "communicator's", "communist's", "community's", "compactor's", "companion's", "company's", "comparator's", "comparison's",
+    "compatibility's", "competition's", "competitor's", "compilation's", "compiler's", "complaint's", "complicator's", "component's",
+    "comptroller's", "compulsion's", "computation's", "computer's", "con", "concept's", "conception's", "conceptualization's",
+    "concession's", "conclusion's", "conductor's", "cone's", "conference's", "conferrer's", "confession's", "confessor's",
+    "confidant's", "configuration's", "confinement's", "confirmation's", "confrontation's", "congress's", "conjunction's", "connection's",
+    "connective's", "connector's", "connoisseur's", "conqueror's", "conquest's", "conscience's", "consequence's", "conservation's",
+    "conservationist's", "consolation's", "consonant's", "conspiracy's", "conspirator's", "constable's", "constellation's", "constituency's",
+    "constituent's", "constraint's", "construction's", "constructor's", "consul's", "consulate's", "consultant's", "consultation's",
+    "consumer's", "consumption's", "containment's", "contention's", "context's", "continent's", "contingency's", "contingent's",
+    "continuance's", "continuation's", "contour's", "contraction's", "contractor's", "contradiction's", "contraption's", "contributor's",
+    "contrivance's", "control's", "controller's", "controversy's", "conundrum's", "convenience's", "convent's", "convention's",
+    "conversation's", "conveyance's", "conviction's", "convulsion's", "coo", "cookie's", "cooler's", "coolie's",
+    "coon's", "cooper's-wood", "cooperator's", "coordinator's", "cop", "cop's", "copper's", "copyright's",
+    "coq", "cor", "cornerstone's", "cornfield's", "corollary's", "coronet's", "coroutine's", "corporal's",
+    "corporation's", "corpse's", "correspondence's", "correspondent's", "corridor's", "cos", "cot", "cot's",
+    "cottonpickin'", "cotyledon's", "couldn't", "council's", "councillor's", "counsellor's", "counselor's", "countermeasure's",
+    "counterpart's", "country's", "county's", "coupon's", "courier's", "courtesy's", "courthouse's", "courtier's",
+    "courtroom's", "courtyard's", "cousin's", "covenant's", "coverlet's", "cow", "cowboy's", "cowslip'd",
+    "cowslip's", "cox", "coy", "coyote's", "coz", "cp", "cp.", "cpa",
+    "cpc", "cpd", "cpe", "cph", "cpi", "cpl", "cpm", "cpo",
+    "cpp", "cpr", "cps", "cpt", "cpu", "cpw", "cq", "cr",
+    "cr.", "crab's", "crag's", "cramp's", "cranberry's", "crane's", "crane's-bill", "cravat's",
+    "crb", "crc", "crd", "cre", "creator's", "creature's", "creditor's", "creed's",
+    "creek's", "crescent's", "crevice's", "cri", "crib's", "cricket's", "crime's", "critic's",
+    "criticism's", "crl", "cro", "crop's", "cropper's", "crossbar's", "crossover's", "crossword's",
+    "crow's-feet", "crow's-foot", "crow's-nest", "crp", "crs", "crt", "cru", "crust's",
+    "crustacean's", "crutch's", "crux's", "cry", "crystal's", "cs", "cs.", "csa",
+    "csb", "csc", "csd", "cse", "csf", "csi", "csk", "csl",
+    "csm", "csn", "cso", "csp", "csr", "css", "cst", "csu",
+    "csw", "ct", "ct.", "cta", "ctc", "ctd", "cte", "ctf",
+    "ctg", "ctm", "ctn", "cto", "ctr", "cts", "ctt", "ctv",
+    "cu", "cua", "cub", "cub's", "cuckoo's", "cucumber's", "cud", "cudgel's",
+    "cue", "cuff's", "cui", "cuj", "cul", "culprit's", "cult's", "cultivator's",
+    "cum", "cun", "cup", "cup's", "cupboard's", "cupid's-bow", "cupid's-dart", "cur",
+    "curfew's", "curiosity's", "currant's", "currency's", "curriculum's", "cursor's", "curtsy's", "cusp's",
+    "custodian's", "customization's", "cut", "cut's", "cutter's", "cv", "cva", "cvo",
+    "cvr", "cvt", "cw", "cwa", "cwc", "cwi", "cwm", "cwo",
+    "cwt", "cxi", "cy", "cyb", "cyc", "cycloid's", "cyclone's", "cyd",
+    "cyl", "cylinder's", "cym", "cymbal's", "cyn", "cyo", "cyp", "cz"
+};
 
-// Maximum number of words estimated from txt file
-#define DICT_C_MAX_WORDS 38934
-#define DICT_C_TXT_PATH "Dictionary/dict_c.txt"
-
-// Global arrays for loaded words
-static char* dict_c_words[DICT_C_MAX_WORDS];
-static size_t dict_c_count = 0;
-
-// Function to load words from txt file
-static int load_dict_c_from_file(void) {
-    FILE* file = fopen(DICT_C_TXT_PATH, "r");
-    if (!file) {
-        return -1; // Failed to open file
-    }
-    
-    char buffer[256];
-    dict_c_count = 0;
-    
-    while (fgets(buffer, sizeof(buffer), file) && dict_c_count < DICT_C_MAX_WORDS) {
-        // Remove newline
-        size_t len = strlen(buffer);
-        if (len > 0 && buffer[len-1] == '\n') {
-            buffer[len-1] = '\0';
-        }
-        
-        // Allocate and copy word
-        if (strlen(buffer) > 0) {
-            dict_c_words[dict_c_count] = malloc(strlen(buffer) + 1);
-            if (dict_c_words[dict_c_count]) {
-                strcpy(dict_c_words[dict_c_count], buffer);
-                dict_c_count++;
-            }
-        }
-    }
-    
-    fclose(file);
-    return 0; // Success
-}
-
-// Function to free loaded words
-static void free_dict_c_words(void) {
-    for (size_t i = 0; i < dict_c_count; i++) {
-        if (dict_c_words[i]) {
-            free(dict_c_words[i]);
-            dict_c_words[i] = NULL;
-        }
-    }
-    dict_c_count = 0;
-}
-
-// Compatibility array pointer (points to loaded words)
-static const char* const* dict_c = (const char* const*)dict_c_words;
-static const size_t DICT_C_SIZE = DICT_C_MAX_WORDS; // Will be updated to actual count after loading
-
-// Getter function for actual count
-static size_t get_dict_c_size(void) {
-    return dict_c_count;
-}
+static const size_t DICT_C_SIZE = sizeof(dict_c) / sizeof(dict_c[0]);
 
 #endif // DICT_C_H

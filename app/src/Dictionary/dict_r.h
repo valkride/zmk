@@ -1,67 +1,134 @@
 #ifndef DICT_R_H
 #define DICT_R_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+static const char* const dict_r[] = {
+    "r", "r&d", "r's", "r-rna", "r.", "r.a.", "r.c.", "r.e.",
+    "r.h.", "r.i.", "r.n.", "r.q.", "r.r.", "r/d", "ra", "raab",
+    "raad", "raaf", "raama", "raash", "rab", "rabah", "rabal", "rabat",
+    "rabbi", "rabbit's", "rabbit's-foot", "rabi", "rabia", "rabic", "rabid", "rabin",
+    "rabot", "rac", "raccoon's", "race", "raced", "racep", "racer", "races",
+    "rach", "rache", "rack", "racket's", "racks", "racon", "racy", "rad",
+    "rad.", "rada", "radar", "radar's", "raddi", "raddy", "radek", "radha",
+    "radiator's", "radie", "radii", "radio", "radish's", "radix", "radke", "radly",
+    "radm", "radom", "radon", "rads", "radu", "rae", "raec", "raf",
+    "rafa", "rafat", "rafe", "rafer", "raff", "raffe", "raffo", "raffs",
+    "rafi", "rafik", "rafiq", "raft", "rafts", "rafty", "rafvr", "rag",
+    "rag's", "raga", "ragan", "ragas", "rage", "raged", "ragee", "ragen",
+    "rager", "rages", "ragg", "raggy", "raghu", "ragi", "ragis", "rago",
+    "rags", "rah", "rahab", "rahal", "rahel", "rahm", "rahr", "rahu",
+    "rahul", "rai", "raia", "raiae", "raias", "raid", "raids", "raif",
+    "rail", "raila", "rails", "railway's", "rain", "raina", "raincoat's", "raindrop's",
+    "raine", "rains", "rainy", "rais", "raise", "raj", "raja", "rajab",
+    "rajah", "rajas", "rajes", "raji", "rajiv", "rakan", "rake", "raked",
+    "rakee", "rakel", "raker", "rakes", "rakh", "raki", "rakia", "rakis",
+    "rakit", "raku", "rale", "rales", "ralf", "rall", "rall.", "ralli",
+    "ralls", "rally", "ralph", "rals", "ram", "ram's", "ram's-horn", "rama",
+    "ramc", "rame", "rami", "ramification's", "ramo", "ramp", "ramp's", "rams",
+    "ran", "rana", "rand", "rane", "rang", "rani", "rank", "ranker's",
+    "ranking's", "rann", "rant", "rao", "raob", "raoc", "rap", "rap's",
+    "rape", "rapp", "raps", "rapt", "rapture's", "rar", "rara", "rare",
+    "rarety's", "rarp", "ras", "rasa", "rasc", "rase", "rash", "rask",
+    "rasp", "rat", "rat's", "rat's-tail", "rata", "rate", "rath", "ratio's",
+    "rationale's", "rato", "rats", "rattlesnake's", "rauk", "raul", "raun", "ravc",
+    "rave", "ravi", "ravine's", "ravo", "raw", "rawl", "raws", "rax",
+    "ray", "ray's", "raya", "raye", "rays", "raze", "razor's", "razz",
+    "rb", "rb-", "rbc", "rbe", "rbhc", "rbi", "rboc", "rbor",
+    "rbt", "rbtl", "rc", "rca", "rcaf", "rcas", "rcb", "rcc",
+    "rcch", "rcd", "rcd.", "rcf", "rch", "rci", "rcl", "rcm",
+    "rcmp", "rcn", "rco", "rcp", "rcpt", "rcs", "rcsc", "rct",
+    "rcu", "rcvr", "rcvs", "rd", "rd.", "rda", "rdac", "rdc",
+    "rdes", "rdf", "rdl", "rdm", "rdp", "rds", "rdt", "rdte",
+    "rdx", "re", "re-", "re.", "rea", "reaction's", "reactionary's", "reactor's",
+    "read", "readout's", "reak", "real", "realist's", "realization's", "realm's", "ream",
+    "reap", "rear", "rearrangement's", "reassessment's", "reassignment's", "reb", "reba", "rebate's",
+    "rebe", "rebel's", "rebellion's", "rebs", "rec", "rec'd", "recd", "receipt's",
+    "receptacle's", "reception's", "rech", "recipe's", "recipient's", "recital's", "recitation's", "reck",
+    "recognition's", "recollection's", "recommendation's", "reconfiguration's", "recovery's", "recruit's", "recs", "rect",
+    "rectangle's", "rector's", "rectum's", "recurrence's", "recursion's", "red", "redd", "rede",
+    "redefinition's", "redo", "reds", "reduction's", "ree", "reed", "reed's", "reef",
+    "reek", "reel", "reem", "reen", "rees", "reet", "ref", "ref.",
+    "referent's", "referral's", "refinement's", "refl", "reflection's", "reflector's", "reflex's", "refr",
+    "refreshment's", "refrigerator's", "refs", "reft", "refugee's", "reg", "reg.", "regd",
+    "regent's", "regime's", "region's", "registration's", "rego", "regr", "regression's", "regs",
+    "regt", "regulator's", "reh", "rehearsal's", "rehm", "rei", "reid", "reif",
+    "reik", "reim", "reimbursement's", "rein", "reinforcement's", "reis", "reit", "rejection's",
+    "rejector's", "reki", "rel", "rel.", "relationship's", "relaxation's", "reld", "relic's",
+    "religion's", "rely", "rem", "rema", "remainder's", "reme", "remembrance's", "remi",
+    "reminiscence's", "remnant's", "removal's", "rems", "remy", "ren", "rena", "rend",
+    "rendition's", "rene", "reni", "renk", "renn", "reno", "rent", "rental's",
+    "renu", "reo", "reorganization's", "rep", "rep.", "reparation's", "repast's", "repercussion's",
+    "repetition's", "repl", "replacement's", "repo", "repository's", "repp", "repr", "representation's",
+    "repression's", "reprisal's", "reproduction's", "reps", "rept", "reptile's", "republic's", "republican's",
+    "reputation's", "req", "req.", "reqd", "requirement's", "res", "resa", "rese",
+    "resemblance's", "reservation's", "reservoir's", "resh", "residence's", "resident's", "residue's", "resignation's",
+    "resin's", "resistor's", "resource's", "resp", "respondent's", "ress", "rest", "restaurant's",
+    "restoration's", "restraint's", "restriction's", "resumption's", "resurrection's", "ret", "reta", "retd",
+    "rete", "reticle's", "retina's", "retirement's", "retransmission's", "retrieval's", "rets", "rett",
+    "reub", "reunion's", "reus", "rev", "rev.", "reva", "revd", "reve",
+    "revelation's", "reverend's", "reversal's", "revision's", "revival's", "revolution's", "revolutionary's", "revs",
+    "rew", "rex", "rexx", "rey", "rf", "rfa", "rfb", "rfc",
+    "rfd", "rfe", "rfi", "rfp", "rfq", "rfs", "rft", "rfz",
+    "rg", "rgb", "rgbi", "rgen", "rgp", "rgs", "rgt", "rgu",
+    "rh", "rha", "rhb", "rhc", "rhd", "rhe", "rhea", "rhee",
+    "rheo", "rhet", "rhg", "rhne", "rho", "rhos", "rhs", "rhu",
+    "rhus", "rhv", "rhys", "rhythm's", "ri", "ria", "rial", "rias",
+    "rib", "rib's", "riba", "ribbon's", "ribe", "ribs", "ric", "rica",
+    "rice", "rich", "rici", "rick", "rickshaw's", "rico", "rics", "rid",
+    "rida", "ride", "ridge's", "rids", "rie", "riel", "riem", "rier",
+    "ries", "rif", "rife", "riff", "rifi", "rifs", "rift", "rig",
+    "rig's", "riga", "rigi", "rigs", "riha", "riia", "riis", "rijn",
+    "rik", "rika", "riki", "rikk", "riksm'", "rile", "rill", "rilm",
+    "rim", "rim's", "rima", "rime", "rims", "rimu", "rimy", "rin",
+    "rina", "rind", "rind's", "rine", "ring", "rink", "rins", "rio",
+    "rion", "rior", "riot", "rip", "ripa", "ripe", "ripp", "rips",
+    "risa", "risc", "rise", "risk", "risp", "riss", "rist", "rit",
+    "rit.", "rita", "rite", "rite's", "riti", "ritz", "riv", "riv.",
+    "riva", "rivalry's", "rive", "river's", "rivi", "rivo", "rivulet's", "rivy",
+    "rix", "rixy", "riza", "rj", "rje", "rket", "rl", "rlc",
+    "rlcm", "rld", "rlds", "rle", "rlg", "rlin", "rll", "rlt",
+    "rly", "rm", "rm.", "rma", "rmas", "rmc", "rmf", "rmi",
+    "rmm", "rmr", "rms", "rn", "rna", "rnas", "rnd", "rngc",
+    "rnli", "rnoc", "rnr", "rnvr", "rnzn", "ro", "roa", "road",
+    "road's", "roadster's", "roadway's", "roak", "roam", "roan", "roar", "rob",
+    "robb", "robber's", "robbery's", "robe", "robi", "robin's", "robot's", "robs",
+    "roby", "roc", "roca", "roch", "rock", "rock-'n'-roll", "rocs", "rod",
+    "rod's", "roda", "rodd", "rode", "rodi", "rodl", "rods", "roe",
+    "roed", "roee", "roer", "roes", "roey", "roff", "rog", "rogue's",
+    "roh", "rohn", "roi", "roid", "roil", "roin", "rois", "roit",
+    "rok", "roka", "roke", "roky", "rola", "role", "role's", "rolf",
+    "roll", "rolo", "rom", "rom.", "roma", "romantic's", "rome", "romo",
+    "romp", "roms", "romy", "ron", "rona", "rond", "rone", "rong",
+    "ronn", "roo", "rood", "roof", "rook", "rool", "room", "roon",
+    "roop", "roos", "root", "root's", "rop", "rope", "ropp", "ropy",
+    "rora", "rori", "rort", "rory", "ros", "rosa", "rose", "rose's",
+    "rosebud's", "ross", "rost", "rosy", "rot", "rota", "rotc", "rote",
+    "roth", "roti", "rotl", "roto", "rots", "roub", "roud", "roue",
+    "roun", "roup", "rous", "rout", "roux", "rove", "row", "rowe",
+    "rows", "rowt", "rowy", "rox", "roxi", "roxy", "roy", "royalist's",
+    "royalty's", "royd", "roye", "royo", "royt", "roz", "roze", "rozi",
+    "rp", "rpc", "rpg", "rpi", "rpm", "rpn", "rpo", "rpq",
+    "rps", "rpt", "rpt.", "rpv", "rq", "rqs", "rqsm", "rr",
+    "rrb", "rrc", "rrip", "rro", "rs", "rs.", "rsa", "rsb",
+    "rsc", "rscs", "rse", "rsgb", "rsh", "rsj", "rsl", "rsle",
+    "rslm", "rsm", "rsn", "rspb", "rsr", "rss", "rsts", "rsu",
+    "rsum", "rsv", "rsvp", "rswc", "rt", "rt.", "rta", "rtac",
+    "rtc", "rte", "rtf", "rtfm", "rtg", "rti", "rtl", "rtls",
+    "rtm", "rtmp", "rtr", "rts", "rtse", "rtsl", "rtt", "rtty",
+    "rtu", "rtw", "ru", "rua", "rub", "rubber's", "rube", "rubi",
+    "ruble's", "rubs", "ruby", "ruby's", "ruc", "ruck", "rud", "rudd",
+    "rudder's", "rude", "rudiment's", "rudy", "rue", "rued", "ruel", "ruen",
+    "ruer", "rues", "rufe", "ruff", "rug", "rug's", "ruga", "rugg",
+    "rugs", "ruhl", "ruhr", "ruin", "ruination's", "ruiz", "rukh", "rule",
+    "rull", "rulo", "ruly", "rum", "rumb", "rume", "rumi", "rump",
+    "rums", "run", "runa", "rune", "rung", "rung's", "runner's", "runs",
+    "runt", "rupa", "ruru", "rus", "rus.", "rusa", "ruse", "rush",
+    "rusk", "ruso", "russ", "russian's", "rust", "rut", "rut's", "ruta",
+    "ruth", "ruts", "rux", "ruy", "rv", "rw", "rwa", "rwc",
+    "rwd", "rwe", "rwm", "rwy", "rwy.", "rx", "ry", "rya",
+    "ryal", "ryan", "ryas", "ryde", "rye", "ryen", "ryes", "ryke",
+    "ryle", "ryme", "rynd", "rynt", "ryon", "ryot", "rype", "ryun"
+};
 
-// Maximum number of words estimated from txt file
-#define DICT_R_MAX_WORDS 21286
-#define DICT_R_TXT_PATH "Dictionary/dict_r.txt"
-
-// Global arrays for loaded words
-static char* dict_r_words[DICT_R_MAX_WORDS];
-static size_t dict_r_count = 0;
-
-// Function to load words from txt file
-static int load_dict_r_from_file(void) {
-    FILE* file = fopen(DICT_R_TXT_PATH, "r");
-    if (!file) {
-        return -1; // Failed to open file
-    }
-    
-    char buffer[256];
-    dict_r_count = 0;
-    
-    while (fgets(buffer, sizeof(buffer), file) && dict_r_count < DICT_R_MAX_WORDS) {
-        // Remove newline
-        size_t len = strlen(buffer);
-        if (len > 0 && buffer[len-1] == '\n') {
-            buffer[len-1] = '\0';
-        }
-        
-        // Allocate and copy word
-        if (strlen(buffer) > 0) {
-            dict_r_words[dict_r_count] = malloc(strlen(buffer) + 1);
-            if (dict_r_words[dict_r_count]) {
-                strcpy(dict_r_words[dict_r_count], buffer);
-                dict_r_count++;
-            }
-        }
-    }
-    
-    fclose(file);
-    return 0; // Success
-}
-
-// Function to free loaded words
-static void free_dict_r_words(void) {
-    for (size_t i = 0; i < dict_r_count; i++) {
-        if (dict_r_words[i]) {
-            free(dict_r_words[i]);
-            dict_r_words[i] = NULL;
-        }
-    }
-    dict_r_count = 0;
-}
-
-// Compatibility array pointer (points to loaded words)
-static const char* const* dict_r = (const char* const*)dict_r_words;
-static const size_t DICT_R_SIZE = DICT_R_MAX_WORDS; // Will be updated to actual count after loading
-
-// Getter function for actual count
-static size_t get_dict_r_size(void) {
-    return dict_r_count;
-}
+static const size_t DICT_R_SIZE = sizeof(dict_r) / sizeof(dict_r[0]);
 
 #endif // DICT_R_H

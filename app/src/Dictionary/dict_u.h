@@ -1,67 +1,134 @@
 #ifndef DICT_U_H
 #define DICT_U_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+static const char* const dict_u[] = {
+    "u", "u's", "u-boat", "u-boot", "u-cut", "u-mm", "u-turn", "u.",
+    "u.a.r.", "u.c.", "u.k.", "u.s.", "u.s.a.", "u.s.s.", "u.v.", "u/s",
+    "ua", "uab", "uae", "uakari", "ualis", "uam", "uang", "uapdu",
+    "uar", "uars", "uart", "uaupe", "uaw", "uayeb", "ub", "uba",
+    "ubald", "uball", "ubana", "ubangi", "ubc", "ube", "uberty", "ubi",
+    "ubiety", "ubii", "ubique", "ubly", "ubm", "ubound", "ubussu", "uc",
+    "uca", "ucal", "ucar", "ucb", "ucc", "ucca", "ucd", "uchean",
+    "uchee", "uchida", "uchish", "uci", "uckers", "uckia", "ucl", "ucla",
+    "ucon", "ucr", "ucsb", "ucsc", "ucsd", "ucsf", "ucuuba", "ud",
+    "uda", "udal", "udale", "udaler", "udall", "udasi", "udb", "udc",
+    "udder", "udders", "udela", "udele", "udell", "udella", "udelle", "udi",
+    "udic", "udine", "udish", "udmh", "udo", "udom", "udos", "udp",
+    "udr", "uds", "udt", "uec", "uel", "uela", "uele", "uella",
+    "ufa", "ufc", "ufer", "uffizi", "ufo", "ufos", "ufs", "ug",
+    "ugali", "uganda", "ugarit", "ugc", "ugh", "ughs", "ughten", "ugli",
+    "uglier", "uglies", "uglify", "uglily", "uglis", "ugly", "ugo", "ugrian",
+    "ugric", "ugroid", "ugsome", "ugt", "uh", "uh-huh", "uhde", "uhf",
+    "uhlan", "uhland", "uhlans", "uhllo", "uhs", "uhuru", "ui", "uic",
+    "uid", "uighur", "uigur", "uil", "uily", "uims", "uinal", "uinta",
+    "uip", "uird", "uirina", "uis", "uit", "uitp", "uiuc", "uji",
+    "ujiji", "ujjain", "ujpest", "uk", "ukase", "ukases", "uke", "ukes",
+    "ukiah", "ukiyoe", "ukr", "ukr.", "ukst", "ul", "ula", "ulah",
+    "ulama", "ulamas", "ulan", "ulana", "ulane", "ulani", "ulans", "ular",
+    "ulaula", "ulcer", "ulcer's", "ulcers", "ulcery", "ulcus", "ulda", "ule",
+    "uledi", "uleki", "ulema", "ulemas", "ulen", "ulent", "uletic", "ulex",
+    "ulfila", "ulick", "ulicon", "ulidia", "ulises", "ulita", "ulitis", "ull",
+    "ulla", "ullage", "ulland", "uller", "ullin", "ulling", "ullman", "ullr",
+    "ulluco", "ullucu", "ullund", "ullur", "ullyot", "ulm", "ulman", "ulmate",
+    "ulmer", "ulmic", "ulmin", "ulmo", "ulmous", "ulmus", "ulna", "ulnad",
+    "ulnae", "ulnage", "ulnar", "ulnare", "ulnas", "uloid", "ulose", "ulous",
+    "ulpan", "ulphi", "ulphia", "ulpian", "ulric", "ulrica", "ulrich", "ulrick",
+    "ulrika", "ulrike", "ulster", "ult", "ulta", "ultan", "ultann", "ultima",
+    "ultime", "ultimo", "ultion", "ulto", "ultor", "ultra", "ultra-", "ultras",
+    "ultun", "ulu", "ulua", "uluhi", "ululu", "ulund", "ulus", "ulva",
+    "ulvan", "ulvas", "um", "um-", "um-hum", "um-yum", "uma", "umaua",
+    "umbel", "umbels", "umber", "umbers", "umble", "umbles", "umbo", "umbone",
+    "umbos", "umbra", "umbrae", "umbral", "umbras", "umbre", "umbrel", "umbrella's",
+    "umbret", "umbria", "umbril", "umbro-", "ume", "umea", "umeh", "umeko",
+    "umest", "umfaan", "umgang", "umiac", "umiack", "umiacs", "umiak", "umiaks",
+    "umiaq", "umiaqs", "umiri", "umist", "umland", "umlaut", "umload", "umm",
+    "ummps", "umont", "ump", "umped", "umph", "umping", "umpire", "umpire's",
+    "umpqua", "umps", "umpty", "umpy", "umset", "umt", "umtali", "umteen",
+    "umu", "umw", "un", "un-", "una", "unable", "unably", "unact",
+    "unadd", "unaged", "unai", "unais", "unakin", "unal", "unami", "unamo",
+    "unapt", "unarch", "unare", "unark", "unarm", "unarms", "unary", "unau",
+    "unaus", "unavid", "unaway", "unawed", "unaxed", "unb", "unbag", "unbain",
+    "unbait", "unbale", "unbane", "unbank", "unbar", "unbarb", "unbare", "unbark",
+    "unbars", "unbase", "unbay", "unbe", "unbear", "unbed", "unbell", "unbelt",
+    "unbend", "unbent", "unbet", "unbias", "unbid", "unbind", "unbit", "unbitt",
+    "unbled", "unboat", "unbody", "unbog", "unbold", "unbolt", "unbone", "unboot",
+    "unborn", "unbow", "unbox", "unboy", "unbran", "unbred", "unbud", "unbung",
+    "unburn", "unbury", "unbush", "unbusk", "unbusy", "unc", "unca", "uncage",
+    "uncake", "uncalk", "uncall", "uncalm", "uncamp", "uncap", "uncaps", "uncart",
+    "uncase", "uncask", "uncast", "uncate", "uncave", "unchic", "unchid", "unci",
+    "uncia", "unciae", "uncial", "uncini", "uncio", "uncite", "uncity", "unclad",
+    "unclay", "uncle", "uncle's", "uncles", "unclew", "unclip", "unclog", "unclot",
+    "unclub", "unco", "uncoat", "uncock", "uncoft", "uncoif", "uncoil", "uncoin",
+    "uncolt", "uncoly", "uncome", "uncool", "uncoop", "uncope", "uncord", "uncore",
+    "uncork", "uncos", "uncost", "uncous", "uncow", "uncowl", "uncoy", "uncram",
+    "uncrib", "uncs", "unct", "unctad", "uncurb", "uncurd", "uncurl", "uncus",
+    "uncut", "uncute", "uncuth", "undam", "undamn", "undark", "undate", "undaub",
+    "unde", "undead", "undeaf", "undean", "undear", "undec-", "undeck", "undee",
+    "undeep", "undeft", "unden", "under", "undergraduate's", "underling's", "undid", "undig",
+    "undim", "undis", "undo", "undog", "undon", "undro", "undry", "undub",
+    "undue", "undug", "undy", "undye", "une", "unef", "uneye", "unfar",
+    "unfed", "unfew", "unfit", "unfix", "unfur", "ung", "ungag", "unger",
+    "unget", "ungka", "ungod", "ungot", "ungt", "ungum", "unhad", "unhap",
+    "unhat", "unhcr", "unhex", "unhid", "unhip", "unhit", "unhot", "uni",
+    "uni-", "uniat", "unice", "unicorn's", "unics", "unidea'd", "unido", "unie",
+    "unify", "uninn", "unio", "unio-", "union", "union's", "unism", "unist",
+    "unit", "unit's", "unit.", "unite", "units", "unity", "unity's", "unius",
+    "univ", "univ.", "univalve's", "universe's", "university's", "unix", "unjam", "unked",
+    "unken", "unket", "unkey", "unkid", "unkin", "unl", "unlap", "unlaw",
+    "unlax", "unlay", "unled", "unlet", "unlid", "unlie", "unlit", "unma",
+    "unmad", "unman", "unmet", "unmew", "unmix", "unn", "unnet", "unnew",
+    "unni", "uno", "unode", "unoil", "unold", "unona", "unorn", "unown",
+    "unp", "unpay", "unpeg", "unpen", "unpin", "unpot", "unput", "unram",
+    "unray", "unred", "unrid", "unrig", "unrip", "unrow", "unrra", "unrun",
+    "unrwa", "uns", "unsad", "unsay", "unsee", "unset", "unsew", "unsex",
+    "unshy", "unsin", "unsly", "unson", "unsty", "unsun", "unta", "untap",
+    "untar", "untax", "untie", "until", "untin", "unto", "untop", "untouchable's",
+    "untz", "unum", "unurn", "unuse", "unwan", "unwas", "unwax", "unweb",
+    "unwed", "unwet", "unwig", "unwit", "unwon", "unwry", "unze", "unzen",
+    "unzip", "uous", "up", "up-", "upali", "uparm", "upas", "upaya",
+    "upbar", "upbay", "upbid", "upbow", "upbuy", "upby", "upbye", "upc",
+    "upcry", "upcut", "updo", "updos", "updry", "upds", "upeat", "upend",
+    "upfly", "upget", "upgo", "upham", "upher", "upi", "upis", "upjet",
+    "upla", "uplay", "upleg", "uplit", "upmix", "upo", "upolu", "upon",
+    "upped", "upper", "uppop", "uprid", "uprip", "uprising's", "uprun", "ups",
+    "upset", "upsey", "upshot's", "upsit", "upson", "upsun", "upsup", "upsy",
+    "uptie", "upton", "upu", "upupa", "upwa", "upwax", "upway", "ur",
+    "ur-", "ura", "uraei", "ural", "urali", "uran", "uran-", "urana",
+    "urao", "urare", "urari", "urase", "urata", "urate", "urb", "urba",
+    "urbai", "urban", "urbas", "urbia", "urbic", "urbs", "urc", "urchin's",
+    "urd", "urdar", "urde", "urdee", "urds", "urdu", "urdur", "urdy",
+    "ure", "urea", "ureal", "ureas", "uredo", "ureic", "ureid", "urena",
+    "urent", "ureo-", "urep", "uret", "urey", "urf", "urfa", "urga",
+    "urge", "urged", "urgel", "urger", "urges", "urgy", "uri", "uria",
+    "uriah", "urial", "urian", "urias", "uric", "urich", "uriel", "urien",
+    "uriia", "urim", "urin-", "urina", "urine", "urion", "uris", "urita",
+    "urite", "urlar", "urled", "urman", "urmia", "urn", "urn's", "urna",
+    "urnae", "urnal", "urns", "uro", "uro-", "urol", "uroo", "urous",
+    "urs", "ursa", "ursae", "ursal", "ursas", "ursel", "ursi", "ursid",
+    "urson", "ursuk", "ursus", "uru", "uru.", "urubu", "urucu", "uruk",
+    "urus", "urutu", "urva", "ury", "us", "usa", "usaaf", "usac",
+    "usaf", "usafa", "usage", "usan", "usant", "usar", "usara", "usb",
+    "usbeg", "usbek", "usc", "usca", "uscg", "usd", "usda", "use",
+    "usecc", "used", "usee", "usent", "user", "user's", "users", "uses",
+    "usfl", "usg", "usga", "usgs", "ush", "usha", "ushak", "ushas",
+    "usher", "ushga", "usia", "usine", "using", "usis", "usita", "usk",
+    "uskok", "uskub", "usl", "uslta", "usm", "usma", "usmc", "usmp",
+    "usn", "usna", "usnas", "usnea", "usnic", "usnin", "uso", "usoc",
+    "usp", "usphs", "uspo", "usps", "uspto", "usque", "usr", "usrc",
+    "uss", "ussb", "ussct", "ussr", "usss", "ust", "ustc", "uster",
+    "usu", "usual", "usun", "usure", "usurp", "usury", "usv", "usw",
+    "ut", "uta", "utah", "utai", "utas", "utc", "utch", "utchy",
+    "ute", "utees", "utend", "utensil's", "uteri", "utero", "utes", "utham",
+    "uther", "uti", "utica", "utick", "util", "utile", "utility's", "utilization's",
+    "utley", "utopian's", "utp", "utqgs", "utr", "utrum", "uts", "utsuk",
+    "utta", "utter", "utterance's", "uttu", "utu", "utum", "utwa", "uu",
+    "uucp", "uug", "uuge", "uum", "uund", "uut", "uv", "uva",
+    "uval", "uvala", "uvate", "uvea", "uveal", "uveas", "uvic", "uvid",
+    "uviol", "uvito", "uvre", "uvres", "uvrou", "uvs", "uvula", "uvver",
+    "uw", "uwcsa", "uws", "uwton", "ux", "uxmal", "uzan", "uzara",
+    "uzbak", "uzbeg", "uzbek", "uzia", "uzial", "uziel", "uzzi", "uzzia"
+};
 
-// Maximum number of words estimated from txt file
-#define DICT_U_MAX_WORDS 23790
-#define DICT_U_TXT_PATH "Dictionary/dict_u.txt"
-
-// Global arrays for loaded words
-static char* dict_u_words[DICT_U_MAX_WORDS];
-static size_t dict_u_count = 0;
-
-// Function to load words from txt file
-static int load_dict_u_from_file(void) {
-    FILE* file = fopen(DICT_U_TXT_PATH, "r");
-    if (!file) {
-        return -1; // Failed to open file
-    }
-    
-    char buffer[256];
-    dict_u_count = 0;
-    
-    while (fgets(buffer, sizeof(buffer), file) && dict_u_count < DICT_U_MAX_WORDS) {
-        // Remove newline
-        size_t len = strlen(buffer);
-        if (len > 0 && buffer[len-1] == '\n') {
-            buffer[len-1] = '\0';
-        }
-        
-        // Allocate and copy word
-        if (strlen(buffer) > 0) {
-            dict_u_words[dict_u_count] = malloc(strlen(buffer) + 1);
-            if (dict_u_words[dict_u_count]) {
-                strcpy(dict_u_words[dict_u_count], buffer);
-                dict_u_count++;
-            }
-        }
-    }
-    
-    fclose(file);
-    return 0; // Success
-}
-
-// Function to free loaded words
-static void free_dict_u_words(void) {
-    for (size_t i = 0; i < dict_u_count; i++) {
-        if (dict_u_words[i]) {
-            free(dict_u_words[i]);
-            dict_u_words[i] = NULL;
-        }
-    }
-    dict_u_count = 0;
-}
-
-// Compatibility array pointer (points to loaded words)
-static const char* const* dict_u = (const char* const*)dict_u_words;
-static const size_t DICT_U_SIZE = DICT_U_MAX_WORDS; // Will be updated to actual count after loading
-
-// Getter function for actual count
-static size_t get_dict_u_size(void) {
-    return dict_u_count;
-}
+static const size_t DICT_U_SIZE = sizeof(dict_u) / sizeof(dict_u[0]);
 
 #endif // DICT_U_H

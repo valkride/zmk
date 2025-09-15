@@ -1,67 +1,134 @@
 #ifndef DICT_M_H
 #define DICT_M_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+static const char* const dict_m[] = {
+    "m", "m'", "m'-", "m'ba", "m's", "m'sieur", "m'taggart", "m-1",
+    "m-14", "m-16", "m.", "m.a.", "m.b.", "m.c.", "m.d.", "m.e.",
+    "m.m.", "m.o.", "m.p.", "m.s.", "m/d", "m/s", "ma", "ma'am",
+    "maa", "maad", "maag", "maam", "maap", "maar", "maas", "maat",
+    "mab", "maba", "mabe", "mabi", "mac", "mac-", "macc", "mace",
+    "mach", "machine's", "mack", "maco", "macquarie'", "macro's", "macromolecule's", "macs",
+    "macy", "mad", "mada", "madd", "made", "madi", "madm", "madn",
+    "mado", "mads", "mady", "mae", "maed", "mael", "maes", "maf",
+    "mag", "mag.", "maga", "magazine's", "mage", "maggot's", "magh", "magi",
+    "magician's", "magistrate's", "magnetism's", "magnitude's", "magr", "mags", "mah", "maha",
+    "mahi", "mahu", "mai", "maia", "maid", "maiden's-tears", "maiden's-wreath", "maiden's-wreaths",
+    "mail", "mailbox's", "maim", "main", "mainframe's", "maintenance's", "mair", "maj",
+    "maja", "maje", "majesty's", "majo", "majority's", "mak", "make", "maki",
+    "mako", "maku", "mal", "mal-", "mala", "malady's", "mald", "male",
+    "male's", "malefactor's", "mali", "mall", "mallet's", "malm", "malo", "mals",
+    "malt", "mam", "mama", "mame", "mamma's", "mammal's", "mamo", "man",
+    "man's", "man-o'-war", "man.", "mana", "management's", "manager's", "mand", "mane",
+    "mane's", "mang", "manger's", "mani", "maniac's", "manifestation's", "manifold's", "manipulator's",
+    "mank", "mankind's", "mann", "mano", "manometer's", "manor's", "mans", "mansion's",
+    "mant", "mantel's", "mantissa's", "mantle's", "manu", "manual's", "manufacturer's", "manuscript's",
+    "manx", "many", "mao", "map", "map's", "maple's", "mapo", "mapping's",
+    "maps", "mar", "mar-", "mar.", "mara", "marc", "mare", "mare's",
+    "mare's-nest", "mare's-tail", "marg", "margin's", "mari", "marj", "mark", "marketplace's",
+    "marl", "marm", "maro", "marq", "marr", "marriage's", "mars", "marsh's",
+    "mart", "martin'", "martyr's", "maru", "marv", "marx", "mary", "mas",
+    "masa", "masb", "masc", "mash", "mask", "masm", "masochist's", "mason's",
+    "mass", "mast", "master's", "masterpiece's", "masu", "mat", "mat's", "mata",
+    "mate", "mate's", "math", "mathematician's", "mats", "matt", "mattress's", "maty",
+    "mau", "maud", "maui", "mauk", "maul", "maun", "maut", "maux",
+    "maw", "mawk", "mawn", "mawp", "mawr", "maws", "max", "max.",
+    "maxa", "maxi", "maxim's", "maxy", "may", "maya", "maye", "mayn't",
+    "mayo", "mayor's", "mays", "maza", "maze", "maze's", "mazy", "mb",
+    "mba", "mbd", "mbe", "mbm", "mbo", "mbps", "mbwa", "mc",
+    "mc-", "mca", "mcad", "mcae", "mcc", "mccs", "mcf", "mcfd",
+    "mcg", "mch", "mchb", "mci", "mcj", "mcn", "mcnc", "mcon",
+    "mcp", "mcpo", "mcr", "mcs", "mcsv", "mcu", "md", "md.",
+    "mdap", "mdas", "mdc", "mdds", "mde", "mdec", "mdes", "mdf",
+    "mdi", "mdiv", "mdm", "mdme", "mdms", "mdnt", "mdoc", "mdqs",
+    "mdre", "mds", "mdse", "mdt", "mdu", "mdx", "me", "me.",
+    "mea", "mead", "meadow's", "meak", "meal", "meal's", "mean", "meaning's",
+    "mear", "meas", "measurement's", "meat", "meat's", "meaw", "mec", "mech",
+    "mechanic's", "mechanism's", "mechanization's", "meck", "meco", "med", "med.", "meda",
+    "medal's", "medallion's", "mede", "median's", "medic's", "medicine's", "medium's", "mee",
+    "meed", "meek", "meer", "meet", "meg", "mei", "mein", "meio",
+    "meir", "meit", "mekn", "mel", "mela", "meld", "mele", "meli",
+    "mell", "melodrama's", "melody's", "melon's", "mels", "melt", "mem", "mem.",
+    "member's", "membership's", "memo", "memo's", "memory's", "mems", "men", "men's",
+    "men-", "mena", "mend", "mene", "meng", "meno", "mens", "ment",
+    "mentor's", "menu", "menu's", "meny", "meo", "meou", "meow", "mep",
+    "mepa", "meq", "mer", "mer-", "mera", "merc", "mercenary's", "merchant's",
+    "merd", "mere", "meri", "merk", "merl", "mero", "merp", "mers",
+    "mert", "merv", "mes", "mes-", "mesa", "mese", "mesh", "meso",
+    "mess", "message's", "messenger's", "mest", "met", "met.", "meta", "metal's",
+    "metaphor's", "mete", "meteor's", "meth", "method's", "methodist's", "methodology's", "metric's",
+    "mets", "metz", "meu", "meum", "mev", "mew", "mewl", "mews",
+    "mex", "mez", "mezo", "mf", "mfa", "mfb", "mfd", "mfd.",
+    "mfg", "mfh", "mfj", "mfm", "mfr", "mfs", "mft", "mg",
+    "mgal", "mgb", "mgd", "mgh", "mgk", "mgm", "mgr", "mgt",
+    "mh", "mha", "mhd", "mhe", "mhf", "mhg", "mhl", "mho",
+    "mhos", "mhr", "mhs", "mhw", "mhz", "mi", "mi-", "mi.",
+    "mi5", "mi6", "mia", "miae", "mial", "mian", "miao", "mias",
+    "mib", "mibs", "mic", "mic.", "mica", "mice", "mich", "mick",
+    "mico", "micr", "microcomputer's", "microfilm's", "microinstruction's", "microprocessor's", "microprogram's", "microscope's",
+    "microsecond's", "mid", "mid-", "mid.", "mide", "midi", "midn", "midpoint's",
+    "mids", "mie", "miek", "mien", "mif", "miff", "mig", "migg",
+    "mightn't", "migs", "mihe", "mijl", "mika", "mike", "miki", "miko",
+    "mil", "mil.", "mila", "mild", "mile", "mile's", "milestone's", "milk",
+    "milkmaid's", "mill", "miller's-thumb", "millionaire's", "millipede's", "millstone's", "milo", "milr",
+    "mils", "milt", "mim", "mima", "mimd", "mime", "mimi", "mimp",
+    "mims", "min", "min.", "mina", "mind", "mine", "mineral's", "ming",
+    "mini", "miniature's", "minicomputer's", "minimization's", "minister's", "ministry's", "mink", "mink's",
+    "minn", "minnesota's", "minnow's", "mino", "minor's", "minority's", "mins", "minstrel's",
+    "mint", "minx", "miny", "mio", "mio-", "mip", "mips", "mir",
+    "mira", "miracle's", "mird", "mire", "miri", "mirk", "miro", "mirs",
+    "miru", "mirv", "miry", "mis", "mis-", "misc", "miscalculation's", "misconception's",
+    "mise", "misery's", "misfit's", "misfortune's", "mishap's", "miso", "misrepresentation's", "miss",
+    "missile's", "missionary's", "mist", "misunderstanding's", "misy", "mit", "mit's", "mita",
+    "mite", "miti", "mits", "mitt", "mitten's", "mitu", "mity", "miun",
+    "mix", "mixe", "mixt", "mixture's", "mixy", "mize", "mj", "mk",
+    "mk.", "mks", "mkt", "mkt.", "mktg", "ml", "ml.", "mla",
+    "mlar", "mlc", "mlcd", "mld", "mlem", "mler", "mlf", "mlg",
+    "mli", "mll", "mlle", "mlo", "mlos", "mlr", "mls", "mlt",
+    "mlv", "mlw", "mlx", "mm", "mm.", "mmc", "mmdf", "mme",
+    "mmes", "mmf", "mmfd", "mmfs", "mmgt", "mmh", "mmhg", "mmj",
+    "mmm", "mmmm", "mmoc", "mmp", "mms", "mmt", "mmu", "mmus",
+    "mmw", "mmx", "mn", "mna", "mnas", "mne", "mnem", "mnemonic's",
+    "mngr", "mnos", "mnp", "mns", "mo", "mo.", "moa", "moab",
+    "moan", "moas", "moat", "moat's", "mob", "mob's", "mobs", "moc",
+    "moca", "moccasin's", "mock", "moco", "mod", "mod.", "modality's", "mode",
+    "model's", "modi", "modo", "mods", "modulator's", "module's", "mody", "moe",
+    "moed", "moen", "moet", "moff", "mofw", "mog", "mogo", "mogs",
+    "moh", "moha", "mohl", "mohn", "moho", "mohr", "moi", "moia",
+    "moid", "moig", "moil", "moio", "moir", "moit", "moji", "mojo",
+    "mok", "moke", "moki", "moko", "moky", "mol", "mol.", "mola",
+    "mold", "mole", "molecule's", "moli", "moll", "moln", "mols", "molt",
+    "moly", "mom", "mome", "moment's", "momi", "momo", "moms", "momv",
+    "mon", "mon-", "mon.", "mona", "monarchy's", "monastery's", "mond", "monday's",
+    "mone", "money's-worth", "mong", "monk", "monk's", "monk's-hood", "mono", "monogram's",
+    "monograph's", "monopoly's", "mons", "monster's", "mont", "montana's", "month's", "monument's",
+    "mony", "moo", "mood", "mood's", "mook", "mool", "moon", "moop",
+    "moor", "moos", "moot", "mop", "mope", "moph", "mops", "mopt",
+    "mopy", "mor", "mora", "mord", "more", "morg", "mori", "morn",
+    "moro", "mors", "morsel's", "mort", "mortgage's", "morw", "mos", "mosa",
+    "mosaic's", "mose", "mosk", "moss", "moss's", "most", "mot", "mota",
+    "mote", "motel's", "moth", "mother's", "motif's", "motorcar's", "motorcycle's", "motorist's",
+    "mots", "mott", "motu", "motv", "mou", "moud", "moue", "moul",
+    "moun", "mountain's", "moup", "mout", "mov", "move", "movement's", "movie's",
+    "mow", "mowe", "mown", "mows", "mowt", "moxa", "moxo", "moy",
+    "moya", "moyl", "moyo", "moze", "mozo", "mp", "mpa", "mpb",
+    "mpbs", "mpc", "mpcc", "mpch", "mpdu", "mpe", "mpg", "mph",
+    "mpif", "mpl", "mpo", "mpow", "mpp", "mppd", "mpr", "mps",
+    "mpt", "mpu", "mpv", "mpw", "mr", "mr.", "mra", "mrc",
+    "mrd", "mre", "mrf", "mri", "mrp", "mrs", "mru", "ms",
+    "ms.", "msa", "msb", "msc", "msd", "mse", "msf", "msg",
+    "msh", "msi", "msj", "msl", "msm", "msn", "mso", "msp",
+    "msr", "mss", "mst", "msw", "mt", "mt.", "mta", "mtb",
+    "mtc", "mtd", "mtf", "mtg", "mth", "mti", "mtm", "mtn",
+    "mto", "mtp", "mtr", "mts", "mtu", "mtv", "mtx", "mu",
+    "mu'min", "mua", "mud", "muf", "muff's", "muffin's", "mug", "mug's",
+    "mulberry's", "mule's", "multiple's", "multiplexor's", "multiplicand's", "multiprocessor's", "multitude's", "mum",
+    "mummy's", "mun", "municipality's", "mup", "mur", "mus", "museum's", "musket's",
+    "muskrat's", "mussel's", "mustn't", "mut", "mutiny's", "mux", "muzzle's", "mv",
+    "mva", "mvd", "mvo", "mvp", "mvs", "mvy", "mw", "mwa",
+    "mwm", "mwt", "mx", "mxd", "mxu", "my", "my-", "mya",
+    "myc", "myg", "mym", "myo", "mystery's", "mystic's", "mythology's", "mzi"
+};
 
-// Maximum number of words estimated from txt file
-#define DICT_M_MAX_WORDS 25194
-#define DICT_M_TXT_PATH "Dictionary/dict_m.txt"
-
-// Global arrays for loaded words
-static char* dict_m_words[DICT_M_MAX_WORDS];
-static size_t dict_m_count = 0;
-
-// Function to load words from txt file
-static int load_dict_m_from_file(void) {
-    FILE* file = fopen(DICT_M_TXT_PATH, "r");
-    if (!file) {
-        return -1; // Failed to open file
-    }
-    
-    char buffer[256];
-    dict_m_count = 0;
-    
-    while (fgets(buffer, sizeof(buffer), file) && dict_m_count < DICT_M_MAX_WORDS) {
-        // Remove newline
-        size_t len = strlen(buffer);
-        if (len > 0 && buffer[len-1] == '\n') {
-            buffer[len-1] = '\0';
-        }
-        
-        // Allocate and copy word
-        if (strlen(buffer) > 0) {
-            dict_m_words[dict_m_count] = malloc(strlen(buffer) + 1);
-            if (dict_m_words[dict_m_count]) {
-                strcpy(dict_m_words[dict_m_count], buffer);
-                dict_m_count++;
-            }
-        }
-    }
-    
-    fclose(file);
-    return 0; // Success
-}
-
-// Function to free loaded words
-static void free_dict_m_words(void) {
-    for (size_t i = 0; i < dict_m_count; i++) {
-        if (dict_m_words[i]) {
-            free(dict_m_words[i]);
-            dict_m_words[i] = NULL;
-        }
-    }
-    dict_m_count = 0;
-}
-
-// Compatibility array pointer (points to loaded words)
-static const char* const* dict_m = (const char* const*)dict_m_words;
-static const size_t DICT_M_SIZE = DICT_M_MAX_WORDS; // Will be updated to actual count after loading
-
-// Getter function for actual count
-static size_t get_dict_m_size(void) {
-    return dict_m_count;
-}
+static const size_t DICT_M_SIZE = sizeof(dict_m) / sizeof(dict_m[0]);
 
 #endif // DICT_M_H

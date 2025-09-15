@@ -1,67 +1,34 @@
 #ifndef DICT_X_H
 #define DICT_X_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+static const char* const dict_x[] = {
+    "x", "x'ing", "x's", "x-axis", "x-ed", "x-high", "x-ing", "x-line",
+    "x-out", "x-ray", "x-unit", "x-wave", "x25", "xa", "xanadu", "xanth-",
+    "xantha", "xanthan", "xanthd-", "xanthe", "xanthic", "xanthid", "xanthin", "xantho-",
+    "xanthus", "xanthyl", "xarque", "xat", "xavier", "xaviera", "xavler", "xb",
+    "xbt", "xc", "xcf", "xcl", "xctl", "xd", "xdiv", "xdmcp",
+    "xdr", "xe", "xebec", "xebecs", "xed", "xema", "xeme", "xen-",
+    "xena", "xenia", "xenial", "xenian", "xenias", "xenic", "xenicus", "xenium",
+    "xeno", "xeno-", "xenomi", "xenon", "xenons", "xenopus", "xenos", "xenurus",
+    "xenyl", "xer-", "xerafin", "xerarch", "xerasia", "xeres", "xeric", "xeriff",
+    "xero-", "xerogel", "xeroma", "xeronic", "xeroses", "xerosis", "xerotes", "xerotic",
+    "xerox", "xeroxed", "xeroxes", "xerus", "xeruses", "xerxes", "xever", "xfe",
+    "xfer", "xhosa", "xi", "xian", "xicak", "xicaque", "xid", "xie",
+    "xii", "xiii", "xim", "ximena", "xina", "xinca", "xincan", "xing",
+    "xingu", "xinhua", "xint", "xinu", "xipe", "xiphi-", "xis", "xiv",
+    "xix", "xl", "xmas", "xmases", "xmi", "xmm", "xms", "xmtr",
+    "xn", "xn.", "xns", "xnty", "xnty.", "xo", "xoana", "xoanon",
+    "xopher", "xor", "xosa", "xp", "xpg", "xpg2", "xport", "xq",
+    "xr", "xray", "xref", "xrm", "xs", "xsect", "xt", "xt.",
+    "xtal", "xtc", "xtian", "xty", "xu", "xui", "xurel", "xuthus",
+    "xuv", "xvi", "xview", "xvii", "xviii", "xw", "xwsds", "xx",
+    "xxi", "xxii", "xxiii", "xxiv", "xxv", "xxx", "xyl-", "xyla",
+    "xylan", "xylans", "xylate", "xylem", "xylems", "xylene", "xylia", "xylic",
+    "xylina", "xylite", "xylo", "xylo-", "xyloid", "xylol", "xylols", "xyloma",
+    "xylon", "xylose", "xyloyl", "xylyl", "xylyls", "xyrid", "xyris", "xyst",
+    "xyster", "xysti", "xystoi", "xystos", "xysts", "xystum", "xystus", "xyz"
+};
 
-// Maximum number of words estimated from txt file
-#define DICT_X_MAX_WORDS 609
-#define DICT_X_TXT_PATH "Dictionary/dict_x.txt"
-
-// Global arrays for loaded words
-static char* dict_x_words[DICT_X_MAX_WORDS];
-static size_t dict_x_count = 0;
-
-// Function to load words from txt file
-static int load_dict_x_from_file(void) {
-    FILE* file = fopen(DICT_X_TXT_PATH, "r");
-    if (!file) {
-        return -1; // Failed to open file
-    }
-    
-    char buffer[256];
-    dict_x_count = 0;
-    
-    while (fgets(buffer, sizeof(buffer), file) && dict_x_count < DICT_X_MAX_WORDS) {
-        // Remove newline
-        size_t len = strlen(buffer);
-        if (len > 0 && buffer[len-1] == '\n') {
-            buffer[len-1] = '\0';
-        }
-        
-        // Allocate and copy word
-        if (strlen(buffer) > 0) {
-            dict_x_words[dict_x_count] = malloc(strlen(buffer) + 1);
-            if (dict_x_words[dict_x_count]) {
-                strcpy(dict_x_words[dict_x_count], buffer);
-                dict_x_count++;
-            }
-        }
-    }
-    
-    fclose(file);
-    return 0; // Success
-}
-
-// Function to free loaded words
-static void free_dict_x_words(void) {
-    for (size_t i = 0; i < dict_x_count; i++) {
-        if (dict_x_words[i]) {
-            free(dict_x_words[i]);
-            dict_x_words[i] = NULL;
-        }
-    }
-    dict_x_count = 0;
-}
-
-// Compatibility array pointer (points to loaded words)
-static const char* const* dict_x = (const char* const*)dict_x_words;
-static const size_t DICT_X_SIZE = DICT_X_MAX_WORDS; // Will be updated to actual count after loading
-
-// Getter function for actual count
-static size_t get_dict_x_size(void) {
-    return dict_x_count;
-}
+static const size_t DICT_X_SIZE = sizeof(dict_x) / sizeof(dict_x[0]);
 
 #endif // DICT_X_H

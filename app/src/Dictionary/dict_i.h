@@ -1,67 +1,134 @@
 #ifndef DICT_I_H
 #define DICT_I_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+static const char* const dict_i[] = {
+    "i", "i'", "i'd", "i'faith", "i'll", "i'm", "i's", "i've",
+    "i-", "i-go", "i-ism", "i-spy", "i.", "i.c.", "i.d.", "i.e.",
+    "i.m.", "i.q.", "i.v.", "i/c", "i/o", "ia", "ia-", "ia.",
+    "iaa", "iab", "iache", "iad", "iadb", "iaea", "iaf", "iago",
+    "iah", "iain", "ial", "iam", "iamb", "iambe", "iambi", "iambs",
+    "iams", "iamus", "ian", "iana", "iand", "ianus", "iao", "iappp",
+    "iapyx", "iare", "iaria", "ias", "iasi", "iasis", "iaso", "iasus",
+    "iata", "iatry", "iatse", "iau", "iauc", "ib", "ib.", "iba",
+    "ibad", "ibada", "ibagu", "iban", "ibbie", "ibby", "iberi", "ibert",
+    "ibew", "ibex", "ibid", "ibid.", "ibis", "ibiza", "ible", "iblis",
+    "ibm", "ibn", "ibo", "ibos", "ibota", "ibrd", "ibsen", "ibson",
+    "ic", "ica", "icaco", "ical", "ican", "icao", "icard", "icasm",
+    "icb", "icbm", "icbw", "icc", "iccc", "icccm", "icd", "ice",
+    "ice.", "iceberg's", "iced", "icel", "icel.", "iceni", "icers", "ices",
+    "icftu", "ich", "ichn-", "icho", "ichor", "ichs", "ichth", "ichu",
+    "ici", "ician", "icica", "icier", "icily", "icing", "icity", "icj",
+    "ick", "icken", "icker", "ickes", "ickle", "icky", "icl", "iclid",
+    "icm", "icmp", "icod", "icon", "icon-", "icons", "iconv", "icos-",
+    "icp", "icrc", "ics", "icsc", "icsh", "icst", "ict", "ictic",
+    "ictus", "icy", "id", "id.", "ida", "idae", "idaea", "idaho",
+    "idaic", "idan", "idant", "idas", "idb", "idc", "idcue", "iddat",
+    "iddd", "idden", "iddhi", "iddio", "iddo", "ide", "idea", "idea'd",
+    "idea's", "ideal", "idealization's", "idean", "ideas", "idee", "idel", "idell",
+    "idem", "idems", "iden", "ident", "identity's", "ideo", "ideo-", "ider",
+    "ides", "idest", "ideta", "idf", "idgah", "idhi", "idi", "idic",
+    "idin", "idio-", "idiom", "idion", "idiosyncrasy's", "idiot", "idiot's", "idism",
+    "idist", "idite", "idium", "idl", "idle", "idled", "idler", "idles",
+    "idly", "idm", "idmon", "idn", "ido", "idol", "idol's", "idola",
+    "idols", "idona", "idose", "idou", "idoux", "idp", "idria", "idris",
+    "idryl", "ids", "idun", "iduna", "idv", "idvc", "idyl", "idyll",
+    "idyls", "idzik", "ie", "ie-", "iec", "ieda", "iee", "ieee",
+    "ien", "iene", "ieper", "ier", "ierna", "ierne", "iesg", "ieso",
+    "ietf", "ietta", "iey", "if", "ifb", "ifc", "ife", "iff",
+    "iffy", "ifill", "ifint", "ifip", "ifla", "iflwu", "ifni", "ifo",
+    "iform", "ifr", "ifree", "ifrit", "ifrps", "ifs", "ify", "ig",
+    "igad", "igal", "igara", "igbo", "igbos", "igdyr", "iges", "igfet",
+    "iggie", "iggy", "ighly", "igigi", "iglau", "igloo", "iglu", "iglus",
+    "igm", "igmp", "ign", "ign.", "ignaw", "ignaz", "igni-", "ignis",
+    "igo", "igor", "igp", "iguac", "igy", "ihab", "ihd", "ihi",
+    "ihlat", "ihlen", "ihp", "ihram", "ihs", "ii", "iia", "iiasa",
+    "iie", "iihf", "iii", "iil", "iila", "iin", "iinde", "iispb",
+    "iives", "iiwi", "ij", "ijma", "ijmaa", "ijo", "ijore", "ik",
+    "ikan", "ikara", "ikary", "ikat", "ike", "ikeda", "ikeja", "ikey",
+    "ikon", "ikona", "ikons", "ikra", "il", "il-", "ila", "ilam",
+    "ilama", "ilan", "ilana", "ile", "ile-", "ilea", "ileac", "ileal",
+    "ilene", "ileo-", "ileon", "ileum", "ileus", "ilex", "ilgwu", "ilha",
+    "ilia", "iliac", "iliad", "ilial", "ilian", "iliau", "iliff", "ilima",
+    "iline", "ilio-", "ilion", "ilisa", "ilise", "ility", "ilium", "ilk",
+    "ilka", "ilke", "ilks", "ill", "ill-", "ill.", "illa", "iller",
+    "illia", "illness's", "ills", "illth", "illus", "illusion's", "illustrator's", "illy",
+    "ilmen", "ilo", "iloko", "ilona", "ilone", "ilot", "ilp", "ils",
+    "ilsa", "ilse", "ilth", "ilv", "ilwu", "ilya", "ilysa", "ilyse",
+    "im", "im-", "ima", "image", "imagination's", "imago", "imam", "imams",
+    "iman", "imap", "imap3", "imare", "imas", "imaum", "imb-", "imban",
+    "imbat", "imbe", "imbed", "imber", "imbu", "imbue", "imc", "imcnt",
+    "imco", "imd", "imena", "imer", "imf", "imho", "imi", "imid",
+    "imide", "imido", "imids", "imine", "imino", "imit", "imit.", "imitt",
+    "imlay", "imler", "imm", "immew", "immi", "immigrant's", "immis", "immit",
+    "immix", "immov", "immun", "immunity's", "immy", "imo", "imola", "imp",
+    "imp.", "impactor's", "impar", "imped", "impedance's", "impediment's", "impel", "impen",
+    "imper", "imperfection's", "imperialist's", "impf", "impf.", "impi", "impis", "implementation's",
+    "implementor's", "implicant's", "imply", "imposition's", "impostor's", "impot", "impression's", "imprisonment's",
+    "improvisation's", "imps", "impurity's", "imput", "impv", "impv.", "impy", "imray",
+    "imre", "imroz", "ims", "imsa", "imshi", "imsl", "imso", "imsvs",
+    "imt", "imts", "imu", "imune", "imvia", "in", "in't", "in-",
+    "in-lb", "in.", "ina", "inact", "inads", "inae", "inaja", "inane",
+    "inapt", "inari", "inark", "inarm", "inbd", "inbe", "inbow", "inby",
+    "inbye", "inc", "inc.", "inca", "incan", "incarnation's", "incas", "incentive's",
+    "inch", "incident's", "incl", "incl.", "incle", "inclination's", "inclusion's", "incog",
+    "incompatibility's", "incompetent's", "inconsistency's", "incor", "incr", "incr.", "incra", "incubator's",
+    "incur", "incus", "incut", "ind", "ind-", "ind.", "indan", "inde",
+    "indef", "indentation's", "indeterminacy's", "indew", "index", "indi", "indi-", "india",
+    "indian's", "indic", "indicator's", "indictment's", "indie", "indii", "indin", "indio",
+    "indiv", "individual's", "indn", "indo-", "indol", "indow", "indra", "indre",
+    "indri", "induc", "inducement's", "induction's", "inductor's", "indue", "indulgence's", "indus",
+    "industrialist's", "industry's", "indy", "indyl", "ine", "inept", "ines", "inez",
+    "inf", "inf.", "infant's", "infection's", "inference's", "inferior's", "inferno's", "infidel's",
+    "infinitive's", "infl", "info", "informant's", "infringement's", "ing", "inga", "inge",
+    "ingredient's", "inh", "inhabitant's", "inheritance's", "inheritor's", "inheritress's", "inhibition's", "inia",
+    "inin", "iniquity's", "init", "initialization's", "initiative's", "initiator's", "injection's", "injunction's",
+    "injury's", "injustice's", "ink", "inkling's", "inks", "inky", "inl", "inlet's",
+    "inly", "inmate's", "inms", "inn", "inna", "inne", "innovation's", "inns",
+    "ino", "ino-", "inoc", "inp-", "input's", "inquiry's", "inquisition's", "inri",
+    "inro", "ins", "ins.", "inscription's", "insect's", "insertion's", "insight's", "insp",
+    "inspection's", "inspector's", "inspiration's", "inst", "installation's", "installment's", "instantiation's", "instigator's",
+    "instinct's", "instruction's", "instructor's", "instrumentalist's", "insulator's", "insurgent's", "insurrection's", "int",
+    "int.", "inta", "intangible's", "integer's", "integral's", "intellect's", "inter-'varsity", "interaction's",
+    "interconnection's", "interior's", "intermediate's", "interpretation's", "interrelationship's", "interruption's", "intersection's", "interval's",
+    "intervention's", "intestine's", "inti", "intl", "into", "intonation's", "intr", "introduction's",
+    "intruder's", "intrusion's", "intuition's", "inv", "inv.", "invasion's", "invention's", "inventor's",
+    "inventory's", "invertebrate's", "investigator's", "investment's", "investor's", "invitation's", "invocation's", "involvement's",
+    "invt", "iny", "io", "io-", "ioab", "ioc", "iocc", "iocs",
+    "iod", "iod-", "iode", "iodo", "iof", "iola", "iole", "iom",
+    "ion", "iona", "ione", "iong", "ioni", "ionl", "ions", "ioof",
+    "iop", "ior", "ios", "iot", "iota", "iou", "iour", "ious",
+    "iow", "iowa", "iowt", "ip", "ipa", "ipbm", "ipc", "ipcc",
+    "ipce", "ipcs", "ipdu", "ipe", "iph", "ipi", "ipid", "ipil",
+    "ipl", "ipm", "ipms", "ipo", "ipoh", "ipr", "ips", "ipse",
+    "ipso", "ipt", "ipx", "ipy", "iq", "iqr", "iqs", "iqsy",
+    "ir", "ir-", "ir.", "ira", "iraf", "irak", "iran", "iraq",
+    "iras", "irbm", "irby", "irc", "ird", "irds", "ire", "ire's",
+    "ire.", "ired", "ireland's", "ires", "irg", "iri", "irid", "iris",
+    "irja", "irk", "irks", "irl", "irm", "irma", "irme", "irmo",
+    "irms", "irn", "iro", "irok", "iron", "iror", "irpe", "irq",
+    "irra", "irs", "irsg", "irtf", "irus", "irv", "is", "is-",
+    "is.", "isa", "isac", "isai", "isak", "isam", "isar", "isas",
+    "isba", "isbd", "isbn", "isc", "isch", "isdn", "isdt", "ise",
+    "ised", "isee", "isf", "ish", "isi", "isia", "isin", "isis",
+    "isl", "isla", "isle", "isle's", "islet's", "islm", "isls", "islu",
+    "ism", "isma", "isms", "ismy", "isn", "isn't", "isnt", "iso",
+    "iso-", "isom", "isomorphism's", "ison", "isoo", "isop", "isotope's", "ispm",
+    "isr", "isrg", "iss", "issi", "issn", "issy", "ist", "isth",
+    "isup", "isus", "isv", "isy", "isz", "it", "it&t", "it'd",
+    "it'll", "it's", "ita", "itai", "ital", "italian's", "itc", "itch",
+    "itcz", "itd", "ite", "itea", "itel", "item", "item's", "itemization's",
+    "iten", "iter", "iterator's", "ithuriel's-spear", "itin", "itis", "itll", "itm",
+    "itmo", "ito", "itol", "its", "itso", "itsy", "itt", "itu",
+    "itv", "ity", "itys", "itza", "iu", "iu-", "iud", "iuds",
+    "iue", "iuka", "ium", "ius", "iuus", "iuv", "iv", "iva",
+    "ivah", "ivan", "ivar", "ivb", "ivdt", "ive", "ivel", "iver",
+    "ives", "ivey", "ivie", "ivin", "ivis", "ivo", "ivon", "ivor",
+    "ivp", "ivts", "ivy", "ivy's", "iw", "iwa", "iwao", "iwc",
+    "iwis", "iwo", "iws", "iwu", "iww", "ix", "ixc", "ixia",
+    "ixil", "ixm", "iy", "iyar", "iynx", "iyo", "iyre", "iz",
+    "izak", "izar", "izba", "ize", "izer", "izle", "izy", "izzy"
+};
 
-// Maximum number of words estimated from txt file
-#define DICT_I_MAX_WORDS 15220
-#define DICT_I_TXT_PATH "Dictionary/dict_i.txt"
-
-// Global arrays for loaded words
-static char* dict_i_words[DICT_I_MAX_WORDS];
-static size_t dict_i_count = 0;
-
-// Function to load words from txt file
-static int load_dict_i_from_file(void) {
-    FILE* file = fopen(DICT_I_TXT_PATH, "r");
-    if (!file) {
-        return -1; // Failed to open file
-    }
-    
-    char buffer[256];
-    dict_i_count = 0;
-    
-    while (fgets(buffer, sizeof(buffer), file) && dict_i_count < DICT_I_MAX_WORDS) {
-        // Remove newline
-        size_t len = strlen(buffer);
-        if (len > 0 && buffer[len-1] == '\n') {
-            buffer[len-1] = '\0';
-        }
-        
-        // Allocate and copy word
-        if (strlen(buffer) > 0) {
-            dict_i_words[dict_i_count] = malloc(strlen(buffer) + 1);
-            if (dict_i_words[dict_i_count]) {
-                strcpy(dict_i_words[dict_i_count], buffer);
-                dict_i_count++;
-            }
-        }
-    }
-    
-    fclose(file);
-    return 0; // Success
-}
-
-// Function to free loaded words
-static void free_dict_i_words(void) {
-    for (size_t i = 0; i < dict_i_count; i++) {
-        if (dict_i_words[i]) {
-            free(dict_i_words[i]);
-            dict_i_words[i] = NULL;
-        }
-    }
-    dict_i_count = 0;
-}
-
-// Compatibility array pointer (points to loaded words)
-static const char* const* dict_i = (const char* const*)dict_i_words;
-static const size_t DICT_I_SIZE = DICT_I_MAX_WORDS; // Will be updated to actual count after loading
-
-// Getter function for actual count
-static size_t get_dict_i_size(void) {
-    return dict_i_count;
-}
+static const size_t DICT_I_SIZE = sizeof(dict_i) / sizeof(dict_i[0]);
 
 #endif // DICT_I_H

@@ -1,67 +1,59 @@
 #ifndef DICT_K_H
 #define DICT_K_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+static const char* const dict_k[] = {
+    "k", "k'ang-te", "k's", "k.", "k.g.", "k.o.", "k.p.", "k.t.",
+    "k.v.", "k2", "k9", "ka", "ka-", "kaas", "kab", "kabs",
+    "kacy", "kad-", "kadi", "kado", "kadu", "kae", "kaes", "kaf",
+    "kafa", "kafs", "kagi", "kago", "kagu", "kaha", "kahl", "kahn",
+    "kahu", "kai", "kaia", "kaid", "kaif", "kaik", "kail", "kain",
+    "kaj", "kaja", "kaka", "kaki", "kal", "kala", "kalb", "kale",
+    "kali", "kalk", "kall", "kalo", "kam", "kama", "kame", "kami",
+    "kamp", "kan", "kana", "kand", "kane", "kang", "kano", "kans",
+    "kant", "kanu", "kao", "kaon", "kaos", "kapa", "kape", "kaph",
+    "kapp", "kara", "karb", "kare", "kari", "karl", "karn", "karo",
+    "karp", "karr", "kars", "kart", "kary", "kas", "kasa", "kase",
+    "kask", "kasm", "kass", "kast", "kat", "kat-", "kata", "kate",
+    "kath", "kati", "kato", "kats", "katt", "katy", "katz", "kava",
+    "kavi", "kaw", "kaw-", "kay", "kaya", "kaye", "kayo", "kays",
+    "kaz", "kazi", "kb", "kbar", "kbe", "kbp", "kbps", "kbs",
+    "kc", "kc/s", "kcal", "kcb", "kci", "kcl", "kcmg", "kcsi",
+    "kcvo", "kd", "kdar", "kdci", "kdd", "kdt", "ke", "kea",
+    "kean", "keap", "keas", "keat", "keb", "keck", "ked", "kee",
+    "keef", "keek", "keel", "keen", "keep", "kees", "keet", "kef",
+    "kefs", "keg", "kegs", "kehr", "kei", "keid", "keil", "keir",
+    "kel", "kela", "keld", "kele", "keli", "kelk", "kell", "kelp",
+    "kelt", "kemb", "kemi", "kemp", "ken", "kend", "kenn", "kennel's",
+    "keno", "kens", "kent", "keo", "keon", "keos", "kep", "kepi",
+    "keps", "kept", "ker", "kerb", "kerchief's", "kerf", "keri", "kerk",
+    "kerl", "kern", "kernel's", "kero", "kerr", "kers", "kery", "ket",
+    "ket-", "keta", "keto", "kettle's", "ketu", "keup", "kev", "kew",
+    "kex", "kexy", "key", "keyboard's", "keypad's", "keys", "keystroke's", "keyword's",
+    "kft", "kg", "kg-m", "kg.", "kgb", "kgf", "kgr", "kha",
+    "khaf", "khai", "khan", "khar", "khat", "khem", "khet", "khi",
+    "khir", "khis", "kho", "khoi", "khos", "khot", "khu", "khud",
+    "khz", "ki", "kia", "kiah", "kial", "kias", "kibe", "kiby",
+    "kick", "kid", "kid's", "kidd", "kidnapper's", "kidnapping's", "kidney's", "kids",
+    "kie", "kief", "kiel", "kier", "kies", "kiev", "kif", "kifs",
+    "kiho", "kike", "kiki", "kiku", "kil", "kila", "kile", "kilk",
+    "kill", "kiln", "kilo", "kilp", "kilt", "kim", "kin", "kina",
+    "kind", "kine", "king", "kingdom's", "kink", "kino", "kins", "kinu",
+    "kip", "kipe", "kipp", "kips", "kir", "kira", "kiri", "kirk",
+    "kirn", "kirs", "kirt", "kish", "kiss", "kist", "kit", "kit's",
+    "kitchen's", "kite", "kith", "kits", "kitten's", "kiva", "kivu", "kiwi",
+    "kiyi", "kj", "kkk", "kkt", "kktp", "kl", "kl-", "kl.",
+    "klam", "klan", "klee", "kler", "kln", "km", "km.", "kmc",
+    "kn", "kn-", "kn.", "knapsack's", "knave's", "knell's", "knickerbocker's", "knight's-spur",
+    "knob's", "knoll's", "knot's", "knp", "knt", "ko", "koa", "kob",
+    "koe", "koh", "koi", "kol", "kon", "koo", "kop", "kor",
+    "kos", "kou", "koy", "kp", "kpc", "kph", "kpo", "kqc",
+    "kr", "kr.", "kra", "krp", "krs", "kru", "ks", "ksc",
+    "ksf", "ksh", "ksi", "ksr", "ksu", "kt", "kt.", "ktb",
+    "kts", "ktu", "ku", "kua", "kue", "kui", "kum", "kun",
+    "kuo", "kur", "kus", "kv", "kva", "kw", "kwa", "kwh",
+    "kwt", "ky", "ky.", "kyd", "kye", "kyl", "kym", "kyu"
+};
 
-// Maximum number of words estimated from txt file
-#define DICT_K_MAX_WORDS 6167
-#define DICT_K_TXT_PATH "Dictionary/dict_k.txt"
-
-// Global arrays for loaded words
-static char* dict_k_words[DICT_K_MAX_WORDS];
-static size_t dict_k_count = 0;
-
-// Function to load words from txt file
-static int load_dict_k_from_file(void) {
-    FILE* file = fopen(DICT_K_TXT_PATH, "r");
-    if (!file) {
-        return -1; // Failed to open file
-    }
-    
-    char buffer[256];
-    dict_k_count = 0;
-    
-    while (fgets(buffer, sizeof(buffer), file) && dict_k_count < DICT_K_MAX_WORDS) {
-        // Remove newline
-        size_t len = strlen(buffer);
-        if (len > 0 && buffer[len-1] == '\n') {
-            buffer[len-1] = '\0';
-        }
-        
-        // Allocate and copy word
-        if (strlen(buffer) > 0) {
-            dict_k_words[dict_k_count] = malloc(strlen(buffer) + 1);
-            if (dict_k_words[dict_k_count]) {
-                strcpy(dict_k_words[dict_k_count], buffer);
-                dict_k_count++;
-            }
-        }
-    }
-    
-    fclose(file);
-    return 0; // Success
-}
-
-// Function to free loaded words
-static void free_dict_k_words(void) {
-    for (size_t i = 0; i < dict_k_count; i++) {
-        if (dict_k_words[i]) {
-            free(dict_k_words[i]);
-            dict_k_words[i] = NULL;
-        }
-    }
-    dict_k_count = 0;
-}
-
-// Compatibility array pointer (points to loaded words)
-static const char* const* dict_k = (const char* const*)dict_k_words;
-static const size_t DICT_K_SIZE = DICT_K_MAX_WORDS; // Will be updated to actual count after loading
-
-// Getter function for actual count
-static size_t get_dict_k_size(void) {
-    return dict_k_count;
-}
+static const size_t DICT_K_SIZE = sizeof(dict_k) / sizeof(dict_k[0]);
 
 #endif // DICT_K_H

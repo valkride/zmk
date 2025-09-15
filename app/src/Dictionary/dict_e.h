@@ -1,67 +1,134 @@
 #ifndef DICT_E_H
 #define DICT_E_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+static const char* const dict_e[] = {
+    "e", "e'en", "e'er", "e's", "e-", "e.", "e.e.", "e.g.",
+    "e.i.", "e.o.", "e.r.", "e.v.", "e911", "ea", "ea.", "eaa",
+    "eably", "each", "eacso", "ead", "eada", "eadas", "eade", "eadi",
+    "eadie", "eads", "eaeo", "eafb", "eagan", "eagar", "eager", "eagle",
+    "eagle's", "eagre", "eak", "eakly", "eal", "eam", "eamon", "ean",
+    "eanes", "ear", "eared", "earl", "earl's", "earla", "earle", "earls",
+    "early", "earn", "earner's", "earns", "earom", "earp", "earring's", "ears",
+    "earsh", "earth", "earthquake's", "earthworm's", "eas", "easd", "ease", "eased",
+    "easel", "easement's", "easer", "eases", "easi", "east", "easts", "easy",
+    "eat", "eaten", "eater", "eath", "eaton", "eats", "eau", "eaux",
+    "eave", "eaved", "eaver", "eaves", "eavesdropper's", "eb", "eba", "ebb",
+    "ebba", "ebbed", "ebbet", "ebbie", "ebbs", "ebby", "ebcd", "eben",
+    "ebert", "ebeye", "ebi", "eblis", "ebn", "ebner", "eboe", "eboh",
+    "eboli", "ebon", "ebons", "ebony", "ebro", "ebs", "ebsen", "ec",
+    "ec-", "eca", "ecad", "ecafe", "ecap", "ecart", "ecass", "ecb",
+    "ecc", "ecca", "ecce", "eccentric's", "ecch", "eccl", "eccl.", "eccm",
+    "eccs", "ecd", "ecdo", "ece", "ecf", "ecg", "echar", "eche",
+    "echea", "eched", "eches", "echis", "echo", "echos", "echt", "ecize",
+    "eck", "eckel", "ecl", "ecla", "eclat", "eclss", "ecm", "ecma",
+    "ecn", "eco", "eco-", "ecod", "ecoid", "ecol", "ecol.", "ecole",
+    "ecom", "econ", "econ.", "economist's", "economy's", "ecpa", "ecpt", "ecr",
+    "ecru", "ecrus", "ecs", "ecsa", "ecsc", "ect", "ect-", "ectad",
+    "ectal", "ecto-", "ector", "ecu", "ecua", "ecua.", "ecus", "ecv",
+    "ed", "ed-", "ed.", "eda", "edac", "edam", "edan", "edana",
+    "edb", "edc", "edd", "edda", "eddas", "edder", "eddi", "eddic",
+    "eddie", "eddo", "eddra", "eddy", "eddy's", "ede", "edea", "edee",
+    "edema", "eden", "edes", "edf", "edgar", "edge", "edged", "edger",
+    "edges", "edgy", "edh", "edhs", "edi", "edict", "edict's", "edie",
+    "edif", "edifice's", "edify", "edik", "edile", "edin", "edina", "edit",
+    "edit.", "edita", "edith", "edition's", "editor's", "edits", "ediva", "ediya",
+    "edla", "edley", "edlin", "edlun", "edlyn", "edm", "edman", "edme",
+    "edmea", "edmee", "edmon", "edna", "ednas", "ednie", "edny", "edo",
+    "edom", "edon", "edoni", "edora", "edp", "edra", "edrea", "edrei",
+    "edric", "edris", "edroi", "edroy", "eds", "edsel", "edson", "edsx",
+    "edt", "edta", "edtcc", "educ", "educ.", "educator's", "educe", "educt",
+    "edva", "edveh", "edwin", "edy", "edyie", "edyth", "ee", "eec",
+    "eect", "eedp", "eee", "eeg", "eeho", "eei", "eek", "eel",
+    "eel's", "eeler", "eels", "eely", "eem", "eemis", "een", "eeo",
+    "eeoc", "eer", "eerie", "eery", "eeten", "ef", "ef-", "efd",
+    "eff", "effector's", "effet", "effie", "effort's", "effs", "effy", "effye",
+    "efi", "efik", "efis", "efl", "efph", "efram", "efrap", "efrem",
+    "efren", "efron", "efs", "eft", "efta", "efts", "eg", "eg.",
+    "ega", "egad", "egadi", "egads", "egal", "egall", "egan", "egba",
+    "egbo", "egede", "eger", "egers", "egest", "egg", "eggar", "egged",
+    "egger", "eggs", "eggy", "egham", "egide", "egin", "egis", "egk",
+    "eglin", "eglon", "egma", "egmc", "egnar", "ego", "egol", "egon",
+    "egor", "egos", "egp", "egre", "egrep", "egret", "egrid", "eh",
+    "eheu", "ehf", "ehfa", "ehp", "ehr", "ehud", "ei", "eia",
+    "eib", "eide", "eigenvalue's", "eigh", "eighth's", "eila", "eild", "ein",
+    "eine", "eir", "eire", "eiry", "eis", "eisa", "eisb", "eisk",
+    "eiss", "eits", "ejam", "ejoo", "eke", "eked", "eker", "ekes",
+    "ekg", "ekka", "ekoi", "ekts", "el", "ela", "elah", "elam",
+    "elan", "elas", "elat", "elb", "elba", "elbe", "elbl", "elc",
+    "elco", "eld", "elda", "eldo", "elds", "ele", "elea", "elec",
+    "election's", "elector's", "electrode's", "electrolyte's", "electron's", "elem", "element's", "elephant's",
+    "elephant's-ear", "elephant's-foot", "elephant's-foots", "elev", "elevator's", "elf", "elga", "elhi",
+    "eli", "elia", "elie", "elik", "elis", "elix", "eliz", "elk",
+    "elk's", "elka", "elke", "elko", "elks", "ell", "ella", "elle",
+    "elli", "ellipse's", "ellipsoid's", "ells", "elly", "elm", "elma", "elmo",
+    "elms", "elmy", "elna", "elne", "elo", "elod", "elon", "eloy",
+    "elp", "els", "elsa", "else", "elsi", "elsy", "elt", "elul",
+    "elum", "elv", "elva", "elve", "ely", "elyn", "elys", "em",
+    "em-", "ema", "emad", "embassy's", "embellishment's", "embodiment's", "embryo's", "emc",
+    "emda", "eme", "emee", "emer", "emerald's", "emergency's", "emes", "emet",
+    "emeu", "emf", "emi", "emia", "emic", "emie", "emigrant's", "emil",
+    "emim", "emir", "emit", "eml", "emm", "emma", "emmi", "emmy",
+    "emotion's", "emp", "emp.", "emperor's", "empire's", "empiricist's", "employee's", "employer's",
+    "employment's", "empt", "emr", "ems", "emt", "emu", "emulator's", "emus",
+    "emyd", "emys", "en", "en-", "ena", "enam", "enb-", "enc",
+    "enc.", "ence", "encl", "enclosure's", "ency", "encyclopedia's", "end", "end-",
+    "ende", "endo", "endowment's", "ends", "ene", "enea", "ened", "enema's",
+    "enemy's", "enet", "enew", "eng", "eng.", "engagement's", "engine's", "engineer's",
+    "engl", "engr", "engs", "enhancement's", "enid", "enif", "enka", "enki",
+    "enl", "enl.", "enlargement's", "eno", "enol", "enon", "enos", "enow",
+    "enp-", "enrollment's", "ens", "ens.", "ense", "ensemble's", "ensign's", "ent",
+    "ent-", "entertainment's", "enthusiast's", "entity's", "entr", "entr'acte", "entr'actes", "entrepreneur's",
+    "entry's", "env", "environment's", "envoy's", "envy", "enyo", "eo", "eo-",
+    "eoan", "eod", "eoe", "eof", "eoin", "eol-", "eola", "eole",
+    "eom", "eon", "eons", "eos", "eot", "eott", "eous", "ep",
+    "ep-", "ep.", "epa", "epaulet's", "epd", "epee", "epes", "eph",
+    "eph-", "eph.", "epha", "epi", "epi-", "epic", "epic's", "epidemic's",
+    "epil", "epis", "episode's", "epistle's", "epit", "epithet's", "epl", "epns",
+    "epop", "epos", "epp", "epps", "eppy", "epri", "eps", "epsf",
+    "epsi", "ept", "epts", "epub", "epw", "eq", "eq.", "eqpt",
+    "equality's", "equator's", "er", "era", "era's", "eral", "eran", "erar",
+    "eras", "erat", "erb", "erbe", "erce", "erd", "erda", "erde",
+    "ere", "erection's", "erector's", "erek", "erep", "erer", "erf", "erg",
+    "erg-", "ergo", "ergs", "eri", "eria", "eric", "erie", "erik",
+    "erin", "eris", "erk", "erke", "erl", "erle", "erma", "erme",
+    "ermine's", "ern", "erna", "erne", "erns", "erny", "eros", "erp",
+    "err", "error's", "errs", "ers", "erse", "ersh", "erst", "ert",
+    "erth", "eru", "eruc", "erv", "ervy", "ery", "eryn", "eryx",
+    "es", "es-", "esa", "esac", "esau", "esb", "esc", "esca",
+    "escapade's", "escapee's", "esch", "esd", "esd.", "esdi", "ese", "eses",
+    "esf", "esh", "esi", "esis", "esk", "esko", "esky", "esl",
+    "esm", "esma", "esmd", "esme", "esn", "esne", "eso", "eso-",
+    "esop", "esox", "esp", "esp.", "esps", "espy", "esq", "esq.",
+    "esr", "esra", "esro", "ess", "essa", "esse", "essence's", "essx",
+    "essy", "est", "est.", "esta", "establishment's", "estate's", "este", "esth",
+    "esu", "et", "eta", "etam", "etan", "etas", "etc", "etc.",
+    "etch", "etd", "etem", "eten", "etf", "etfd", "eth", "eth-",
+    "eth.", "ethe", "ether's", "eths", "etic", "etka", "etla", "etn",
+    "etna", "eto", "etom", "eton", "etr", "etra", "ets", "etsi",
+    "etta", "ette", "etti", "etty", "etua", "etui", "etv", "ety",
+    "etym", "etz", "eu", "eu-", "euc", "euda", "eudo", "eug",
+    "euge", "euh", "eula", "euphemism's", "eur", "eur-", "eur.", "eure",
+    "euro", "euug", "euv", "euve", "ev", "eva", "eval", "evaluator's",
+    "evan", "evap", "eve", "evea", "even", "evening's", "event's", "ever",
+    "everyone's", "eves", "evey", "evg", "eviction's", "evie", "evil", "evin",
+    "evoe", "evolute's", "evolution's", "evoy", "evva", "evvy", "evx", "evy",
+    "evyn", "ew", "ewa", "ewan", "ewe", "ewe's", "ewen", "ewer",
+    "ewes", "ewo", "ewos", "ewry", "ews", "ewte", "ex", "ex-",
+    "ex.", "exa-", "exaction's", "exam", "exam's", "examination's", "example's", "exc",
+    "exc.", "exception's", "exch", "exchequer's", "excitation's", "excl", "exclamation's", "excursion's",
+    "exec", "executive's", "executor's", "exertion's", "exes", "exh-", "exhibition's", "exhibitor's",
+    "exhortation's", "existentialist's", "exit", "exla", "exo-", "exod", "exon", "exor",
+    "exp", "exp.", "expander's", "expectation's", "expedition's", "expenditure's", "experimentation's", "expiration's",
+    "explanation's", "exploitation's", "exploration's", "explosion's", "expo", "exponent's", "exponentiation's", "exposition's",
+    "exposure's", "expression's", "expt", "expy", "exr", "exr.", "exrx", "ext",
+    "ext.", "exta", "extension's", "extent's", "exterior's", "extg", "extraction's", "extractor's",
+    "extremist's", "extremity's", "exul", "ey", "eyah", "eyas", "eyck", "eyde",
+    "eye", "eyebrow's", "eyed", "eyelid's", "eyen", "eyepiece's", "eyer", "eyes",
+    "eyewitness's", "eyey", "eyl", "eyla", "eyn", "eyne", "eyot", "eyr",
+    "eyra", "eyre", "eyry", "eysk", "ez", "ez.", "ezan", "ezar",
+    "ezba", "ezek", "ezel", "ezod", "ezr", "ezra", "ezri", "ezzo"
+};
 
-// Maximum number of words estimated from txt file
-#define DICT_E_MAX_WORDS 16815
-#define DICT_E_TXT_PATH "Dictionary/dict_e.txt"
-
-// Global arrays for loaded words
-static char* dict_e_words[DICT_E_MAX_WORDS];
-static size_t dict_e_count = 0;
-
-// Function to load words from txt file
-static int load_dict_e_from_file(void) {
-    FILE* file = fopen(DICT_E_TXT_PATH, "r");
-    if (!file) {
-        return -1; // Failed to open file
-    }
-    
-    char buffer[256];
-    dict_e_count = 0;
-    
-    while (fgets(buffer, sizeof(buffer), file) && dict_e_count < DICT_E_MAX_WORDS) {
-        // Remove newline
-        size_t len = strlen(buffer);
-        if (len > 0 && buffer[len-1] == '\n') {
-            buffer[len-1] = '\0';
-        }
-        
-        // Allocate and copy word
-        if (strlen(buffer) > 0) {
-            dict_e_words[dict_e_count] = malloc(strlen(buffer) + 1);
-            if (dict_e_words[dict_e_count]) {
-                strcpy(dict_e_words[dict_e_count], buffer);
-                dict_e_count++;
-            }
-        }
-    }
-    
-    fclose(file);
-    return 0; // Success
-}
-
-// Function to free loaded words
-static void free_dict_e_words(void) {
-    for (size_t i = 0; i < dict_e_count; i++) {
-        if (dict_e_words[i]) {
-            free(dict_e_words[i]);
-            dict_e_words[i] = NULL;
-        }
-    }
-    dict_e_count = 0;
-}
-
-// Compatibility array pointer (points to loaded words)
-static const char* const* dict_e = (const char* const*)dict_e_words;
-static const size_t DICT_E_SIZE = DICT_E_MAX_WORDS; // Will be updated to actual count after loading
-
-// Getter function for actual count
-static size_t get_dict_e_size(void) {
-    return dict_e_count;
-}
+static const size_t DICT_E_SIZE = sizeof(dict_e) / sizeof(dict_e[0]);
 
 #endif // DICT_E_H

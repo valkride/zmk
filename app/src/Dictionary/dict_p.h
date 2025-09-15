@@ -1,67 +1,134 @@
 #ifndef DICT_P_H
 #define DICT_P_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+static const char* const dict_p[] = {
+    "p", "p'eng-hu", "p's", "p.", "p.a.", "p.b.", "p.c.", "p.d.",
+    "p.e.", "p.g.", "p.i.", "p.m.", "p.o.", "p.p.", "p.q.", "p.r.",
+    "p.s.", "p.t.", "p/c", "p2", "p3", "p4", "pa", "pa.",
+    "paal", "paar", "paas", "paba", "pabx", "pac", "paca", "pace",
+    "pack", "packet's", "paco", "pacs", "pact", "pact's", "pacu", "pacx",
+    "pad", "pad's", "padi", "pads", "paff", "pag", "paga", "pagan's",
+    "page", "page's", "pageant's", "pah", "paha", "pahi", "pahl", "paho",
+    "paia", "paid", "paik", "pail", "pail's", "pain", "paip", "pair",
+    "pais", "pak", "paki", "pal", "pal's", "pal.", "pala", "palace's",
+    "palate's", "pale", "pali", "pall", "palm", "palo", "palp", "pals",
+    "palt", "paly", "pam", "pam.", "pamd", "pamphlet's", "pams", "pan",
+    "pan's", "pan-", "pan.", "pana", "panacea's", "pancake's", "pand", "pane",
+    "pane's", "panelist's", "pang", "pang's", "pani", "panic's", "pank", "pans",
+    "pansy's", "pant", "panther's", "pantry's", "pao", "paon", "pap", "papa",
+    "pape", "paper's", "paperback's", "papp", "paps", "par", "par-", "par.",
+    "para", "parachute's", "paradigm's", "paradox's", "paragon's", "parallelogram's", "parameter's", "parameterization's",
+    "parapet's", "parasite's", "parc", "pard", "pare", "parent's", "pari", "parish's",
+    "park", "parl", "parliament's", "parlor's", "parr", "parrot's-bill", "parrot's-feather", "pars",
+    "parson's", "part", "participant's", "particle's", "partisan's", "partridge's", "party's", "pas",
+    "pase", "pash", "pasi", "pask", "paso", "pass", "passage's", "passenger's",
+    "passport's", "password's", "past", "past's", "pastime's", "pastor's", "pasture's", "pat",
+    "pat.", "pata", "patd", "pate", "path", "pathway's", "pato", "patrician's",
+    "patriot's", "patrol's", "patron's", "pats", "patt", "patty's", "patu", "paty",
+    "pau", "paua", "paul", "paup", "paur", "paut", "pav", "pave",
+    "pavement's", "pavilion's", "pavo", "pavy", "paw", "pawk", "pawl", "pawn",
+    "pawn's", "paws", "pax", "pay", "pay-", "paya", "paycheck's", "paye",
+    "payer's", "payment's", "payoff's", "pays", "payt", "paz", "paza", "pb",
+    "pbc", "pbd", "pbm", "pbs", "pbt", "pbx", "pc", "pc.",
+    "pca", "pcat", "pcb", "pcc", "pcda", "pcf", "pch", "pci",
+    "pcie", "pcl", "pcm", "pcn", "pco", "pcpc", "pcs", "pcsa",
+    "pct", "pct.", "pcte", "pcts", "pctv", "pd", "pd.", "pdad",
+    "pde", "pdes", "pdf", "pdi", "pdl", "pdn", "pdp", "pdq",
+    "pds", "pdsa", "pdsp", "pdt", "pdu", "pe", "pea", "pea's",
+    "peach's", "peacock's", "peag", "peai", "peak", "peal", "pean", "peanut's",
+    "pear", "pearl's", "peas", "peasant's", "peat", "peba", "pebble's", "pecc",
+    "pech", "peck", "pecs", "peculiarity's", "ped", "ped-", "ped.", "peda",
+    "pedd", "peddler's", "pede", "pedestrian's", "pedi", "peds", "pee", "peed",
+    "peek", "peel", "peen", "peep", "peer", "pees", "peg", "peg's",
+    "pega", "pegg", "pegh", "pegs", "pegu", "peh", "peho", "pehs",
+    "pei", "pein", "peke", "pel", "pele", "pelf", "pell", "pelt",
+    "pelu", "pem", "pen", "pen-", "pen.", "pena", "penalty's", "pend",
+    "pendulum's", "penetrator's", "peng", "penguin's", "penh", "peninsula's", "penk", "penn",
+    "penny's", "pens", "pent", "pentagon's", "peon", "people's", "pep", "pepe",
+    "pepi", "pepo", "peps", "per", "per-", "per.", "pera", "pere",
+    "perf", "perfectionist's", "performance's", "perh", "peri", "peril's", "period's", "periphery's",
+    "perishable's", "perk", "perl", "perm", "permit's", "permutation's", "pern", "pero",
+    "perp", "perpetrator's", "perr", "pers", "persecutor's", "person's", "personage's", "personality's",
+    "perspective's", "persuasion's", "pert", "perturbation's", "peru", "perv", "pes", "pesa",
+    "peso", "pess", "pest", "pet", "pet.", "peta", "petal's", "pete",
+    "peti", "petn", "peto", "petr", "pets", "petter's", "petticoat's", "peul",
+    "pew", "pew's", "pews", "pewy", "pex", "pf", "pf.", "pfb",
+    "pfc", "pfd", "pfft", "pfg", "pfpu", "pfui", "pfx", "pg",
+    "pg.", "pga", "ph", "pha", "phantom's", "phar", "phat", "phc",
+    "phd", "pheasant's", "pheasant's-eye", "pheasant's-eyes", "pheb", "phew", "phi", "phia",
+    "phil", "philosopher's", "philosophy's", "phio", "phip", "phis", "phit", "phiz",
+    "phl", "phm", "pho", "phoh", "phon", "phoneme's", "phoo", "phos",
+    "phosphate's", "phot", "photo's", "phox", "phr", "phr.", "phs", "pht",
+    "phu", "phut", "phyl", "phys", "physician's", "physicist's", "pi", "pia",
+    "piaf", "pial", "pian", "piano's", "pias", "piazza's", "pic", "pica",
+    "pice", "pich", "pici", "pick", "pickup's", "picnic's", "pico", "pics",
+    "pict", "pid", "pie", "pied", "pien", "pier", "pies", "piet",
+    "pif", "piff", "pig", "pig's", "pigeon's", "pigeon's-neck", "pigg", "pigs",
+    "pik", "pika", "pike", "piki", "piky", "pil", "pil-", "pile",
+    "pilgrim's", "pilgrimage's", "pili", "pill", "pill's", "pillow's", "pilm", "pily",
+    "pim", "pima", "pimp", "pims", "pin", "pin's", "pina", "pind",
+    "pine", "pineapple's", "ping", "pini", "pink", "pinnacle's", "pino", "pins",
+    "pint", "pint's", "pinx", "piny", "pinz", "pio", "pion", "pip",
+    "pipa", "pipe", "pipi", "pips", "pipy", "piqu", "pir", "pirate's",
+    "pire", "pirl", "pirn", "piro", "pirr", "piru", "pis", "pisa",
+    "pise", "pish", "pisk", "piso", "piss", "pist", "pistil's", "pistol's",
+    "piston's", "pit", "pit's", "pita", "pitfall's", "pith", "piti", "pits",
+    "pitt", "pity", "piu", "pius", "pix", "pixy", "pize", "pizz",
+    "pj's", "pk", "pk.", "pkg", "pkg.", "pkgs", "pks", "pkt",
+    "pkt.", "pku", "pkwy", "pl", "pl.", "pl/1", "pl1", "pla",
+    "placard's", "placement's", "plaid's", "plaintiff's", "plait's", "plak", "plan", "plan's",
+    "plane's", "planet's", "planner's", "plantation's", "plap", "plat", "plateau's", "platelet's",
+    "platen's", "platform's", "platter's", "play", "player's", "playground's", "playmate's", "plaything's",
+    "playwright's", "plc", "plcc", "pld", "plea", "plea's", "pleb", "plebiscite's",
+    "pled", "plew", "plex", "plf", "pli", "plie", "plim", "pll",
+    "plm", "plo", "plod", "plop", "plos", "plot", "plot's", "plotter's",
+    "plow", "ploy", "ploy's", "plp", "plr", "pls", "plss", "plt",
+    "plu", "plud", "plug", "plug's", "plum", "plum's", "plumb's", "plup",
+    "plur", "plus", "ply", "plze", "pm", "pm.", "pma", "pmac",
+    "pmc", "pmdf", "pmeg", "pmg", "pmk", "pmo", "pmos", "pmrc",
+    "pmsg", "pmt", "pmu", "pmx", "pn", "pn-", "pna", "pnb",
+    "pnce", "pndb", "pnea", "pnp", "pnpn", "pnxt", "pnyx", "po",
+    "po'd", "poa", "pob", "pobs", "poc", "poca", "pock", "pocketbook's",
+    "poco", "pod", "pod's", "poda", "pods", "poe", "poem", "poem's",
+    "poet", "poet's", "poetry's", "pof", "pofo", "pogo", "pogy", "poh",
+    "poha", "poi", "poil", "pois", "pok", "poke", "poky", "pol",
+    "pol.", "pola", "polarity's", "pole", "police's", "policy's", "politician's", "polk",
+    "poll", "polo", "pols", "polt", "poly", "polymer's", "polynomial's", "pom",
+    "pome", "pomo", "pomp", "poms", "pon", "pond", "pone", "pong",
+    "pons", "pont", "pony", "pony's", "pooa", "pood", "poof", "pooh",
+    "pooi", "pook", "pool", "poon", "poop", "poor", "poot", "pop",
+    "pop's", "pop-", "pope", "poppy's", "pops", "por", "porc", "porch's",
+    "porcupine's", "pore", "pori", "portal's", "portion's", "portrait's", "pos", "possession's",
+    "possessor's", "possibility's", "possum's", "postmaster's", "postoffice's", "postscript's", "posture's", "pot",
+    "pot's", "potentate's", "potentiometer's", "potter's", "pouch's", "pov", "pow", "powerset's",
+    "pox", "poy", "poz", "pp", "pp.", "ppa", "ppb", "ppc",
+    "ppd", "ppe", "pph", "ppi", "ppl", "ppm", "ppn", "ppp",
+    "ppr", "pps", "ppt", "pq", "pr", "pr.", "pra", "practitioner's",
+    "prank's", "prayer's", "prb", "prc", "pre", "precaution's", "precedence's", "precept's",
+    "precinct's", "preconception's", "precursor's", "predecessor's", "predefinition's", "prediction's", "preference's", "prelude's",
+    "premier's", "premise's", "premium's", "preparation's", "preparative's", "preposition's", "prerequisite's", "prerogative's",
+    "prescription's", "presence's", "presentation's", "president's", "presumption's", "pretext's", "prf", "prg",
+    "pri", "primary's", "prince's-feather", "prince's-pine", "princess's", "principality's", "priority's", "prism's",
+    "prisoner's", "privy's", "prn", "pro", "pro's", "problem's", "procedure's", "process's",
+    "processor's", "proclamation's", "proclivity's", "procurement's", "product's", "production's", "profession's", "professor's",
+    "profiteer's", "profitter's", "program's", "programmer's", "progression's", "prohibition's", "projection's", "projector's",
+    "promenade's", "pronoun's", "pronouncement's", "pronunciation's", "proof's", "propeller's", "prophecy's", "prophet's",
+    "proponent's", "proposal's", "proprietor's", "propulsion's", "prospection's", "prospector's", "protection's", "protector's",
+    "protege's", "protein's", "protestor's", "protocol's", "proton's", "protrusion's", "proverb's", "province's",
+    "prow's", "prp", "prs", "pru", "prud'hon", "pry", "ps", "ps.",
+    "psa", "psalm's", "psc", "pse", "psf", "psg", "psi", "psk",
+    "psl", "psm", "psn", "pso", "psp", "psr", "pss", "pst",
+    "psu", "psv", "psw", "psyche's", "psychiatrist's", "psychologist's", "pt", "pt.",
+    "pta", "ptd", "pte", "ptg", "pti", "ptn", "pto", "ptp",
+    "pts", "ptt", "ptv", "ptw", "pty", "pu", "pua", "pub",
+    "pub's", "publication's", "puc", "pud", "pudding's", "pug", "pul", "pulley's",
+    "pulpit's", "pumpkin's", "pun", "pun's", "puncture's", "punishment's", "pup", "pup's",
+    "pupil's", "puppet's", "puppy's", "pur", "pursuit's", "pus", "put", "puy",
+    "pv", "pva", "pvc", "pvn", "pvo", "pvp", "pvt", "pw",
+    "pwa", "pwb", "pwd", "pwg", "pwr", "pwt", "px", "py",
+    "py-", "pya", "pye", "pygmy's", "pym", "pyr", "pyramid's", "pyx"
+};
 
-// Maximum number of words estimated from txt file
-#define DICT_P_MAX_WORDS 40956
-#define DICT_P_TXT_PATH "Dictionary/dict_p.txt"
-
-// Global arrays for loaded words
-static char* dict_p_words[DICT_P_MAX_WORDS];
-static size_t dict_p_count = 0;
-
-// Function to load words from txt file
-static int load_dict_p_from_file(void) {
-    FILE* file = fopen(DICT_P_TXT_PATH, "r");
-    if (!file) {
-        return -1; // Failed to open file
-    }
-    
-    char buffer[256];
-    dict_p_count = 0;
-    
-    while (fgets(buffer, sizeof(buffer), file) && dict_p_count < DICT_P_MAX_WORDS) {
-        // Remove newline
-        size_t len = strlen(buffer);
-        if (len > 0 && buffer[len-1] == '\n') {
-            buffer[len-1] = '\0';
-        }
-        
-        // Allocate and copy word
-        if (strlen(buffer) > 0) {
-            dict_p_words[dict_p_count] = malloc(strlen(buffer) + 1);
-            if (dict_p_words[dict_p_count]) {
-                strcpy(dict_p_words[dict_p_count], buffer);
-                dict_p_count++;
-            }
-        }
-    }
-    
-    fclose(file);
-    return 0; // Success
-}
-
-// Function to free loaded words
-static void free_dict_p_words(void) {
-    for (size_t i = 0; i < dict_p_count; i++) {
-        if (dict_p_words[i]) {
-            free(dict_p_words[i]);
-            dict_p_words[i] = NULL;
-        }
-    }
-    dict_p_count = 0;
-}
-
-// Compatibility array pointer (points to loaded words)
-static const char* const* dict_p = (const char* const*)dict_p_words;
-static const size_t DICT_P_SIZE = DICT_P_MAX_WORDS; // Will be updated to actual count after loading
-
-// Getter function for actual count
-static size_t get_dict_p_size(void) {
-    return dict_p_count;
-}
+static const size_t DICT_P_SIZE = sizeof(dict_p) / sizeof(dict_p[0]);
 
 #endif // DICT_P_H

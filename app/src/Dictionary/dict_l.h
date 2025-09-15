@@ -1,67 +1,134 @@
 #ifndef DICT_L_H
 #define DICT_L_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+static const char* const dict_l[] = {
+    "l", "l'addition", "l'allegro", "l'aquila", "l'avare", "l'chaim", "l'enfant", "l'envoy",
+    "l'etranger", "l'hospital", "l'immoraliste", "l'oeil", "l'otage", "l'ouverture", "l's", "l'tre",
+    "l'vov", "l-", "l-p", "l.", "l.a.", "l.c.", "l.h.", "l.i.",
+    "l.p.", "l.t.", "l/c", "l/cpl", "l/p", "l/w", "l1", "l2",
+    "l3", "l4", "l5", "la", "la-la", "la.", "laang", "lab",
+    "lab's", "lab.", "laban", "labaw", "labba", "labby", "labe", "label",
+    "labia", "labis", "labor", "laboratory's", "labra", "labs", "lac", "lacca",
+    "lace", "laced", "lacee", "lacer", "laces", "lacet", "lacey", "lach",
+    "lache", "lacie", "lacis", "lack", "lacks", "lacon", "lacs", "lact-",
+    "lacto", "lacw", "lacy", "lad", "ladar", "ladd", "laddy", "lade",
+    "laded", "laden", "lader", "lades", "ladew", "ladies'-tobacco", "ladies'-tobaccoes", "ladies'-tobaccos",
+    "ladik", "ladin", "ladle", "ladon", "lads", "ladt", "ladue", "lady",
+    "lady's", "lady's-eardrop", "lady's-mantle", "lady's-slipper", "lady's-smock", "lady's-thistle", "lady's-thumb", "lady's-tresses",
+    "lae", "lael", "laen", "laet", "laeti", "laevo", "laf", "lafox",
+    "laft", "lafta", "lag", "lagan", "lagas", "lagen", "lager", "lagly",
+    "lagna", "lagoon's", "lagos", "lagro", "lags", "lah", "lahar", "lahey",
+    "lahmu", "lahti", "lai", "laic", "laich", "laics", "laid", "laie",
+    "laigh", "laik", "lail", "lain", "laina", "laine", "laing", "lair",
+    "lair's", "laird", "lairs", "lairy", "lais", "laise", "lait", "laith",
+    "laity", "laius", "lajas", "lajos", "lak", "lake", "lake's", "laked",
+    "laker", "lakes", "lakey", "lakh", "lakhs", "lakie", "lakin", "lakke",
+    "lakme", "laks", "laksa", "laky", "lal", "lala", "lali", "lalia",
+    "lall", "lalla", "lalls", "lally", "lalo", "lalu", "laluz", "lam",
+    "lam.", "lama", "lamar", "lamas", "lamb", "lamb's", "lamb's-quarters", "lamb's-wool",
+    "lamba", "lambs", "lamby", "lamda", "lame", "lamentation's", "lamm", "lamp",
+    "lamp's", "lams", "lan", "lana", "lancaster'", "land", "landlady's", "landlord's",
+    "landmark's", "landowner's", "landsm'", "landsm'al", "lane", "lane's", "lang", "language's",
+    "lani", "lank", "lanl", "lant", "lantern's", "lanx", "lao", "laon",
+    "laos", "lap", "lap's", "lapb", "lapd", "lapel's", "lapm", "lapp",
+    "laps", "lar", "lara", "larc", "lard", "lare", "lari", "lark",
+    "lark's", "larn", "lars", "las", "lasa", "lase", "laser's", "lash",
+    "lasi", "lask", "lass", "lass's", "last", "lat", "lat.", "lata",
+    "late", "lath", "lati", "latitude's", "latrine's", "lats", "latt", "lattice's",
+    "lau", "laud", "laue", "laun", "laur", "laurel's", "laus", "laux",
+    "lav", "lava", "lavatory's", "lavc", "lave", "lavi", "lavs", "lavy",
+    "law", "law's", "lawk", "lawn", "lawn's", "laws", "lawsuit's", "lawyer's",
+    "lax", "lay", "layout's", "lays", "laz", "laze", "lazy", "lb",
+    "lb.", "lbf", "lbhs", "lbj", "lbl", "lbo", "lbp", "lbs",
+    "lbw", "lc", "lca", "lcc", "lccl", "lcd", "lcdn", "lcdr",
+    "lcf", "lci", "lcie", "lcj", "lcl", "lcm", "lcn", "lcp",
+    "lcr", "lcs", "lcse", "lct", "lcvp", "ld", "ld.", "ldc",
+    "ldef", "ldf", "ldg", "ldl", "ldp", "lds", "ldx", "le",
+    "lea", "lea.", "lead", "leadership's", "leaf", "leaflet's", "leah", "leak",
+    "leakage's", "leal", "leam", "lean", "leao", "leap", "lear", "leas",
+    "leash's", "leat", "lebo", "lec", "lech", "leck", "lect", "led",
+    "leda", "lede", "leds", "lee", "leech's", "leed", "leef", "leek",
+    "leep", "leer", "lees", "leet", "leff", "left", "leftist's", "leftover's",
+    "leg", "leg-o'-mutton", "leg.", "legacy's", "lege", "legend's", "legion's", "legislator's",
+    "legislature's", "lego", "legs", "lehi", "lehr", "lei", "leia", "leid",
+    "leif", "leis", "leix", "lek", "leke", "leks", "leku", "lela",
+    "lely", "lem", "lem-", "lema", "leme", "lemma's", "lemon's", "len",
+    "lena", "lend", "lene", "leng", "leno", "lens", "lens's", "lent",
+    "lentil's", "lenz", "leo", "leod", "leon", "leopard's", "leopard's-bane", "leor",
+    "leos", "lep", "lepa", "lepp", "lept", "ler", "lerc", "lere",
+    "lerp", "les", "lese", "lesh", "less", "lesson's", "lest", "let",
+    "let's", "leta", "lete", "leto", "lets", "lett", "leu", "leud",
+    "leuk", "lev", "lev-", "lev.", "leva", "leve", "levee's", "lever's",
+    "levi", "levi's", "levo", "levy", "lew", "lewd", "lewe", "lex",
+    "lex.", "lexa", "lexi", "lexicon's", "lexy", "ley", "leys", "lez",
+    "lf", "lfs", "lfsa", "lg", "lg.", "lga", "lgb", "lgbo",
+    "lger", "lgk", "lgm", "lgth", "lh", "lhb", "lhd", "lhs",
+    "li", "lia", "liability's", "liaison's", "liam", "lian", "liao", "liar",
+    "liar's", "lias", "lib", "lib.", "liba", "libb", "liberator's", "liberty's",
+    "libr", "librarian's", "library's", "libs", "lice", "lich", "lichen's", "lick",
+    "lid", "lid's", "lida", "lide", "lido", "lids", "lie", "lied",
+    "lief", "lien", "lien's", "lier", "lies", "lieu", "lieutenant's", "liew",
+    "lif", "life", "lifetime's", "lifo", "lift", "lig", "lige", "light-o'-love",
+    "light-o'love", "lighter's", "lighthouse's", "lightning's", "liin", "lija", "like", "likeness's",
+    "lil", "lila", "lilac's", "lile", "lili", "lill", "lilo", "lilt",
+    "lily", "lily's", "lim", "lima", "limb", "lime", "lime's", "limitation's",
+    "limm", "limn", "limo", "limp", "limu", "limy", "lin", "lin.",
+    "lina", "linc", "lind", "line", "line's", "linen's", "ling", "linguist's",
+    "link", "linkage's", "linn", "lino", "lins", "lint", "liny", "linz",
+    "liod", "lion", "lion's", "lioness's", "liou", "lip", "lip's", "lip-",
+    "lipa", "lipp", "lips", "liq", "liq.", "liquid's", "liquidation's", "liquor's",
+    "lir", "lira", "lire", "lis", "lisa", "lise", "lish", "lisk",
+    "lisp", "lisp's", "liss", "list", "listing's", "lit", "lit.", "lita",
+    "litb", "litd", "lite", "literature's", "lith", "liti", "lits", "litt",
+    "litu", "litz", "liu", "liv", "liva", "live", "livi", "livy",
+    "liz", "liza", "lizard's", "lizard's-tail", "lj", "ljbf", "ljod", "ll",
+    "ll.", "llb", "llc", "lld", "ller", "lleu", "llew", "llm",
+    "lln", "llnl", "llo", "llox", "lloyd's", "llp", "llud", "llyn",
+    "llyr", "lm", "lm/m", "lm/w", "lman", "lmc", "lme", "lmf",
+    "lmms", "lmos", "lmt", "ln", "ln2", "lndg", "lng", "lnos",
+    "lnr", "lo", "loa", "load", "loaf", "loam", "loan", "loar",
+    "lob", "lob-", "lobe", "lobe's", "lobi", "lobo", "lobs", "lobster's",
+    "loc", "loca", "locality's", "locator's", "loch", "loci", "lock", "lockout's",
+    "lockup's", "locn", "loco", "locomotive's", "locust's", "lod", "loda", "lode",
+    "lodi", "lody", "lodz", "loe", "loeb", "loed", "lof", "lofn",
+    "loft", "loft's", "log", "log's", "log-", "logarithm's", "loge", "logger's",
+    "logi", "logic's", "logician's", "logo", "logs", "logy", "lohn", "loi",
+    "loin", "loin's", "loir", "lois", "loja", "loka", "loke", "loki",
+    "lola", "lole", "loli", "loll", "lolo", "lom", "loma", "lomb",
+    "lome", "lon", "lona", "lond", "lone", "long", "longitude's", "loni",
+    "lonk", "loo", "loob", "lood", "loof", "look", "lookup's", "loom",
+    "loon", "loop", "loophole's", "loos", "loot", "lop", "lope", "lops",
+    "loq", "loq.", "lor", "lor'", "lora", "lord", "lore", "lori",
+    "lorn", "loro", "lors", "lory", "los", "lose", "losf", "losh",
+    "loss", "loss's", "lost", "lot", "lot's", "lota", "lote", "loth",
+    "loti", "loto", "lots", "lott", "lotz", "lou", "loud", "loudspeaker's",
+    "louk", "loun", "loup", "lour", "lout", "loux", "love", "low",
+    "lowa", "lowe", "lowl", "lown", "lows", "lowy", "lox", "loy",
+    "loyalty's", "loyd", "loyn", "loz", "lozi", "lp", "lpc", "lpda",
+    "lpf", "lpg", "lpl", "lpm", "lpn", "lpp", "lpr", "lps",
+    "lpt", "lpv", "lpw", "lr", "lrap", "lrb", "lrbm", "lrc",
+    "lrs", "lrsp", "lrss", "lru", "ls", "lsap", "lsb", "lsc",
+    "lsd", "lse", "lsi", "lsm", "lsp", "lsr", "lsrp", "lss",
+    "lssd", "lst", "lsv", "lt", "lt.", "lta", "ltab", "ltc",
+    "ltd", "ltd.", "ltf", "ltg", "lth", "ltjg", "ltl", "ltp",
+    "ltpd", "ltr", "lts", "ltv", "ltvr", "lu", "luau", "lub",
+    "luba", "lube", "lubricant's", "luby", "luc", "luca", "luce", "luci",
+    "luck", "lucy", "lud", "ludd", "lude", "ludo", "lue", "lues",
+    "luff", "lug", "luge", "lugo", "lugs", "luhe", "luht", "lui",
+    "luik", "luis", "luk", "luke", "luks", "lula", "luli", "lull",
+    "lulu", "lum", "lump", "lums", "lun", "luna", "luncheon's", "lund",
+    "lune", "lung", "lunk", "lunn", "luns", "lunt", "luny", "luo",
+    "lupe", "lupi", "lur", "lura", "lure", "lurg", "luri", "lurk",
+    "lusa", "lush", "lusk", "lust", "lut", "lute", "lute's", "luth",
+    "lutz", "luv", "luvs", "lux", "lux.", "luxe", "luxury's", "luz",
+    "lv", "lv.", "lviv", "lvos", "lvov", "lw", "lwe", "lwei",
+    "lwl", "lwm", "lwo", "lwop", "lwp", "lwsp", "lwt", "lx",
+    "lxe", "lxx", "ly", "lyam", "lyas", "lyc", "lych", "lyda",
+    "lye", "lyes", "lyle", "lyly", "lym", "lyme", "lymn", "lyn",
+    "lynd", "lynn", "lyns", "lynx", "lynx's", "lyo-", "lyon", "lyra",
+    "lyre", "lys", "lys-", "lyse", "lyte", "lyze", "lz", "lzen"
+};
 
-// Maximum number of words estimated from txt file
-#define DICT_L_MAX_WORDS 14093
-#define DICT_L_TXT_PATH "Dictionary/dict_l.txt"
-
-// Global arrays for loaded words
-static char* dict_l_words[DICT_L_MAX_WORDS];
-static size_t dict_l_count = 0;
-
-// Function to load words from txt file
-static int load_dict_l_from_file(void) {
-    FILE* file = fopen(DICT_L_TXT_PATH, "r");
-    if (!file) {
-        return -1; // Failed to open file
-    }
-    
-    char buffer[256];
-    dict_l_count = 0;
-    
-    while (fgets(buffer, sizeof(buffer), file) && dict_l_count < DICT_L_MAX_WORDS) {
-        // Remove newline
-        size_t len = strlen(buffer);
-        if (len > 0 && buffer[len-1] == '\n') {
-            buffer[len-1] = '\0';
-        }
-        
-        // Allocate and copy word
-        if (strlen(buffer) > 0) {
-            dict_l_words[dict_l_count] = malloc(strlen(buffer) + 1);
-            if (dict_l_words[dict_l_count]) {
-                strcpy(dict_l_words[dict_l_count], buffer);
-                dict_l_count++;
-            }
-        }
-    }
-    
-    fclose(file);
-    return 0; // Success
-}
-
-// Function to free loaded words
-static void free_dict_l_words(void) {
-    for (size_t i = 0; i < dict_l_count; i++) {
-        if (dict_l_words[i]) {
-            free(dict_l_words[i]);
-            dict_l_words[i] = NULL;
-        }
-    }
-    dict_l_count = 0;
-}
-
-// Compatibility array pointer (points to loaded words)
-static const char* const* dict_l = (const char* const*)dict_l_words;
-static const size_t DICT_L_SIZE = DICT_L_MAX_WORDS; // Will be updated to actual count after loading
-
-// Getter function for actual count
-static size_t get_dict_l_size(void) {
-    return dict_l_count;
-}
+static const size_t DICT_L_SIZE = sizeof(dict_l) / sizeof(dict_l[0]);
 
 #endif // DICT_L_H

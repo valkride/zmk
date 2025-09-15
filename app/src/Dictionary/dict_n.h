@@ -1,67 +1,134 @@
 #ifndef DICT_N_H
 #define DICT_N_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+static const char* const dict_n[] = {
+    "n", "n'djamena", "n'gana", "n'importe", "n's", "n-", "n-ple", "n-ply",
+    "n.", "n.a.", "n.b.", "n.c.", "n.d.", "n.f.", "n.g.", "n.i.",
+    "n.j.", "n.p.", "n.s.", "n.t.", "n.y.", "n.z.", "n/a", "n/f",
+    "n/s/f", "na", "naa", "naacp", "naafi", "naam", "naara", "naas",
+    "nab", "nabac", "nabak", "nabal", "nabb", "nabby", "nabe", "nabes",
+    "nabis", "nabk", "nabla", "nable", "nabob", "nabs", "nabu", "nac",
+    "naca", "nace", "nach", "nache", "nacho", "naco", "nacre", "nacry",
+    "nacs", "nad", "nada", "nadab", "nadda", "nader", "nadge", "nadh",
+    "nadia", "nadir", "nadja", "nador", "nadp", "nady", "nadya", "nae",
+    "nael", "naevi", "naf", "nafis", "nafl", "nafud", "nag", "nag's",
+    "naga", "nage", "nagel", "nagey", "naggy", "naght", "nagle", "nagor",
+    "nags", "nagy", "nah", "nah.", "naha", "nahma", "nahor", "nahua",
+    "nahum", "naiad", "naias", "naib", "naid", "naida", "naif", "naifs",
+    "naig", "naik", "nail", "nails", "naily", "naim", "naima", "nain",
+    "naio", "nair", "naira", "nairn", "nairy", "nais", "naish", "naive",
+    "naja", "naji", "nak", "nake", "naked", "naker", "nakir", "nako",
+    "nakoo", "nalda", "naldo", "nale", "naled", "nalgo", "nally", "nalor",
+    "nam", "nama", "naman", "namaz", "nambe", "namby", "namda", "name",
+    "named", "namen", "namer", "names", "namesake's", "namm", "namma", "nammo",
+    "nammu", "nampa", "namur", "nan", "nana", "nanak", "nanas", "nance",
+    "nanci", "nancy", "nand", "nanda", "nandi", "nandu", "nane", "nanes",
+    "nanga", "nani", "nanji", "nanmu", "nanna", "nanni", "nanny", "nano-",
+    "nanon", "nanp", "nant", "nants", "nantz", "naoi", "naoma", "naomi",
+    "naor", "naos", "naoto", "nap", "nap's", "napa", "napal", "napap",
+    "nape", "naper", "napes", "napkin's", "napoo", "nappa", "nappe", "nappy",
+    "naps", "napu", "nar", "nara", "narah", "narc", "narco", "narcs",
+    "nard", "narda", "nards", "nardu", "nare", "naren", "nares", "narev",
+    "narew", "nari", "naric", "naris", "nark", "narka", "narks", "narky",
+    "narr", "narra", "narrative's", "narva", "narw", "nary", "nas", "nas-",
+    "nasa", "nasab", "nasal", "nasat", "nasby", "nasca", "nasch", "nasd",
+    "nasda", "nash", "nashe", "nasho", "nasi", "nasia", "nasm", "naso",
+    "naso-", "nason", "nasp", "nassa", "nassi", "nast", "nasty", "nasua",
+    "nasus", "nasya", "nat", "nata", "natal", "natch", "nate", "nates",
+    "nath", "nathe", "natie", "nation's", "nationalist's", "nationality's", "natka", "natl",
+    "natl.", "nato", "natr", "nats", "natt", "natta", "natty", "natu",
+    "nature's", "natus", "nau", "nauch", "naum", "naumk", "naunt", "naur",
+    "nauru", "naut", "naut.", "nav", "nav.", "nava", "naval", "navar",
+    "nave", "navel", "naves", "navet", "navew", "navi", "navig", "navigator's",
+    "navis", "navvy", "navy", "navy's", "naw", "nawab", "nawle", "nawob",
+    "nawt", "naxos", "nay", "nayar", "nays", "nazar", "naze", "nazi",
+    "nazi's", "nazim", "nazir", "nazis", "nb", "nba", "nbc", "nbe",
+    "nberg", "nbfm", "nbg", "nbo", "nbp", "nbs", "nbvm", "nbw",
+    "nc", "nca", "ncaa", "ncar", "ncb", "ncc", "nccf", "nccl",
+    "ncd", "ncdc", "nce", "ncga", "nci", "ncic", "ncmos", "nco",
+    "ncp", "ncr", "ncs", "ncsa", "ncsc", "ncsl", "ncte", "nctl",
+    "ncv", "nd", "nda", "ndac", "ndak", "ndb", "ndcc", "nddl",
+    "nde", "ndea", "ndi", "ndis", "ndl", "ndola", "ndp", "ndsl",
+    "ndt", "ndv", "ne", "ne'er", "ne'er-do-well", "ne'er-dos", "ne-", "nea",
+    "neaf", "neagh", "neal", "neala", "neale", "neall", "nealy", "neap",
+    "neaps", "near", "near-", "nears", "neat", "neath", "neats", "neau",
+    "neb", "nebby", "nebe", "nebel", "nebn", "nebo", "nebr", "nebr.",
+    "nebs", "nec", "neche", "necho", "necia", "neck", "necklace's", "necks",
+    "necktie's", "necr-", "necro", "ned", "neda", "nedc", "nedda", "neddy",
+    "nedi", "nedra", "nedry", "nee", "need", "needn", "needn't", "needs",
+    "needy", "neel", "neela", "neeld", "neele", "neely", "neem", "neems",
+    "neep", "neeps", "neer", "neese", "neet", "neeze", "nef", "nefas",
+    "nefen", "neff", "neffs", "neffy", "nefs", "neg", "neger", "negev",
+    "negro", "negus", "neh", "neh.", "nehru", "nei", "neif", "neifs",
+    "neigh", "neighborhood's", "neil", "neila", "neile", "neill", "neils", "nein",
+    "neisa", "neist", "neith", "neiva", "nejd", "nejdi", "nek", "nel",
+    "nela", "nelan", "nelda", "nelia", "nelie", "nell", "nella", "nelle",
+    "nelli", "nelly", "nels", "nelse", "nema", "neman", "nemas", "nemea",
+    "nemo", "nemos", "nemp", "nena", "nene", "nenes", "nenni", "nenta",
+    "neo", "neo-", "neoga", "neola", "neom", "neoma", "neon", "neona",
+    "neons", "neoza", "nep", "nepa", "nepal", "neper", "neph", "nephew's",
+    "nephi", "nepil", "nepit", "nepos", "neral", "nerc", "nerd", "nerds",
+    "nerdy", "nere", "neri", "nerin", "nerka", "nero", "nero's-crown", "nerol",
+    "neron", "nert", "nerta", "nerte", "nerti", "nerts", "nerty", "nertz",
+    "nerv-", "nerva", "nerve", "nerve's", "nervy", "nes", "nesac", "nesc",
+    "nese", "neses", "nesh", "ness", "nessa", "nessi", "nessy", "nest",
+    "nesta", "nesto", "nests", "nesty", "net", "net's", "nete", "neter",
+    "neth", "neth.", "neti", "neto", "netop", "nets", "nett", "netta",
+    "nette", "netti", "netts", "netty", "network's", "neu", "neuk", "neuks",
+    "neum", "neuma", "neume", "neums", "neur-", "neuron's", "neuss", "neut",
+    "neut.", "neutrino's", "nev", "nev.", "neva", "nevai", "nevat", "neve",
+    "nevel", "neven", "never", "neves", "nevi", "nevil", "nevin", "nevis",
+    "nevo", "nevoy", "nevsa", "nevus", "new", "newcomer's", "news", "newspaper's",
+    "newt", "nexo", "next", "ney", "nf", "nfc", "nfd", "nffe",
+    "nfl", "nfpa", "nfr", "nfs", "nft", "nfu", "nfwi", "ng",
+    "nga", "ngai", "ngc", "ngk", "ngo", "nh", "nha", "nhan",
+    "nhg", "nhi", "nhl", "nhr", "nhs", "ni", "nia", "nial",
+    "nias", "nib", "nibs", "nic", "nica", "nice", "nich", "nici",
+    "nick", "nickel's", "nico", "nid", "nida", "nide", "nidi", "niece's",
+    "niel", "nier", "nies", "nife", "niff", "nig", "nigh", "nightingale's",
+    "nightmare's", "nih", "nihi", "nik", "nika", "nike", "niki", "niko",
+    "nil", "nila", "nile", "nill", "nils", "nim", "nimb", "nimh",
+    "nims", "nina", "nine", "ning", "nino", "niog", "nip", "nipa",
+    "nips", "nir", "nira", "nirc", "nis", "nisa", "nisc", "nish",
+    "nisi", "niso", "nist", "nit", "nita", "nito", "nits", "nitz",
+    "niu", "niue", "niv", "nix", "nixa", "nixe", "nixy", "nizy",
+    "nj", "nkgb", "nks", "nkvd", "nl", "nlc", "nldp", "nlf",
+    "nlm", "nlp", "nlrb", "nls", "nm", "nmc", "nmi", "nmos",
+    "nmr", "nms", "nmu", "nne", "nnp", "nntp", "nnw", "nnx",
+    "no", "no-man's-land", "noa", "noaa", "noah", "noak", "noam", "noao",
+    "nob", "nobe", "nobody'd", "nobs", "noby", "noc", "nock", "nocs",
+    "nod", "nod's", "node", "node's", "nodi", "nods", "noe", "noel",
+    "noes", "noex", "nog", "nogg", "nogs", "noh", "noil", "noir",
+    "noix", "nol", "nola", "nold", "nole", "noli", "noll", "nolo",
+    "nolt", "nom", "nom.", "noma", "nome", "nomi", "noms", "nomy",
+    "non", "non-", "nona", "none", "nong", "noni", "nonlinearity's", "nono",
+    "nonspecialist's", "nonterminal's", "noo", "nook", "nook's", "noon", "noop", "nop",
+    "nope", "nor", "nor'", "nor'-west", "nor'-wester", "nor'east", "nor'easter", "nor'west",
+    "nor'wester", "nor-", "nor.", "nora", "nord", "nore", "nori", "nork",
+    "norm", "norm's", "norn", "north'ard", "norw", "nos", "nos-", "nosc",
+    "nose", "nosh", "nostril's", "nosu", "nosy", "not", "not-", "nota",
+    "notation's", "note", "notebook's", "noti", "nots", "nou", "noun", "noun's",
+    "noup", "nous", "nov", "nov.", "nova", "novel's", "novelist's", "novelty's",
+    "november's", "novi", "novice's", "novo", "now", "nows", "nowt", "nowy",
+    "nox", "noxa", "noy", "nozi", "np", "npa", "npc", "npfx",
+    "npg", "npi", "npl", "npn", "npp", "npr", "nprm", "npsi",
+    "npt", "npv", "nq", "nqs", "nr", "nr.", "nra", "nrab",
+    "nrao", "nrc", "nrdc", "nre", "nren", "nrl", "nrm", "nro",
+    "nrpb", "nrz", "nrzi", "ns", "nsa", "nsap", "nsb", "nsc",
+    "nscs", "nse", "nsec", "nsel", "nsem", "nsf", "nso", "nsp",
+    "nsrb", "nst", "nsts", "nsu", "nsug", "nsw", "nswc", "nt",
+    "ntec", "nteu", "ntf", "nth", "ntia", "ntis", "ntn", "nto",
+    "ntp", "ntr", "nts", "ntsb", "ntsc", "ntt", "nu", "nua",
+    "nub", "nuba", "nubs", "nucleotide's", "nuda", "nudd", "nude", "nui",
+    "nuisance's", "nuj", "nuke", "nuku'alofa", "nul", "nuli", "null", "num",
+    "numa", "numb", "numeral's", "numerator's", "nump", "nun", "nun's", "nunc",
+    "nunn", "nuns", "nunu", "nupe", "nur", "nurd", "nuri", "nurl",
+    "nursery's", "nus", "nusc", "nut", "nut's", "nuts", "nuww", "nv",
+    "nvh", "nw", "nwa", "nwbn", "nwbw", "nwc", "nwlb", "nws",
+    "nwt", "nxx", "ny", "nya", "nyac", "nyas", "nyc", "nye",
+    "nyet", "nyp", "nysa", "nyse", "nyu", "nyx", "nz", "nzbc"
+};
 
-// Maximum number of words estimated from txt file
-#define DICT_N_MAX_WORDS 16174
-#define DICT_N_TXT_PATH "Dictionary/dict_n.txt"
-
-// Global arrays for loaded words
-static char* dict_n_words[DICT_N_MAX_WORDS];
-static size_t dict_n_count = 0;
-
-// Function to load words from txt file
-static int load_dict_n_from_file(void) {
-    FILE* file = fopen(DICT_N_TXT_PATH, "r");
-    if (!file) {
-        return -1; // Failed to open file
-    }
-    
-    char buffer[256];
-    dict_n_count = 0;
-    
-    while (fgets(buffer, sizeof(buffer), file) && dict_n_count < DICT_N_MAX_WORDS) {
-        // Remove newline
-        size_t len = strlen(buffer);
-        if (len > 0 && buffer[len-1] == '\n') {
-            buffer[len-1] = '\0';
-        }
-        
-        // Allocate and copy word
-        if (strlen(buffer) > 0) {
-            dict_n_words[dict_n_count] = malloc(strlen(buffer) + 1);
-            if (dict_n_words[dict_n_count]) {
-                strcpy(dict_n_words[dict_n_count], buffer);
-                dict_n_count++;
-            }
-        }
-    }
-    
-    fclose(file);
-    return 0; // Success
-}
-
-// Function to free loaded words
-static void free_dict_n_words(void) {
-    for (size_t i = 0; i < dict_n_count; i++) {
-        if (dict_n_words[i]) {
-            free(dict_n_words[i]);
-            dict_n_words[i] = NULL;
-        }
-    }
-    dict_n_count = 0;
-}
-
-// Compatibility array pointer (points to loaded words)
-static const char* const* dict_n = (const char* const*)dict_n_words;
-static const size_t DICT_N_SIZE = DICT_N_MAX_WORDS; // Will be updated to actual count after loading
-
-// Getter function for actual count
-static size_t get_dict_n_size(void) {
-    return dict_n_count;
-}
+static const size_t DICT_N_SIZE = sizeof(dict_n) / sizeof(dict_n[0]);
 
 #endif // DICT_N_H

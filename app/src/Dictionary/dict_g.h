@@ -1,67 +1,134 @@
 #ifndef DICT_G_H
 #define DICT_G_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+static const char* const dict_g[] = {
+    "g", "g's", "g-cal", "g-man", "g-men", "g.", "g.a.", "g.b.",
+    "g.i.", "g.m.", "g.o.", "g.p.", "g.s.", "g.u.", "g.v.", "ga",
+    "ga.", "gaal", "gaap", "gaas", "gab", "gabar", "gabbi", "gabbs",
+    "gabby", "gabe", "gabel", "gabes", "gabey", "gabi", "gabie", "gable",
+    "gabo", "gabon", "gabor", "gabs", "gabun", "gaby", "gad", "gaddi",
+    "gade", "gader", "gades", "gadge", "gadget's", "gadi", "gadid", "gadis",
+    "gado", "gads", "gadso", "gadus", "gae", "gaea", "gaed", "gael",
+    "gaels", "gaen", "gaes", "gaet", "gaeta", "gaff", "gaffe", "gaffs",
+    "gafsa", "gag", "gaga", "gage", "gaged", "gagee", "gager", "gages",
+    "gagne", "gagor", "gags", "gahan", "gahl", "gaia", "gaige", "gail",
+    "gaile", "gaily", "gain", "gain-", "gaine", "gains", "gair", "gaist",
+    "gait", "gaits", "gaitt", "gaius", "gaivn", "gaize", "gaj", "gajda",
+    "gal", "gal.", "gala", "galah", "galan", "galas", "galax", "galaxy's",
+    "galba", "galbe", "gale", "galea", "galee", "galei", "galen", "galer",
+    "gales", "galet", "galey", "galga", "gali", "galik", "gall", "galla",
+    "galle", "galley's", "galli", "gallon's", "galls", "gally", "galop", "galp",
+    "gals", "galt", "galut", "galv", "galva", "galvo", "gam", "gam-",
+    "gama", "gamal", "gamas", "gamay", "gamb", "gamba", "gambe", "gambi",
+    "gambs", "game", "gamed", "gamer", "games", "gamey", "gamic", "gamin",
+    "gamma", "gammy", "gamo-", "gamp", "gamps", "gams", "gamut", "gamy",
+    "gan", "ganam", "gance", "ganch", "gand", "ganda", "gane", "ganef",
+    "ganev", "gang", "gang's", "ganga", "gange", "gangs", "gangster's", "ganja",
+    "ganny", "ganof", "gans", "gansa", "gansy", "gant", "ganta", "gantt",
+    "ganza", "gao", "gaol", "gaols", "gaon", "gaons", "gap", "gap's",
+    "gapa", "gape", "gaped", "gaper", "gapes", "gapin", "gapo", "gappy",
+    "gaps", "gapy", "gar", "gara", "garad", "garau", "garb", "garbage's",
+    "garbe", "garbo", "garbs", "garce", "gard", "garda", "garde", "gardy",
+    "gare", "gareh", "garek", "garey", "garg", "gari", "garik", "garin",
+    "garle", "garm", "garment's", "garmr", "garn", "garni", "garo", "garon",
+    "garoo", "garry", "gars", "garse", "gart", "garter's", "garth", "garua",
+    "garum", "garv", "garvy", "gary", "gas", "gas's", "gasan", "gases",
+    "gash", "gash's", "gashy", "gasp", "gaspe", "gasps", "gaspy", "gass",
+    "gassy", "gast", "gasts", "gat", "gata", "gatch", "gate", "gated",
+    "gater", "gates", "gateway's", "gath", "gatha", "gati", "gator", "gatow",
+    "gats", "gatt", "gatun", "gatv", "gau", "gaub", "gauby", "gaucy",
+    "gaud", "gauds", "gaudy", "gauge", "gauk", "gaul", "gauls", "gault",
+    "gaum", "gaums", "gaumy", "gaun", "gaunt", "gaup", "gaur", "gaura",
+    "gaure", "gauri", "gaurs", "gaus", "gause", "gauss", "gaut", "gauze",
+    "gauzy", "gav", "gavan", "gave", "gavel", "gaven", "gavia", "gavin",
+    "gavle", "gavot", "gavra", "gaw", "gawby", "gawen", "gawk", "gawks",
+    "gawky", "gawm", "gawn", "gawp", "gawps", "gawra", "gawsy", "gay",
+    "gaya", "gayal", "gaye", "gayel", "gayer", "gayl", "gayla", "gayle",
+    "gayly", "gayn", "gays", "gaz", "gaz.", "gaza", "gaze", "gazed",
+    "gazee", "gazel", "gazer", "gazes", "gazet", "gazi", "gazo", "gazon",
+    "gazoz", "gazy", "gazzo", "gb", "gba", "gbari", "gbe", "gbg",
+    "gbh", "gbip", "gbj", "gbm", "gbs", "gbt", "gbz", "gc",
+    "gc/s", "gca", "gcb", "gcc", "gcd", "gce", "gcf", "gci",
+    "gcl", "gcm", "gcmg", "gconv", "gcr", "gcs", "gct", "gcvo",
+    "gcvs", "gd", "gda", "gdb", "gde", "gdel", "gdns", "gdp",
+    "gdr", "gds", "gds.", "ge", "ge'ez", "ge-", "gea", "geal",
+    "gean", "gear", "gears", "geary", "gease", "geast", "geat", "geb",
+    "geber", "gebur", "geck", "gecko", "gecr", "ged", "gedd", "geds",
+    "gee", "geed", "geek", "geer", "gees", "geet", "geez", "geff",
+    "gegg", "geic", "gein", "geir", "geis", "gel", "gel's", "gela",
+    "gelb", "geld", "gell", "gels", "gelt", "gem", "gem's", "gems",
+    "gen", "gen-", "gen.", "gena", "gender's", "gene", "gene's", "generalist's",
+    "generalization's", "generator's", "generosity's", "genf", "genius's", "genk", "genl", "geno",
+    "genre's", "gens", "gent", "genu", "geny", "geo", "geo-", "geod",
+    "geof", "geog", "geol", "geologist's", "geom", "geon", "gepp", "ger",
+    "ger.", "gera", "gerb", "gerd", "gere", "geri", "germ", "germ's",
+    "german's", "gers", "gert", "gery", "ges", "gess", "gest", "get",
+    "geta", "geth", "gets", "getter's", "geum", "gev", "gex", "gey",
+    "gez", "gfci", "gftu", "gg", "ggp", "ggr", "gh", "gha",
+    "ghan", "ghat", "ghee", "gheg", "ghi", "ghis", "ghq", "ghrs",
+    "ghuz", "ghz", "gi", "gi'd", "gi'ing", "gi.", "giai", "gian",
+    "giant's", "gib", "gibb", "gibe", "gibs", "gid", "gide", "gids",
+    "gie", "gied", "gien", "gies", "gif", "giff", "gift", "gifu",
+    "gig", "giga", "gigi", "gigo", "gigs", "gij", "gil", "gila",
+    "gild", "gile", "gill", "gill's", "gilo", "gils", "gilt", "gim",
+    "gimmick's", "gimp", "gin", "gin's", "gina", "gine", "ging", "gink",
+    "ginn", "gino", "gins", "gio", "gip", "gips", "gipsy's", "giraffe's",
+    "gird", "girder's", "gire", "girl", "girl's", "girn", "giro", "girr",
+    "girt", "gis", "gise", "gish", "giss", "gist", "git", "gite",
+    "gith", "gitt", "give", "giza", "gizo", "gizz", "gk", "gks",
+    "gksm", "gl", "gl.", "glacier's", "glad", "glam", "gland's", "glar",
+    "glb", "glc", "gld", "gle", "gled", "glee", "gleg", "glen",
+    "glen's", "glew", "gley", "glia", "glib", "glim", "glis", "glob",
+    "globe's", "glod", "glom", "glop", "glor", "glos", "glossary's", "glow",
+    "gloy", "glt", "glt.", "glub", "glue", "glug", "glum", "glut",
+    "glux", "glyc", "glyn", "gm", "gmat", "gmb", "gmbh", "gmc",
+    "gmrt", "gmt", "gmur", "gmw", "gn", "gnar", "gnat", "gnat's",
+    "gnaw", "gnd", "gneu", "gnma", "gnni", "gnow", "gnp", "gns",
+    "gnu", "gnus", "go", "goa", "goad", "goaf", "goal", "goal's",
+    "goan", "goar", "goas", "goat", "goat's", "goat's-beard", "goat's-rue", "goatee's",
+    "gob", "gobi", "goblet's", "goblin's", "gobo", "gobs", "goby", "goc",
+    "god", "god's", "god's-penny", "goda", "goddess's", "gode", "godmother's", "gods",
+    "goel", "goen", "goer", "goes", "goff", "gog", "gogh", "gogo",
+    "goi", "gois", "gok", "gol", "gola", "gold", "golf", "goli",
+    "goll", "golo", "golp", "goma", "gome", "gon", "gon-", "gona",
+    "gond", "gone", "gong", "gong's", "gonk", "gony", "goo", "good",
+    "goody's", "goof", "goog", "gook", "gool", "goon", "goop", "goos",
+    "gop", "gor", "gora", "gorb", "gord", "gore", "gorilla's", "gorp",
+    "gory", "gorz", "gos", "gosh", "goss", "got", "gote", "goth",
+    "goto", "gott", "gotz", "gou", "goup", "gour", "gout", "gov",
+    "gov.", "gove", "government's", "governor's", "govt", "gow", "gowd", "gowf",
+    "gowk", "gowl", "gown", "gox", "goy", "goya", "goys", "gp",
+    "gpad", "gpc", "gpcd", "gpci", "gpd", "gpe", "gph", "gpi",
+    "gpib", "gpl", "gpm", "gpo", "gps", "gpsi", "gpss", "gpu",
+    "gq", "gr", "gr-s", "gr.", "gra", "grab", "grabber's", "grad",
+    "gradation's", "gradient's", "grae", "graf", "graham's", "gram", "grammar's", "gran",
+    "granary's", "grandfather's", "grandmother's", "grandson's", "grape's", "graph's", "gras", "grat",
+    "gratuity's", "grav", "gray", "graz", "grb", "grd", "gre", "greb",
+    "gree", "greek's", "greenhouse's", "greg", "grenade's", "grep", "gres", "gret",
+    "grew", "grex", "grey", "grf", "gri", "grid", "grid's", "grief's",
+    "grievance's", "grig", "grim", "grin", "grindstone's", "grip", "gris", "grit",
+    "grit's", "griz", "gro", "gro.", "grocer's", "grof", "grog", "groh",
+    "gros", "grot", "grotto's", "grow", "grownup's", "grr", "grs", "grub",
+    "grub's", "grudge's", "grue", "gruf", "grum", "grun", "grus", "grx",
+    "gry", "gry-", "gs", "gsa", "gsat", "gsc", "gsfc", "gsr",
+    "gsts", "gt", "gt.", "gta", "gtc", "gtd", "gtd.", "gte",
+    "gto", "gts", "gtsi", "gtt", "gu", "guam", "guan", "guao",
+    "guar", "guardian's", "guat", "guck", "gud", "gude", "gue", "guerrilla's",
+    "guest's", "gufa", "guff", "gugu", "guha", "guhr", "gui", "guib",
+    "guid", "guidebook's", "guideline's", "guin", "guise's", "guitar's", "gul", "gula",
+    "gulch's", "guld", "gule", "gulf", "gulf's", "gull", "gully's", "gulo",
+    "gulp", "guls", "gult", "guly", "gum", "gum's", "gumi", "gump",
+    "gums", "gun", "gun's", "guna", "gung", "gunj", "gunk", "gunl",
+    "gunn", "gunner's", "guns", "gunz", "gup", "gur", "gurk", "gurl",
+    "gurr", "gurt", "guru", "gus", "gush", "guss", "gust", "gust's",
+    "gut", "guti", "guts", "gutt", "guv", "guvs", "guy", "guys",
+    "guz", "guze", "gv", "gw", "gwag", "gwen", "gwin", "gws",
+    "gwyn", "gy", "gy-", "gyal", "gyas", "gybe", "gye", "gyes",
+    "gyge", "gyle", "gym", "gymnasium's", "gymnast's", "gyms", "gyn", "gyn-",
+    "gyne", "gyny", "gyor", "gyp", "gype", "gyps", "gypsy's", "gyr-",
+    "gyre", "gyri", "gyro", "gyroscope's", "gyse", "gyte", "gyve", "gza"
+};
 
-// Maximum number of words estimated from txt file
-#define DICT_G_MAX_WORDS 14466
-#define DICT_G_TXT_PATH "Dictionary/dict_g.txt"
-
-// Global arrays for loaded words
-static char* dict_g_words[DICT_G_MAX_WORDS];
-static size_t dict_g_count = 0;
-
-// Function to load words from txt file
-static int load_dict_g_from_file(void) {
-    FILE* file = fopen(DICT_G_TXT_PATH, "r");
-    if (!file) {
-        return -1; // Failed to open file
-    }
-    
-    char buffer[256];
-    dict_g_count = 0;
-    
-    while (fgets(buffer, sizeof(buffer), file) && dict_g_count < DICT_G_MAX_WORDS) {
-        // Remove newline
-        size_t len = strlen(buffer);
-        if (len > 0 && buffer[len-1] == '\n') {
-            buffer[len-1] = '\0';
-        }
-        
-        // Allocate and copy word
-        if (strlen(buffer) > 0) {
-            dict_g_words[dict_g_count] = malloc(strlen(buffer) + 1);
-            if (dict_g_words[dict_g_count]) {
-                strcpy(dict_g_words[dict_g_count], buffer);
-                dict_g_count++;
-            }
-        }
-    }
-    
-    fclose(file);
-    return 0; // Success
-}
-
-// Function to free loaded words
-static void free_dict_g_words(void) {
-    for (size_t i = 0; i < dict_g_count; i++) {
-        if (dict_g_words[i]) {
-            free(dict_g_words[i]);
-            dict_g_words[i] = NULL;
-        }
-    }
-    dict_g_count = 0;
-}
-
-// Compatibility array pointer (points to loaded words)
-static const char* const* dict_g = (const char* const*)dict_g_words;
-static const size_t DICT_G_SIZE = DICT_G_MAX_WORDS; // Will be updated to actual count after loading
-
-// Getter function for actual count
-static size_t get_dict_g_size(void) {
-    return dict_g_count;
-}
+static const size_t DICT_G_SIZE = sizeof(dict_g) / sizeof(dict_g[0]);
 
 #endif // DICT_G_H

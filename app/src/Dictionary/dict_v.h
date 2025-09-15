@@ -1,67 +1,59 @@
 #ifndef DICT_V_H
 #define DICT_V_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+static const char* const dict_v[] = {
+    "v", "v's", "v-1", "v-2", "v.", "v.a.", "v.c.", "v.d.",
+    "v.g.", "v.i.", "v.p.", "v.r.", "v.s.", "v.v.", "v.w.", "v6",
+    "v8", "va", "va-t'-en", "va.", "vaad", "vaal", "vaas", "vab",
+    "vac", "vacancy's", "vacs", "vad", "vada", "vade", "vads", "vady",
+    "vafb", "vag", "vag-", "vagabond's", "vagary's", "vage", "vagi", "vagina's",
+    "vahe", "vai", "vail", "vain", "vair", "vaja", "val", "val-d'oise",
+    "val.", "vala", "vale", "vale's", "valence's", "valentine's", "valet's", "vali",
+    "vall", "valley's", "valuation's", "valve's", "vamp", "van", "van's", "vane",
+    "vane's", "vang", "vani", "vano", "vans", "vap", "var", "var.",
+    "vara", "vare", "vari", "variable's", "variance's", "variation's", "variety's", "varl",
+    "varnish's", "vars", "vary", "vas", "vas-", "vasa", "vase", "vase's",
+    "vasi", "vass", "vast", "vasu", "vat", "vat's", "vat.", "vats",
+    "vatu", "vau", "vaud", "vaus", "vav", "vavs", "vaw", "vaws",
+    "vax", "vayu", "vb", "vb.", "vc", "vcci", "vcm", "vco",
+    "vcr", "vcs", "vcu", "vd", "vdc", "vde", "vdfm", "vdi",
+    "vdm", "vdt", "vdu", "ve", "veal", "veau", "vector's", "veda",
+    "vedi", "vee", "veen", "veep", "veer", "vees", "veg", "vega",
+    "vegetable's", "vegetarian's", "vehicle's", "vei", "veii", "veil", "vein", "veit",
+    "vel", "vel.", "vela", "veld", "vell", "velo", "velocity's", "ven",
+    "ven-", "ven.", "vena", "vend", "vendor's", "venn", "veno", "vent",
+    "ventricle's", "venu", "venus's-flytrap", "venus's-girdle", "venus's-hair", "veny", "veps", "ver",
+    "vera", "veranda's", "verb", "verb's", "verd", "vere", "veri", "vern",
+    "vers", "vert", "vertebrate's", "very", "vese", "vesp", "vessel's", "vest",
+    "vestige's", "vet", "vet.", "veta", "veteran's", "veterinarian's", "veto", "vets",
+    "veu", "vex", "vext", "vey", "vf", "vfea", "vfo", "vfr",
+    "vfs", "vfw", "vfy", "vg", "vga", "vgf", "vgi", "vhd",
+    "vhdl", "vhf", "vhs", "vi", "via", "vial", "vial's", "vian",
+    "vias", "vibe", "vic", "vic.", "vica", "vice", "vice's", "vici",
+    "vicissitude's", "vick", "vico", "vict", "victim's", "victor's", "victory's", "vida",
+    "vide", "videotape's", "vie", "vied", "vier", "vies", "viet", "view",
+    "viewpoint's", "vig", "viga", "vigilante's", "vignette's", "vigo", "vigs", "vii",
+    "viii", "viki", "vil", "vil.", "vila", "vild", "vile", "vili",
+    "vill", "villa's", "villain's", "vim", "vims", "vimy", "vin", "vin-",
+    "vina", "vine", "vine's", "vineyard's", "vinn", "vino", "vins", "vint",
+    "viny", "viol", "violator's", "violet's", "violin's", "violinist's", "vip", "viper's",
+    "vips", "vir", "vira", "vire", "virg", "virgin's", "virgin's-bower", "virl",
+    "virtue's", "virtuoso's", "virus's", "vis", "visa", "visc", "viscount's", "vise",
+    "vish", "vision's", "visitation's", "visitor's", "visor's", "viss", "vista's", "vita",
+    "vite", "viti", "vito", "viu", "viv", "viva", "vive", "vivi",
+    "vivl", "vivo", "viz", "viz.", "vize", "vj", "vl", "vla",
+    "vlad", "vlba", "vlbi", "vlei", "vlf", "vliw", "vlor", "vlos",
+    "vlsi", "vlt", "vm", "vmc", "vmcf", "vmd", "vme", "vmm",
+    "vmos", "vmr", "vmrs", "vms", "vn", "vnf", "vnl", "vny",
+    "vo", "vo.", "voa", "voc", "vocation's", "vod", "voe", "vog",
+    "vol", "volcano's", "volleyball's", "volume's", "vom", "von", "voq", "vor",
+    "vow", "vowel's", "vox", "vp", "vpf", "vpn", "vr", "vrc",
+    "vri", "vrm", "vrs", "vs", "vs.", "vsb", "vse", "vso",
+    "vsp", "vsr", "vss", "vsx", "vt", "vt.", "vtc", "vte",
+    "vti", "vto", "vtp", "vtr", "vts", "vu", "vug", "vul",
+    "vulture's", "vum", "vup", "vv", "vv.", "vw", "vws", "vxi"
+};
 
-// Maximum number of words estimated from txt file
-#define DICT_V_MAX_WORDS 6816
-#define DICT_V_TXT_PATH "Dictionary/dict_v.txt"
-
-// Global arrays for loaded words
-static char* dict_v_words[DICT_V_MAX_WORDS];
-static size_t dict_v_count = 0;
-
-// Function to load words from txt file
-static int load_dict_v_from_file(void) {
-    FILE* file = fopen(DICT_V_TXT_PATH, "r");
-    if (!file) {
-        return -1; // Failed to open file
-    }
-    
-    char buffer[256];
-    dict_v_count = 0;
-    
-    while (fgets(buffer, sizeof(buffer), file) && dict_v_count < DICT_V_MAX_WORDS) {
-        // Remove newline
-        size_t len = strlen(buffer);
-        if (len > 0 && buffer[len-1] == '\n') {
-            buffer[len-1] = '\0';
-        }
-        
-        // Allocate and copy word
-        if (strlen(buffer) > 0) {
-            dict_v_words[dict_v_count] = malloc(strlen(buffer) + 1);
-            if (dict_v_words[dict_v_count]) {
-                strcpy(dict_v_words[dict_v_count], buffer);
-                dict_v_count++;
-            }
-        }
-    }
-    
-    fclose(file);
-    return 0; // Success
-}
-
-// Function to free loaded words
-static void free_dict_v_words(void) {
-    for (size_t i = 0; i < dict_v_count; i++) {
-        if (dict_v_words[i]) {
-            free(dict_v_words[i]);
-            dict_v_words[i] = NULL;
-        }
-    }
-    dict_v_count = 0;
-}
-
-// Compatibility array pointer (points to loaded words)
-static const char* const* dict_v = (const char* const*)dict_v_words;
-static const size_t DICT_V_SIZE = DICT_V_MAX_WORDS; // Will be updated to actual count after loading
-
-// Getter function for actual count
-static size_t get_dict_v_size(void) {
-    return dict_v_count;
-}
+static const size_t DICT_V_SIZE = sizeof(dict_v) / sizeof(dict_v[0]);
 
 #endif // DICT_V_H

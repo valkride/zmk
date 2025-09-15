@@ -1,67 +1,134 @@
 #ifndef DICT_W_H
 #define DICT_W_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+static const char* const dict_w[] = {
+    "w", "w's", "w.", "w.a.", "w.b.", "w.c.", "w.d.", "w.f.",
+    "w.i.", "w.l.", "w.o.", "w/", "w/b", "w/o", "wa", "wa'",
+    "waaaf", "waac", "waacs", "waadt", "waaf", "waafs", "waag", "waal",
+    "waals", "waapa", "waar", "waasi", "wab", "waban", "wabby", "wabe",
+    "wabi", "wabs", "wac", "wace", "wack", "wacke", "wacko", "wacks",
+    "wacky", "waco", "wacs", "wad", "wadai", "waddy", "wade", "waded",
+    "wader", "wades", "wadge", "wadi", "wadis", "wadna", "wads", "wady",
+    "wae", "waefu", "waeg", "waer", "waers", "waes", "waf", "wafd",
+    "wafer", "wafer's", "waff", "waffle's", "waffs", "wafs", "waft", "wafts",
+    "wafty", "wag", "wage", "waged", "wager", "wages", "waget", "wagga",
+    "waggy", "wagh", "wagon", "wags", "wah", "wahl", "wahoo", "waif",
+    "waifs", "waik", "wail", "wails", "waily", "wain", "waine", "wains",
+    "wair", "waird", "wairs", "wais", "waise", "waist", "waist's", "waistcoat's",
+    "wait", "waite", "waitress's", "waits", "waive", "wajda", "waka", "wakan",
+    "wakas", "wake", "waked", "waken", "waker", "wakes", "wakf", "wakhi",
+    "waki", "wakif", "wakon", "waky", "wal", "wal.", "wald", "waldo",
+    "wale", "waled", "waler", "wales", "waley", "wali", "walk", "walke",
+    "walks", "wall", "walla", "wallet's", "walli", "walls", "wally", "walnut's",
+    "walrus's", "walsh", "walt", "walth", "walty", "waltz", "waly", "wam",
+    "wame", "wamel", "wames", "wamp", "wams", "wamus", "wan", "wan-",
+    "wana", "wand", "wanda", "wando", "wands", "wandy", "wane", "waned",
+    "waner", "wanes", "waney", "wang", "wanga", "wank", "wanky", "wanle",
+    "wanly", "wann", "wanna", "wanny", "wans", "want", "wants", "wanty",
+    "wany", "wanze", "wap", "wapp", "wappo", "waps", "war", "war's",
+    "warb", "warba", "warc", "warch", "ward", "warda", "warde", "wardrobe's",
+    "wards", "ware", "wared", "warer", "wares", "warf", "warga", "wark",
+    "warks", "warl", "warly", "warm", "warms", "warn", "warne", "warns",
+    "warnt", "warp", "warps", "warranty's", "warri", "warrior's", "wars", "warse",
+    "warship's", "warst", "wart", "wart's", "warta", "warth", "warts", "warty",
+    "warua", "warve", "wary", "was", "wasat", "wasco", "wase", "wasel",
+    "wash", "wash.", "washo", "washy", "wasir", "wasn", "wasn't", "wasnt",
+    "wasp", "wasp's", "wasps", "waspy", "wast", "wasta", "waste", "wasts",
+    "wasty", "wat", "watap", "watch", "watchword's", "water", "waterfall's", "waterway's",
+    "wath", "watha", "wats", "watt", "watts", "wauch", "wauf", "waugh",
+    "wauk", "wauks", "waul", "wauls", "wauna", "wauns", "waup", "waur",
+    "waura", "wausa", "wauve", "wave", "waved", "waveform's", "wavefront's", "waver",
+    "waves", "wavey", "wavy", "waw", "wawa", "wawah", "wawl", "wawls",
+    "wawro", "waws", "wax", "waxed", "waxen", "waxer", "waxes", "waxy",
+    "way", "way's", "wayan", "wayao", "wayne", "ways", "wazir", "wb",
+    "wbc", "wbn", "wbs", "wburg", "wc", "wcc", "wcl", "wcpc",
+    "wcs", "wctu", "wd", "wd.", "wdc", "wdm", "wdt", "we",
+    "we'd", "we'll", "we're", "we've", "wea", "weak", "weakness's", "weaks",
+    "weaky", "weal", "weald", "weals", "weam", "wean", "weans", "weapon's",
+    "wear", "weare", "wears", "weary", "weasel's", "weathercock's", "weave", "weaver's",
+    "web", "web's", "webb", "webby", "weber", "webs", "wecht", "weco",
+    "wed", "wedding's", "wede", "wedel", "wedge", "wedgy", "wednesday's", "weds",
+    "wee", "weed", "weeda", "weeds", "weedy", "week", "weekend's", "weeks",
+    "weel", "weem", "weems", "ween", "weens", "weent", "weeny", "weep",
+    "weeps", "weepy", "weer", "wees", "weesh", "weest", "weet", "weets",
+    "weety", "weeze", "wef", "weft", "wefts", "wefty", "wega", "wehee",
+    "wehr", "wei", "weide", "weig", "weigh", "weihs", "weil", "weill",
+    "wein", "weir", "weird", "weirs", "weism", "weiss", "weka", "wekas",
+    "wekau", "weki", "welby", "welch", "welcy", "weld", "welda", "welds",
+    "welf", "weli", "welk", "well", "wells", "welly", "wels", "welsh",
+    "welt", "welts", "welty", "wem", "wemmy", "wen", "wench", "wench's",
+    "wend", "wenda", "wende", "wendi", "wends", "wendt", "wendy", "wene",
+    "wenn", "wenny", "wenoa", "wens", "went", "wenz", "weott", "wept",
+    "wer", "wera", "werby", "were", "were-", "weren", "weren't", "werf",
+    "weri", "werra", "wersh", "wert", "wertz", "wes", "wesa", "wesco",
+    "wese", "weser", "wesla", "wesle", "west", "weste", "westm", "wests",
+    "westy", "wet", "weta", "wetly", "wets", "weu", "weve", "wever",
+    "wevet", "wey", "weyl", "weys", "wezen", "wezn", "wf", "wfpc",
+    "wftu", "wg", "wgs", "wh", "wha", "whack", "whale", "whall",
+    "whalm", "whalp", "whaly", "wham", "whame", "whamo", "whamp", "whams",
+    "whan", "whand", "whang", "whank", "whap", "whaps", "whar", "whare",
+    "wharf", "wharl", "wharp", "whart", "whase", "what", "what'd", "what'll",
+    "what're", "what's", "what's-her-name", "what's-his-face", "what's-his-name", "what's-its-name", "what've", "what-d'ye-call-'em",
+    "what-d'ye-call-it", "what-d'you-call-it", "what-you-may-call-'em", "whata", "whatd", "whate'er", "whats", "whatsoe'er",
+    "whau", "whauk", "whaup", "whaur", "whbl", "wheal", "wheam", "wheat",
+    "whee", "wheel", "wheem", "wheen", "wheep", "wheer", "whees", "wheft",
+    "whein", "wheki", "whelk", "whelm", "whelp", "when", "when'd", "when'll",
+    "when're", "when's", "whene'er", "whens", "whensoe'er", "where", "where'd", "where'er",
+    "where'll", "where're", "where's", "where've", "wheresoe'er", "whet", "whets", "whew",
+    "whewl", "whews", "whewt", "whey", "wheys", "whf", "whf.", "whiba",
+    "which", "whick", "whid", "whids", "whiff", "whift", "whig", "whigs",
+    "while", "whilk", "whill", "whils", "whim", "whim's", "whims", "whimsy's",
+    "whin", "whine", "whing", "whins", "whiny", "whip", "whip's", "whip-",
+    "whipper's", "whipping's", "whips", "whipt", "whir", "whirl", "whirlpool's", "whirr",
+    "whirs", "whish", "whisk", "whisp", "whiss", "whist", "whit", "white",
+    "whits", "whitt", "whity", "whiz", "whizz", "who", "who'd", "who'll",
+    "who're", "who's", "who've", "whoa", "whoas", "whod", "whoever's", "whoi",
+    "whole", "wholl", "whom", "whomp", "whon", "whone", "whoo", "whoof",
+    "whoop", "whoot", "whop", "whops", "whore", "whore's", "whorl", "whorl's",
+    "whort", "whory", "whose", "whoso", "whr", "whs", "whse", "whsle",
+    "whud", "whuff", "whulk", "whump", "whun", "whup", "whush", "whute",
+    "whuz", "why", "why'll", "why're", "why's", "whyo", "whys", "whyte",
+    "wi", "wi-wi", "wiak", "wiatt", "wicca", "wice", "wich", "wicht",
+    "wick", "wicks", "wicky", "wid", "widdy", "wide", "widen", "wider",
+    "wides", "widow", "widow's-cross", "width", "widu", "wie", "wied", "wield",
+    "wien", "wier", "wierd", "wiese", "wife", "wife's", "wifed", "wifes",
+    "wifie", "wig", "wig's", "wigan", "wiggy", "wight", "wigs", "wil",
+    "wilco", "wild", "wilda", "wildcat's", "wilde", "wilds", "wile", "wiled",
+    "wilek", "wilen", "wiles", "wiley", "wilga", "wilie", "wilk", "will",
+    "will-o'-the-wisp", "willa", "willi", "willo'-the-wispish", "willo'-the-wispy", "willow's", "wills", "willy",
+    "wilma", "wilno", "wilow", "wilt", "wilts", "wily", "wim", "wime",
+    "wimp", "win", "wina", "wind", "windmill's", "window's", "wine", "wing",
+    "wini", "wink", "winn", "winner's", "wino", "wins", "wint", "winy",
+    "wip", "wipe", "wipo", "wips", "wir", "wira", "wird", "wire",
+    "wiretap's", "wirl", "wirr", "wiry", "wis", "wis.", "wisc", "wisd",
+    "wise", "wish", "wisp", "wisp's", "wiss", "wist", "wit", "wit's",
+    "witches'-besom", "witches'-broom", "wite", "with", "withdrawal's", "wits", "witt", "wive",
+    "wiwi", "wiyn", "wiz", "wizard's", "wjc", "wk", "wk.", "wkly",
+    "wks", "wl", "wlm", "wm", "wmc", "wmk", "wmk.", "wmo",
+    "wnn", "wnp", "wnw", "wo", "woa", "woad", "woak", "woan",
+    "wob", "wod", "wode", "woe", "woes", "woft", "wog", "wogs",
+    "wok", "woke", "woks", "wold", "wolf", "wolf's-bane", "wolf's-head", "wolf'smilk",
+    "wolk", "woll", "woman's", "womb", "womb's", "women's", "womp", "won",
+    "won't", "wone", "wong", "wonk", "wons", "wont", "woo", "wood",
+    "woodchuck's", "woodcock's", "woodpecker's", "woof", "wool", "woom", "woon", "woos",
+    "wop", "wopr", "wops", "word", "word's", "wore", "work", "workbench's",
+    "workbook's", "workhorse's", "workshop's", "worl", "world's", "worm", "worn", "wort",
+    "wos", "wost", "wot", "wote", "wots", "wouf", "wouk", "wouldn't",
+    "wove", "wow", "wows", "wowt", "woy", "wp", "wpa", "wpb",
+    "wpc", "wpm", "wps", "wr", "wr-", "wra", "wrac", "wraf",
+    "wran", "wrap", "wrap's", "wrapper's", "wraw", "wray", "wren", "wren's",
+    "wrig", "wrist's", "wristwatch's", "writ", "writ's", "writer's", "wrns", "wrnt",
+    "wro", "wrong'un", "wrox", "wrt", "wrvs", "wry", "ws", "wsan",
+    "wsd", "wsi", "wsj", "wsmr", "wsn", "wsp", "wsw", "wt",
+    "wtf", "wtr", "wu", "wu-lu-mu-ch'i", "wud", "wudu", "wuff", "wugg",
+    "wuhu", "wulf", "wulk", "wull", "wun", "wup", "wur", "wurm",
+    "wus", "wush", "wusp", "wuss", "wust", "wut", "wuzu", "wv",
+    "wva", "wvs", "ww", "ww2", "wwfo", "wwi", "wwii", "wy",
+    "wyat", "wych", "wyck", "wyco", "wyde", "wye", "wyes", "wyke",
+    "wyld", "wyle", "wyly", "wyn", "wynd", "wyne", "wynn", "wyns",
+    "wyo", "wyo.", "wyon", "wype", "wyrd", "wyss", "wyte", "wyve"
+};
 
-// Maximum number of words estimated from txt file
-#define DICT_W_MAX_WORDS 11672
-#define DICT_W_TXT_PATH "Dictionary/dict_w.txt"
-
-// Global arrays for loaded words
-static char* dict_w_words[DICT_W_MAX_WORDS];
-static size_t dict_w_count = 0;
-
-// Function to load words from txt file
-static int load_dict_w_from_file(void) {
-    FILE* file = fopen(DICT_W_TXT_PATH, "r");
-    if (!file) {
-        return -1; // Failed to open file
-    }
-    
-    char buffer[256];
-    dict_w_count = 0;
-    
-    while (fgets(buffer, sizeof(buffer), file) && dict_w_count < DICT_W_MAX_WORDS) {
-        // Remove newline
-        size_t len = strlen(buffer);
-        if (len > 0 && buffer[len-1] == '\n') {
-            buffer[len-1] = '\0';
-        }
-        
-        // Allocate and copy word
-        if (strlen(buffer) > 0) {
-            dict_w_words[dict_w_count] = malloc(strlen(buffer) + 1);
-            if (dict_w_words[dict_w_count]) {
-                strcpy(dict_w_words[dict_w_count], buffer);
-                dict_w_count++;
-            }
-        }
-    }
-    
-    fclose(file);
-    return 0; // Success
-}
-
-// Function to free loaded words
-static void free_dict_w_words(void) {
-    for (size_t i = 0; i < dict_w_count; i++) {
-        if (dict_w_words[i]) {
-            free(dict_w_words[i]);
-            dict_w_words[i] = NULL;
-        }
-    }
-    dict_w_count = 0;
-}
-
-// Compatibility array pointer (points to loaded words)
-static const char* const* dict_w = (const char* const*)dict_w_words;
-static const size_t DICT_W_SIZE = DICT_W_MAX_WORDS; // Will be updated to actual count after loading
-
-// Getter function for actual count
-static size_t get_dict_w_size(void) {
-    return dict_w_count;
-}
+static const size_t DICT_W_SIZE = sizeof(dict_w) / sizeof(dict_w[0]);
 
 #endif // DICT_W_H
