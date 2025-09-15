@@ -10,16 +10,7 @@ static const char* const dict_x[] = {
     "xanthiuria", "xanthocarpous", "xanthocephalus", "xanthoceras", "xanthochroi", "xanthochroia", "xanthochroic", "xanthochroid",
     "xanthochroism", "xanthochromia", "xanthochromic", "xanthochroous", "xanthocobaltic", "xanthocone", "xanthoconite", "xanthocreatinine",
     "xanthocyanopia", "xanthocyanopsia", "xanthocyanopsy", "xanthocyanopy", "xanthoderm", "xanthoderma", "xanthodermatous", "xanthodont",
-    "xanthodontous", "xanthogen", "xanthogenamic", "xanthogenamide", "xanthogenate", "xanthogenic", "xantholeucophore", "xanthoma",
-    "xanthomas", "xanthomata", "xanthomatosis", "xanthomatous", "xanthomelanoi", "xanthomelanous", "xanthometer", "xanthomonas",
-    "xanthomyeloma", "xanthone", "xanthones", "xanthophane", "xanthophore", "xanthophose", "xanthophyceae", "xanthophyl",
-    "xanthophyll", "xanthophyllic", "xanthophyllite", "xanthophyllous", "xanthopia", "xanthopicrin", "xanthopicrite", "xanthoproteic",
-    "xanthoprotein", "xanthoproteinic", "xanthopsia", "xanthopsin", "xanthopsydracia", "xanthopterin", "xanthopurpurin", "xanthorhamnin",
-    "xanthorrhiza", "xanthorrhoea", "xanthosiderite", "xanthosis", "xanthosoma", "xanthospermous", "xanthotic", "xanthoura",
-    "xanthous", "xanthoxalis", "xanthoxenite", "xanthoxylin", "xanthrochroid", "xanthuria", "xanthus", "xanthydrol",
-    "xanthyl", "xantippe", "xarque", "xat", "xaverian", "xavier", "xaviera", "xavler",
-    "xb", "xbt", "xc", "xcf", "xcl", "xctl", "xd", "xdiv",
-    "xdmcp"
+    "xanthodontous", "xanthogen", "xanthogenamic", "xanthogenamide"
 };
 
 static const size_t DICT_X_SIZE = sizeof(dict_x) / sizeof(dict_x[0]);

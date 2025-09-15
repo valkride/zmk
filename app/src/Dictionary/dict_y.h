@@ -23,28 +23,7 @@ static const char* const dict_y[] = {
     "yalaha", "yalb", "yald", "yale", "yalensian", "yali", "yalla", "yallaer",
     "yallock", "yallow", "yalonda", "yalta", "yalu", "yam", "yama", "yamacraw",
     "yamagata", "yamaha", "yamalka", "yamalkas", "yamamadi", "yamamai", "yamanai", "yamani",
-    "yamashita", "yamaskite", "yamassee", "yamato", "yamauchi", "yamel", "yamen", "yamens",
-    "yameo", "yami", "yamilke", "yamis", "yammadji", "yammer", "yammered", "yammerer",
-    "yammerers", "yammering", "yammerly", "yammers", "yamp", "yampa", "yampee", "yamph",
-    "yams", "yamshik", "yamstchick", "yamstchik", "yamulka", "yamulkas", "yamun", "yamuns",
-    "yan", "yana", "yanacona", "yanan", "yanaton", "yance", "yancey", "yanceyville",
-    "yancopin", "yancy", "yand", "yander", "yang", "yanggona", "yangku", "yangs",
-    "yangtao", "yangtze", "yanina", "yank", "yanked", "yankee", "yankeedom", "yankeefied",
-    "yankeefy", "yankeefying", "yankeeism", "yankeeist", "yankeeize", "yankeeland", "yankeeness", "yankees",
-    "yankeetown", "yanker", "yanking", "yanks", "yankton", "yanktonai", "yanky", "yann",
-    "yannam", "yannigan", "yannina", "yanolite", "yanqui", "yanquis", "yantic", "yantis",
-    "yantra", "yantras", "yao", "yaoort", "yaounde", "yaourt", "yaourti", "yap",
-    "yapa", "yaphank", "yaply", "yapman", "yapness", "yapock", "yapocks", "yapok",
-    "yapoks", "yapon", "yapons", "yapp", "yapped", "yapper", "yappers", "yappiness",
-    "yapping", "yappingly", "yappish", "yappy", "yaps", "yapster", "yapur", "yaqona",
-    "yaqui", "yaquina", "yar", "yarak", "yaray", "yarb", "yarborough", "yard",
-    "yardage", "yardages", "yardang", "yardarm", "yardarms", "yardbird", "yardbirds", "yarded",
-    "yarder", "yardful", "yardgrass", "yarding", "yardkeep", "yardland", "yardlands", "yardley",
-    "yardman", "yardmaster", "yardmasters", "yardmen", "yards", "yardsman", "yardstick", "yardsticks",
-    "yardwand", "yardwands", "yardwork", "yardworks", "yare", "yarely", "yarer", "yarest",
-    "yareta", "yariyari", "yark", "yarkand", "yarke", "yarkee", "yarl", "yarly",
-    "yarm", "yarmalke", "yarmelke", "yarmelkes", "yarmouth", "yarmuk", "yarmulka", "yarmulke",
-    "yarmulkes", "yarn", "yarned", "you'd", "you'll", "you're", "you've"
+    "yamashita", "you'd", "you'll", "you're", "you've"
 };
 
 static const size_t DICT_Y_SIZE = sizeof(dict_y) / sizeof(dict_y[0]);
