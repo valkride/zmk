@@ -1,30 +1,67 @@
 #ifndef DICT_T_H
 #define DICT_T_H
 
-static const char* const dict_t[] = {
-    "'til", "'tis", "'twas", "'tween", "'twere", "'twill", "'twixt", "'twould",
-    "t'other", "ta'en", "table", "take", "taken", "talk", "talked", "task",
-    "taught", "tax", "teach", "teacher", "team", "technology", "television", "tell",
-    "temperature", "ten", "tenth", "term", "test", "tested", "text", "than",
-    "thank", "thanks", "that", "that's", "the", "theater", "their", "theirs",
-    "them", "themselves", "then", "theory", "there", "there's", "these", "they",
-    "they'd", "they'll", "they're", "they've", "thing", "things", "think", "thinking",
-    "third", "thirteen", "thirty", "this", "those", "though", "thought", "thousand",
-    "threat", "threaten", "threatened", "three", "threw", "through", "throw", "thrown",
-    "thus", "tie", "tied", "tight", "till", "time", "tip", "tired",
-    "tissue", "title", "to", "today", "together", "told", "tomorrow", "tone",
-    "tongue", "tonight", "too", "took", "tool", "tooth", "top", "topic",
-    "total", "touch", "touched", "tough", "tour", "tourist", "toward", "town",
-    "track", "trade", "tradition", "traditional", "traffic", "train", "training", "transfer",
-    "transferred", "transform", "transformed", "transport", "trap", "trapped", "travel", "traveled",
-    "treat", "treated", "treatment", "tree", "trial", "tried", "trip", "trouble",
-    "truck", "true", "trust", "trusted", "truth", "try", "trying", "tuesday",
-    "tune", "turn", "turned", "twelve", "twenty", "two", "type", "typical"
-};
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+// Maximum number of words estimated from txt file
+#define DICT_T_MAX_WORDS 25221
+#define DICT_T_TXT_PATH "Dictionary/dict_t.txt"
 
+// Global arrays for loaded words
+static char* dict_t_words[DICT_T_MAX_WORDS];
+static size_t dict_t_count = 0;
 
+// Function to load words from txt file
+static int load_dict_t_from_file(void) {
+    FILE* file = fopen(DICT_T_TXT_PATH, "r");
+    if (!file) {
+        return -1; // Failed to open file
+    }
+    
+    char buffer[256];
+    dict_t_count = 0;
+    
+    while (fgets(buffer, sizeof(buffer), file) && dict_t_count < DICT_T_MAX_WORDS) {
+        // Remove newline
+        size_t len = strlen(buffer);
+        if (len > 0 && buffer[len-1] == '\n') {
+            buffer[len-1] = '\0';
+        }
+        
+        // Allocate and copy word
+        if (strlen(buffer) > 0) {
+            dict_t_words[dict_t_count] = malloc(strlen(buffer) + 1);
+            if (dict_t_words[dict_t_count]) {
+                strcpy(dict_t_words[dict_t_count], buffer);
+                dict_t_count++;
+            }
+        }
+    }
+    
+    fclose(file);
+    return 0; // Success
+}
 
-static const size_t DICT_T_SIZE = sizeof(dict_t) / sizeof(dict_t[0]);
+// Function to free loaded words
+static void free_dict_t_words(void) {
+    for (size_t i = 0; i < dict_t_count; i++) {
+        if (dict_t_words[i]) {
+            free(dict_t_words[i]);
+            dict_t_words[i] = NULL;
+        }
+    }
+    dict_t_count = 0;
+}
+
+// Compatibility array pointer (points to loaded words)
+static const char* const* dict_t = (const char* const*)dict_t_words;
+static const size_t DICT_T_SIZE = DICT_T_MAX_WORDS; // Will be updated to actual count after loading
+
+// Getter function for actual count
+static size_t get_dict_t_size(void) {
+    return dict_t_count;
+}
 
 #endif // DICT_T_H

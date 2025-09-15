@@ -1,37 +1,67 @@
 #ifndef DICT_L_H
 #define DICT_L_H
 
-static const char* const dict_l[] = {
-    "laang", "lab", "laban", "labaw", "labba", "labby", "labe", "label",
-    "labia", "labis", "labor", "labra", "labs", "lac", "lacca", "lace",
-    "laced", "lacee", "lacer", "laces", "lacet", "lacey", "lach", "lache",
-    "lacie", "lacis", "lack", "lacks", "lacon", "lacs", "lacto", "lacw",
-    "lacy", "lad", "ladar", "ladd", "laddy", "lade", "laded", "laden",
-    "lader", "lades", "ladew", "ladik", "ladin", "ladle", "ladon", "lads",
-    "ladt", "ladue", "lady", "lae", "lael", "laen", "laet", "laeti",
-    "laevo", "laf", "lafox", "laft", "lafta", "lag", "lagan", "lagas",
-    "lagen", "lager", "lagly", "lagna", "lagos", "lagro", "lags", "lah",
-    "lahar", "lahey", "lahmu", "lahti", "lai", "laic", "laich", "laics",
-    "laid", "laie", "laigh", "laik", "lail", "lain", "laina", "laine",
-    "laing", "lair", "laird", "lairs", "lairy", "lais", "laise", "lait",
-    "laith", "laity", "laius", "lajas", "lajos", "lak", "lake", "laked",
-    "laker", "lakes", "lakey", "lakh", "lakhs", "lakie", "lakin", "lakke",
-    "lakme", "laks", "laksa", "laky", "lal", "lala", "lali", "lalia",
-    "lall", "lalla", "lalls", "lally", "lalo", "lalu", "laluz", "lam",
-    "lama", "lamar", "lamas", "lamb", "lamba", "lambs", "lamby", "lamda",
-    "lame", "lamed", "lamee", "lamel", "lamer", "lames", "lamia", "lamin",
-    "lamm", "lammy", "lamna", "lamp", "lampe", "lams", "lan", "lana",
-    "land", "language", "large", "last", "late", "later", "law", "lay",
-    "lead", "learn", "learned", "least", "leave", "led", "left", "leg",
-    "less", "let", "let's", "letter", "level", "lie", "lied", "life",
-    "light", "like", "liked", "likely", "line", "list", "listen", "little",
-    "live", "lived", "living", "local", "long", "look", "looked", "looking",
-    "lose", "loss", "lost", "lot", "love", "loved", "low", "lunch"
-};
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+// Maximum number of words estimated from txt file
+#define DICT_L_MAX_WORDS 14093
+#define DICT_L_TXT_PATH "Dictionary/dict_l.txt"
 
+// Global arrays for loaded words
+static char* dict_l_words[DICT_L_MAX_WORDS];
+static size_t dict_l_count = 0;
 
+// Function to load words from txt file
+static int load_dict_l_from_file(void) {
+    FILE* file = fopen(DICT_L_TXT_PATH, "r");
+    if (!file) {
+        return -1; // Failed to open file
+    }
+    
+    char buffer[256];
+    dict_l_count = 0;
+    
+    while (fgets(buffer, sizeof(buffer), file) && dict_l_count < DICT_L_MAX_WORDS) {
+        // Remove newline
+        size_t len = strlen(buffer);
+        if (len > 0 && buffer[len-1] == '\n') {
+            buffer[len-1] = '\0';
+        }
+        
+        // Allocate and copy word
+        if (strlen(buffer) > 0) {
+            dict_l_words[dict_l_count] = malloc(strlen(buffer) + 1);
+            if (dict_l_words[dict_l_count]) {
+                strcpy(dict_l_words[dict_l_count], buffer);
+                dict_l_count++;
+            }
+        }
+    }
+    
+    fclose(file);
+    return 0; // Success
+}
 
-static const size_t DICT_L_SIZE = sizeof(dict_l) / sizeof(dict_l[0]);
+// Function to free loaded words
+static void free_dict_l_words(void) {
+    for (size_t i = 0; i < dict_l_count; i++) {
+        if (dict_l_words[i]) {
+            free(dict_l_words[i]);
+            dict_l_words[i] = NULL;
+        }
+    }
+    dict_l_count = 0;
+}
+
+// Compatibility array pointer (points to loaded words)
+static const char* const* dict_l = (const char* const*)dict_l_words;
+static const size_t DICT_L_SIZE = DICT_L_MAX_WORDS; // Will be updated to actual count after loading
+
+// Getter function for actual count
+static size_t get_dict_l_size(void) {
+    return dict_l_count;
+}
 
 #endif // DICT_L_H

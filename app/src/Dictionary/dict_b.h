@@ -1,37 +1,67 @@
 #ifndef DICT_B_H
 #define DICT_B_H
 
-static const char* const dict_b[] = {
-    "baa", "baaed", "baal", "baals", "baar", "baas", "bab", "baba",
-    "babai", "babar", "babas", "babb", "babby", "babe", "babel", "baber",
-    "babes", "babi", "babis", "babka", "bable", "babol", "baboo", "babs",
-    "babu", "babua", "babul", "babur", "babus", "baby", "bac", "bacao",
-    "bacau", "bacc", "bacca", "baccy", "bach", "bache", "bacin", "bacis",
-    "back", "backs", "backy", "baco", "bacon", "bact", "bad", "badan",
-    "badb", "baddy", "bade", "baden", "badge", "badin", "badju", "badly",
-    "badon", "badr", "bads", "bae", "baed", "baeda", "bael", "baer",
-    "baerl", "baese", "baez", "baff", "baffs", "baffy", "bafo", "baft",
-    "bafta", "bag", "baga", "bagdi", "bage", "bagel", "bagge", "baggs",
-    "baggy", "bagh", "bagie", "bagio", "bagle", "bagne", "bago", "bagr",
-    "bagre", "bags", "bagsc", "bah", "bahai", "baham", "bahan", "bahar",
-    "bahay", "bahia", "baho", "bahoe", "bahoo", "bahr", "baht", "bahts",
-    "bahur", "bahut", "bai", "baiae", "baiel", "baign", "bail", "baile",
-    "bailo", "bails", "baily", "bain", "bais", "bait", "baja", "bak",
-    "baka", "bake", "baku", "bal", "bala", "bald", "bale", "balf",
-    "bali", "balk", "ball", "balm", "balr", "bals", "balt", "balu",
-    "bam", "bams", "ban", "bana", "banc", "band", "bane", "bang",
-    "bani", "bank", "bann", "bans", "bant", "bao", "baor", "bap",
-    "bapt", "bar", "bara", "barb", "based", "be", "bear", "beat",
-    "beautiful", "because", "become", "bed", "been", "before", "began", "begin",
-    "behind", "being", "believe", "below", "best", "better", "between", "beyond",
-    "big", "billion", "bit", "black", "blood", "blue", "board", "body",
-    "book", "born", "both", "bought", "box", "boy", "break", "bring",
-    "brother", "brought", "build", "building", "business", "but", "buy", "by"
-};
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+// Maximum number of words estimated from txt file
+#define DICT_B_MAX_WORDS 24332
+#define DICT_B_TXT_PATH "Dictionary/dict_b.txt"
 
+// Global arrays for loaded words
+static char* dict_b_words[DICT_B_MAX_WORDS];
+static size_t dict_b_count = 0;
 
+// Function to load words from txt file
+static int load_dict_b_from_file(void) {
+    FILE* file = fopen(DICT_B_TXT_PATH, "r");
+    if (!file) {
+        return -1; // Failed to open file
+    }
+    
+    char buffer[256];
+    dict_b_count = 0;
+    
+    while (fgets(buffer, sizeof(buffer), file) && dict_b_count < DICT_B_MAX_WORDS) {
+        // Remove newline
+        size_t len = strlen(buffer);
+        if (len > 0 && buffer[len-1] == '\n') {
+            buffer[len-1] = '\0';
+        }
+        
+        // Allocate and copy word
+        if (strlen(buffer) > 0) {
+            dict_b_words[dict_b_count] = malloc(strlen(buffer) + 1);
+            if (dict_b_words[dict_b_count]) {
+                strcpy(dict_b_words[dict_b_count], buffer);
+                dict_b_count++;
+            }
+        }
+    }
+    
+    fclose(file);
+    return 0; // Success
+}
 
-static const size_t DICT_B_SIZE = sizeof(dict_b) / sizeof(dict_b[0]);
+// Function to free loaded words
+static void free_dict_b_words(void) {
+    for (size_t i = 0; i < dict_b_count; i++) {
+        if (dict_b_words[i]) {
+            free(dict_b_words[i]);
+            dict_b_words[i] = NULL;
+        }
+    }
+    dict_b_count = 0;
+}
+
+// Compatibility array pointer (points to loaded words)
+static const char* const* dict_b = (const char* const*)dict_b_words;
+static const size_t DICT_B_SIZE = DICT_B_MAX_WORDS; // Will be updated to actual count after loading
+
+// Getter function for actual count
+static size_t get_dict_b_size(void) {
+    return dict_b_count;
+}
 
 #endif // DICT_B_H

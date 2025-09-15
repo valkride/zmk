@@ -1,37 +1,67 @@
 #ifndef DICT_D_H
 #define DICT_D_H
 
-static const char* const dict_d[] = {
-    "dab", "dabb", "dabs", "dac", "dace", "dacs", "dacy", "dad",
-    "dada", "dade", "dado", "dads", "dadu", "dae", "dael", "daer",
-    "daff", "daft", "dag", "dago", "dags", "dah", "dahl", "dahs",
-    "dail", "dain", "dais", "dak", "daks", "dal", "dale", "dalf",
-    "dali", "dalk", "dall", "dals", "dalt", "daly", "dam", "dama",
-    "dame", "damn", "damp", "dams", "dan", "dana", "dand", "dane",
-    "dang", "dani", "dank", "danl", "dann", "danu", "dao", "dap",
-    "daph", "daps", "dar", "dara", "darb", "darc", "dard", "dare",
-    "darg", "dari", "dark", "darn", "darr", "dart", "daru", "das",
-    "dasd", "dase", "dash", "dasi", "dat", "data", "date", "dato",
-    "dau", "daub", "daud", "dauk", "daun", "daur", "daut", "dauw",
-    "dav", "dave", "davy", "daw", "dawe", "dawk", "dawn", "daws",
-    "dawt", "dax", "day", "daye", "days", "daza", "daze", "dazy",
-    "dba", "dbac", "dbas", "dbe", "dbf", "dbh", "dbi", "dbl",
-    "dbm", "dbme", "dbms", "dbo", "dbrn", "dbs", "dbv", "dbw",
-    "dca", "dcb", "dcc", "dcco", "dccs", "dcd", "dce", "dch",
-    "dche", "dci", "dcl", "dclu", "dcm", "dcmg", "dcms", "dcmu",
-    "dcna", "dcnl", "dco", "dcor", "dcp", "dcpr", "dcs", "dct",
-    "dctn", "dcts", "dda", "ddb", "ddc", "ddd", "dde", "ddj",
-    "ddk", "ddl", "ddn", "ddp", "ddr", "dds", "ddt", "ddx",
-    "dea", "dead", "deal", "death", "deb", "dec", "december", "decide",
-    "decision", "deep", "degree", "describe", "design", "detail", "determine", "develop",
-    "development", "did", "didn't", "die", "died", "different", "difficult", "do",
-    "doctor", "does", "doesn't", "dog", "don't", "door", "down", "draw",
-    "dream", "drew", "drive", "drop", "dropped", "drove", "drug", "during"
-};
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+// Maximum number of words estimated from txt file
+#define DICT_D_MAX_WORDS 22777
+#define DICT_D_TXT_PATH "Dictionary/dict_d.txt"
 
+// Global arrays for loaded words
+static char* dict_d_words[DICT_D_MAX_WORDS];
+static size_t dict_d_count = 0;
 
+// Function to load words from txt file
+static int load_dict_d_from_file(void) {
+    FILE* file = fopen(DICT_D_TXT_PATH, "r");
+    if (!file) {
+        return -1; // Failed to open file
+    }
+    
+    char buffer[256];
+    dict_d_count = 0;
+    
+    while (fgets(buffer, sizeof(buffer), file) && dict_d_count < DICT_D_MAX_WORDS) {
+        // Remove newline
+        size_t len = strlen(buffer);
+        if (len > 0 && buffer[len-1] == '\n') {
+            buffer[len-1] = '\0';
+        }
+        
+        // Allocate and copy word
+        if (strlen(buffer) > 0) {
+            dict_d_words[dict_d_count] = malloc(strlen(buffer) + 1);
+            if (dict_d_words[dict_d_count]) {
+                strcpy(dict_d_words[dict_d_count], buffer);
+                dict_d_count++;
+            }
+        }
+    }
+    
+    fclose(file);
+    return 0; // Success
+}
 
-static const size_t DICT_D_SIZE = sizeof(dict_d) / sizeof(dict_d[0]);
+// Function to free loaded words
+static void free_dict_d_words(void) {
+    for (size_t i = 0; i < dict_d_count; i++) {
+        if (dict_d_words[i]) {
+            free(dict_d_words[i]);
+            dict_d_words[i] = NULL;
+        }
+    }
+    dict_d_count = 0;
+}
+
+// Compatibility array pointer (points to loaded words)
+static const char* const* dict_d = (const char* const*)dict_d_words;
+static const size_t DICT_D_SIZE = DICT_D_MAX_WORDS; // Will be updated to actual count after loading
+
+// Getter function for actual count
+static size_t get_dict_d_size(void) {
+    return dict_d_count;
+}
 
 #endif // DICT_D_H

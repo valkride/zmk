@@ -1,20 +1,67 @@
 #ifndef DICT_M_H
 #define DICT_M_H
 
-static const char* const dict_m[] = {
-    "ma'am", "machine", "made", "major", "make", "making", "man", "manage",
-    "manager", "many", "march", "market", "match", "matter", "may", "maybe",
-    "mayn't", "me", "meal", "mean", "meant", "measure", "media", "medical",
-    "meet", "member", "memory", "mention", "message", "met", "method", "middle",
-    "might", "might've", "mightn't", "military", "million", "mind", "minute", "miss",
-    "missed", "model", "modern", "moment", "money", "month", "more", "morning",
-    "most", "mother", "move", "moved", "movement", "movie", "much", "music",
-    "must", "mustn't", "my", "myself"
-};
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+// Maximum number of words estimated from txt file
+#define DICT_M_MAX_WORDS 25194
+#define DICT_M_TXT_PATH "Dictionary/dict_m.txt"
 
+// Global arrays for loaded words
+static char* dict_m_words[DICT_M_MAX_WORDS];
+static size_t dict_m_count = 0;
 
+// Function to load words from txt file
+static int load_dict_m_from_file(void) {
+    FILE* file = fopen(DICT_M_TXT_PATH, "r");
+    if (!file) {
+        return -1; // Failed to open file
+    }
+    
+    char buffer[256];
+    dict_m_count = 0;
+    
+    while (fgets(buffer, sizeof(buffer), file) && dict_m_count < DICT_M_MAX_WORDS) {
+        // Remove newline
+        size_t len = strlen(buffer);
+        if (len > 0 && buffer[len-1] == '\n') {
+            buffer[len-1] = '\0';
+        }
+        
+        // Allocate and copy word
+        if (strlen(buffer) > 0) {
+            dict_m_words[dict_m_count] = malloc(strlen(buffer) + 1);
+            if (dict_m_words[dict_m_count]) {
+                strcpy(dict_m_words[dict_m_count], buffer);
+                dict_m_count++;
+            }
+        }
+    }
+    
+    fclose(file);
+    return 0; // Success
+}
 
-static const size_t DICT_M_SIZE = sizeof(dict_m) / sizeof(dict_m[0]);
+// Function to free loaded words
+static void free_dict_m_words(void) {
+    for (size_t i = 0; i < dict_m_count; i++) {
+        if (dict_m_words[i]) {
+            free(dict_m_words[i]);
+            dict_m_words[i] = NULL;
+        }
+    }
+    dict_m_count = 0;
+}
+
+// Compatibility array pointer (points to loaded words)
+static const char* const* dict_m = (const char* const*)dict_m_words;
+static const size_t DICT_M_SIZE = DICT_M_MAX_WORDS; // Will be updated to actual count after loading
+
+// Getter function for actual count
+static size_t get_dict_m_size(void) {
+    return dict_m_count;
+}
 
 #endif // DICT_M_H

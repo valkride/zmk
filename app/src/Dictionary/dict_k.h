@@ -1,37 +1,67 @@
 #ifndef DICT_K_H
 #define DICT_K_H
 
-static const char* const dict_k[] = {
-    "kaaawa", "kaaba", "kaama", "kaas", "kab", "kabab", "kababs", "kabaka",
-    "kabala", "kabar", "kabard", "kabars", "kabaya", "kabel", "kaberu", "kabiet",
-    "kabiki", "kabir", "kabob", "kabobs", "kabs", "kabuki", "kabul", "kabuli",
-    "kabyle", "kacey", "kacha", "kachin", "kacie", "kacy", "kaczer", "kadaga",
-    "kadai", "kadar", "kadaya", "kadder", "kadein", "kaden", "kadi", "kadine",
-    "kadis", "kadish", "kadmi", "kadner", "kado", "kadoka", "kados", "kadu",
-    "kaduna", "kae", "kaela", "kaenel", "kaes", "kaete", "kaf", "kafa",
-    "kaffia", "kaffir", "kafila", "kafir", "kafiri", "kafirs", "kafiz", "kafka",
-    "kafre", "kafs", "kafta", "kaftan", "kagawa", "kagi", "kago", "kagos",
-    "kagu", "kagus", "kaha", "kahar", "kahau", "kahl", "kahle", "kahn",
-    "kahu", "kai", "kaia", "kaiak", "kaid", "kaif", "kaifs", "kaik",
-    "kail", "kaila", "kaile", "kails", "kaimo", "kain", "kaine", "kains",
-    "kaiwi", "kaj", "kaja", "kajar", "kaka", "kakan", "kakar", "kakas",
-    "kaki", "kakis", "kakke", "kal", "kala", "kalam", "kalan", "kalat",
-    "kalb", "kale", "kaleb", "kales", "kali", "kalie", "kalif", "kalil",
-    "kalin", "kalis", "kalk", "kalki", "kall", "kalle", "kalli", "kally",
-    "kalo", "kalon", "kalpa", "kalvn", "kam", "kama", "kamal", "kamao",
-    "kamas", "kamat", "kamay", "kamba", "kame", "kamel", "kames", "kamet",
-    "kami", "kamik", "kamin", "kamis", "kamp", "kamsa", "kan", "kana",
-    "kanab", "kanae", "kanal", "kanap", "kanas", "kanat", "kand", "kande",
-    "kandy", "kane", "kaneh", "kanes", "kang", "kanga", "kania", "kanji",
-    "kannu", "kano", "kans", "kansa", "kansu", "kant", "kanu", "kanya",
-    "kanzu", "kao", "kaon", "kaons", "kaos", "kapa", "kapaa", "kapai",
-    "kapas", "kape", "kaph", "kaphs", "kapok", "keep", "kept", "key",
-    "kid", "kill", "killed", "kind", "kitchen", "knew", "know", "known"
-};
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+// Maximum number of words estimated from txt file
+#define DICT_K_MAX_WORDS 6167
+#define DICT_K_TXT_PATH "Dictionary/dict_k.txt"
 
+// Global arrays for loaded words
+static char* dict_k_words[DICT_K_MAX_WORDS];
+static size_t dict_k_count = 0;
 
+// Function to load words from txt file
+static int load_dict_k_from_file(void) {
+    FILE* file = fopen(DICT_K_TXT_PATH, "r");
+    if (!file) {
+        return -1; // Failed to open file
+    }
+    
+    char buffer[256];
+    dict_k_count = 0;
+    
+    while (fgets(buffer, sizeof(buffer), file) && dict_k_count < DICT_K_MAX_WORDS) {
+        // Remove newline
+        size_t len = strlen(buffer);
+        if (len > 0 && buffer[len-1] == '\n') {
+            buffer[len-1] = '\0';
+        }
+        
+        // Allocate and copy word
+        if (strlen(buffer) > 0) {
+            dict_k_words[dict_k_count] = malloc(strlen(buffer) + 1);
+            if (dict_k_words[dict_k_count]) {
+                strcpy(dict_k_words[dict_k_count], buffer);
+                dict_k_count++;
+            }
+        }
+    }
+    
+    fclose(file);
+    return 0; // Success
+}
 
-static const size_t DICT_K_SIZE = sizeof(dict_k) / sizeof(dict_k[0]);
+// Function to free loaded words
+static void free_dict_k_words(void) {
+    for (size_t i = 0; i < dict_k_count; i++) {
+        if (dict_k_words[i]) {
+            free(dict_k_words[i]);
+            dict_k_words[i] = NULL;
+        }
+    }
+    dict_k_count = 0;
+}
+
+// Compatibility array pointer (points to loaded words)
+static const char* const* dict_k = (const char* const*)dict_k_words;
+static const size_t DICT_K_SIZE = DICT_K_MAX_WORDS; // Will be updated to actual count after loading
+
+// Getter function for actual count
+static size_t get_dict_k_size(void) {
+    return dict_k_count;
+}
 
 #endif // DICT_K_H

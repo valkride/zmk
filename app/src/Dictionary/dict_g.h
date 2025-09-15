@@ -1,37 +1,67 @@
 #ifndef DICT_G_H
 #define DICT_G_H
 
-static const char* const dict_g[] = {
-    "gaal", "gaap", "gaas", "gab", "gabar", "gabbi", "gabbs", "gabby",
-    "gabe", "gabel", "gabes", "gabey", "gabi", "gabie", "gable", "gabo",
-    "gabon", "gabor", "gabs", "gabun", "gaby", "gad", "gaddi", "gade",
-    "gader", "gades", "gadge", "gadi", "gadid", "gadis", "gado", "gads",
-    "gadso", "gadus", "gae", "gaea", "gaed", "gael", "gaels", "gaen",
-    "gaes", "gaet", "gaeta", "gaff", "gaffe", "gaffs", "gafsa", "gag",
-    "gaga", "gage", "gaged", "gagee", "gager", "gages", "gagne", "gagor",
-    "gags", "gahan", "gahl", "gaia", "gaige", "gail", "gaile", "gaily",
-    "gain", "gaine", "gains", "gair", "gaist", "gait", "gaits", "gaitt",
-    "gaius", "gaivn", "gaize", "gaj", "gajda", "gal", "gala", "galah",
-    "galan", "galas", "galax", "galba", "galbe", "gale", "galea", "galee",
-    "galei", "galen", "galer", "gales", "galet", "galey", "galga", "gali",
-    "galik", "gall", "galla", "galle", "galli", "galls", "gally", "galop",
-    "galp", "gals", "galt", "galut", "galv", "galva", "galvo", "gam",
-    "gama", "gamal", "gamas", "gamay", "gamb", "gamba", "gambe", "gambi",
-    "gambs", "game", "gamed", "gamer", "games", "gamey", "gamic", "gamin",
-    "gamma", "gammy", "gamp", "gamps", "gams", "gamut", "gamy", "gan",
-    "ganam", "gance", "ganch", "gand", "ganda", "gane", "ganef", "ganev",
-    "gang", "ganga", "gange", "gangs", "ganja", "ganny", "ganof", "gans",
-    "gansa", "gansy", "gant", "ganta", "gantt", "ganza", "gao", "gaol",
-    "gaon", "gap", "gapa", "gape", "gapo", "gaps", "gapy", "gar",
-    "gara", "garb", "gard", "garden", "gas", "gave", "general", "get",
-    "girl", "give", "given", "glass", "global", "go", "goal", "goes",
-    "going", "gold", "gone", "good", "got", "government", "great", "green",
-    "grew", "ground", "group", "grow", "grown", "gun", "guy", "went"
-};
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+// Maximum number of words estimated from txt file
+#define DICT_G_MAX_WORDS 14466
+#define DICT_G_TXT_PATH "Dictionary/dict_g.txt"
 
+// Global arrays for loaded words
+static char* dict_g_words[DICT_G_MAX_WORDS];
+static size_t dict_g_count = 0;
 
+// Function to load words from txt file
+static int load_dict_g_from_file(void) {
+    FILE* file = fopen(DICT_G_TXT_PATH, "r");
+    if (!file) {
+        return -1; // Failed to open file
+    }
+    
+    char buffer[256];
+    dict_g_count = 0;
+    
+    while (fgets(buffer, sizeof(buffer), file) && dict_g_count < DICT_G_MAX_WORDS) {
+        // Remove newline
+        size_t len = strlen(buffer);
+        if (len > 0 && buffer[len-1] == '\n') {
+            buffer[len-1] = '\0';
+        }
+        
+        // Allocate and copy word
+        if (strlen(buffer) > 0) {
+            dict_g_words[dict_g_count] = malloc(strlen(buffer) + 1);
+            if (dict_g_words[dict_g_count]) {
+                strcpy(dict_g_words[dict_g_count], buffer);
+                dict_g_count++;
+            }
+        }
+    }
+    
+    fclose(file);
+    return 0; // Success
+}
 
-static const size_t DICT_G_SIZE = sizeof(dict_g) / sizeof(dict_g[0]);
+// Function to free loaded words
+static void free_dict_g_words(void) {
+    for (size_t i = 0; i < dict_g_count; i++) {
+        if (dict_g_words[i]) {
+            free(dict_g_words[i]);
+            dict_g_words[i] = NULL;
+        }
+    }
+    dict_g_count = 0;
+}
+
+// Compatibility array pointer (points to loaded words)
+static const char* const* dict_g = (const char* const*)dict_g_words;
+static const size_t DICT_G_SIZE = DICT_G_MAX_WORDS; // Will be updated to actual count after loading
+
+// Getter function for actual count
+static size_t get_dict_g_size(void) {
+    return dict_g_count;
+}
 
 #endif // DICT_G_H

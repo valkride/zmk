@@ -1,37 +1,67 @@
 #ifndef DICT_R_H
 #define DICT_R_H
 
-static const char* const dict_r[] = {
-    "raab", "raad", "raaf", "raama", "raash", "rab", "rabah", "rabal",
-    "rabat", "rabbi", "rabi", "rabia", "rabic", "rabid", "rabin", "rabot",
-    "rac", "race", "raced", "racep", "racer", "races", "rach", "rache",
-    "rack", "racks", "racon", "racy", "rad", "rada", "radar", "raddi",
-    "raddy", "radek", "radha", "radie", "radii", "radio", "radix", "radke",
-    "radly", "radm", "radom", "radon", "rads", "radu", "rae", "raec",
-    "raf", "rafa", "rafat", "rafe", "rafer", "raff", "raffe", "raffo",
-    "raffs", "rafi", "rafik", "rafiq", "raft", "rafts", "rafty", "rafvr",
-    "rag", "raga", "ragan", "ragas", "rage", "raged", "ragee", "ragen",
-    "rager", "rages", "ragg", "raggy", "raghu", "ragi", "ragis", "rago",
-    "rags", "rah", "rahab", "rahal", "rahel", "rahm", "rahr", "rahu",
-    "rahul", "rai", "raia", "raiae", "raias", "raid", "raids", "raif",
-    "rail", "raila", "rain", "rais", "raj", "raja", "raji", "rake",
-    "rakh", "raki", "raku", "rale", "ralf", "rall", "rals", "ram",
-    "rama", "ramc", "rame", "rami", "ramo", "ramp", "rams", "ran",
-    "rana", "rand", "rane", "rang", "rani", "rank", "rann", "rant",
-    "rao", "raob", "raoc", "rap", "rape", "rapp", "raps", "rapt",
-    "rar", "rara", "rare", "rarp", "ras", "rasa", "rasc", "rase",
-    "rash", "rask", "rasp", "rat", "rata", "rate", "rath", "rather",
-    "rato", "rats", "read", "real", "really", "reason", "receive", "received",
-    "recent", "record", "red", "reduce", "reflect", "region", "relate", "related",
-    "relationship", "religious", "remain", "remember", "remembered", "remove", "report", "reported",
-    "represent", "require", "required", "research", "resource", "respond", "response", "responsibility",
-    "result", "return", "returned", "reveal", "rich", "right", "rise", "risen",
-    "risk", "road", "rock", "role", "room", "rose", "rule", "run"
-};
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+// Maximum number of words estimated from txt file
+#define DICT_R_MAX_WORDS 21286
+#define DICT_R_TXT_PATH "Dictionary/dict_r.txt"
 
+// Global arrays for loaded words
+static char* dict_r_words[DICT_R_MAX_WORDS];
+static size_t dict_r_count = 0;
 
+// Function to load words from txt file
+static int load_dict_r_from_file(void) {
+    FILE* file = fopen(DICT_R_TXT_PATH, "r");
+    if (!file) {
+        return -1; // Failed to open file
+    }
+    
+    char buffer[256];
+    dict_r_count = 0;
+    
+    while (fgets(buffer, sizeof(buffer), file) && dict_r_count < DICT_R_MAX_WORDS) {
+        // Remove newline
+        size_t len = strlen(buffer);
+        if (len > 0 && buffer[len-1] == '\n') {
+            buffer[len-1] = '\0';
+        }
+        
+        // Allocate and copy word
+        if (strlen(buffer) > 0) {
+            dict_r_words[dict_r_count] = malloc(strlen(buffer) + 1);
+            if (dict_r_words[dict_r_count]) {
+                strcpy(dict_r_words[dict_r_count], buffer);
+                dict_r_count++;
+            }
+        }
+    }
+    
+    fclose(file);
+    return 0; // Success
+}
 
-static const size_t DICT_R_SIZE = sizeof(dict_r) / sizeof(dict_r[0]);
+// Function to free loaded words
+static void free_dict_r_words(void) {
+    for (size_t i = 0; i < dict_r_count; i++) {
+        if (dict_r_words[i]) {
+            free(dict_r_words[i]);
+            dict_r_words[i] = NULL;
+        }
+    }
+    dict_r_count = 0;
+}
+
+// Compatibility array pointer (points to loaded words)
+static const char* const* dict_r = (const char* const*)dict_r_words;
+static const size_t DICT_R_SIZE = DICT_R_MAX_WORDS; // Will be updated to actual count after loading
+
+// Getter function for actual count
+static size_t get_dict_r_size(void) {
+    return dict_r_count;
+}
 
 #endif // DICT_R_H
