@@ -21,59 +21,10 @@ static inline const dictionary_entry_t* get_dictionary_for_letter(char letter) {
     return NULL;
 }
 
-// Function declaration for levenshtein_distance
-static int levenshtein_distance(const char* s1, const char* s2) {
-    int len1 = strlen(s1);
-    int len2 = strlen(s2);
-    
-    // Quick optimization: if length difference is too large, skip
-    if (abs(len1 - len2) > 2) {
-        return 3; // More than max edit distance
-    }
-    
-    // Ultra-fast path: exact match
-    if (len1 == len2 && strcmp(s1, s2) == 0) return 0;
-    
-    // Fast path: check for single character differences first
-    if (len1 == len2) {
-        int diff_count = 0;
-        for (int i = 0; i < len1; i++) {
-            if (s1[i] != s2[i]) {
-                diff_count++;
-                if (diff_count > 2) return 3; // More than max edit distance
-            }
-        }
-        return diff_count;
-    }
-    
-    // Use static array to avoid dynamic allocation
-    static int matrix[16][16]; // Maximum word length for edit distance is 15
-    
-    if (len1 >= 15 || len2 >= 15) {
-        return 3; // Words too long, just return max+1
-    }
-    
-    // Initialize first row and column
-    for (int i = 0; i <= len1; i++) matrix[i][0] = i;
-    for (int j = 0; j <= len2; j++) matrix[0][j] = j;
-    
-    // Fill the matrix
-    for (int i = 1; i <= len1; i++) {
-        for (int j = 1; j <= len2; j++) {
-            int cost = (s1[i-1] == s2[j-1]) ? 0 : 1;
-            int del = matrix[i-1][j] + 1;
-            int ins = matrix[i][j-1] + 1;
-            int sub = matrix[i-1][j-1] + cost;
-            
-            // Find minimum
-            matrix[i][j] = del;
-            if (ins < matrix[i][j]) matrix[i][j] = ins;
-            if (sub < matrix[i][j]) matrix[i][j] = sub;
-        }
-    }
-    
-    return matrix[len1][len2];
-}
+// Forward declaration for levenshtein_distance in zmk_spell_checker.c
+// This function is defined in zmk_spell_checker.c, we're just declaring it here
+// so we can use it in our find_similar_word function
+static int levenshtein_distance(const char* s1, const char* s2);
 
 // Find a word similar to the given word using our hash dictionary
 // This is a simplified implementation that doesn't scan the whole dictionary

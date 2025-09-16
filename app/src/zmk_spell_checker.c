@@ -13,6 +13,10 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/hid_usage.h>
 #include <zmk/spell_checker.h>
+
+// Forward declaration of levenshtein_distance so it can be used by other files
+static int levenshtein_distance(const char* s1, const char* s2);
+
 #include "Dictionary/spell_dictionary_map.h"
 #define MAX_WORD_LEN 15
 #define MAX_EDIT_DISTANCE 2  // Allow up to 2 character errors (balanced)
