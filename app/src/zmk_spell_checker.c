@@ -662,9 +662,6 @@ int zmk_autocorrect_keyboard_press(zmk_key_t key) {
     // Add letter or apostrophe to current word
     if ((c >= 'a' && c <= 'z') || c == '\'' && word_pos < MAX_WORD_LEN - 1) {
         current_word[word_pos++] = c;
-        
-        // Note: Timeout-based correction removed to prevent interrupting typing flow
-        // Only correct when explicit word boundaries (space, punctuation) are hit
     }
     
     return 0;
