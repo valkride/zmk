@@ -1,12 +1,12 @@
 #ifndef SPELL_DICTIONARY_MAP_H
 #define SPELL_DICTIONARY_MAP_H
 
-#include "simple_hash_dictionary.h"
+#include "compact_dictionary.h"
 
-// Check if word exists in hash dictionary
+// Check if word exists in compact dictionary
 static bool hash_dictionary_lookup(const char* word) {
-    // Use the hash_table_contains_word function from simple_hash_dictionary.h
-    return hash_table_contains_word(word) ? true : false;
+    // Use the compact dictionary with binary search lookup
+    return is_word_in_compact_dictionary(word);
 }
 
 // Legacy structure for compatibility - will be refactored later
@@ -49,8 +49,8 @@ static const char* find_similar_word(const char* word, int max_edit_distance) {
     };
     #define NUM_COMMON_WORDS (sizeof(common_words) / sizeof(common_words[0]))
     
-    // Start with a lookup in our hash dictionary
-    if (hash_dictionary_lookup(word)) {
+    // Start with a lookup in our compact dictionary
+    if (is_word_in_compact_dictionary(word)) {
         return word; // Word already exists
     }
     
