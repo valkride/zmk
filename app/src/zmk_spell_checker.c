@@ -296,7 +296,18 @@ static const char* find_best_match(const char* word) {
     if (word[0] >= 'A' && word[0] <= 'Z' && !should_capitalize_sentence_start) {
         return NULL;
     }
+    // Look for similar words in the dictionary
+    // Find best match using the find_similar_word function
+    best_match = find_similar_word(word, MAX_EDIT_DISTANCE);
     
+    #if FAST_TYPER_MODE
+    // Cache the result for future lookups
+    if (best_match != NULL) {
+        add_to_cache(word, best_match);
+    }
+    #endif
+    
+    /* Legacy implementation using letter-based dictionaries
     // Get dictionary for the first letter of the word
     const dictionary_entry_t* dict_entry = get_dictionary_for_letter(word[0]);
     
@@ -384,6 +395,7 @@ static const char* find_best_match(const char* word) {
         }
         #endif
     }
+    */
     
     return best_match;
 }
@@ -391,6 +403,10 @@ static const char* find_best_match(const char* word) {
 // Check if word exists in dictionary (exact match)
 static bool is_valid_word(const char* word) {
     // Use the hash-based dictionary lookup
+    return hash_dictionary_lookup(word);
+    
+    /* Legacy fallback code - no longer needed
+    // Fallback to checking with the old dictionary structure
     unsigned int hash = word_hash(word);
     
     // Note: This implementation requires that we include all the bucket references
@@ -412,7 +428,9 @@ static bool is_valid_word(const char* word) {
         bucket_size = sizeof(bucket_0) / sizeof(bucket_0[0]);
     }
     // Add more buckets here...
+    */
     
+    /* Removed legacy implementation
     // Search the bucket if we found one
     if (bucket != NULL) {
         for (int i = 0; i < bucket_size; i++) {
@@ -452,6 +470,7 @@ static bool is_valid_word(const char* word) {
     }
     
     return false;
+    */
 }
     return false;
 }
