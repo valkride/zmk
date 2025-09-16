@@ -281,7 +281,6 @@ static const char* find_best_match(const char* word) {
     }
     #endif
     
-    int best_distance = MAX_EDIT_DISTANCE + 1;
     const char* best_match = NULL;
     int word_len = strlen(word);
     
@@ -300,6 +299,7 @@ static const char* find_best_match(const char* word) {
     if (word[0] >= 'A' && word[0] <= 'Z' && !should_capitalize_sentence_start) {
         return NULL;
     }
+    
     // Look for similar words in the dictionary
     // Find best match using the find_similar_word function
     best_match = find_similar_word(word, MAX_EDIT_DISTANCE);
@@ -473,10 +473,7 @@ static bool is_valid_word(const char* word) {
         #endif
     }
     
-    return false;
-    */
-}
-    return false;
+    return best_match;
 }
 
 // Convert key to char
