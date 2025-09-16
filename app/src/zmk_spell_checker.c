@@ -390,7 +390,39 @@ static const char* find_best_match(const char* word) {
 
 // Check if word exists in dictionary (exact match)
 static bool is_valid_word(const char* word) {
-    // Get dictionary for the first letter of the word
+    // Use the hash-based dictionary lookup
+    unsigned int hash = word_hash(word);
+    
+    // Note: This implementation requires that we include all the bucket references
+    // from the simple_hash_dictionary.h file
+    
+    // Rather than having a huge switch statement with thousands of cases,
+    // we'll implement a simplified version that checks if the word is in 
+    // any of the populated buckets (this is for demonstration)
+    
+    // This is just a small subset of buckets for testing
+    // In a full implementation, this would be auto-generated to include all buckets
+    const char* const* bucket = NULL;
+    int bucket_size = 0;
+    
+    // Check if the hash matches any of our buckets
+    // In reality, this would be a giant switch statement or hash table lookup
+    if (hash == 0) {
+        bucket = bucket_0;
+        bucket_size = sizeof(bucket_0) / sizeof(bucket_0[0]);
+    }
+    // Add more buckets here...
+    
+    // Search the bucket if we found one
+    if (bucket != NULL) {
+        for (int i = 0; i < bucket_size; i++) {
+            if (strcmp(word, bucket[i]) == 0) {
+                return true;
+            }
+        }
+    }
+    
+    // Fallback to old implementation for now
     const dictionary_entry_t* dict_entry = get_dictionary_for_letter(word[0]);
     
     if (dict_entry && dict_entry->words) {
@@ -418,6 +450,9 @@ static bool is_valid_word(const char* word) {
         }
         #endif
     }
+    
+    return false;
+}
     return false;
 }
 
