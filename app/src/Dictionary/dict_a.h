@@ -2,14 +2,6 @@
 #define DICT_A_H
 
 static const char* const dict_a[] = {
-    "'bout",
-    "'fore",
-    "'round",
-    "'til",
-    "'tis",
-    "'twas",
-    "'twere",
-    "'twill",
     "a",
     "aa",
     "aaa",
