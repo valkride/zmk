@@ -1,38 +1,20 @@
 #ifndef DICT_K_H
 #define DICT_K_H
 
-// Comprehensive 15K frequency dictionary - 26 words starting with 'k'
-// Based on English word frequency analysis and common usage patterns
-// Optimized for nRF52840 1MB flash memory constraint
-// Target coverage: ~95% of typical English writing
-
 static const char* const dict_k[] = {
+    "keep",
     "key",
-    "keyboard",
+    "kid",
+    "kill",
+    "kind",
     "kitchen",
-    "knob",
+    "knew",
+    "knife",
     "know",
-    "knowable",
-    "knowage",
-    "knowar",
-    "knowdom",
-    "knower",
-    "knowful",
-    "knowhood",
-    "knowible",
-    "knowism",
-    "knowist",
+    "knowing",
     "knowledge",
-    "knowledgeed",
-    "knowledgeing",
-    "knowledges",
-    "knowless",
-    "knowment",
-    "knowness",
-    "knowor",
-    "knowship",
-    "knowsion",
-    "knowtion",
+    "known",
+    "knows",
 };
 
 #define DICT_K_SIZE (sizeof(dict_k) / sizeof(dict_k[0]))
