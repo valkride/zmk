@@ -40,6 +40,9 @@ static struct {
 static int cache_index = 0;
 static uint32_t cache_access_counter = 0;
 
+// Function declarations
+static int levenshtein_distance(const char* s1, const char* s2);
+
 // Check cache for recent lookup
 static const char* check_cache(const char* word) {
     for (int i = 0; i < CACHE_SIZE; i++) {
