@@ -7,6 +7,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <math.h>
 #include <zmk/hid.h>
 #include <zmk/keys.h>
 #include <zmk/event_manager.h>
@@ -16,6 +17,19 @@
 #include <zmk/spell_checker.h>
 
 #include "Dictionary/spell_dictionary_two_letter_map.h"
+
+// ARM NEON support detection
+#ifdef CONFIG_ARM
+#ifdef __ARM_NEON
+#include <arm_neon.h>
+#define NEON_AVAILABLE 1
+#else
+#define NEON_AVAILABLE 0
+#endif
+#else
+#define NEON_AVAILABLE 0
+#endif
+
 #define MAX_WORD_LEN 15
 #define MAX_EDIT_DISTANCE 2  // Allow up to 2 character errors (balanced)
 
@@ -28,6 +42,14 @@ static int word_pos = 0;
 static bool correcting = false;
 static uint32_t correction_start_time = 0;
 static uint32_t last_keystroke_time = 0;
+
+// Context-aware correction system
+#define CONTEXT_HISTORY_SIZE 3
+static struct {
+    char words[CONTEXT_HISTORY_SIZE][MAX_WORD_LEN];
+    int count;
+    int index;
+} word_context = {0};
 
 // Enhanced cache for recent lookups (simple LRU cache)
 #define CACHE_SIZE 16
@@ -42,6 +64,86 @@ static uint32_t cache_access_counter = 0;
 
 // Function declarations
 static int levenshtein_distance(const char* s1, const char* s2);
+static bool are_keyboard_adjacent(char c1, char c2);
+
+// Enhanced keyboard layout awareness for Keyball44
+// Physical key distance matrix for QWERTY layout (approximate distances)
+static float get_key_distance(char c1, char c2) {
+    // Convert to lowercase for comparison
+    c1 = (c1 >= 'A' && c1 <= 'Z') ? c1 + 32 : c1;
+    c2 = (c2 >= 'A' && c2 <= 'Z') ? c2 + 32 : c2;
+    
+    if (c1 == c2) return 0.0f;
+    
+    // Define key positions (row, column) for QWERTY layout
+    static const struct { char key; float row; float col; } key_positions[] = {
+        {'q', 0, 0}, {'w', 0, 1}, {'e', 0, 2}, {'r', 0, 3}, {'t', 0, 4}, 
+        {'y', 0, 5}, {'u', 0, 6}, {'i', 0, 7}, {'o', 0, 8}, {'p', 0, 9},
+        {'a', 1, 0.5}, {'s', 1, 1.5}, {'d', 1, 2.5}, {'f', 1, 3.5}, {'g', 1, 4.5},
+        {'h', 1, 5.5}, {'j', 1, 6.5}, {'k', 1, 7.5}, {'l', 1, 8.5},
+        {'z', 2, 1}, {'x', 2, 2}, {'c', 2, 3}, {'v', 2, 4}, {'b', 2, 5},
+        {'n', 2, 6}, {'m', 2, 7},
+        {'\0', 0, 0} // Terminator
+    };
+    
+    float pos1_row = -1, pos1_col = -1, pos2_row = -1, pos2_col = -1;
+    
+    // Find positions of both characters
+    for (int i = 0; key_positions[i].key != '\0'; i++) {
+        if (key_positions[i].key == c1) {
+            pos1_row = key_positions[i].row;
+            pos1_col = key_positions[i].col;
+        }
+        if (key_positions[i].key == c2) {
+            pos2_row = key_positions[i].row;
+            pos2_col = key_positions[i].col;
+        }
+    }
+    
+    // If either character not found in layout, return high distance  
+    if (pos1_row < 0 || pos2_row < 0) return 10.0f;
+    
+    // Calculate Euclidean distance
+    float row_diff = pos1_row - pos2_row;
+    float col_diff = pos1_col - pos2_col;
+    return sqrtf(row_diff * row_diff + col_diff * col_diff);
+}
+
+// Returns true if two characters are adjacent on the keyboard (distance <= 1.5)
+static bool are_keyboard_adjacent(char c1, char c2) {
+    return get_key_distance(c1, c2) <= 1.5f;
+}
+
+// Calculate keyboard-aware correction score (lower is better)
+static float get_keyboard_aware_score(const char* word, const char* candidate) {
+    int word_len = strlen(word);
+    int candidate_len = strlen(candidate);
+    int min_len = (word_len < candidate_len) ? word_len : candidate_len;
+    
+    float score = 0.0f;
+    float position_weight = 1.0f; // Give more weight to early characters
+    
+    // Compare character by character
+    for (int i = 0; i < min_len; i++) {
+        if (word[i] == candidate[i]) {
+            // Perfect match - no penalty
+            continue;
+        } else {
+            // Add penalty based on keyboard distance
+            float distance = get_key_distance(word[i], candidate[i]);
+            score += distance * position_weight;
+        }
+        
+        // Reduce position weight for later characters (typos early in word are more disruptive)
+        position_weight *= 0.8f;
+    }
+    
+    // Add penalty for length differences
+    int length_diff = abs(word_len - candidate_len);
+    score += length_diff * 2.0f; // Length differences are expensive
+    
+    return score;
+}
 
 // Check cache for recent lookup
 static const char* check_cache(const char* word) {
@@ -121,10 +223,92 @@ static char* capitalize_first_letter(const char* word, char* buffer, int buffer_
     return buffer;
 }
 
+// Context-aware correction functions
+static void add_to_context(const char* word) {
+    if (strlen(word) == 0 || strlen(word) >= MAX_WORD_LEN) return;
+    
+    // Add word to circular buffer
+    strncpy(word_context.words[word_context.index], word, MAX_WORD_LEN - 1);
+    word_context.words[word_context.index][MAX_WORD_LEN - 1] = '\0';
+    
+    word_context.index = (word_context.index + 1) % CONTEXT_HISTORY_SIZE;
+    if (word_context.count < CONTEXT_HISTORY_SIZE) {
+        word_context.count++;
+    }
+}
+
+static const char* get_context_aware_correction(const char* word, const char* primary_correction) {
+    if (word_context.count == 0 || !primary_correction) return primary_correction;
+    
+    // Get the most recent word for context
+    int last_index = (word_context.index - 1 + CONTEXT_HISTORY_SIZE) % CONTEXT_HISTORY_SIZE;
+    const char* prev_word = word_context.words[last_index];
+    
+    // Context-specific corrections based on common patterns
+    if (strlen(prev_word) > 0) {
+        // "I wan" -> "want" (not "wan")
+        if (strcmp(prev_word, "I") == 0 && strcmp(word, "wan") == 0) {
+            return "want";
+        }
+        
+        // "to go" context
+        if (strcmp(prev_word, "to") == 0) {
+            if (strcmp(word, "go") == 0 || strcmp(word, "og") == 0) return "go";
+            if (strcmp(word, "be") == 0 || strcmp(word, "eb") == 0) return "be";
+            if (strcmp(word, "do") == 0 || strcmp(word, "od") == 0) return "do";
+        }
+        
+        // "the" context - common article patterns
+        if (strcmp(prev_word, "the") == 0) {
+            if (strcmp(word, "tiem") == 0 || strcmp(word, "itme") == 0) return "time";
+            if (strcmp(word, "palce") == 0 || strcmp(word, "plca") == 0) return "place";
+        }
+        
+        // "and" context
+        if (strcmp(prev_word, "and") == 0) {
+            if (strcmp(word, "hte") == 0 || strcmp(word, "teh") == 0) return "the";
+            if (strcmp(word, "I") == 0 || strcmp(word, "i") == 0) return "I";
+        }
+        
+        // Question patterns
+        if (strcmp(prev_word, "what") == 0) {
+            if (strcmp(word, "si") == 0 || strcmp(word, "is") == 0) return "is";
+        }
+        
+        if (strcmp(prev_word, "how") == 0) {
+            if (strcmp(word, "era") == 0 || strcmp(word, "aer") == 0) return "are";
+        }
+    }
+    
+    // Check two-word context for more complex patterns
+    if (word_context.count >= 2) {
+        int second_last = (word_context.index - 2 + CONTEXT_HISTORY_SIZE) % CONTEXT_HISTORY_SIZE;
+        const char* prev_prev_word = word_context.words[second_last];
+        
+        // "I want to" -> common verb patterns
+        if (strcmp(prev_prev_word, "I") == 0 && strcmp(prev_word, "want") == 0) {
+            if (strcmp(word, "og") == 0 || strcmp(word, "go") == 0) return "go";
+            if (strcmp(word, "eb") == 0 || strcmp(word, "be") == 0) return "be";
+        }
+        
+        // "are you" patterns
+        if (strcmp(prev_prev_word, "are") == 0 && strcmp(prev_word, "you") == 0) {
+            if (strcmp(word, "ko") == 0 || strcmp(word, "ok") == 0) return "ok";
+        }
+    }
+    
+    return primary_correction; // Return original correction if no context match
+}
+
 // Levenshtein distance calculation
 static int min3(int a, int b, int c) {
     return (a < b) ? ((a < c) ? a : c) : ((b < c) ? b : c);
 }
+
+// Forward declaration for NEON version
+#if NEON_AVAILABLE
+static int levenshtein_distance_neon(const char* s1, const char* s2);
+#endif
 
 static int levenshtein_distance(const char* s1, const char* s2) {
     int len1 = strlen(s1);
@@ -145,8 +329,10 @@ static int levenshtein_distance(const char* s1, const char* s2) {
     for (int i = 0; i <= len1; i++) matrix[i][0] = i;
     for (int j = 0; j <= len2; j++) matrix[0][j] = j;
     
-    // Fill the matrix using standard Levenshtein algorithm
+    // Fill the matrix using optimized Levenshtein algorithm with early termination
     for (int i = 1; i <= len1; i++) {
+        int row_min = MAX_EDIT_DISTANCE + 1; // Track minimum in current row for early exit
+        
         for (int j = 1; j <= len2; j++) {
             int cost = (s1[i-1] == s2[j-1]) ? 0 : 1;
             matrix[i][j] = min3(
@@ -154,11 +340,146 @@ static int levenshtein_distance(const char* s1, const char* s2) {
                 matrix[i][j-1] + 1,     // insertion
                 matrix[i-1][j-1] + cost // substitution
             );
+            
+            // Track minimum value in this row for early termination
+            if (matrix[i][j] < row_min) {
+                row_min = matrix[i][j];
+            }
+        }
+        
+        // Early termination: if minimum in this row exceeds threshold, abort
+        if (row_min > MAX_EDIT_DISTANCE) {
+            return MAX_EDIT_DISTANCE + 1;
         }
     }
     
     return matrix[len1][len2];
 }
+
+#if NEON_AVAILABLE
+// SIMD-optimized Levenshtein distance using ARM NEON
+static int levenshtein_distance_neon(const char* s1, const char* s2) {
+    int len1 = strlen(s1);
+    int len2 = strlen(s2);
+    
+    // Quick optimization: if length difference is too large, skip
+    if (abs(len1 - len2) > MAX_EDIT_DISTANCE) {
+        return MAX_EDIT_DISTANCE + 1;
+    }
+    
+    // Simple exact match check
+    if (len1 == len2 && strcmp(s1, s2) == 0) return 0;
+    
+    // For very short strings, use standard algorithm
+    if (len1 < 4 || len2 < 4) {
+        // Use static array to avoid dynamic allocation
+        static int matrix[MAX_WORD_LEN + 1][MAX_WORD_LEN + 1];
+        
+        // Initialize first row and column
+        for (int i = 0; i <= len1; i++) matrix[i][0] = i;
+        for (int j = 0; j <= len2; j++) matrix[0][j] = j;
+        
+        // Standard algorithm for short strings
+        for (int i = 1; i <= len1; i++) {
+            int row_min = MAX_EDIT_DISTANCE + 1;
+            
+            for (int j = 1; j <= len2; j++) {
+                int cost = (s1[i-1] == s2[j-1]) ? 0 : 1;
+                matrix[i][j] = min3(
+                    matrix[i-1][j] + 1,     // deletion
+                    matrix[i][j-1] + 1,     // insertion
+                    matrix[i-1][j-1] + cost // substitution
+                );
+                
+                if (matrix[i][j] < row_min) {
+                    row_min = matrix[i][j];
+                }
+            }
+            
+            // Early termination
+            if (row_min > MAX_EDIT_DISTANCE) {
+                return MAX_EDIT_DISTANCE + 1;
+            }
+        }
+        
+        return matrix[len1][len2];
+    }
+    
+    // NEON-optimized version for longer strings
+    static int matrix[MAX_WORD_LEN + 1][MAX_WORD_LEN + 1];
+    
+    // Initialize first row and column
+    for (int i = 0; i <= len1; i++) matrix[i][0] = i;
+    for (int j = 0; j <= len2; j++) matrix[0][j] = j;
+    
+    // NEON-optimized inner loop
+    for (int i = 1; i <= len1; i++) {
+        int row_min = MAX_EDIT_DISTANCE + 1;
+        uint8_t s1_char = (uint8_t)s1[i-1];
+        
+        // Process characters in groups of 8 using NEON
+        int j = 1;
+        for (; j <= len2 - 7; j += 8) {
+            // Load 8 characters from s2
+            uint8x8_t s2_chars = vld1_u8((uint8_t*)&s2[j-1]);
+            
+            // Broadcast current s1 character
+            uint8x8_t s1_chars = vdup_n_u8(s1_char);
+            
+            // Compare characters (result is 0xFF for match, 0x00 for mismatch)
+            uint8x8_t cmp_result = vceq_u8(s1_chars, s2_chars);
+            
+            // Extract comparison results and compute matrix values
+            uint8_t results[8];
+            vst1_u8(results, cmp_result);
+            
+            for (int k = 0; k < 8 && j + k <= len2; k++) {
+                int cost = (results[k] == 0xFF) ? 0 : 1;
+                matrix[i][j + k] = min3(
+                    matrix[i-1][j + k] + 1,     // deletion
+                    matrix[i][j + k - 1] + 1,   // insertion
+                    matrix[i-1][j + k - 1] + cost // substitution
+                );
+                
+                if (matrix[i][j + k] < row_min) {
+                    row_min = matrix[i][j + k];
+                }
+            }
+        }
+        
+        // Handle remaining characters
+        for (; j <= len2; j++) {
+            int cost = (s1[i-1] == s2[j-1]) ? 0 : 1;
+            matrix[i][j] = min3(
+                matrix[i-1][j] + 1,     // deletion
+                matrix[i][j-1] + 1,     // insertion
+                matrix[i-1][j-1] + cost // substitution
+            );
+            
+            if (matrix[i][j] < row_min) {
+                row_min = matrix[i][j];
+            }
+        }
+        
+        // Early termination
+        if (row_min > MAX_EDIT_DISTANCE) {
+            return MAX_EDIT_DISTANCE + 1;
+        }
+    }
+    
+    return matrix[len1][len2];
+}
+
+// Wrapper function that chooses between NEON and standard implementation
+static inline int levenshtein_distance_optimized(const char* s1, const char* s2) {
+    return levenshtein_distance_neon(s1, s2);
+}
+#else
+// Standard implementation when NEON is not available
+static inline int levenshtein_distance_optimized(const char* s1, const char* s2) {
+    return levenshtein_distance(s1, s2);
+}
+#endif
 
 // Check if word needs common corrections (typos, capitalization, contractions)
 static const char* get_correction(const char* word) {
@@ -199,20 +520,35 @@ static const char* find_best_match(const char* word) {
         return NULL;
     }
     
-    // Look for similar words using two-letter dictionary approach
+    // Look for similar words using two-letter dictionary approach with keyboard awareness
     int best_distance = MAX_EDIT_DISTANCE + 1;
+    float best_keyboard_score = 1000.0f; // Lower is better
     
-    // Helper macro to search a specific dictionary
+    // Helper macro to search a specific dictionary with aggressive pre-filtering and keyboard awareness
     #define SEARCH_DICTIONARY(dict_entry) do { \
         if ((dict_entry) && (dict_entry)->words) { \
             for (size_t i = 0; i < (dict_entry)->size; i++) { \
                 const char* candidate = (dict_entry)->words[i]; \
                 int candidate_len = strlen(candidate); \
                 \
-                int max_length_diff = (word_len <= 4) ? 1 : 2; \
+                /* Aggressive length-based pre-filtering */ \
+                int max_length_diff; \
+                if (word_len <= 3) { \
+                    max_length_diff = 1; /* Very short words: max 1 char difference */ \
+                } else if (word_len <= 6) { \
+                    max_length_diff = 2; /* Medium words: max 2 char difference */ \
+                } else { \
+                    max_length_diff = 2; /* Long words: still max 2 for safety */ \
+                } \
                 if (abs(candidate_len - word_len) > max_length_diff) continue; \
                 \
-                int distance = levenshtein_distance(word, candidate); \
+                /* Keyboard-aware pre-filtering: first character proximity check */ \
+                if (word_len >= 2 && candidate_len >= 2) { \
+                    float first_char_distance = get_key_distance(word[0], candidate[0]); \
+                    if (first_char_distance > 3.0f) continue; /* Skip very distant first chars */ \
+                } \
+                \
+                int distance = levenshtein_distance_optimized(word, candidate); \
                 \
                 bool should_correct = false; \
                 if (distance == 1) { \
@@ -230,9 +566,17 @@ static const char* find_best_match(const char* word) {
                     } \
                 } \
                 \
-                if (should_correct && distance < best_distance) { \
-                    best_distance = distance; \
-                    best_match = candidate; \
+                if (should_correct) { \
+                    /* Use keyboard-aware scoring for better candidate selection */ \
+                    float keyboard_score = get_keyboard_aware_score(word, candidate); \
+                    \
+                    /* Prefer candidates with better keyboard score, or lower edit distance */ \
+                    if (distance < best_distance || \
+                        (distance == best_distance && keyboard_score < best_keyboard_score)) { \
+                        best_distance = distance; \
+                        best_keyboard_score = keyboard_score; \
+                        best_match = candidate; \
+                    } \
                 } \
             } \
         } \
@@ -372,6 +716,9 @@ static void correct_word(const char* correct_word, int typo_len) {
     // Type the correction
     type_string(correct_word);
     
+    // Add corrected word to context for future corrections
+    add_to_context(correct_word);
+    
     correcting = false;
     correction_start_time = 0;
 }
@@ -418,8 +765,9 @@ static void process_word() {
         // Always check for common corrections first (typos, capitalization, contractions)
         final_correction = get_correction(current_word);
         
-        // If no capitalization correction and word is valid, don't correct
+        // If no capitalization correction and word is valid, add to context and don't correct
         if (final_correction == NULL && is_valid_word(current_word)) {
+            add_to_context(current_word);  // Track valid words for context
             word_pos = 0;
             return;
         }
@@ -427,6 +775,11 @@ static void process_word() {
         // If still no correction found, attempt dictionary-based correction
         if (final_correction == NULL) {
             final_correction = find_best_match(current_word);
+        }
+        
+        // Apply context-aware improvement to the correction
+        if (final_correction != NULL) {
+            final_correction = get_context_aware_correction(current_word, final_correction);
         }
     }
     
@@ -441,7 +794,7 @@ static void process_word() {
             correct_word(final_correction, word_pos);
         } else if (strlen(final_correction) > 0 && !is_valid_word(current_word)) {
             // Multiple safety checks before correcting other words
-            int correction_distance = levenshtein_distance(current_word, final_correction);
+            int correction_distance = levenshtein_distance_optimized(current_word, final_correction);
             int word_length = strlen(current_word);
             int correction_length = strlen(final_correction);
             
