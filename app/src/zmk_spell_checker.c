@@ -28,6 +28,7 @@ static bool spell_checker_enabled = true;
 static char current_word[MAX_WORD_LEN] = {0};
 static int word_pos = 0;
 static bool correcting = false;
+static uint32_t correction_start_time = 0;
 
 #if FAST_TYPER_MODE
 // Enhanced cache for recent lookups (simple LRU cache)
@@ -353,6 +354,7 @@ static void type_string(const char* str) {
 static void correct_word(const char* correct_word, int typo_len) {
     if (correcting) return;
     correcting = true;
+    correction_start_time = k_uptime_get_32();
     
     #if FAST_TYPER_MODE
     // Faster deletion for quick typers
@@ -376,6 +378,7 @@ static void correct_word(const char* correct_word, int typo_len) {
     type_string(correct_word);
     
     correcting = false;
+    correction_start_time = 0;
 }
 
 
@@ -491,6 +494,16 @@ int zmk_autocorrect_keyboard_press(zmk_key_t key) {
         return 0;
     }
     
+    // Safety check: if correcting flag is stuck, reset it after timeout (1 second)
+    if (correcting && correction_start_time > 0) {
+        uint32_t current_time = k_uptime_get_32();
+        if (current_time - correction_start_time > 1000) {
+            correcting = false;
+            correction_start_time = 0;
+            word_pos = 0;  // Reset word buffer as well
+        }
+    }
+    
     if (correcting || !spell_checker_enabled) return 0;
     
     char c = key_to_char(key);
@@ -521,6 +534,7 @@ static int spell_checker_init(void) {
     memset(current_word, 0, sizeof(current_word));
     word_pos = 0;
     correcting = false;
+    correction_start_time = 0;
     spell_checker_enabled = true;
     
     #if FAST_TYPER_MODE
