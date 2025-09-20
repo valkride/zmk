@@ -1,0 +1,52 @@
+#ifndef DICT_EA_H
+#define DICT_EA_H
+
+static const char* const dict_ea[] = {
+    "e",
+    "ea",
+    "each",
+    "eager",
+    "eagle",
+    "eagles",
+    "ean",
+    "ear",
+    "earl",
+    "earlier",
+    "earliest",
+    "early",
+    "earn",
+    "earned",
+    "earnest",
+    "earning",
+    "earnings",
+    "earns",
+    "earring",
+    "earrings",
+    "ears",
+    "earth",
+    "earthquake",
+    "earthquakes",
+    "eas",
+    "ease",
+    "easier",
+    "easiest",
+    "easily",
+    "east",
+    "easter",
+    "eastern",
+    "eastman",
+    "easton",
+    "easy",
+    "easyshare",
+    "eat",
+    "eaten",
+    "eater",
+    "eating",
+    "eaton",
+    "eats",
+    "eau",
+};
+
+#define DICT_EA_SIZE (sizeof(dict_ea) / sizeof(dict_ea[0]))
+
+#endif // DICT_EA_H

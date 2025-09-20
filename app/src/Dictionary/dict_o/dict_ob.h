@@ -1,0 +1,52 @@
+#ifndef DICT_OB_H
+#define DICT_OB_H
+
+static const char* const dict_ob[] = {
+    "ob",
+    "obedience",
+    "obese",
+    "obesity",
+    "obey",
+    "obituaries",
+    "obituary",
+    "obj",
+    "object",
+    "objection",
+    "objectionable",
+    "objections",
+    "objective",
+    "objectives",
+    "objects",
+    "obligated",
+    "obligation",
+    "obligations",
+    "obliged",
+    "oblique",
+    "obs",
+    "obscene",
+    "obscure",
+    "observation",
+    "observations",
+    "observatory",
+    "observe",
+    "observed",
+    "observer",
+    "observers",
+    "observing",
+    "obsessed",
+    "obsession",
+    "obsolete",
+    "obstacle",
+    "obstacles",
+    "obstetrics",
+    "obstruction",
+    "obtain",
+    "obtained",
+    "obtaining",
+    "obvious",
+    "obviously",
+};
+
+#define DICT_OB_SIZE (sizeof(dict_ob) / sizeof(dict_ob[0]))
+
+#endif // DICT_OB_H

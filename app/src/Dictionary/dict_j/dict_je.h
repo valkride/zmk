@@ -1,0 +1,53 @@
+#ifndef DICT_JE_H
+#define DICT_JE_H
+
+static const char* const dict_je[] = {
+    "je",
+    "jealous",
+    "jean",
+    "jeanne",
+    "jeans",
+    "jedi",
+    "jeep",
+    "jeeves",
+    "jeff",
+    "jefferson",
+    "jeffrey",
+    "jelly",
+    "jelsoft",
+    "jen",
+    "jenkins",
+    "jenna",
+    "jennifer",
+    "jennings",
+    "jenny",
+    "jensen",
+    "jeremiah",
+    "jeremy",
+    "jerk",
+    "jerking",
+    "jerome",
+    "jerry",
+    "jersey",
+    "jerseys",
+    "jerusalem",
+    "jess",
+    "jesse",
+    "jessica",
+    "jessie",
+    "jesus",
+    "jet",
+    "jets",
+    "jeux",
+    "jew",
+    "jewel",
+    "jewellery",
+    "jewelry",
+    "jewels",
+    "jewish",
+    "jews",
+};
+
+#define DICT_JE_SIZE (sizeof(dict_je) / sizeof(dict_je[0]))
+
+#endif // DICT_JE_H

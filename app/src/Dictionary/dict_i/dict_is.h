@@ -1,0 +1,51 @@
+#ifndef DICT_IS_H
+#define DICT_IS_H
+
+static const char* const dict_is[] = {
+    "is",
+    "isa",
+    "isaac",
+    "isabel",
+    "isabella",
+    "isaiah",
+    "isbn",
+    "isd",
+    "isdn",
+    "ish",
+    "isis",
+    "isl",
+    "islam",
+    "islamic",
+    "island",
+    "islander",
+    "islanders",
+    "islands",
+    "isle",
+    "isles",
+    "isnt",
+    "iso",
+    "isolate",
+    "isolated",
+    "isolates",
+    "isolation",
+    "isp",
+    "isps",
+    "israel",
+    "israeli",
+    "israelis",
+    "iss",
+    "issn",
+    "issuance",
+    "issue",
+    "issued",
+    "issuer",
+    "issues",
+    "issuing",
+    "ist",
+    "istanbul",
+    "isuzu",
+};
+
+#define DICT_IS_SIZE (sizeof(dict_is) / sizeof(dict_is[0]))
+
+#endif // DICT_IS_H

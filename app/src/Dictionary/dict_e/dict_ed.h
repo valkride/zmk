@@ -1,0 +1,47 @@
+#ifndef DICT_ED_H
+#define DICT_ED_H
+
+static const char* const dict_ed[] = {
+    "ed",
+    "eddie",
+    "eddy",
+    "eden",
+    "edgar",
+    "edge",
+    "edges",
+    "edi",
+    "edible",
+    "edinburgh",
+    "edison",
+    "edit",
+    "edited",
+    "edith",
+    "editing",
+    "edition",
+    "editions",
+    "editor",
+    "editorial",
+    "editorials",
+    "editors",
+    "edits",
+    "edmonton",
+    "edmund",
+    "eds",
+    "edt",
+    "edu",
+    "educ",
+    "educate",
+    "educated",
+    "educating",
+    "education",
+    "educational",
+    "educator",
+    "educators",
+    "edward",
+    "edwards",
+    "edwin",
+};
+
+#define DICT_ED_SIZE (sizeof(dict_ed) / sizeof(dict_ed[0]))
+
+#endif // DICT_ED_H

@@ -15,7 +15,7 @@
 #include <dt-bindings/zmk/hid_usage.h>
 #include <zmk/spell_checker.h>
 
-#include "Dictionary/spell_dictionary_map.h"
+#include "Dictionary/spell_dictionary_two_letter_map.h"
 #define MAX_WORD_LEN 15
 #define MAX_EDIT_DISTANCE 2  // Allow up to 2 character errors (balanced)
 
@@ -27,6 +27,7 @@ static char current_word[MAX_WORD_LEN] = {0};
 static int word_pos = 0;
 static bool correcting = false;
 static uint32_t correction_start_time = 0;
+static uint32_t last_keystroke_time = 0;
 
 // Enhanced cache for recent lookups (simple LRU cache)
 #define CACHE_SIZE 16
@@ -82,6 +83,7 @@ static const struct {
     {"i'll", "I'll"},
     {"i've", "I've"},
     {"i'd", "I'd"},
+    {"im", "I'm"},    // Add common contraction without apostrophe
 };
 #define CAPITALIZATION_RULES_SIZE (sizeof(capitalization_rules) / sizeof(capitalization_rules[0]))
 
@@ -181,6 +183,16 @@ static int levenshtein_distance(const char* s1, const char* s2) {
     return matrix[len1][len2];
 }
 
+// Check if word needs capitalization correction regardless of dictionary status
+static const char* get_capitalization_correction(const char* word) {
+    // Always check capitalization first, even for valid dictionary words
+    const char* cap_result = check_capitalization(word);
+    if (cap_result != NULL) {
+        return cap_result;
+    }
+    return NULL;
+}
+
 // Find best match in dictionary
 static const char* find_best_match(const char* word) {
     // Check cache first for fast repeat lookups
@@ -189,8 +201,8 @@ static const char* find_best_match(const char* word) {
         return cached_result;
     }
     
-    // Ultra-fast capitalization correction (highest priority)
-    const char* cap_result = check_capitalization(word);
+    // Ultra-fast capitalization correction (highest priority) - always check this first
+    const char* cap_result = get_capitalization_correction(word);
     if (cap_result != NULL) {
         add_to_cache(word, cap_result);
         return cap_result;
@@ -217,14 +229,11 @@ static const char* find_best_match(const char* word) {
         return NULL;
     }
     
-    // Look for similar words in the dictionary using letter-based approach
+    // Look for similar words using two-letter dictionary approach
     int best_distance = MAX_EDIT_DISTANCE + 1;
     
-    // Get dictionary for the first letter of the word
-    char first_letter = tolower(word[0]);
-    if (first_letter < 'a' || first_letter > 'z') return NULL;
-    
-    const dictionary_entry_t* dict_entry = &letter_dictionaries[first_letter - 'a'];
+    // Get two-letter dictionary for the first two letters of the word
+    const two_letter_dict_entry_t* dict_entry = get_two_letter_dict(word);
     
     if (dict_entry && dict_entry->words) {
         // Conservative approach: be very selective about corrections
@@ -275,8 +284,8 @@ static const char* find_best_match(const char* word) {
 
 // Check if word exists in dictionary (exact match)
 static bool is_valid_word(const char* word) {
-    // Use the hash-based dictionary lookup
-    return hash_dictionary_lookup(word);
+    // Use the two-letter dictionary lookup with binary search
+    return two_letter_dictionary_lookup(word);
 }
 
 // Convert key to char
@@ -393,21 +402,32 @@ static void process_word() {
     
     // If no sentence capitalization needed, check normal correction
     if (final_correction == NULL) {
-        // Check if word is already correct (fast path)
-        if (is_valid_word(current_word)) {
+        // Always check for capitalization corrections first (like im->I'm, i'm->I'm)
+        final_correction = get_capitalization_correction(current_word);
+        
+        // If no capitalization correction and word is valid, don't correct
+        if (final_correction == NULL && is_valid_word(current_word)) {
             word_pos = 0;
             return;
         }
         
-        // Attempt correction for words that aren't in dictionary
-        final_correction = find_best_match(current_word);
+        // If still no correction found, attempt dictionary-based correction
+        if (final_correction == NULL) {
+            final_correction = find_best_match(current_word);
+        }
     }
     
     // Apply correction if found, but be extra conservative with final checks
     if (final_correction != NULL && strcmp(current_word, final_correction) != 0) {
-        // Multiple safety checks before correcting
-        if (strlen(final_correction) > 0 && !is_valid_word(current_word)) {
-            // Additional similarity check - ensure the correction makes sense
+        // Check if this is a capitalization correction (always allow these)
+        const char* cap_correction = get_capitalization_correction(current_word);
+        bool is_capitalization_correction = (cap_correction != NULL && strcmp(final_correction, cap_correction) == 0);
+        
+        if (is_capitalization_correction) {
+            // Always apply capitalization corrections (im->I'm, i'm->I'm, etc.)
+            correct_word(final_correction, word_pos);
+        } else if (strlen(final_correction) > 0 && !is_valid_word(current_word)) {
+            // Multiple safety checks before correcting other words
             int correction_distance = levenshtein_distance(current_word, final_correction);
             int word_length = strlen(current_word);
             int correction_length = strlen(final_correction);
@@ -452,17 +472,30 @@ int zmk_autocorrect_keyboard_press(zmk_key_t key) {
         return 0;
     }
     
-    // Safety check: if correcting flag is stuck, reset it after timeout (1 second)
+    uint32_t current_time = k_uptime_get_32();
+    
+    // Safety check: if correcting flag is stuck, reset it after timeout (5 seconds)
     if (correcting && correction_start_time > 0) {
-        uint32_t current_time = k_uptime_get_32();
-        if (current_time - correction_start_time > 1000) {
+        if (current_time - correction_start_time > 5000) {
             correcting = false;
             correction_start_time = 0;
             word_pos = 0;  // Reset word buffer as well
+            memset(current_word, 0, sizeof(current_word));
+        }
+    }
+    
+    // Buffer timeout: reset word buffer after 2 seconds of inactivity
+    if (word_pos > 0 && last_keystroke_time > 0) {
+        if (current_time - last_keystroke_time > 2000) {
+            word_pos = 0;
+            memset(current_word, 0, sizeof(current_word));
         }
     }
     
     if (correcting || !spell_checker_enabled) return 0;
+    
+    // Update last keystroke time for any key press
+    last_keystroke_time = current_time;
     
     char c = key_to_char(key);
     if (c == 0) return 0;  // Unsupported key
@@ -493,6 +526,7 @@ static int spell_checker_init(void) {
     word_pos = 0;
     correcting = false;
     correction_start_time = 0;
+    last_keystroke_time = 0;
     spell_checker_enabled = true;
     
     // Initialize cache
