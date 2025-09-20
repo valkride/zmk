@@ -6,6 +6,7 @@
 #include <zephyr/init.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include <zmk/hid.h>
 #include <zmk/keys.h>
 #include <zmk/event_manager.h>
@@ -300,106 +301,38 @@ static const char* find_best_match(const char* word) {
         return NULL;
     }
     
-    // Look for similar words in the dictionary
-    // Find best match using the find_similar_word function
-    best_match = find_similar_word(word, MAX_EDIT_DISTANCE);
+    // Look for similar words in the dictionary using letter-based approach
+    int best_distance = MAX_EDIT_DISTANCE + 1;
     
-    #if FAST_TYPER_MODE
-    // Cache the result for future lookups
-    if (best_match != NULL) {
-        add_to_cache(word, best_match);
-    }
-    #endif
-    
-    /* Legacy implementation using letter-based dictionaries
     // Get dictionary for the first letter of the word
-    const dictionary_entry_t* dict_entry = get_dictionary_for_letter(word[0]);
+    char first_letter = tolower(word[0]);
+    if (first_letter < 'a' || first_letter > 'z') return NULL;
+    
+    const dictionary_entry_t* dict_entry = &letter_dictionaries[first_letter - 'a'];
     
     if (dict_entry && dict_entry->words) {
-        #if FAST_TYPER_MODE
-        // First pass: exact matches only (fastest possible)
-        for (size_t i = 0; i < dict_entry->size; i++) {
-            const char* candidate = dict_entry->words[i];
-            if (strlen(candidate) == word_len && strcmp(word, candidate) == 0) {
-                add_to_cache(word, candidate);
-                return candidate; // Exact match found
-            }
-        }
-        
-        // Second pass: same length with 1 error (very fast)
+        // Simple approach: check all words in the dictionary for this letter
         for (size_t i = 0; i < dict_entry->size; i++) {
             const char* candidate = dict_entry->words[i];
             int candidate_len = strlen(candidate);
             
-            if (candidate_len == word_len) {
-                // Quick single-difference check for same length
-                int diff_count = 0;
-                for (int j = 0; j < word_len; j++) {
-                    if (word[j] != candidate[j]) {
-                        diff_count++;
-                        if (diff_count > 1) break; // More than 1 difference
-                    }
-                }
-                
-                if (diff_count == 1) {
-                    best_distance = 1;
-                    best_match = candidate;
-                    break; // Single character difference is good enough
-                }
+            // Skip if length difference exceeds edit distance
+            if (abs(candidate_len - word_len) > MAX_EDIT_DISTANCE) continue;
+            
+            int distance = levenshtein_distance(word, candidate);
+            if (distance <= MAX_EDIT_DISTANCE && distance < best_distance) {
+                best_distance = distance;
+                best_match = candidate;
             }
         }
         
-        // Third pass: check length +/- 1 with edit distance (if no single-char match)
-        if (best_match == NULL) {
-            for (size_t i = 0; i < dict_entry->size; i++) {
-                const char* candidate = dict_entry->words[i];
-                int candidate_len = strlen(candidate);
-                
-                // Only check words with length difference of 1
-                if (abs(candidate_len - word_len) == 1) {
-                    int distance = levenshtein_distance(word, candidate);
-                    if (distance <= MAX_EDIT_DISTANCE && distance < best_distance) {
-                        best_distance = distance;
-                        best_match = candidate;
-                        
-                        // Single insertion/deletion is good enough
-                        if (distance == 1) break;
-                    }
-                }
-            }
-        }
-        
-        // Fourth pass: full edit distance only if necessary (slowest)
-        if (best_match == NULL) {
-        #endif
-            for (size_t i = 0; i < dict_entry->size; i++) {
-                const char* candidate = dict_entry->words[i];
-                int candidate_len = strlen(candidate);
-                
-                #if FAST_TYPER_MODE
-                // Skip if already checked in previous passes
-                if (abs(candidate_len - word_len) <= 1) continue;
-                #endif
-                
-                // Skip if length difference exceeds edit distance
-                if (abs(candidate_len - word_len) > MAX_EDIT_DISTANCE) continue;
-                
-                int distance = levenshtein_distance(word, candidate);
-                if (distance <= MAX_EDIT_DISTANCE && distance < best_distance) {
-                    best_distance = distance;
-                    best_match = candidate;
-                }
-            }
         #if FAST_TYPER_MODE
-        }
-        
         // Cache the result for future lookups
         if (best_match != NULL) {
             add_to_cache(word, best_match);
         }
         #endif
     }
-    */
     
     return best_match;
 }
