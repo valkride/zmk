@@ -2,7 +2,6 @@
 #define DICT_LA_H
 
 static const char* const dict_la[] = {
-    "l",
     "la",
     "lab",
     "label",
@@ -173,6 +172,6 @@ static const char* const dict_la[] = {
     "lazy",
 };
 
-#define DICT_LA_SIZE (sizeof(dict_la) / sizeof(dict_la[0]))
+#define DICT_LA_SIZE 168
 
 #endif // DICT_LA_H

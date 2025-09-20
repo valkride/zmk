@@ -46,6 +46,6 @@ static const char* const dict_is[] = {
     "isuzu",
 };
 
-#define DICT_IS_SIZE (sizeof(dict_is) / sizeof(dict_is[0]))
+#define DICT_IS_SIZE 42
 
 #endif // DICT_IS_H

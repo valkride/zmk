@@ -11,6 +11,6 @@ static const char* const dict_ax[] = {
     "axle",
 };
 
-#define DICT_AX_SIZE (sizeof(dict_ax) / sizeof(dict_ax[0]))
+#define DICT_AX_SIZE 7
 
 #endif // DICT_AX_H

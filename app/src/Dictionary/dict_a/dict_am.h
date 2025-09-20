@@ -75,6 +75,6 @@ static const char* const dict_am[] = {
     "amy",
 };
 
-#define DICT_AM_SIZE (sizeof(dict_am) / sizeof(dict_am[0]))
+#define DICT_AM_SIZE 71
 
 #endif // DICT_AM_H

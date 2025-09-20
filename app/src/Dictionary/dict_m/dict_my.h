@@ -23,6 +23,6 @@ static const char* const dict_my[] = {
     "myths",
 };
 
-#define DICT_MY_SIZE (sizeof(dict_my) / sizeof(dict_my[0]))
+#define DICT_MY_SIZE 19
 
 #endif // DICT_MY_H

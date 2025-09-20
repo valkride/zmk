@@ -2,7 +2,6 @@
 #define DICT_HA_H
 
 static const char* const dict_ha[] = {
-    "h",
     "ha",
     "haas",
     "habit",
@@ -188,6 +187,6 @@ static const char* const dict_ha[] = {
     "hazel",
 };
 
-#define DICT_HA_SIZE (sizeof(dict_ha) / sizeof(dict_ha[0]))
+#define DICT_HA_SIZE 183
 
 #endif // DICT_HA_H

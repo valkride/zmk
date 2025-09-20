@@ -81,6 +81,6 @@ static const char* const dict_at[] = {
     "atx",
 };
 
-#define DICT_AT_SIZE (sizeof(dict_at) / sizeof(dict_at[0]))
+#define DICT_AT_SIZE 77
 
 #endif // DICT_AT_H

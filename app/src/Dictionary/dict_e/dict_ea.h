@@ -2,7 +2,6 @@
 #define DICT_EA_H
 
 static const char* const dict_ea[] = {
-    "e",
     "ea",
     "each",
     "eager",
@@ -47,6 +46,6 @@ static const char* const dict_ea[] = {
     "eau",
 };
 
-#define DICT_EA_SIZE (sizeof(dict_ea) / sizeof(dict_ea[0]))
+#define DICT_EA_SIZE 42
 
 #endif // DICT_EA_H

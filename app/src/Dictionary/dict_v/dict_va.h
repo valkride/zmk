@@ -2,7 +2,6 @@
 #define DICT_VA_H
 
 static const char* const dict_va[] = {
-    "v",
     "va",
     "vac",
     "vacancies",
@@ -89,6 +88,6 @@ static const char* const dict_va[] = {
     "vauxhall",
 };
 
-#define DICT_VA_SIZE (sizeof(dict_va) / sizeof(dict_va[0]))
+#define DICT_VA_SIZE 84
 
 #endif // DICT_VA_H

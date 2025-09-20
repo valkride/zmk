@@ -112,6 +112,6 @@ static const char* const dict_we[] = {
     "weymouth",
 };
 
-#define DICT_WE_SIZE (sizeof(dict_we) / sizeof(dict_we[0]))
+#define DICT_WE_SIZE 108
 
 #endif // DICT_WE_H

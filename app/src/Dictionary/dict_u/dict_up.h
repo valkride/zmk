@@ -37,6 +37,6 @@ static const char* const dict_up[] = {
     "upwards",
 };
 
-#define DICT_UP_SIZE (sizeof(dict_up) / sizeof(dict_up[0]))
+#define DICT_UP_SIZE 33
 
 #endif // DICT_UP_H

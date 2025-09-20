@@ -78,6 +78,6 @@ static const char* const dict_qu[] = {
     "quoting",
 };
 
-#define DICT_QU_SIZE (sizeof(dict_qu) / sizeof(dict_qu[0]))
+#define DICT_QU_SIZE 74
 
 #endif // DICT_QU_H

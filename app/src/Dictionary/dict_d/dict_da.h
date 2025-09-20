@@ -2,7 +2,6 @@
 #define DICT_DA_H
 
 static const char* const dict_da[] = {
-    "d",
     "da",
     "dab",
     "dac",
@@ -109,6 +108,6 @@ static const char* const dict_da[] = {
     "daytona",
 };
 
-#define DICT_DA_SIZE (sizeof(dict_da) / sizeof(dict_da[0]))
+#define DICT_DA_SIZE 104
 
 #endif // DICT_DA_H

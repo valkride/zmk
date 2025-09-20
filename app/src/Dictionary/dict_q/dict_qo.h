@@ -5,6 +5,6 @@ static const char* const dict_qo[] = {
     "qos",
 };
 
-#define DICT_QO_SIZE (sizeof(dict_qo) / sizeof(dict_qo[0]))
+#define DICT_QO_SIZE 1
 
 #endif // DICT_QO_H

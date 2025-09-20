@@ -7,6 +7,6 @@ static const char* const dict_if[] = {
     "ifs",
 };
 
-#define DICT_IF_SIZE (sizeof(dict_if) / sizeof(dict_if[0]))
+#define DICT_IF_SIZE 3
 
 #endif // DICT_IF_H

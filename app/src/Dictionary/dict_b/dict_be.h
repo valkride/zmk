@@ -191,6 +191,6 @@ static const char* const dict_be[] = {
     "bezel",
 };
 
-#define DICT_BE_SIZE (sizeof(dict_be) / sizeof(dict_be[0]))
+#define DICT_BE_SIZE 187
 
 #endif // DICT_BE_H

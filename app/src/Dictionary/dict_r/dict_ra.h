@@ -2,7 +2,6 @@
 #define DICT_RA_H
 
 static const char* const dict_ra[] = {
-    "r",
     "ra",
     "rabbi",
     "rabbit",
@@ -137,6 +136,6 @@ static const char* const dict_ra[] = {
     "razr",
 };
 
-#define DICT_RA_SIZE (sizeof(dict_ra) / sizeof(dict_ra[0]))
+#define DICT_RA_SIZE 132
 
 #endif // DICT_RA_H

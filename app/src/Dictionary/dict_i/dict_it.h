@@ -24,6 +24,6 @@ static const char* const dict_it[] = {
     "ity",
 };
 
-#define DICT_IT_SIZE (sizeof(dict_it) / sizeof(dict_it[0]))
+#define DICT_IT_SIZE 20
 
 #endif // DICT_IT_H

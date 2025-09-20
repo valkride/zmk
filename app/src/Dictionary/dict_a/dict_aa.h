@@ -2,7 +2,6 @@
 #define DICT_AA_H
 
 static const char* const dict_aa[] = {
-    "a",
     "aa",
     "aaa",
     "aac",
@@ -10,6 +9,6 @@ static const char* const dict_aa[] = {
     "aaron",
 };
 
-#define DICT_AA_SIZE (sizeof(dict_aa) / sizeof(dict_aa[0]))
+#define DICT_AA_SIZE 5
 
 #endif // DICT_AA_H

@@ -32,6 +32,6 @@ static const char* const dict_of[] = {
     "often",
 };
 
-#define DICT_OF_SIZE (sizeof(dict_of) / sizeof(dict_of[0]))
+#define DICT_OF_SIZE 28
 
 #endif // DICT_OF_H

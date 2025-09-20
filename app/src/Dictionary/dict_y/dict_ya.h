@@ -2,7 +2,6 @@
 #define DICT_YA_H
 
 static const char* const dict_ya[] = {
-    "y",
     "ya",
     "yacht",
     "yachts",
@@ -21,6 +20,6 @@ static const char* const dict_ya[] = {
     "yay",
 };
 
-#define DICT_YA_SIZE (sizeof(dict_ya) / sizeof(dict_ya[0]))
+#define DICT_YA_SIZE 16
 
 #endif // DICT_YA_H

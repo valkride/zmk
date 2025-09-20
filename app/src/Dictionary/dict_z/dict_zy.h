@@ -5,6 +5,6 @@ static const char* const dict_zy[] = {
     "zyban",
 };
 
-#define DICT_ZY_SIZE (sizeof(dict_zy) / sizeof(dict_zy[0]))
+#define DICT_ZY_SIZE 1
 
 #endif // DICT_ZY_H

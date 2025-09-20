@@ -2,7 +2,6 @@
 #define DICT_WA_H
 
 static const char* const dict_wa[] = {
-    "w",
     "wa",
     "wac",
     "wacky",
@@ -145,6 +144,6 @@ static const char* const dict_wa[] = {
     "ways",
 };
 
-#define DICT_WA_SIZE (sizeof(dict_wa) / sizeof(dict_wa[0]))
+#define DICT_WA_SIZE 140
 
 #endif // DICT_WA_H

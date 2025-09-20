@@ -5,6 +5,6 @@ static const char* const dict_zs[] = {
     "zshops",
 };
 
-#define DICT_ZS_SIZE (sizeof(dict_zs) / sizeof(dict_zs[0]))
+#define DICT_ZS_SIZE 1
 
 #endif // DICT_ZS_H

@@ -80,6 +80,6 @@ static const char* const dict_or[] = {
     "orthopedic",
 };
 
-#define DICT_OR_SIZE (sizeof(dict_or) / sizeof(dict_or[0]))
+#define DICT_OR_SIZE 76
 
 #endif // DICT_OR_H

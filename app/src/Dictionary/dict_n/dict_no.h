@@ -117,6 +117,6 @@ static const char* const dict_no[] = {
     "nozzle",
 };
 
-#define DICT_NO_SIZE (sizeof(dict_no) / sizeof(dict_no[0]))
+#define DICT_NO_SIZE 113
 
 #endif // DICT_NO_H

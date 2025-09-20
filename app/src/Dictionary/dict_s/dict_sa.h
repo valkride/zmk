@@ -2,7 +2,6 @@
 #define DICT_SA_H
 
 static const char* const dict_sa[] = {
-    "s",
     "sa",
     "saab",
     "sabbath",
@@ -173,6 +172,6 @@ static const char* const dict_sa[] = {
     "says",
 };
 
-#define DICT_SA_SIZE (sizeof(dict_sa) / sizeof(dict_sa[0]))
+#define DICT_SA_SIZE 168
 
 #endif // DICT_SA_H

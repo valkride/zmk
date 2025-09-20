@@ -120,6 +120,6 @@ static const char* const dict_as[] = {
     "asynchronous",
 };
 
-#define DICT_AS_SIZE (sizeof(dict_as) / sizeof(dict_as[0]))
+#define DICT_AS_SIZE 116
 
 #endif // DICT_AS_H

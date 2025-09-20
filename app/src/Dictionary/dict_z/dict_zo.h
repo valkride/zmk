@@ -17,6 +17,6 @@ static const char* const dict_zo[] = {
     "zope",
 };
 
-#define DICT_ZO_SIZE (sizeof(dict_zo) / sizeof(dict_zo[0]))
+#define DICT_ZO_SIZE 13
 
 #endif // DICT_ZO_H

@@ -5,6 +5,6 @@ static const char* const dict_ym[] = {
     "ymca",
 };
 
-#define DICT_YM_SIZE (sizeof(dict_ym) / sizeof(dict_ym[0]))
+#define DICT_YM_SIZE 1
 
 #endif // DICT_YM_H

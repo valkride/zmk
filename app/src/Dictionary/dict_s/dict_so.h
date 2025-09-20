@@ -146,6 +146,6 @@ static const char* const dict_so[] = {
     "soybean",
 };
 
-#define DICT_SO_SIZE (sizeof(dict_so) / sizeof(dict_so[0]))
+#define DICT_SO_SIZE 142
 
 #endif // DICT_SO_H

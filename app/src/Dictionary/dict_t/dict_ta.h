@@ -2,7 +2,6 @@
 #define DICT_TA_H
 
 static const char* const dict_ta[] = {
-    "t",
     "ta",
     "tab",
     "table",
@@ -126,6 +125,6 @@ static const char* const dict_ta[] = {
     "taylor",
 };
 
-#define DICT_TA_SIZE (sizeof(dict_ta) / sizeof(dict_ta[0]))
+#define DICT_TA_SIZE 121
 
 #endif // DICT_TA_H

@@ -25,6 +25,6 @@ static const char* const dict_on[] = {
     "onyx",
 };
 
-#define DICT_ON_SIZE (sizeof(dict_on) / sizeof(dict_on[0]))
+#define DICT_ON_SIZE 21
 
 #endif // DICT_ON_H

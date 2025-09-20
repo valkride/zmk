@@ -2,7 +2,6 @@
 #define DICT_OA_H
 
 static const char* const dict_oa[] = {
-    "o",
     "oa",
     "oahu",
     "oak",
@@ -14,6 +13,6 @@ static const char* const dict_oa[] = {
     "oath",
 };
 
-#define DICT_OA_SIZE (sizeof(dict_oa) / sizeof(dict_oa[0]))
+#define DICT_OA_SIZE 9
 
 #endif // DICT_OA_H

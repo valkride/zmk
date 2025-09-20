@@ -12,6 +12,6 @@ static const char* const dict_zi[] = {
     "zirconia",
 };
 
-#define DICT_ZI_SIZE (sizeof(dict_zi) / sizeof(dict_zi[0]))
+#define DICT_ZI_SIZE 8
 
 #endif // DICT_ZI_H

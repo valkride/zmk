@@ -13,6 +13,6 @@ static const char* const dict_by[] = {
     "bytes",
 };
 
-#define DICT_BY_SIZE (sizeof(dict_by) / sizeof(dict_by[0]))
+#define DICT_BY_SIZE 9
 
 #endif // DICT_BY_H

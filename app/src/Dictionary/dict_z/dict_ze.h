@@ -13,6 +13,6 @@ static const char* const dict_ze[] = {
     "zeta",
 };
 
-#define DICT_ZE_SIZE (sizeof(dict_ze) / sizeof(dict_ze[0]))
+#define DICT_ZE_SIZE 9
 
 #endif // DICT_ZE_H

@@ -2,7 +2,6 @@
 #define DICT_GA_H
 
 static const char* const dict_ga[] = {
-    "g",
     "ga",
     "gabon",
     "gabriel",
@@ -112,6 +111,6 @@ static const char* const dict_ga[] = {
     "gazette",
 };
 
-#define DICT_GA_SIZE (sizeof(dict_ga) / sizeof(dict_ga[0]))
+#define DICT_GA_SIZE 107
 
 #endif // DICT_GA_H

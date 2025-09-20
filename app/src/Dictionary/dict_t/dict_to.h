@@ -143,6 +143,6 @@ static const char* const dict_to[] = {
     "toys",
 };
 
-#define DICT_TO_SIZE (sizeof(dict_to) / sizeof(dict_to[0]))
+#define DICT_TO_SIZE 139
 
 #endif // DICT_TO_H

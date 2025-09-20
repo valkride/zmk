@@ -2,7 +2,6 @@
 #define DICT_MA_H
 
 static const char* const dict_ma[] = {
-    "m",
     "ma",
     "mac",
     "macau",
@@ -369,6 +368,6 @@ static const char* const dict_ma[] = {
     "maze",
 };
 
-#define DICT_MA_SIZE (sizeof(dict_ma) / sizeof(dict_ma[0]))
+#define DICT_MA_SIZE 364
 
 #endif // DICT_MA_H

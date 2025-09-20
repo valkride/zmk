@@ -198,6 +198,6 @@ static const char* const dict_me[] = {
     "meyer",
 };
 
-#define DICT_ME_SIZE (sizeof(dict_me) / sizeof(dict_me[0]))
+#define DICT_ME_SIZE 194
 
 #endif // DICT_ME_H

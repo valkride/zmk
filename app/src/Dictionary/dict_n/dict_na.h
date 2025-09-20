@@ -2,7 +2,6 @@
 #define DICT_NA_H
 
 static const char* const dict_na[] = {
-    "n",
     "na",
     "nabble",
     "nach",
@@ -87,6 +86,6 @@ static const char* const dict_na[] = {
     "nazis",
 };
 
-#define DICT_NA_SIZE (sizeof(dict_na) / sizeof(dict_na[0]))
+#define DICT_NA_SIZE 82
 
 #endif // DICT_NA_H

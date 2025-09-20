@@ -134,6 +134,6 @@ static const char* const dict_ad[] = {
     "adware",
 };
 
-#define DICT_AD_SIZE (sizeof(dict_ad) / sizeof(dict_ad[0]))
+#define DICT_AD_SIZE 130
 
 #endif // DICT_AD_H

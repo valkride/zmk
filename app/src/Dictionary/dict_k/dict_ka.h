@@ -2,7 +2,6 @@
 #define DICT_KA_H
 
 static const char* const dict_ka[] = {
-    "k",
     "ka",
     "kai",
     "kaiser",
@@ -42,6 +41,6 @@ static const char* const dict_ka[] = {
     "kazakhstan",
 };
 
-#define DICT_KA_SIZE (sizeof(dict_ka) / sizeof(dict_ka[0]))
+#define DICT_KA_SIZE 37
 
 #endif // DICT_KA_H

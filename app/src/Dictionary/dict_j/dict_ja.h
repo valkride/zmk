@@ -2,7 +2,6 @@
 #define DICT_JA_H
 
 static const char* const dict_ja[] = {
-    "j",
     "ja",
     "jabber",
     "jack",
@@ -58,6 +57,6 @@ static const char* const dict_ja[] = {
     "jazz",
 };
 
-#define DICT_JA_SIZE (sizeof(dict_ja) / sizeof(dict_ja[0]))
+#define DICT_JA_SIZE 53
 
 #endif // DICT_JA_H

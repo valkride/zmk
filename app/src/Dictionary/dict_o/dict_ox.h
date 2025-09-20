@@ -11,6 +11,6 @@ static const char* const dict_ox[] = {
     "oxygen",
 };
 
-#define DICT_OX_SIZE (sizeof(dict_ox) / sizeof(dict_ox[0]))
+#define DICT_OX_SIZE 7
 
 #endif // DICT_OX_H

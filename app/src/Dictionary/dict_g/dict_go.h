@@ -75,6 +75,6 @@ static const char* const dict_go[] = {
     "gowns",
 };
 
-#define DICT_GO_SIZE (sizeof(dict_go) / sizeof(dict_go[0]))
+#define DICT_GO_SIZE 71
 
 #endif // DICT_GO_H

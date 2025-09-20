@@ -8,6 +8,6 @@ static const char* const dict_ah[] = {
     "ahmed",
 };
 
-#define DICT_AH_SIZE (sizeof(dict_ah) / sizeof(dict_ah[0]))
+#define DICT_AH_SIZE 4
 
 #endif // DICT_AH_H

@@ -35,6 +35,6 @@ static const char* const dict_us[] = {
     "usually",
 };
 
-#define DICT_US_SIZE (sizeof(dict_us) / sizeof(dict_us[0]))
+#define DICT_US_SIZE 31
 
 #endif // DICT_US_H

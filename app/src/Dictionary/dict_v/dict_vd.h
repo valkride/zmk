@@ -5,6 +5,6 @@ static const char* const dict_vd[] = {
     "vdata",
 };
 
-#define DICT_VD_SIZE (sizeof(dict_vd) / sizeof(dict_vd[0]))
+#define DICT_VD_SIZE 1
 
 #endif // DICT_VD_H

@@ -2,7 +2,6 @@
 #define DICT_CA_H
 
 static const char* const dict_ca[] = {
-    "c",
     "ca",
     "caa",
     "cab",
@@ -326,6 +325,6 @@ static const char* const dict_ca[] = {
     "cayman",
 };
 
-#define DICT_CA_SIZE (sizeof(dict_ca) / sizeof(dict_ca[0]))
+#define DICT_CA_SIZE 321
 
 #endif // DICT_CA_H

@@ -74,6 +74,6 @@ static const char* const dict_hi[] = {
     "hiv",
 };
 
-#define DICT_HI_SIZE (sizeof(dict_hi) / sizeof(dict_hi[0]))
+#define DICT_HI_SIZE 70
 
 #endif // DICT_HI_H

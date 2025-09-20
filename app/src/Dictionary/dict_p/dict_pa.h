@@ -2,7 +2,6 @@
 #define DICT_PA_H
 
 static const char* const dict_pa[] = {
-    "p",
     "pa",
     "pablo",
     "pac",
@@ -269,6 +268,6 @@ static const char* const dict_pa[] = {
     "paz",
 };
 
-#define DICT_PA_SIZE (sizeof(dict_pa) / sizeof(dict_pa[0]))
+#define DICT_PA_SIZE 264
 
 #endif // DICT_PA_H

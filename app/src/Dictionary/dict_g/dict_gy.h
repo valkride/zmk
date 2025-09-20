@@ -8,6 +8,6 @@ static const char* const dict_gy[] = {
     "gypsy",
 };
 
-#define DICT_GY_SIZE (sizeof(dict_gy) / sizeof(dict_gy[0]))
+#define DICT_GY_SIZE 4
 
 #endif // DICT_GY_H

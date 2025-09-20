@@ -462,6 +462,6 @@ static const char* const dict_in[] = {
     "inward",
 };
 
-#define DICT_IN_SIZE (sizeof(dict_in) / sizeof(dict_in[0]))
+#define DICT_IN_SIZE 458
 
 #endif // DICT_IN_H

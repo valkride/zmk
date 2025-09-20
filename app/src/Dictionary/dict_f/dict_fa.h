@@ -2,7 +2,6 @@
 #define DICT_FA_H
 
 static const char* const dict_fa[] = {
-    "f",
     "fa",
     "faa",
     "fab",
@@ -152,6 +151,6 @@ static const char* const dict_fa[] = {
     "fayetteville",
 };
 
-#define DICT_FA_SIZE (sizeof(dict_fa) / sizeof(dict_fa[0]))
+#define DICT_FA_SIZE 147
 
 #endif // DICT_FA_H
