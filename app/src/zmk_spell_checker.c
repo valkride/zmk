@@ -159,60 +159,8 @@ static int levenshtein_distance(const char* s1, const char* s2) {
         return MAX_EDIT_DISTANCE + 1;
     }
     
-    #if FAST_TYPER_MODE
-    // Ultra-fast path: exact match
+    // Simple exact match check
     if (len1 == len2 && strcmp(s1, s2) == 0) return 0;
-    
-    // Fast path: check for single character differences first
-    if (len1 == len2) {
-        int diff_count = 0;
-        for (int i = 0; i < len1; i++) {
-            if (s1[i] != s2[i]) {
-                diff_count++;
-                if (diff_count > MAX_EDIT_DISTANCE) return MAX_EDIT_DISTANCE + 1;
-            }
-        }
-        return diff_count;
-    }
-    
-    // Fast path: check for single insertion/deletion
-    if (abs(len1 - len2) == 1) {
-        const char* shorter = (len1 < len2) ? s1 : s2;
-        const char* longer = (len1 < len2) ? s2 : s1;
-        int short_len = (len1 < len2) ? len1 : len2;
-        
-        int i = 0, j = 0, diff_count = 0;
-        while (i < short_len && j < short_len + 1) {
-            if (shorter[i] != longer[j]) {
-                diff_count++;
-                if (diff_count > MAX_EDIT_DISTANCE) return MAX_EDIT_DISTANCE + 1;
-                if (i == j) j++; // Skip character in longer string
-                else i++; // Skip character in shorter string
-            } else {
-                i++; j++;
-            }
-        }
-        return diff_count;
-    }
-    
-    // Fast path: check common transposition errors (swap adjacent characters)
-    if (len1 == len2 && len1 >= 2) {
-        for (int i = 0; i < len1 - 1; i++) {
-            if (s1[i] == s2[i + 1] && s1[i + 1] == s2[i]) {
-                // Found transposition, check if rest matches
-                bool rest_matches = true;
-                for (int j = 0; j < len1; j++) {
-                    if (j == i || j == i + 1) continue;
-                    if (s1[j] != s2[j]) {
-                        rest_matches = false;
-                        break;
-                    }
-                }
-                if (rest_matches) return 1; // Single transposition
-            }
-        }
-    }
-    #endif
     
     // Use static array to avoid dynamic allocation
     static int matrix[MAX_WORD_LEN + 1][MAX_WORD_LEN + 1];
@@ -221,13 +169,8 @@ static int levenshtein_distance(const char* s1, const char* s2) {
     for (int i = 0; i <= len1; i++) matrix[i][0] = i;
     for (int j = 0; j <= len2; j++) matrix[0][j] = j;
     
-    // Fill the matrix with early termination
+    // Fill the matrix using standard Levenshtein algorithm
     for (int i = 1; i <= len1; i++) {
-        #if FAST_TYPER_MODE
-        // Early termination: if minimum possible distance exceeds threshold
-        int min_in_row = MAX_EDIT_DISTANCE + 1;
-        #endif
-        
         for (int j = 1; j <= len2; j++) {
             int cost = (s1[i-1] == s2[j-1]) ? 0 : 1;
             matrix[i][j] = min3(
@@ -235,18 +178,7 @@ static int levenshtein_distance(const char* s1, const char* s2) {
                 matrix[i][j-1] + 1,     // insertion
                 matrix[i-1][j-1] + cost // substitution
             );
-            
-            #if FAST_TYPER_MODE
-            if (matrix[i][j] < min_in_row) min_in_row = matrix[i][j];
-            #endif
         }
-        
-        #if FAST_TYPER_MODE
-        // Early termination: if all values in this row exceed threshold
-        if (min_in_row > MAX_EDIT_DISTANCE) {
-            return MAX_EDIT_DISTANCE + 1;
-        }
-        #endif
     }
     
     return matrix[len1][len2];
@@ -305,16 +237,38 @@ static const char* find_best_match(const char* word) {
     const dictionary_entry_t* dict_entry = &letter_dictionaries[first_letter - 'a'];
     
     if (dict_entry && dict_entry->words) {
-        // Simple approach: check all words in the dictionary for this letter
+        // Conservative approach: be very selective about corrections
         for (size_t i = 0; i < dict_entry->size; i++) {
             const char* candidate = dict_entry->words[i];
             int candidate_len = strlen(candidate);
             
-            // Skip if length difference exceeds edit distance
-            if (abs(candidate_len - word_len) > MAX_EDIT_DISTANCE) continue;
+            // More restrictive length check - only allow 1 character difference for most words
+            int max_length_diff = (word_len <= 4) ? 1 : 2;
+            if (abs(candidate_len - word_len) > max_length_diff) continue;
             
             int distance = levenshtein_distance(word, candidate);
-            if (distance <= MAX_EDIT_DISTANCE && distance < best_distance) {
+            
+            // Be much more conservative with corrections
+            bool should_correct = false;
+            if (distance == 1) {
+                // Single character difference - usually safe
+                should_correct = true;
+            } else if (distance == 2 && word_len >= 5) {
+                // Two character difference only for longer words
+                // Additional similarity check - ensure at least 60% of characters match
+                int matching_chars = 0;
+                int min_len = (word_len < candidate_len) ? word_len : candidate_len;
+                for (int j = 0; j < min_len; j++) {
+                    if (j < word_len && j < candidate_len && word[j] == candidate[j]) {
+                        matching_chars++;
+                    }
+                }
+                if (matching_chars >= (min_len * 6 / 10)) {
+                    should_correct = true;
+                }
+            }
+            
+            if (should_correct && distance < best_distance) {
                 best_distance = distance;
                 best_match = candidate;
             }
@@ -488,11 +442,29 @@ static void process_word() {
         final_correction = find_best_match(current_word);
     }
     
-    // Apply correction if found, but be extra conservative
+    // Apply correction if found, but be extra conservative with final checks
     if (final_correction != NULL && strcmp(current_word, final_correction) != 0) {
-        // Double-check that the correction is actually better
+        // Multiple safety checks before correcting
         if (strlen(final_correction) > 0 && !is_valid_word(current_word)) {
-            correct_word(final_correction, word_pos);
+            // Additional similarity check - ensure the correction makes sense
+            int correction_distance = levenshtein_distance(current_word, final_correction);
+            int word_length = strlen(current_word);
+            int correction_length = strlen(final_correction);
+            
+            // Only correct if:
+            // 1. Single character difference, OR
+            // 2. Two character difference but words are similar length and reasonably long
+            bool should_apply_correction = false;
+            if (correction_distance == 1) {
+                should_apply_correction = true;  // Single typo corrections are usually safe
+            } else if (correction_distance == 2 && word_length >= 4 && abs(word_length - correction_length) <= 1) {
+                // Double typo only for longer words with similar length
+                should_apply_correction = true;
+            }
+            
+            if (should_apply_correction) {
+                correct_word(final_correction, word_pos);
+            }
         }
     }
     
