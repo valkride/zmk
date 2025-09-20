@@ -15,19 +15,14 @@
 #include <dt-bindings/zmk/hid_usage.h>
 #include <zmk/spell_checker.h>
 
-// Forward declaration of levenshtein_distance so it can be used by other files
-static int levenshtein_distance(const char* s1, const char* s2);
-
 #include "Dictionary/spell_dictionary_map.h"
 #define MAX_WORD_LEN 15
 #define MAX_EDIT_DISTANCE 2  // Allow up to 2 character errors (balanced)
 #define FAST_TYPER_MODE 1    // Enable optimizations for fast typing
 #define MIN_WORD_LENGTH 2    // Don't correct very short words
-#define TYPING_TIMEOUT_MS 500  // Consider word complete after this timeout
 
-// Global enable/disable flag - always enabled for testing
+// Global enable/disable flag
 static bool spell_checker_enabled = true;
-static int64_t last_keypress_time = 0;
 
 // Buffer for word extraction
 static char current_word[MAX_WORD_LEN] = {0};
@@ -122,8 +117,7 @@ static char* capitalize_first_letter(const char* word, char* buffer, int buffer_
     return buffer;
 }
 
-// Forward declaration
-static int levenshtein_distance(const char* s1, const char* s2);
+
 
 // Common word patterns for ultra-fast checking
 static const char* common_patterns[] = {
@@ -430,43 +424,13 @@ static void correct_word(const char* correct_word, int typo_len) {
     correcting = false;
 }
 
-// Most common English words that should NEVER be corrected
-static const char* protected_words[] = {
-    "the", "be", "to", "of", "and", "a", "in", "that", "have", "it", 
-    "for", "not", "on", "with", "he", "as", "you", "do", "at", "this",
-    "but", "his", "by", "from", "they", "we", "say", "her", "she", "or",
-    "an", "will", "my", "one", "all", "would", "there", "their", "what",
-    "so", "up", "out", "if", "about", "who", "get", "which", "go", "me",
-    "when", "make", "can", "like", "time", "no", "just", "him", "know",
-    "take", "people", "into", "year", "your", "good", "some", "could", "them",
-    "see", "other", "than", "then", "now", "look", "only", "come", "its",
-    "over", "think", "also", "back", "after", "use", "two", "how", "our",
-    "work", "first", "well", "way", "even", "new", "want", "because", "any",
-    "these", "give", "day", "most", "us", "is", "was", "are", "been", "has", "had", "were"
-};
-#define PROTECTED_WORDS_SIZE (sizeof(protected_words) / sizeof(protected_words[0]))
 
-// Check if word is in protected list
-static bool is_protected_word(const char* word) {
-    for (int i = 0; i < PROTECTED_WORDS_SIZE; i++) {
-        if (strcmp(word, protected_words[i]) == 0) {
-            return true;
-        }
-    }
-    return false;
-}
 
 // Process completed word
 static void process_word() {
     if (word_pos == 0) return;  // Empty word
     
     current_word[word_pos] = '\0';  // Null terminate
-    
-    // NEVER correct the most common English words
-    if (is_protected_word(current_word)) {
-        word_pos = 0;
-        return;
-    }
     
     // Special case: always correct standalone "i" to "I" (before length check)
     if (word_pos == 1 && current_word[0] == 'i') {
@@ -535,22 +499,7 @@ static void process_word() {
     word_pos = 0;  // Reset for next word
 }
 
-#if FAST_TYPER_MODE
-// Timeout-based word processing for fast typers
-static void timeout_process_word(struct k_work *work) {
-    if (word_pos > 0) {
-        int64_t time_since_last = k_uptime_get() - last_keypress_time;
-        
-        // If enough time has passed, process the current word
-        if (time_since_last >= TYPING_TIMEOUT_MS) {
-            process_word();
-        }
-    }
-}
 
-// Define work item for timeout processing
-K_WORK_DELAYABLE_DEFINE(timeout_work, timeout_process_word);
-#endif
 
 // Toggle function for enabling/disabling spell checker
 void zmk_spell_checker_toggle(void) {
@@ -564,13 +513,13 @@ bool zmk_spell_checker_is_enabled(void) {
 
 // Main keystroke handler
 int zmk_autocorrect_keyboard_press(zmk_key_t key) {
-    // Spell checker is always enabled - no toggle for now
-    if (correcting) return 0;
+    // Check for F24 key (toggle functionality)
+    if (key == HID_USAGE_KEY_KEYBOARD_F24) {
+        spell_checker_enabled = !spell_checker_enabled;
+        return 0;
+    }
     
-    #if FAST_TYPER_MODE
-    // Update timing for potential future features (keeping for compatibility)
-    last_keypress_time = k_uptime_get();
-    #endif
+    if (correcting || !spell_checker_enabled) return 0;
     
     char c = key_to_char(key);
     if (c == 0) return 0;  // Unsupported key
@@ -600,8 +549,7 @@ static int spell_checker_init(void) {
     memset(current_word, 0, sizeof(current_word));
     word_pos = 0;
     correcting = false;
-    spell_checker_enabled = true;  // Always enabled
-    last_keypress_time = 0;
+    spell_checker_enabled = true;
     
     #if FAST_TYPER_MODE
     // Initialize cache
