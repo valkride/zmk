@@ -202,11 +202,10 @@ static const char* find_best_match(const char* word) {
     // Look for similar words using two-letter dictionary approach
     int best_distance = MAX_EDIT_DISTANCE + 1;
     
-    // Get two-letter dictionary for the first two letters of the word
-    const two_letter_dict_entry_t* dict_entry = get_two_letter_dict(word);
-    
-    if (dict_entry && dict_entry->words) {
-        // Conservative approach: be very selective about corrections
+    // Helper function to search a specific dictionary
+    auto search_dictionary = [&](const two_letter_dict_entry_t* dict_entry) {
+        if (!dict_entry || !dict_entry->words) return;
+        
         for (size_t i = 0; i < dict_entry->size; i++) {
             const char* candidate = dict_entry->words[i];
             int candidate_len = strlen(candidate);
@@ -242,11 +241,58 @@ static const char* find_best_match(const char* word) {
                 best_match = candidate;
             }
         }
+    };
+    
+    // First, search the primary dictionary (first two letters of the word)
+    const two_letter_dict_entry_t* primary_dict = get_two_letter_dict(word);
+    search_dictionary(primary_dict);
+    
+    // If no good match found (distance > 1), search additional dictionaries
+    // This handles common typo patterns like "teh" -> "the"
+    if (best_distance > 1 && word_len >= 3) {
+        // Generate alternative prefixes for common typo patterns
+        char alt_prefix1[3] = {0}; // Swap first two letters
+        char alt_prefix2[3] = {0}; // First + third letter
+        char alt_prefix3[3] = {0}; // Second + third letter
         
-        // Cache the result for future lookups
-        if (best_match != NULL) {
-            add_to_cache(word, best_match);
+        // Pattern 1: Swap first two characters (handles "teh" -> "th")
+        if (word[0] != word[1]) {
+            alt_prefix1[0] = word[1];
+            alt_prefix1[1] = word[0];
         }
+        
+        // Pattern 2: First + third character (handles "tge" -> "th")  
+        if (word_len > 2 && word[0] != word[2]) {
+            alt_prefix2[0] = word[0];
+            alt_prefix2[1] = word[2];
+        }
+        
+        // Pattern 3: Second + third character (handles "eth" -> "th")
+        if (word_len > 2 && word[1] != word[2]) {
+            alt_prefix3[0] = word[1];
+            alt_prefix3[1] = word[2];
+        }
+        
+        // Search alternative dictionaries
+        if (alt_prefix1[0] && alt_prefix1[1]) {
+            const two_letter_dict_entry_t* alt_dict1 = get_two_letter_dict(alt_prefix1);
+            search_dictionary(alt_dict1);
+        }
+        
+        if (alt_prefix2[0] && alt_prefix2[1]) {
+            const two_letter_dict_entry_t* alt_dict2 = get_two_letter_dict(alt_prefix2);
+            search_dictionary(alt_dict2);
+        }
+        
+        if (alt_prefix3[0] && alt_prefix3[1]) {
+            const two_letter_dict_entry_t* alt_dict3 = get_two_letter_dict(alt_prefix3);
+            search_dictionary(alt_dict3);
+        }
+    }
+    
+    // Cache the result for future lookups
+    if (best_match != NULL) {
+        add_to_cache(word, best_match);
     }
     
     return best_match;
