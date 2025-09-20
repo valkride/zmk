@@ -2,7 +2,6 @@
 #define DICT_EN_H
 
 static const char* const dict_en[] = {
-    "en",
     "enable",
     "enabled",
     "enables",
@@ -158,8 +157,8 @@ static const char* const dict_en[] = {
     "enya",
     "enzyme",
     "enzymes",
-};
+}
 
-#define DICT_EN_SIZE (sizeof(dict_en) / sizeof(dict_en[0]))
+#define DICT_EN_SIZE 155
 
 #endif // DICT_EN_H

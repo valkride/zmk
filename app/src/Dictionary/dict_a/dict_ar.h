@@ -2,7 +2,6 @@
 #define DICT_AR_H
 
 static const char* const dict_ar[] = {
-    "ar",
     "arab",
     "arabia",
     "arabian",
@@ -133,8 +132,8 @@ static const char* const dict_ar[] = {
     "artwork",
     "aruba",
     "arxiv",
-};
+}
 
-#define DICT_AR_SIZE (sizeof(dict_ar) / sizeof(dict_ar[0]))
+#define DICT_AR_SIZE 130
 
 #endif // DICT_AR_H

@@ -2,7 +2,6 @@
 #define DICT_RO_H
 
 static const char* const dict_ro[] = {
-    "ro",
     "roach",
     "road",
     "roadmap",
@@ -151,8 +150,8 @@ static const char* const dict_ro[] = {
     "royalties",
     "royalty",
     "royce",
-};
+}
 
-#define DICT_RO_SIZE (sizeof(dict_ro) / sizeof(dict_ro[0]))
+#define DICT_RO_SIZE 148
 
 #endif // DICT_RO_H

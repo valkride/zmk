@@ -2,7 +2,6 @@
 #define DICT_OV_H
 
 static const char* const dict_ov[] = {
-    "ov",
     "oval",
     "ovarian",
     "oven",
@@ -38,8 +37,8 @@ static const char* const dict_ov[] = {
     "overweight",
     "overwhelmed",
     "overwhelming",
-};
+}
 
-#define DICT_OV_SIZE (sizeof(dict_ov) / sizeof(dict_ov[0]))
+#define DICT_OV_SIZE 35
 
 #endif // DICT_OV_H

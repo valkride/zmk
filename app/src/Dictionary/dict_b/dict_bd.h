@@ -2,11 +2,10 @@
 #define DICT_BD_H
 
 static const char* const dict_bd[] = {
-    "bd",
     "bdd",
     "bdsm",
-};
+}
 
-#define DICT_BD_SIZE (sizeof(dict_bd) / sizeof(dict_bd[0]))
+#define DICT_BD_SIZE 2
 
 #endif // DICT_BD_H

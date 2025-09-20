@@ -2,7 +2,6 @@
 #define DICT_CI_H
 
 static const char* const dict_ci[] = {
-    "ci",
     "cia",
     "cialis",
     "ciao",
@@ -58,8 +57,8 @@ static const char* const dict_ci[] = {
     "civilian",
     "civilians",
     "civilization",
-};
+}
 
-#define DICT_CI_SIZE (sizeof(dict_ci) / sizeof(dict_ci[0]))
+#define DICT_CI_SIZE 55
 
 #endif // DICT_CI_H

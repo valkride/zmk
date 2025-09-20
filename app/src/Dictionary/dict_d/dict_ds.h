@@ -2,7 +2,6 @@
 #define DICT_DS_H
 
 static const char* const dict_ds[] = {
-    "ds",
     "dsa",
     "dsc",
     "dsl",
@@ -10,8 +9,8 @@ static const char* const dict_ds[] = {
     "dsp",
     "dss",
     "dst",
-};
+}
 
-#define DICT_DS_SIZE (sizeof(dict_ds) / sizeof(dict_ds[0]))
+#define DICT_DS_SIZE 7
 
 #endif // DICT_DS_H

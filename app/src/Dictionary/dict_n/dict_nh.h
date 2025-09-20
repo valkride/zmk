@@ -2,11 +2,10 @@
 #define DICT_NH_H
 
 static const char* const dict_nh[] = {
-    "nh",
     "nhl",
     "nhs",
-};
+}
 
-#define DICT_NH_SIZE (sizeof(dict_nh) / sizeof(dict_nh[0]))
+#define DICT_NH_SIZE 2
 
 #endif // DICT_NH_H

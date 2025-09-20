@@ -2,7 +2,6 @@
 #define DICT_SP_H
 
 static const char* const dict_sp[] = {
-    "sp",
     "spa",
     "space",
     "spacecraft",
@@ -180,8 +179,8 @@ static const char* const dict_sp[] = {
     "spy",
     "spying",
     "spyware",
-};
+}
 
-#define DICT_SP_SIZE (sizeof(dict_sp) / sizeof(dict_sp[0]))
+#define DICT_SP_SIZE 177
 
 #endif // DICT_SP_H

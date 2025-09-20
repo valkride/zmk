@@ -2,7 +2,6 @@
 #define DICT_OU_H
 
 static const char* const dict_ou[] = {
-    "ou",
     "ought",
     "ounce",
     "ounces",
@@ -47,8 +46,8 @@ static const char* const dict_ou[] = {
     "outstanding",
     "outta",
     "outward",
-};
+}
 
-#define DICT_OU_SIZE (sizeof(dict_ou) / sizeof(dict_ou[0]))
+#define DICT_OU_SIZE 44
 
 #endif // DICT_OU_H

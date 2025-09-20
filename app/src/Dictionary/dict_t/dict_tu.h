@@ -2,7 +2,6 @@
 #define DICT_TU_H
 
 static const char* const dict_tu[] = {
-    "tu",
     "tub",
     "tube",
     "tuberculosis",
@@ -63,8 +62,8 @@ static const char* const dict_tu[] = {
     "tutoring",
     "tutors",
     "tuvalu",
-};
+}
 
-#define DICT_TU_SIZE (sizeof(dict_tu) / sizeof(dict_tu[0]))
+#define DICT_TU_SIZE 60
 
 #endif // DICT_TU_H

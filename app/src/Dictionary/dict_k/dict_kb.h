@@ -2,11 +2,10 @@
 #define DICT_KB_H
 
 static const char* const dict_kb[] = {
-    "kb",
     "kbps",
     "kbytes",
-};
+}
 
-#define DICT_KB_SIZE (sizeof(dict_kb) / sizeof(dict_kb[0]))
+#define DICT_KB_SIZE 2
 
 #endif // DICT_KB_H

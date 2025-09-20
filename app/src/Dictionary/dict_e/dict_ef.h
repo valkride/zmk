@@ -2,7 +2,6 @@
 #define DICT_EF_H
 
 static const char* const dict_ef[] = {
-    "ef",
     "eff",
     "effect",
     "effected",
@@ -18,8 +17,8 @@ static const char* const dict_ef[] = {
     "effluent",
     "effort",
     "efforts",
-};
+}
 
-#define DICT_EF_SIZE (sizeof(dict_ef) / sizeof(dict_ef[0]))
+#define DICT_EF_SIZE 15
 
 #endif // DICT_EF_H

@@ -2,7 +2,6 @@
 #define DICT_SH_H
 
 static const char* const dict_sh[] = {
-    "sh",
     "sha",
     "shack",
     "shade",
@@ -183,8 +182,8 @@ static const char* const dict_sh[] = {
     "shutter",
     "shuttle",
     "shy",
-};
+}
 
-#define DICT_SH_SIZE (sizeof(dict_sh) / sizeof(dict_sh[0]))
+#define DICT_SH_SIZE 180
 
 #endif // DICT_SH_H

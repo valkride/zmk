@@ -2,7 +2,6 @@
 #define DICT_HU_H
 
 static const char* const dict_hu[] = {
-    "hu",
     "hua",
     "huang",
     "hub",
@@ -70,8 +69,8 @@ static const char* const dict_hu[] = {
     "hustler",
     "hut",
     "hutchinson",
-};
+}
 
-#define DICT_HU_SIZE (sizeof(dict_hu) / sizeof(dict_hu[0]))
+#define DICT_HU_SIZE 67
 
 #endif // DICT_HU_H

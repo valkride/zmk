@@ -2,7 +2,6 @@
 #define DICT_ES_H
 
 static const char* const dict_es[] = {
-    "es",
     "esa",
     "esc",
     "escape",
@@ -49,8 +48,8 @@ static const char* const dict_es[] = {
     "estonia",
     "estonian",
     "estrogen",
-};
+}
 
-#define DICT_ES_SIZE (sizeof(dict_es) / sizeof(dict_es[0]))
+#define DICT_ES_SIZE 46
 
 #endif // DICT_ES_H

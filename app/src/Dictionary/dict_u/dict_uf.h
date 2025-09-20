@@ -2,10 +2,9 @@
 #define DICT_UF_H
 
 static const char* const dict_uf[] = {
-    "uf",
     "ufo",
-};
+}
 
-#define DICT_UF_SIZE (sizeof(dict_uf) / sizeof(dict_uf[0]))
+#define DICT_UF_SIZE 1
 
 #endif // DICT_UF_H

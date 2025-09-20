@@ -2,7 +2,6 @@
 #define DICT_PR_H
 
 static const char* const dict_pr[] = {
-    "pr",
     "prac",
     "practicable",
     "practical",
@@ -421,8 +420,8 @@ static const char* const dict_pr[] = {
     "prudent",
     "prudential",
     "prweb",
-};
+}
 
-#define DICT_PR_SIZE (sizeof(dict_pr) / sizeof(dict_pr[0]))
+#define DICT_PR_SIZE 418
 
 #endif // DICT_PR_H

@@ -2,7 +2,6 @@
 #define DICT_TI_H
 
 static const char* const dict_ti[] = {
-    "ti",
     "tia",
     "tiava",
     "tibet",
@@ -87,8 +86,8 @@ static const char* const dict_ti[] = {
     "tive",
     "tivo",
     "tivoli",
-};
+}
 
-#define DICT_TI_SIZE (sizeof(dict_ti) / sizeof(dict_ti[0]))
+#define DICT_TI_SIZE 84
 
 #endif // DICT_TI_H

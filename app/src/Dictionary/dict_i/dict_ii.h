@@ -2,11 +2,10 @@
 #define DICT_II_H
 
 static const char* const dict_ii[] = {
-    "ii",
     "iii",
     "iis",
-};
+}
 
-#define DICT_II_SIZE (sizeof(dict_ii) / sizeof(dict_ii[0]))
+#define DICT_II_SIZE 2
 
 #endif // DICT_II_H

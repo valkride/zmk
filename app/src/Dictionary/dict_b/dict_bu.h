@@ -2,7 +2,6 @@
 #define DICT_BU_H
 
 static const char* const dict_bu[] = {
-    "bu",
     "bubble",
     "bubbles",
     "buchanan",
@@ -133,8 +132,8 @@ static const char* const dict_bu[] = {
     "buying",
     "buys",
     "buzz",
-};
+}
 
-#define DICT_BU_SIZE (sizeof(dict_bu) / sizeof(dict_bu[0]))
+#define DICT_BU_SIZE 130
 
 #endif // DICT_BU_H

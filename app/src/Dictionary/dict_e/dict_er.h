@@ -2,7 +2,6 @@
 #define DICT_ER_H
 
 static const char* const dict_er[] = {
-    "er",
     "era",
     "erase",
     "erect",
@@ -31,8 +30,8 @@ static const char* const dict_er[] = {
     "error",
     "errors",
     "ers",
-};
+}
 
-#define DICT_ER_SIZE (sizeof(dict_er) / sizeof(dict_er[0]))
+#define DICT_ER_SIZE 28
 
 #endif // DICT_ER_H

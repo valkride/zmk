@@ -2,7 +2,6 @@
 #define DICT_KI_H
 
 static const char* const dict_ki[] = {
-    "ki",
     "kia",
     "kick",
     "kicked",
@@ -59,8 +58,8 @@ static const char* const dict_ki[] = {
     "kitts",
     "kitty",
     "kiwi",
-};
+}
 
-#define DICT_KI_SIZE (sizeof(dict_ki) / sizeof(dict_ki[0]))
+#define DICT_KI_SIZE 56
 
 #endif // DICT_KI_H

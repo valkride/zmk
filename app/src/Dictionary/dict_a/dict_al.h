@@ -2,7 +2,6 @@
 #define DICT_AL_H
 
 static const char* const dict_al[] = {
-    "al",
     "ala",
     "alabama",
     "aladdin",
@@ -155,8 +154,8 @@ static const char* const dict_al[] = {
     "alvin",
     "always",
     "alzheimer",
-};
+}
 
-#define DICT_AL_SIZE (sizeof(dict_al) / sizeof(dict_al[0]))
+#define DICT_AL_SIZE 152
 
 #endif // DICT_AL_H

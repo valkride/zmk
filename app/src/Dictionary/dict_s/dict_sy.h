@@ -2,7 +2,6 @@
 #define DICT_SY_H
 
 static const char* const dict_sy[] = {
-    "sy",
     "sybase",
     "sydney",
     "syllabus",
@@ -48,8 +47,8 @@ static const char* const dict_sy[] = {
     "systematically",
     "systemic",
     "systems",
-};
+}
 
-#define DICT_SY_SIZE (sizeof(dict_sy) / sizeof(dict_sy[0]))
+#define DICT_SY_SIZE 45
 
 #endif // DICT_SY_H

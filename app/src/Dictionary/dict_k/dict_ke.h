@@ -2,7 +2,6 @@
 #define DICT_KE_H
 
 static const char* const dict_ke[] = {
-    "ke",
     "keeling",
     "keen",
     "keep",
@@ -48,8 +47,8 @@ static const char* const dict_ke[] = {
     "keystone",
     "keyword",
     "keywords",
-};
+}
 
-#define DICT_KE_SIZE (sizeof(dict_ke) / sizeof(dict_ke[0]))
+#define DICT_KE_SIZE 45
 
 #endif // DICT_KE_H

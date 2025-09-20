@@ -2,11 +2,10 @@
 #define DICT_KL_H
 
 static const char* const dict_kl[] = {
-    "kl",
     "klaus",
     "klein",
-};
+}
 
-#define DICT_KL_SIZE (sizeof(dict_kl) / sizeof(dict_kl[0]))
+#define DICT_KL_SIZE 2
 
 #endif // DICT_KL_H

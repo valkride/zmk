@@ -2,7 +2,6 @@
 #define DICT_DR_H
 
 static const char* const dict_dr[] = {
-    "dr",
     "draft",
     "drafted",
     "drafting",
@@ -85,8 +84,8 @@ static const char* const dict_dr[] = {
     "dryer",
     "dryers",
     "drying",
-};
+}
 
-#define DICT_DR_SIZE (sizeof(dict_dr) / sizeof(dict_dr[0]))
+#define DICT_DR_SIZE 82
 
 #endif // DICT_DR_H

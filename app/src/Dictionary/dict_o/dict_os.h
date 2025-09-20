@@ -2,7 +2,6 @@
 #define DICT_OS_H
 
 static const char* const dict_os[] = {
-    "os",
     "osaka",
     "osama",
     "osborne",
@@ -15,8 +14,8 @@ static const char* const dict_os[] = {
     "ostg",
     "osu",
     "osx",
-};
+}
 
-#define DICT_OS_SIZE (sizeof(dict_os) / sizeof(dict_os[0]))
+#define DICT_OS_SIZE 12
 
 #endif // DICT_OS_H

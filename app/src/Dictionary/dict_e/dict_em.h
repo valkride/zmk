@@ -2,7 +2,6 @@
 #define DICT_EM_H
 
 static const char* const dict_em[] = {
-    "em",
     "emacs",
     "email",
     "emailed",
@@ -77,8 +76,8 @@ static const char* const dict_em[] = {
     "emulation",
     "emulator",
     "emule",
-};
+}
 
-#define DICT_EM_SIZE (sizeof(dict_em) / sizeof(dict_em[0]))
+#define DICT_EM_SIZE 74
 
 #endif // DICT_EM_H

@@ -2,7 +2,6 @@
 #define DICT_JU_H
 
 static const char* const dict_ju[] = {
-    "ju",
     "juan",
     "jubilee",
     "judaism",
@@ -58,8 +57,8 @@ static const char* const dict_ju[] = {
     "justify",
     "justin",
     "juvenile",
-};
+}
 
-#define DICT_JU_SIZE (sizeof(dict_ju) / sizeof(dict_ju[0]))
+#define DICT_JU_SIZE 55
 
 #endif // DICT_JU_H

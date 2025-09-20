@@ -2,7 +2,6 @@
 #define DICT_AB_H
 
 static const char* const dict_ab[] = {
-    "ab",
     "aba",
     "abandon",
     "abandoned",
@@ -57,8 +56,8 @@ static const char* const dict_ab[] = {
     "abused",
     "abuses",
     "abusive",
-};
+}
 
-#define DICT_AB_SIZE (sizeof(dict_ab) / sizeof(dict_ab[0]))
+#define DICT_AB_SIZE 54
 
 #endif // DICT_AB_H

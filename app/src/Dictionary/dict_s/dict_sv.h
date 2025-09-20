@@ -2,7 +2,6 @@
 #define DICT_SV_H
 
 static const char* const dict_sv[] = {
-    "sv",
     "svalbard",
     "svc",
     "svcd",
@@ -10,8 +9,8 @@ static const char* const dict_sv[] = {
     "svenska",
     "svg",
     "svn",
-};
+}
 
-#define DICT_SV_SIZE (sizeof(dict_sv) / sizeof(dict_sv[0]))
+#define DICT_SV_SIZE 7
 
 #endif // DICT_SV_H

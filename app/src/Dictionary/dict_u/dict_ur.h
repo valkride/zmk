@@ -2,7 +2,6 @@
 #define DICT_UR_H
 
 static const char* const dict_ur[] = {
-    "ur",
     "uranium",
     "urban",
     "urbana",
@@ -21,8 +20,8 @@ static const char* const dict_ur[] = {
     "urology",
     "uruguay",
     "urw",
-};
+}
 
-#define DICT_UR_SIZE (sizeof(dict_ur) / sizeof(dict_ur[0]))
+#define DICT_UR_SIZE 18
 
 #endif // DICT_UR_H

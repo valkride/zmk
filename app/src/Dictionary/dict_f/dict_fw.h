@@ -2,10 +2,9 @@
 #define DICT_FW_H
 
 static const char* const dict_fw[] = {
-    "fw",
     "fwd",
-};
+}
 
-#define DICT_FW_SIZE (sizeof(dict_fw) / sizeof(dict_fw[0]))
+#define DICT_FW_SIZE 1
 
 #endif // DICT_FW_H

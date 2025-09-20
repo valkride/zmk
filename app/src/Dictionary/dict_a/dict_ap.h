@@ -2,7 +2,6 @@
 #define DICT_AP_H
 
 static const char* const dict_ap[] = {
-    "ap",
     "apa",
     "apache",
     "apart",
@@ -105,8 +104,8 @@ static const char* const dict_ap[] = {
     "apron",
     "aps",
     "apt",
-};
+}
 
-#define DICT_AP_SIZE (sizeof(dict_ap) / sizeof(dict_ap[0]))
+#define DICT_AP_SIZE 102
 
 #endif // DICT_AP_H

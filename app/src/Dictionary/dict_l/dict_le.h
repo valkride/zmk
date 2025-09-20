@@ -2,7 +2,6 @@
 #define DICT_LE_H
 
 static const char* const dict_le[] = {
-    "le",
     "lea",
     "lead",
     "leader",
@@ -145,8 +144,8 @@ static const char* const dict_le[] = {
     "lexisnexis",
     "lexmark",
     "lexus",
-};
+}
 
-#define DICT_LE_SIZE (sizeof(dict_le) / sizeof(dict_le[0]))
+#define DICT_LE_SIZE 142
 
 #endif // DICT_LE_H

@@ -2,7 +2,6 @@
 #define DICT_CH_H
 
 static const char* const dict_ch[] = {
-    "ch",
     "cha",
     "chad",
     "chain",
@@ -248,8 +247,8 @@ static const char* const dict_ch[] = {
     "church",
     "churches",
     "churchill",
-};
+}
 
-#define DICT_CH_SIZE (sizeof(dict_ch) / sizeof(dict_ch[0]))
+#define DICT_CH_SIZE 245
 
 #endif // DICT_CH_H

@@ -2,7 +2,6 @@
 #define DICT_SU_H
 
 static const char* const dict_su[] = {
-    "su",
     "sub",
     "subaru",
     "subcategories",
@@ -269,8 +268,8 @@ static const char* const dict_su[] = {
     "suvs",
     "suzanne",
     "suzuki",
-};
+}
 
-#define DICT_SU_SIZE (sizeof(dict_su) / sizeof(dict_su[0]))
+#define DICT_SU_SIZE 266
 
 #endif // DICT_SU_H

@@ -2,14 +2,13 @@
 #define DICT_FT_H
 
 static const char* const dict_ft[] = {
-    "ft",
     "fta",
     "ftc",
     "ftd",
     "fte",
     "ftp",
-};
+}
 
-#define DICT_FT_SIZE (sizeof(dict_ft) / sizeof(dict_ft[0]))
+#define DICT_FT_SIZE 5
 
 #endif // DICT_FT_H

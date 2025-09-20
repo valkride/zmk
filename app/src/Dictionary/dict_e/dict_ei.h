@@ -2,7 +2,6 @@
 #define DICT_EI_H
 
 static const char* const dict_ei[] = {
-    "ei",
     "eia",
     "eight",
     "eighteen",
@@ -14,8 +13,8 @@ static const char* const dict_ei[] = {
     "einstein",
     "eis",
     "either",
-};
+}
 
-#define DICT_EI_SIZE (sizeof(dict_ei) / sizeof(dict_ei[0]))
+#define DICT_EI_SIZE 11
 
 #endif // DICT_EI_H

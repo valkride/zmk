@@ -2,7 +2,6 @@
 #define DICT_SQ_H
 
 static const char* const dict_sq[] = {
-    "sq",
     "sql",
     "sqrt",
     "squad",
@@ -16,8 +15,8 @@ static const char* const dict_sq[] = {
     "squirrel",
     "squirt",
     "squirting",
-};
+}
 
-#define DICT_SQ_SIZE (sizeof(dict_sq) / sizeof(dict_sq[0]))
+#define DICT_SQ_SIZE 13
 
 #endif // DICT_SQ_H

@@ -2,7 +2,6 @@
 #define DICT_LU_H
 
 static const char* const dict_lu[] = {
-    "lu",
     "lubbock",
     "lubricants",
     "luc",
@@ -40,8 +39,8 @@ static const char* const dict_lu[] = {
     "luxembourg",
     "luxurious",
     "luxury",
-};
+}
 
-#define DICT_LU_SIZE (sizeof(dict_lu) / sizeof(dict_lu[0]))
+#define DICT_LU_SIZE 37
 
 #endif // DICT_LU_H

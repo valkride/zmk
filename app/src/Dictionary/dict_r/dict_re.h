@@ -2,7 +2,6 @@
 #define DICT_RE_H
 
 static const char* const dict_re[] = {
-    "re",
     "rea",
     "reach",
     "reached",
@@ -649,8 +648,8 @@ static const char* const dict_re[] = {
     "rey",
     "reyes",
     "reynolds",
-};
+}
 
-#define DICT_RE_SIZE (sizeof(dict_re) / sizeof(dict_re[0]))
+#define DICT_RE_SIZE 646
 
 #endif // DICT_RE_H

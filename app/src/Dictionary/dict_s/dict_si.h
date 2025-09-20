@@ -2,7 +2,6 @@
 #define DICT_SI_H
 
 static const char* const dict_si[] = {
-    "si",
     "siam",
     "siberian",
     "sibling",
@@ -138,8 +137,8 @@ static const char* const dict_si[] = {
     "sizeof",
     "sizes",
     "sizing",
-};
+}
 
-#define DICT_SI_SIZE (sizeof(dict_si) / sizeof(dict_si[0]))
+#define DICT_SI_SIZE 135
 
 #endif // DICT_SI_H

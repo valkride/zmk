@@ -2,13 +2,12 @@
 #define DICT_AK_H
 
 static const char* const dict_ak[] = {
-    "ak",
     "aka",
     "akin",
     "akon",
     "akron",
-};
+}
 
-#define DICT_AK_SIZE (sizeof(dict_ak) / sizeof(dict_ak[0]))
+#define DICT_AK_SIZE 4
 
 #endif // DICT_AK_H

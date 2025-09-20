@@ -2,10 +2,9 @@
 #define DICT_OZ_H
 
 static const char* const dict_oz[] = {
-    "oz",
     "ozone",
-};
+}
 
-#define DICT_OZ_SIZE (sizeof(dict_oz) / sizeof(dict_oz[0]))
+#define DICT_OZ_SIZE 1
 
 #endif // DICT_OZ_H

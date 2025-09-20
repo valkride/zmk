@@ -2,7 +2,6 @@
 #define DICT_AU_H
 
 static const char* const dict_au[] = {
-    "au",
     "auburn",
     "auch",
     "auckland",
@@ -91,8 +90,8 @@ static const char* const dict_au[] = {
     "autumn",
     "aux",
     "auxiliary",
-};
+}
 
-#define DICT_AU_SIZE (sizeof(dict_au) / sizeof(dict_au[0]))
+#define DICT_AU_SIZE 88
 
 #endif // DICT_AU_H

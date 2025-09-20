@@ -2,9 +2,8 @@
 #define DICT_UX_H
 
 static const char* const dict_ux[] = {
-    "ux",
-};
+}
 
-#define DICT_UX_SIZE (sizeof(dict_ux) / sizeof(dict_ux[0]))
+#define DICT_UX_SIZE 0
 
 #endif // DICT_UX_H

@@ -2,7 +2,6 @@
 #define DICT_AC_H
 
 static const char* const dict_ac[] = {
-    "ac",
     "aca",
     "acad",
     "academia",
@@ -150,8 +149,8 @@ static const char* const dict_ac[] = {
     "acura",
     "acute",
     "acxiom",
-};
+}
 
-#define DICT_AC_SIZE (sizeof(dict_ac) / sizeof(dict_ac[0]))
+#define DICT_AC_SIZE 147
 
 #endif // DICT_AC_H

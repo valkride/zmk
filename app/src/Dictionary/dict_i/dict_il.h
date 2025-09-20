@@ -2,7 +2,6 @@
 #define DICT_IL_H
 
 static const char* const dict_il[] = {
-    "il",
     "ile",
     "ill",
     "illegal",
@@ -23,8 +22,8 @@ static const char* const dict_il[] = {
     "illustrator",
     "ilo",
     "ilug",
-};
+}
 
-#define DICT_IL_SIZE (sizeof(dict_il) / sizeof(dict_il[0]))
+#define DICT_IL_SIZE 20
 
 #endif // DICT_IL_H

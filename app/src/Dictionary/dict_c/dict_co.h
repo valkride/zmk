@@ -2,7 +2,6 @@
 #define DICT_CO_H
 
 static const char* const dict_co[] = {
-    "co",
     "coa",
     "coach",
     "coaches",
@@ -832,8 +831,8 @@ static const char* const dict_co[] = {
     "cox",
     "coyote",
     "cozy",
-};
+}
 
-#define DICT_CO_SIZE (sizeof(dict_co) / sizeof(dict_co[0]))
+#define DICT_CO_SIZE 829
 
 #endif // DICT_CO_H

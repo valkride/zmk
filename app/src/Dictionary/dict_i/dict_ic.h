@@ -2,7 +2,6 @@
 #define DICT_IC_H
 
 static const char* const dict_ic[] = {
-    "ic",
     "icann",
     "icc",
     "ice",
@@ -14,8 +13,8 @@ static const char* const dict_ic[] = {
     "icq",
     "ics",
     "ict",
-};
+}
 
-#define DICT_IC_SIZE (sizeof(dict_ic) / sizeof(dict_ic[0]))
+#define DICT_IC_SIZE 11
 
 #endif // DICT_IC_H

@@ -2,7 +2,6 @@
 #define DICT_VO_H
 
 static const char* const dict_vo[] = {
-    "vo",
     "voc",
     "vocabulary",
     "vocal",
@@ -60,8 +59,8 @@ static const char* const dict_vo[] = {
     "voyeur",
     "voyeurweb",
     "voyuer",
-};
+}
 
-#define DICT_VO_SIZE (sizeof(dict_vo) / sizeof(dict_vo[0]))
+#define DICT_VO_SIZE 57
 
 #endif // DICT_VO_H

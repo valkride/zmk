@@ -2,7 +2,6 @@
 #define DICT_IM_H
 
 static const char* const dict_im[] = {
-    "im",
     "imac",
     "image",
     "imagery",
@@ -88,8 +87,8 @@ static const char* const dict_im[] = {
     "improving",
     "impulse",
     "ims",
-};
+}
 
-#define DICT_IM_SIZE (sizeof(dict_im) / sizeof(dict_im[0]))
+#define DICT_IM_SIZE 85
 
 #endif // DICT_IM_H

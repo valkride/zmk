@@ -2,7 +2,6 @@
 #define DICT_PC_H
 
 static const char* const dict_pc[] = {
-    "pc",
     "pcb",
     "pcg",
     "pci",
@@ -12,8 +11,8 @@ static const char* const dict_pc[] = {
     "pcr",
     "pcs",
     "pct",
-};
+}
 
-#define DICT_PC_SIZE (sizeof(dict_pc) / sizeof(dict_pc[0]))
+#define DICT_PC_SIZE 9
 
 #endif // DICT_PC_H

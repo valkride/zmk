@@ -2,7 +2,6 @@
 #define DICT_GL_H
 
 static const char* const dict_gl[] = {
-    "gl",
     "glacier",
     "glad",
     "gladly",
@@ -47,8 +46,8 @@ static const char* const dict_gl[] = {
     "glucose",
     "glue",
     "gly",
-};
+}
 
-#define DICT_GL_SIZE (sizeof(dict_gl) / sizeof(dict_gl[0]))
+#define DICT_GL_SIZE 44
 
 #endif // DICT_GL_H

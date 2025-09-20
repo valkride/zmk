@@ -2,7 +2,6 @@
 #define DICT_DY_H
 
 static const char* const dict_dy[] = {
-    "dy",
     "dye",
     "dyer",
     "dyes",
@@ -16,8 +15,8 @@ static const char* const dict_dy[] = {
     "dynasty",
     "dysfunction",
     "dyson",
-};
+}
 
-#define DICT_DY_SIZE (sizeof(dict_dy) / sizeof(dict_dy[0]))
+#define DICT_DY_SIZE 13
 
 #endif // DICT_DY_H

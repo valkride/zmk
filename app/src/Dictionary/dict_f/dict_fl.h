@@ -2,7 +2,6 @@
 #define DICT_FL_H
 
 static const char* const dict_fl[] = {
-    "fl",
     "fla",
     "flag",
     "flags",
@@ -94,8 +93,8 @@ static const char* const dict_fl[] = {
     "flyers",
     "flying",
     "flynn",
-};
+}
 
-#define DICT_FL_SIZE (sizeof(dict_fl) / sizeof(dict_fl[0]))
+#define DICT_FL_SIZE 91
 
 #endif // DICT_FL_H

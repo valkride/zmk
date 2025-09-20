@@ -2,7 +2,6 @@
 #define DICT_EX_H
 
 static const char* const dict_ex[] = {
-    "ex",
     "exact",
     "exactly",
     "exam",
@@ -213,8 +212,8 @@ static const char* const dict_ex[] = {
     "extreme",
     "extremely",
     "extremes",
-};
+}
 
-#define DICT_EX_SIZE (sizeof(dict_ex) / sizeof(dict_ex[0]))
+#define DICT_EX_SIZE 210
 
 #endif // DICT_EX_H

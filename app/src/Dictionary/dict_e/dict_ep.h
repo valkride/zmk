@@ -2,7 +2,6 @@
 #define DICT_EP_H
 
 static const char* const dict_ep[] = {
-    "ep",
     "epa",
     "epic",
     "epidemic",
@@ -18,8 +17,8 @@ static const char* const dict_ep[] = {
     "epsilon",
     "epson",
     "epstein",
-};
+}
 
-#define DICT_EP_SIZE (sizeof(dict_ep) / sizeof(dict_ep[0]))
+#define DICT_EP_SIZE 15
 
 #endif // DICT_EP_H

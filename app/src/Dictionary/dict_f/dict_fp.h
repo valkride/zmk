@@ -2,12 +2,11 @@
 #define DICT_FP_H
 
 static const char* const dict_fp[] = {
-    "fp",
     "fpo",
     "fprintf",
     "fps",
-};
+}
 
-#define DICT_FP_SIZE (sizeof(dict_fp) / sizeof(dict_fp[0]))
+#define DICT_FP_SIZE 3
 
 #endif // DICT_FP_H

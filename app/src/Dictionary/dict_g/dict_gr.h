@@ -2,7 +2,6 @@
 #define DICT_GR_H
 
 static const char* const dict_gr[] = {
-    "gr",
     "grab",
     "grabbed",
     "grabs",
@@ -144,8 +143,8 @@ static const char* const dict_gr[] = {
     "grown",
     "grows",
     "growth",
-};
+}
 
-#define DICT_GR_SIZE (sizeof(dict_gr) / sizeof(dict_gr[0]))
+#define DICT_GR_SIZE 141
 
 #endif // DICT_GR_H

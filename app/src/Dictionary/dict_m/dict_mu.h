@@ -2,7 +2,6 @@
 #define DICT_MU_H
 
 static const char* const dict_mu[] = {
-    "mu",
     "much",
     "mud",
     "muddy",
@@ -72,8 +71,8 @@ static const char* const dict_mu[] = {
     "mutual",
     "mutually",
     "muze",
-};
+}
 
-#define DICT_MU_SIZE (sizeof(dict_mu) / sizeof(dict_mu[0]))
+#define DICT_MU_SIZE 69
 
 #endif // DICT_MU_H

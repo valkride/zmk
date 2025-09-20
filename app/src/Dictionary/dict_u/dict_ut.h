@@ -2,7 +2,6 @@
 #define DICT_UT_H
 
 static const char* const dict_ut[] = {
-    "ut",
     "utah",
     "utc",
     "utensils",
@@ -22,8 +21,8 @@ static const char* const dict_ut[] = {
     "utp",
     "utter",
     "utterly",
-};
+}
 
-#define DICT_UT_SIZE (sizeof(dict_ut) / sizeof(dict_ut[0]))
+#define DICT_UT_SIZE 19
 
 #endif // DICT_UT_H

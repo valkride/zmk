@@ -2,7 +2,6 @@
 #define DICT_LI_H
 
 static const char* const dict_li[] = {
-    "li",
     "liabilities",
     "liability",
     "liable",
@@ -201,8 +200,8 @@ static const char* const dict_li[] = {
     "livingston",
     "liz",
     "lizard",
-};
+}
 
-#define DICT_LI_SIZE (sizeof(dict_li) / sizeof(dict_li[0]))
+#define DICT_LI_SIZE 198
 
 #endif // DICT_LI_H

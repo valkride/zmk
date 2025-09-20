@@ -2,11 +2,10 @@
 #define DICT_DJ_H
 
 static const char* const dict_dj[] = {
-    "dj",
     "djibouti",
     "djs",
-};
+}
 
-#define DICT_DJ_SIZE (sizeof(dict_dj) / sizeof(dict_dj[0]))
+#define DICT_DJ_SIZE 2
 
 #endif // DICT_DJ_H

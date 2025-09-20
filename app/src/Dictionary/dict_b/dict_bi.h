@@ -2,7 +2,6 @@
 #define DICT_BI_H
 
 static const char* const dict_bi[] = {
-    "bi",
     "bias",
     "biased",
     "bib",
@@ -112,8 +111,8 @@ static const char* const dict_bi[] = {
     "bizjournalshire",
     "bizkit",
     "bizrate",
-};
+}
 
-#define DICT_BI_SIZE (sizeof(dict_bi) / sizeof(dict_bi[0]))
+#define DICT_BI_SIZE 109
 
 #endif // DICT_BI_H

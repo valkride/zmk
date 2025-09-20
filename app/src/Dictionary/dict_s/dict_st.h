@@ -2,7 +2,6 @@
 #define DICT_ST_H
 
 static const char* const dict_st[] = {
-    "st",
     "sta",
     "staa",
     "stab",
@@ -333,8 +332,8 @@ static const char* const dict_st[] = {
     "styling",
     "stylish",
     "stylus",
-};
+}
 
-#define DICT_ST_SIZE (sizeof(dict_st) / sizeof(dict_st[0]))
+#define DICT_ST_SIZE 330
 
 #endif // DICT_ST_H

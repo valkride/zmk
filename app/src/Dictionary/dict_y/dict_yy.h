@@ -2,10 +2,9 @@
 #define DICT_YY_H
 
 static const char* const dict_yy[] = {
-    "yy",
     "yyyy",
-};
+}
 
-#define DICT_YY_SIZE (sizeof(dict_yy) / sizeof(dict_yy[0]))
+#define DICT_YY_SIZE 1
 
 #endif // DICT_YY_H

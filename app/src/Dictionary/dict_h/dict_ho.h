@@ -2,7 +2,6 @@
 #define DICT_HO_H
 
 static const char* const dict_ho[] = {
-    "ho",
     "hobart",
     "hobbies",
     "hobbs",
@@ -164,8 +163,8 @@ static const char* const dict_ho[] = {
     "howell",
     "however",
     "howto",
-};
+}
 
-#define DICT_HO_SIZE (sizeof(dict_ho) / sizeof(dict_ho[0]))
+#define DICT_HO_SIZE 161
 
 #endif // DICT_HO_H

@@ -2,7 +2,6 @@
 #define DICT_SL_H
 
 static const char* const dict_sl[] = {
-    "sl",
     "slab",
     "slac",
     "slack",
@@ -70,8 +69,8 @@ static const char* const dict_sl[] = {
     "slug",
     "slut",
     "sluts",
-};
+}
 
-#define DICT_SL_SIZE (sizeof(dict_sl) / sizeof(dict_sl[0]))
+#define DICT_SL_SIZE 67
 
 #endif // DICT_SL_H

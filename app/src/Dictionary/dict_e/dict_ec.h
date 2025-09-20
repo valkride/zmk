@@ -2,7 +2,6 @@
 #define DICT_EC_H
 
 static const char* const dict_ec[] = {
-    "ec",
     "ecard",
     "ecards",
     "ecc",
@@ -31,8 +30,8 @@ static const char* const dict_ec[] = {
     "ecstasy",
     "ect",
     "ecuador",
-};
+}
 
-#define DICT_EC_SIZE (sizeof(dict_ec) / sizeof(dict_ec[0]))
+#define DICT_EC_SIZE 28
 
 #endif // DICT_EC_H

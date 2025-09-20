@@ -2,7 +2,6 @@
 #define DICT_OC_H
 
 static const char* const dict_oc[] = {
-    "oc",
     "occ",
     "occasion",
     "occasional",
@@ -32,8 +31,8 @@ static const char* const dict_oc[] = {
     "octave",
     "octet",
     "october",
-};
+}
 
-#define DICT_OC_SIZE (sizeof(dict_oc) / sizeof(dict_oc[0]))
+#define DICT_OC_SIZE 29
 
 #endif // DICT_OC_H

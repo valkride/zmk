@@ -2,12 +2,11 @@
 #define DICT_DC_H
 
 static const char* const dict_dc[] = {
-    "dc",
     "dcp",
     "dcr",
     "dcs",
-};
+}
 
-#define DICT_DC_SIZE (sizeof(dict_dc) / sizeof(dict_dc[0]))
+#define DICT_DC_SIZE 3
 
 #endif // DICT_DC_H

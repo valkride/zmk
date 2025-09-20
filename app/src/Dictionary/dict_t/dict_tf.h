@@ -2,10 +2,9 @@
 #define DICT_TF_H
 
 static const char* const dict_tf[] = {
-    "tf",
     "tft",
-};
+}
 
-#define DICT_TF_SIZE (sizeof(dict_tf) / sizeof(dict_tf[0]))
+#define DICT_TF_SIZE 1
 
 #endif // DICT_TF_H

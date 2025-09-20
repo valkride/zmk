@@ -2,7 +2,6 @@
 #define DICT_EU_H
 
 static const char* const dict_eu[] = {
-    "eu",
     "eugene",
     "eur",
     "eureka",
@@ -12,8 +11,8 @@ static const char* const dict_eu[] = {
     "european",
     "europeans",
     "euros",
-};
+}
 
-#define DICT_EU_SIZE (sizeof(dict_eu) / sizeof(dict_eu[0]))
+#define DICT_EU_SIZE 9
 
 #endif // DICT_EU_H

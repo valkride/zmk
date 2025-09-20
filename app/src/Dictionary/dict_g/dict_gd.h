@@ -2,11 +2,10 @@
 #define DICT_GD_H
 
 static const char* const dict_gd[] = {
-    "gd",
     "gdb",
     "gdp",
-};
+}
 
-#define DICT_GD_SIZE (sizeof(dict_gd) / sizeof(dict_gd[0]))
+#define DICT_GD_SIZE 2
 
 #endif // DICT_GD_H

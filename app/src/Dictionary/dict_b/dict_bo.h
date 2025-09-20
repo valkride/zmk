@@ -2,7 +2,6 @@
 #define DICT_BO_H
 
 static const char* const dict_bo[] = {
-    "bo",
     "boa",
     "board",
     "boarding",
@@ -163,8 +162,8 @@ static const char* const dict_bo[] = {
     "boyle",
     "boys",
     "boyz",
-};
+}
 
-#define DICT_BO_SIZE (sizeof(dict_bo) / sizeof(dict_bo[0]))
+#define DICT_BO_SIZE 160
 
 #endif // DICT_BO_H

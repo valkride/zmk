@@ -2,7 +2,6 @@
 #define DICT_FU_H
 
 static const char* const dict_fu[] = {
-    "fu",
     "fuck",
     "fucked",
     "fuckers",
@@ -65,8 +64,8 @@ static const char* const dict_fu[] = {
     "future",
     "futures",
     "fuzzy",
-};
+}
 
-#define DICT_FU_SIZE (sizeof(dict_fu) / sizeof(dict_fu[0]))
+#define DICT_FU_SIZE 62
 
 #endif // DICT_FU_H

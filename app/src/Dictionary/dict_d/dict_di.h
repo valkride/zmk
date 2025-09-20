@@ -2,7 +2,6 @@
 #define DICT_DI_H
 
 static const char* const dict_di[] = {
-    "di",
     "dia",
     "diabetes",
     "diabetic",
@@ -305,8 +304,8 @@ static const char* const dict_di[] = {
     "dixie",
     "dixon",
     "diy",
-};
+}
 
-#define DICT_DI_SIZE (sizeof(dict_di) / sizeof(dict_di[0]))
+#define DICT_DI_SIZE 302
 
 #endif // DICT_DI_H

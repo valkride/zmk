@@ -2,10 +2,9 @@
 #define DICT_FB_H
 
 static const char* const dict_fb[] = {
-    "fb",
     "fbi",
-};
+}
 
-#define DICT_FB_SIZE (sizeof(dict_fb) / sizeof(dict_fb[0]))
+#define DICT_FB_SIZE 1
 
 #endif // DICT_FB_H

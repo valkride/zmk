@@ -2,7 +2,6 @@
 #define DICT_VE_H
 
 static const char* const dict_ve[] = {
-    "ve",
     "vector",
     "vectors",
     "vega",
@@ -83,8 +82,8 @@ static const char* const dict_ve[] = {
     "veterinary",
     "veto",
     "vets",
-};
+}
 
-#define DICT_VE_SIZE (sizeof(dict_ve) / sizeof(dict_ve[0]))
+#define DICT_VE_SIZE 80
 
 #endif // DICT_VE_H

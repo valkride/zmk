@@ -2,7 +2,6 @@
 #define DICT_TW_H
 
 static const char* const dict_tw[] = {
-    "tw",
     "twain",
     "tweak",
     "tweed",
@@ -21,8 +20,8 @@ static const char* const dict_tw[] = {
     "twiztid",
     "two",
     "twp",
-};
+}
 
-#define DICT_TW_SIZE (sizeof(dict_tw) / sizeof(dict_tw[0]))
+#define DICT_TW_SIZE 18
 
 #endif // DICT_TW_H

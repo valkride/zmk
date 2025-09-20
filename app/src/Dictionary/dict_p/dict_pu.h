@@ -2,7 +2,6 @@
 #define DICT_PU_H
 
 static const char* const dict_pu[] = {
-    "pu",
     "pub",
     "publ",
     "public",
@@ -90,8 +89,8 @@ static const char* const dict_pu[] = {
     "putting",
     "puzzle",
     "puzzles",
-};
+}
 
-#define DICT_PU_SIZE (sizeof(dict_pu) / sizeof(dict_pu[0]))
+#define DICT_PU_SIZE 87
 
 #endif // DICT_PU_H

@@ -2,7 +2,6 @@
 #define DICT_PS_H
 
 static const char* const dict_ps[] = {
-    "ps",
     "psa",
     "psalm",
     "psalms",
@@ -22,8 +21,8 @@ static const char* const dict_ps[] = {
     "psychologists",
     "psychology",
     "psychotherapy",
-};
+}
 
-#define DICT_PS_SIZE (sizeof(dict_ps) / sizeof(dict_ps[0]))
+#define DICT_PS_SIZE 19
 
 #endif // DICT_PS_H

@@ -2,7 +2,6 @@
 #define DICT_CD_H
 
 static const char* const dict_cd[] = {
-    "cd",
     "cdc",
     "cdma",
     "cdn",
@@ -13,8 +12,8 @@ static const char* const dict_cd[] = {
     "cdrw",
     "cds",
     "cdt",
-};
+}
 
-#define DICT_CD_SIZE (sizeof(dict_cd) / sizeof(dict_cd[0]))
+#define DICT_CD_SIZE 10
 
 #endif // DICT_CD_H

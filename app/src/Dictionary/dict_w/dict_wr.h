@@ -2,7 +2,6 @@
 #define DICT_WR_H
 
 static const char* const dict_wr[] = {
-    "wr",
     "wrap",
     "wrapped",
     "wrapper",
@@ -27,8 +26,8 @@ static const char* const dict_wr[] = {
     "wrongful",
     "wrote",
     "wrought",
-};
+}
 
-#define DICT_WR_SIZE (sizeof(dict_wr) / sizeof(dict_wr[0]))
+#define DICT_WR_SIZE 24
 
 #endif // DICT_WR_H

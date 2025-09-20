@@ -2,9 +2,8 @@
 #define DICT_JM_H
 
 static const char* const dict_jm[] = {
-    "jm",
-};
+}
 
-#define DICT_JM_SIZE (sizeof(dict_jm) / sizeof(dict_jm[0]))
+#define DICT_JM_SIZE 0
 
 #endif // DICT_JM_H

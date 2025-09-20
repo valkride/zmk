@@ -2,7 +2,6 @@
 #define DICT_SE_H
 
 static const char* const dict_se[] = {
-    "se",
     "sea",
     "seafood",
     "seagate",
@@ -253,8 +252,8 @@ static const char* const dict_se[] = {
     "sexy",
     "seychelles",
     "seymour",
-};
+}
 
-#define DICT_SE_SIZE (sizeof(dict_se) / sizeof(dict_se[0]))
+#define DICT_SE_SIZE 250
 
 #endif // DICT_SE_H

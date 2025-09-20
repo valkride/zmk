@@ -2,10 +2,9 @@
 #define DICT_TV_H
 
 static const char* const dict_tv[] = {
-    "tv",
     "tvs",
-};
+}
 
-#define DICT_TV_SIZE (sizeof(dict_tv) / sizeof(dict_tv[0]))
+#define DICT_TV_SIZE 1
 
 #endif // DICT_TV_H

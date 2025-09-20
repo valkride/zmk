@@ -2,7 +2,6 @@
 #define DICT_SN_H
 
 static const char* const dict_sn[] = {
-    "sn",
     "snack",
     "snacks",
     "snake",
@@ -26,8 +25,8 @@ static const char* const dict_sn[] = {
     "snp",
     "snr",
     "snyder",
-};
+}
 
-#define DICT_SN_SIZE (sizeof(dict_sn) / sizeof(dict_sn[0]))
+#define DICT_SN_SIZE 23
 
 #endif // DICT_SN_H

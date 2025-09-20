@@ -2,7 +2,6 @@
 #define DICT_AV_H
 
 static const char* const dict_av[] = {
-    "av",
     "avail",
     "availability",
     "available",
@@ -37,8 +36,8 @@ static const char* const dict_av[] = {
     "avr",
     "avril",
     "avs",
-};
+}
 
-#define DICT_AV_SIZE (sizeof(dict_av) / sizeof(dict_av[0]))
+#define DICT_AV_SIZE 34
 
 #endif // DICT_AV_H

@@ -2,7 +2,6 @@
 #define DICT_CR_H
 
 static const char* const dict_cr[] = {
-    "cr",
     "crab",
     "crack",
     "cracked",
@@ -141,8 +140,8 @@ static const char* const dict_cr[] = {
     "cryptography",
     "crystal",
     "crystals",
-};
+}
 
-#define DICT_CR_SIZE (sizeof(dict_cr) / sizeof(dict_cr[0]))
+#define DICT_CR_SIZE 138
 
 #endif // DICT_CR_H

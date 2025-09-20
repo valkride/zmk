@@ -2,7 +2,6 @@
 #define DICT_FI_H
 
 static const char* const dict_fi[] = {
-    "fi",
     "fiat",
     "fiber",
     "fiberglass",
@@ -158,8 +157,8 @@ static const char* const dict_fi[] = {
     "fixing",
     "fixture",
     "fixtures",
-};
+}
 
-#define DICT_FI_SIZE (sizeof(dict_fi) / sizeof(dict_fi[0]))
+#define DICT_FI_SIZE 155
 
 #endif // DICT_FI_H

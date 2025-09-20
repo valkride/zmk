@@ -2,7 +2,6 @@
 #define DICT_GI_H
 
 static const char* const dict_gi[] = {
-    "gi",
     "gia",
     "giant",
     "giants",
@@ -40,8 +39,8 @@ static const char* const dict_gi[] = {
     "given",
     "gives",
     "giving",
-};
+}
 
-#define DICT_GI_SIZE (sizeof(dict_gi) / sizeof(dict_gi[0]))
+#define DICT_GI_SIZE 37
 
 #endif // DICT_GI_H

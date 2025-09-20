@@ -2,7 +2,6 @@
 #define DICT_FR_H
 
 static const char* const dict_fr[] = {
-    "fr",
     "fra",
     "fraction",
     "fractional",
@@ -124,8 +123,8 @@ static const char* const dict_fr[] = {
     "frustrating",
     "frustration",
     "fry",
-};
+}
 
-#define DICT_FR_SIZE (sizeof(dict_fr) / sizeof(dict_fr[0]))
+#define DICT_FR_SIZE 121
 
 #endif // DICT_FR_H

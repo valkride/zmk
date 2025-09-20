@@ -2,7 +2,6 @@
 #define DICT_BR_H
 
 static const char* const dict_br[] = {
-    "br",
     "bra",
     "brace",
     "bracelet",
@@ -168,8 +167,8 @@ static const char* const dict_br[] = {
     "bryan",
     "bryant",
     "bryce",
-};
+}
 
-#define DICT_BR_SIZE (sizeof(dict_br) / sizeof(dict_br[0]))
+#define DICT_BR_SIZE 165
 
 #endif // DICT_BR_H

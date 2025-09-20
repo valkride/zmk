@@ -2,7 +2,6 @@
 #define DICT_MI_H
 
 static const char* const dict_mi[] = {
-    "mi",
     "mia",
     "miami",
     "mib",
@@ -184,8 +183,8 @@ static const char* const dict_mi[] = {
     "mixing",
     "mixture",
     "mixtures",
-};
+}
 
-#define DICT_MI_SIZE (sizeof(dict_mi) / sizeof(dict_mi[0]))
+#define DICT_MI_SIZE 181
 
 #endif // DICT_MI_H

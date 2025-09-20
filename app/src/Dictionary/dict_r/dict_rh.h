@@ -2,7 +2,6 @@
 #define DICT_RH_H
 
 static const char* const dict_rh[] = {
-    "rh",
     "rhapsody",
     "rhetoric",
     "rheumatoid",
@@ -12,8 +11,8 @@ static const char* const dict_rh[] = {
     "rhymes",
     "rhythm",
     "rhythms",
-};
+}
 
-#define DICT_RH_SIZE (sizeof(dict_rh) / sizeof(dict_rh[0]))
+#define DICT_RH_SIZE 9
 
 #endif // DICT_RH_H

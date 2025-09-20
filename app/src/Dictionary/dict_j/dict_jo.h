@@ -2,7 +2,6 @@
 #define DICT_JO_H
 
 static const char* const dict_jo[] = {
-    "jo",
     "joan",
     "joanna",
     "joanne",
@@ -63,8 +62,8 @@ static const char* const dict_jo[] = {
     "joy",
     "joyce",
     "joystick",
-};
+}
 
-#define DICT_JO_SIZE (sizeof(dict_jo) / sizeof(dict_jo[0]))
+#define DICT_JO_SIZE 60
 
 #endif // DICT_JO_H

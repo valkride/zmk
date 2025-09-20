@@ -1,6 +1,34 @@
 #ifndef SPELL_DICTIONARY_TWO_LETTER_MAP_H
 #define SPELL_DICTIONARY_TWO_LETTER_MAP_H
 
+// Include single-letter dictionary headers
+#include "dict_a/dict_a.h"
+#include "dict_b/dict_b.h"
+#include "dict_c/dict_c.h"
+#include "dict_d/dict_d.h"
+#include "dict_e/dict_e.h"
+#include "dict_f/dict_f.h"
+#include "dict_g/dict_g.h"
+#include "dict_h/dict_h.h"
+#include "dict_i/dict_i.h"
+#include "dict_j/dict_j.h"
+#include "dict_k/dict_k.h"
+#include "dict_l/dict_l.h"
+#include "dict_m/dict_m.h"
+#include "dict_n/dict_n.h"
+#include "dict_o/dict_o.h"
+#include "dict_p/dict_p.h"
+#include "dict_q/dict_q.h"
+#include "dict_r/dict_r.h"
+#include "dict_s/dict_s.h"
+#include "dict_t/dict_t.h"
+#include "dict_u/dict_u.h"
+#include "dict_v/dict_v.h"
+#include "dict_w/dict_w.h"
+#include "dict_x/dict_x.h"
+#include "dict_y/dict_y.h"
+#include "dict_z/dict_z.h"
+
 // Include all two-letter dictionary headers
 #include "dict_a/dict_aa.h"
 #include "dict_a/dict_ab.h"
@@ -44,6 +72,7 @@
 #include "dict_b/dict_bn.h"
 #include "dict_b/dict_bo.h"
 #include "dict_b/dict_bp.h"
+#include "dict_b/dict_bq.h"
 #include "dict_b/dict_br.h"
 #include "dict_b/dict_bs.h"
 #include "dict_b/dict_bt.h"
@@ -52,6 +81,7 @@
 #include "dict_b/dict_bw.h"
 #include "dict_b/dict_bx.h"
 #include "dict_b/dict_by.h"
+#include "dict_b/dict_bz.h"
 #include "dict_c/dict_ca.h"
 #include "dict_c/dict_cb.h"
 #include "dict_c/dict_cc.h"
@@ -140,18 +170,22 @@
 #include "dict_f/dict_fh.h"
 #include "dict_f/dict_fi.h"
 #include "dict_f/dict_fj.h"
+#include "dict_f/dict_fk.h"
 #include "dict_f/dict_fl.h"
 #include "dict_f/dict_fm.h"
 #include "dict_f/dict_fn.h"
 #include "dict_f/dict_fo.h"
 #include "dict_f/dict_fp.h"
+#include "dict_f/dict_fq.h"
 #include "dict_f/dict_fr.h"
 #include "dict_f/dict_fs.h"
 #include "dict_f/dict_ft.h"
 #include "dict_f/dict_fu.h"
+#include "dict_f/dict_fv.h"
 #include "dict_f/dict_fw.h"
 #include "dict_f/dict_fx.h"
 #include "dict_f/dict_fy.h"
+#include "dict_f/dict_fz.h"
 #include "dict_g/dict_ga.h"
 #include "dict_g/dict_gb.h"
 #include "dict_g/dict_gc.h"
@@ -168,6 +202,7 @@
 #include "dict_g/dict_gn.h"
 #include "dict_g/dict_go.h"
 #include "dict_g/dict_gp.h"
+#include "dict_g/dict_gq.h"
 #include "dict_g/dict_gr.h"
 #include "dict_g/dict_gs.h"
 #include "dict_g/dict_gt.h"
@@ -225,7 +260,9 @@
 #include "dict_i/dict_it.h"
 #include "dict_i/dict_iu.h"
 #include "dict_i/dict_iv.h"
+#include "dict_i/dict_iw.h"
 #include "dict_i/dict_ix.h"
+#include "dict_i/dict_iy.h"
 #include "dict_i/dict_iz.h"
 #include "dict_j/dict_ja.h"
 #include "dict_j/dict_jb.h"
@@ -243,17 +280,22 @@
 #include "dict_j/dict_jn.h"
 #include "dict_j/dict_jo.h"
 #include "dict_j/dict_jp.h"
+#include "dict_j/dict_jq.h"
 #include "dict_j/dict_jr.h"
 #include "dict_j/dict_js.h"
 #include "dict_j/dict_jt.h"
 #include "dict_j/dict_ju.h"
 #include "dict_j/dict_jv.h"
 #include "dict_j/dict_jw.h"
+#include "dict_j/dict_jx.h"
+#include "dict_j/dict_jy.h"
+#include "dict_j/dict_jz.h"
 #include "dict_k/dict_ka.h"
 #include "dict_k/dict_kb.h"
 #include "dict_k/dict_kc.h"
 #include "dict_k/dict_kd.h"
 #include "dict_k/dict_ke.h"
+#include "dict_k/dict_kf.h"
 #include "dict_k/dict_kg.h"
 #include "dict_k/dict_kh.h"
 #include "dict_k/dict_ki.h"
@@ -264,6 +306,7 @@
 #include "dict_k/dict_kn.h"
 #include "dict_k/dict_ko.h"
 #include "dict_k/dict_kp.h"
+#include "dict_k/dict_kq.h"
 #include "dict_k/dict_kr.h"
 #include "dict_k/dict_ks.h"
 #include "dict_k/dict_kt.h"
@@ -298,6 +341,7 @@
 #include "dict_l/dict_lw.h"
 #include "dict_l/dict_lx.h"
 #include "dict_l/dict_ly.h"
+#include "dict_l/dict_lz.h"
 #include "dict_m/dict_ma.h"
 #include "dict_m/dict_mb.h"
 #include "dict_m/dict_mc.h"
@@ -314,6 +358,7 @@
 #include "dict_m/dict_mn.h"
 #include "dict_m/dict_mo.h"
 #include "dict_m/dict_mp.h"
+#include "dict_m/dict_mq.h"
 #include "dict_m/dict_mr.h"
 #include "dict_m/dict_ms.h"
 #include "dict_m/dict_mt.h"
@@ -339,6 +384,7 @@
 #include "dict_n/dict_nn.h"
 #include "dict_n/dict_no.h"
 #include "dict_n/dict_np.h"
+#include "dict_n/dict_nq.h"
 #include "dict_n/dict_nr.h"
 #include "dict_n/dict_ns.h"
 #include "dict_n/dict_nt.h"
@@ -364,6 +410,7 @@
 #include "dict_o/dict_on.h"
 #include "dict_o/dict_oo.h"
 #include "dict_o/dict_op.h"
+#include "dict_o/dict_oq.h"
 #include "dict_o/dict_or.h"
 #include "dict_o/dict_os.h"
 #include "dict_o/dict_ot.h"
@@ -398,18 +445,33 @@
 #include "dict_p/dict_pw.h"
 #include "dict_p/dict_px.h"
 #include "dict_p/dict_py.h"
+#include "dict_p/dict_pz.h"
 #include "dict_q/dict_qa.h"
 #include "dict_q/dict_qb.h"
 #include "dict_q/dict_qc.h"
 #include "dict_q/dict_qd.h"
+#include "dict_q/dict_qe.h"
+#include "dict_q/dict_qf.h"
+#include "dict_q/dict_qg.h"
+#include "dict_q/dict_qh.h"
 #include "dict_q/dict_qi.h"
+#include "dict_q/dict_qj.h"
+#include "dict_q/dict_qk.h"
 #include "dict_q/dict_ql.h"
+#include "dict_q/dict_qm.h"
+#include "dict_q/dict_qn.h"
 #include "dict_q/dict_qo.h"
+#include "dict_q/dict_qp.h"
 #include "dict_q/dict_qq.h"
 #include "dict_q/dict_qr.h"
+#include "dict_q/dict_qs.h"
 #include "dict_q/dict_qt.h"
 #include "dict_q/dict_qu.h"
+#include "dict_q/dict_qv.h"
 #include "dict_q/dict_qw.h"
+#include "dict_q/dict_qx.h"
+#include "dict_q/dict_qy.h"
+#include "dict_q/dict_qz.h"
 #include "dict_r/dict_ra.h"
 #include "dict_r/dict_rb.h"
 #include "dict_r/dict_rc.h"
@@ -426,6 +488,7 @@
 #include "dict_r/dict_rn.h"
 #include "dict_r/dict_ro.h"
 #include "dict_r/dict_rp.h"
+#include "dict_r/dict_rq.h"
 #include "dict_r/dict_rr.h"
 #include "dict_r/dict_rs.h"
 #include "dict_r/dict_rt.h"
@@ -434,6 +497,7 @@
 #include "dict_r/dict_rw.h"
 #include "dict_r/dict_rx.h"
 #include "dict_r/dict_ry.h"
+#include "dict_r/dict_rz.h"
 #include "dict_s/dict_sa.h"
 #include "dict_s/dict_sb.h"
 #include "dict_s/dict_sc.h"
@@ -476,6 +540,7 @@
 #include "dict_t/dict_tn.h"
 #include "dict_t/dict_to.h"
 #include "dict_t/dict_tp.h"
+#include "dict_t/dict_tq.h"
 #include "dict_t/dict_tr.h"
 #include "dict_t/dict_ts.h"
 #include "dict_t/dict_tt.h"
@@ -494,11 +559,14 @@
 #include "dict_u/dict_ug.h"
 #include "dict_u/dict_uh.h"
 #include "dict_u/dict_ui.h"
+#include "dict_u/dict_uj.h"
 #include "dict_u/dict_uk.h"
 #include "dict_u/dict_ul.h"
 #include "dict_u/dict_um.h"
 #include "dict_u/dict_un.h"
+#include "dict_u/dict_uo.h"
 #include "dict_u/dict_up.h"
+#include "dict_u/dict_uq.h"
 #include "dict_u/dict_ur.h"
 #include "dict_u/dict_us.h"
 #include "dict_u/dict_ut.h"
@@ -506,6 +574,7 @@
 #include "dict_u/dict_uv.h"
 #include "dict_u/dict_uw.h"
 #include "dict_u/dict_ux.h"
+#include "dict_u/dict_uy.h"
 #include "dict_u/dict_uz.h"
 #include "dict_v/dict_va.h"
 #include "dict_v/dict_vb.h"
@@ -516,11 +585,14 @@
 #include "dict_v/dict_vg.h"
 #include "dict_v/dict_vh.h"
 #include "dict_v/dict_vi.h"
+#include "dict_v/dict_vj.h"
+#include "dict_v/dict_vk.h"
 #include "dict_v/dict_vl.h"
 #include "dict_v/dict_vm.h"
 #include "dict_v/dict_vn.h"
 #include "dict_v/dict_vo.h"
 #include "dict_v/dict_vp.h"
+#include "dict_v/dict_vq.h"
 #include "dict_v/dict_vr.h"
 #include "dict_v/dict_vs.h"
 #include "dict_v/dict_vt.h"
@@ -528,6 +600,8 @@
 #include "dict_v/dict_vv.h"
 #include "dict_v/dict_vw.h"
 #include "dict_v/dict_vx.h"
+#include "dict_v/dict_vy.h"
+#include "dict_v/dict_vz.h"
 #include "dict_w/dict_wa.h"
 #include "dict_w/dict_wb.h"
 #include "dict_w/dict_wc.h"
@@ -544,6 +618,7 @@
 #include "dict_w/dict_wn.h"
 #include "dict_w/dict_wo.h"
 #include "dict_w/dict_wp.h"
+#include "dict_w/dict_wq.h"
 #include "dict_w/dict_wr.h"
 #include "dict_w/dict_ws.h"
 #include "dict_w/dict_wt.h"
@@ -552,45 +627,83 @@
 #include "dict_w/dict_ww.h"
 #include "dict_w/dict_wx.h"
 #include "dict_w/dict_wy.h"
+#include "dict_w/dict_wz.h"
 #include "dict_x/dict_xa.h"
 #include "dict_x/dict_xb.h"
 #include "dict_x/dict_xc.h"
 #include "dict_x/dict_xd.h"
 #include "dict_x/dict_xe.h"
 #include "dict_x/dict_xf.h"
+#include "dict_x/dict_xg.h"
 #include "dict_x/dict_xh.h"
 #include "dict_x/dict_xi.h"
+#include "dict_x/dict_xj.h"
+#include "dict_x/dict_xk.h"
 #include "dict_x/dict_xl.h"
 #include "dict_x/dict_xm.h"
 #include "dict_x/dict_xn.h"
 #include "dict_x/dict_xo.h"
 #include "dict_x/dict_xp.h"
+#include "dict_x/dict_xq.h"
 #include "dict_x/dict_xr.h"
 #include "dict_x/dict_xs.h"
 #include "dict_x/dict_xt.h"
 #include "dict_x/dict_xu.h"
 #include "dict_x/dict_xv.h"
+#include "dict_x/dict_xw.h"
 #include "dict_x/dict_xx.h"
 #include "dict_x/dict_xy.h"
+#include "dict_x/dict_xz.h"
 #include "dict_y/dict_ya.h"
+#include "dict_y/dict_yb.h"
+#include "dict_y/dict_yc.h"
 #include "dict_y/dict_yd.h"
 #include "dict_y/dict_ye.h"
+#include "dict_y/dict_yf.h"
+#include "dict_y/dict_yg.h"
+#include "dict_y/dict_yh.h"
 #include "dict_y/dict_yi.h"
+#include "dict_y/dict_yj.h"
+#include "dict_y/dict_yk.h"
+#include "dict_y/dict_yl.h"
 #include "dict_y/dict_ym.h"
 #include "dict_y/dict_yn.h"
 #include "dict_y/dict_yo.h"
+#include "dict_y/dict_yp.h"
+#include "dict_y/dict_yq.h"
 #include "dict_y/dict_yr.h"
+#include "dict_y/dict_ys.h"
+#include "dict_y/dict_yt.h"
 #include "dict_y/dict_yu.h"
 #include "dict_y/dict_yv.h"
+#include "dict_y/dict_yw.h"
+#include "dict_y/dict_yx.h"
 #include "dict_y/dict_yy.h"
+#include "dict_y/dict_yz.h"
 #include "dict_z/dict_za.h"
+#include "dict_z/dict_zb.h"
+#include "dict_z/dict_zc.h"
 #include "dict_z/dict_zd.h"
 #include "dict_z/dict_ze.h"
+#include "dict_z/dict_zf.h"
+#include "dict_z/dict_zg.h"
 #include "dict_z/dict_zh.h"
 #include "dict_z/dict_zi.h"
+#include "dict_z/dict_zj.h"
+#include "dict_z/dict_zk.h"
+#include "dict_z/dict_zl.h"
+#include "dict_z/dict_zm.h"
+#include "dict_z/dict_zn.h"
 #include "dict_z/dict_zo.h"
+#include "dict_z/dict_zp.h"
+#include "dict_z/dict_zq.h"
+#include "dict_z/dict_zr.h"
 #include "dict_z/dict_zs.h"
+#include "dict_z/dict_zt.h"
 #include "dict_z/dict_zu.h"
+#include "dict_z/dict_zv.h"
+#include "dict_z/dict_zw.h"
+#include "dict_z/dict_zx.h"
 #include "dict_z/dict_zy.h"
 #include "dict_z/dict_zz.h"
 
@@ -599,7 +712,37 @@ typedef struct {
     size_t size;
 } two_letter_dict_entry_t;
 
-// Two-letter dictionary mapping
+// Single-letter dictionary mapping
+static const two_letter_dict_entry_t single_letter_dictionaries[26] = {
+    {dict_a, DICT_A_SIZE}, // a
+    {dict_b, DICT_B_SIZE}, // b
+    {dict_c, DICT_C_SIZE}, // c
+    {dict_d, DICT_D_SIZE}, // d
+    {dict_e, DICT_E_SIZE}, // e
+    {dict_f, DICT_F_SIZE}, // f
+    {dict_g, DICT_G_SIZE}, // g
+    {dict_h, DICT_H_SIZE}, // h
+    {dict_i, DICT_I_SIZE}, // i
+    {dict_j, DICT_J_SIZE}, // j
+    {dict_k, DICT_K_SIZE}, // k
+    {dict_l, DICT_L_SIZE}, // l
+    {dict_m, DICT_M_SIZE}, // m
+    {dict_n, DICT_N_SIZE}, // n
+    {dict_o, DICT_O_SIZE}, // o
+    {dict_p, DICT_P_SIZE}, // p
+    {dict_q, DICT_Q_SIZE}, // q
+    {dict_r, DICT_R_SIZE}, // r
+    {dict_s, DICT_S_SIZE}, // s
+    {dict_t, DICT_T_SIZE}, // t
+    {dict_u, DICT_U_SIZE}, // u
+    {dict_v, DICT_V_SIZE}, // v
+    {dict_w, DICT_W_SIZE}, // w
+    {dict_x, DICT_X_SIZE}, // x
+    {dict_y, DICT_Y_SIZE}, // y
+    {dict_z, DICT_Z_SIZE}, // z
+};
+
+// Two-letter dictionary mapping (complete 26x26 matrix)
 static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
     { // A*
         {dict_aa, DICT_AA_SIZE}, // aa
@@ -646,7 +789,7 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_bn, DICT_BN_SIZE}, // bn
         {dict_bo, DICT_BO_SIZE}, // bo
         {dict_bp, DICT_BP_SIZE}, // bp
-        {NULL, 0}, // bq (empty)
+        {dict_bq, DICT_BQ_SIZE}, // bq
         {dict_br, DICT_BR_SIZE}, // br
         {dict_bs, DICT_BS_SIZE}, // bs
         {dict_bt, DICT_BT_SIZE}, // bt
@@ -655,7 +798,7 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_bw, DICT_BW_SIZE}, // bw
         {dict_bx, DICT_BX_SIZE}, // bx
         {dict_by, DICT_BY_SIZE}, // by
-        {NULL, 0}, // bz (empty)
+        {dict_bz, DICT_BZ_SIZE}, // bz
     },
     { // C*
         {dict_ca, DICT_CA_SIZE}, // ca
@@ -752,22 +895,22 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_fh, DICT_FH_SIZE}, // fh
         {dict_fi, DICT_FI_SIZE}, // fi
         {dict_fj, DICT_FJ_SIZE}, // fj
-        {NULL, 0}, // fk (empty)
+        {dict_fk, DICT_FK_SIZE}, // fk
         {dict_fl, DICT_FL_SIZE}, // fl
         {dict_fm, DICT_FM_SIZE}, // fm
         {dict_fn, DICT_FN_SIZE}, // fn
         {dict_fo, DICT_FO_SIZE}, // fo
         {dict_fp, DICT_FP_SIZE}, // fp
-        {NULL, 0}, // fq (empty)
+        {dict_fq, DICT_FQ_SIZE}, // fq
         {dict_fr, DICT_FR_SIZE}, // fr
         {dict_fs, DICT_FS_SIZE}, // fs
         {dict_ft, DICT_FT_SIZE}, // ft
         {dict_fu, DICT_FU_SIZE}, // fu
-        {NULL, 0}, // fv (empty)
+        {dict_fv, DICT_FV_SIZE}, // fv
         {dict_fw, DICT_FW_SIZE}, // fw
         {dict_fx, DICT_FX_SIZE}, // fx
         {dict_fy, DICT_FY_SIZE}, // fy
-        {NULL, 0}, // fz (empty)
+        {dict_fz, DICT_FZ_SIZE}, // fz
     },
     { // G*
         {dict_ga, DICT_GA_SIZE}, // ga
@@ -786,7 +929,7 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_gn, DICT_GN_SIZE}, // gn
         {dict_go, DICT_GO_SIZE}, // go
         {dict_gp, DICT_GP_SIZE}, // gp
-        {NULL, 0}, // gq (empty)
+        {dict_gq, DICT_GQ_SIZE}, // gq
         {dict_gr, DICT_GR_SIZE}, // gr
         {dict_gs, DICT_GS_SIZE}, // gs
         {dict_gt, DICT_GT_SIZE}, // gt
@@ -848,9 +991,9 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_it, DICT_IT_SIZE}, // it
         {dict_iu, DICT_IU_SIZE}, // iu
         {dict_iv, DICT_IV_SIZE}, // iv
-        {NULL, 0}, // iw (empty)
+        {dict_iw, DICT_IW_SIZE}, // iw
         {dict_ix, DICT_IX_SIZE}, // ix
-        {NULL, 0}, // iy (empty)
+        {dict_iy, DICT_IY_SIZE}, // iy
         {dict_iz, DICT_IZ_SIZE}, // iz
     },
     { // J*
@@ -870,16 +1013,16 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_jn, DICT_JN_SIZE}, // jn
         {dict_jo, DICT_JO_SIZE}, // jo
         {dict_jp, DICT_JP_SIZE}, // jp
-        {NULL, 0}, // jq (empty)
+        {dict_jq, DICT_JQ_SIZE}, // jq
         {dict_jr, DICT_JR_SIZE}, // jr
         {dict_js, DICT_JS_SIZE}, // js
         {dict_jt, DICT_JT_SIZE}, // jt
         {dict_ju, DICT_JU_SIZE}, // ju
         {dict_jv, DICT_JV_SIZE}, // jv
         {dict_jw, DICT_JW_SIZE}, // jw
-        {NULL, 0}, // jx (empty)
-        {NULL, 0}, // jy (empty)
-        {NULL, 0}, // jz (empty)
+        {dict_jx, DICT_JX_SIZE}, // jx
+        {dict_jy, DICT_JY_SIZE}, // jy
+        {dict_jz, DICT_JZ_SIZE}, // jz
     },
     { // K*
         {dict_ka, DICT_KA_SIZE}, // ka
@@ -887,7 +1030,7 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_kc, DICT_KC_SIZE}, // kc
         {dict_kd, DICT_KD_SIZE}, // kd
         {dict_ke, DICT_KE_SIZE}, // ke
-        {NULL, 0}, // kf (empty)
+        {dict_kf, DICT_KF_SIZE}, // kf
         {dict_kg, DICT_KG_SIZE}, // kg
         {dict_kh, DICT_KH_SIZE}, // kh
         {dict_ki, DICT_KI_SIZE}, // ki
@@ -898,7 +1041,7 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_kn, DICT_KN_SIZE}, // kn
         {dict_ko, DICT_KO_SIZE}, // ko
         {dict_kp, DICT_KP_SIZE}, // kp
-        {NULL, 0}, // kq (empty)
+        {dict_kq, DICT_KQ_SIZE}, // kq
         {dict_kr, DICT_KR_SIZE}, // kr
         {dict_ks, DICT_KS_SIZE}, // ks
         {dict_kt, DICT_KT_SIZE}, // kt
@@ -935,7 +1078,7 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_lw, DICT_LW_SIZE}, // lw
         {dict_lx, DICT_LX_SIZE}, // lx
         {dict_ly, DICT_LY_SIZE}, // ly
-        {NULL, 0}, // lz (empty)
+        {dict_lz, DICT_LZ_SIZE}, // lz
     },
     { // M*
         {dict_ma, DICT_MA_SIZE}, // ma
@@ -954,7 +1097,7 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_mn, DICT_MN_SIZE}, // mn
         {dict_mo, DICT_MO_SIZE}, // mo
         {dict_mp, DICT_MP_SIZE}, // mp
-        {NULL, 0}, // mq (empty)
+        {dict_mq, DICT_MQ_SIZE}, // mq
         {dict_mr, DICT_MR_SIZE}, // mr
         {dict_ms, DICT_MS_SIZE}, // ms
         {dict_mt, DICT_MT_SIZE}, // mt
@@ -982,7 +1125,7 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_nn, DICT_NN_SIZE}, // nn
         {dict_no, DICT_NO_SIZE}, // no
         {dict_np, DICT_NP_SIZE}, // np
-        {NULL, 0}, // nq (empty)
+        {dict_nq, DICT_NQ_SIZE}, // nq
         {dict_nr, DICT_NR_SIZE}, // nr
         {dict_ns, DICT_NS_SIZE}, // ns
         {dict_nt, DICT_NT_SIZE}, // nt
@@ -1010,7 +1153,7 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_on, DICT_ON_SIZE}, // on
         {dict_oo, DICT_OO_SIZE}, // oo
         {dict_op, DICT_OP_SIZE}, // op
-        {NULL, 0}, // oq (empty)
+        {dict_oq, DICT_OQ_SIZE}, // oq
         {dict_or, DICT_OR_SIZE}, // or
         {dict_os, DICT_OS_SIZE}, // os
         {dict_ot, DICT_OT_SIZE}, // ot
@@ -1047,35 +1190,35 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_pw, DICT_PW_SIZE}, // pw
         {dict_px, DICT_PX_SIZE}, // px
         {dict_py, DICT_PY_SIZE}, // py
-        {NULL, 0}, // pz (empty)
+        {dict_pz, DICT_PZ_SIZE}, // pz
     },
     { // Q*
         {dict_qa, DICT_QA_SIZE}, // qa
         {dict_qb, DICT_QB_SIZE}, // qb
         {dict_qc, DICT_QC_SIZE}, // qc
         {dict_qd, DICT_QD_SIZE}, // qd
-        {NULL, 0}, // qe (empty)
-        {NULL, 0}, // qf (empty)
-        {NULL, 0}, // qg (empty)
-        {NULL, 0}, // qh (empty)
+        {dict_qe, DICT_QE_SIZE}, // qe
+        {dict_qf, DICT_QF_SIZE}, // qf
+        {dict_qg, DICT_QG_SIZE}, // qg
+        {dict_qh, DICT_QH_SIZE}, // qh
         {dict_qi, DICT_QI_SIZE}, // qi
-        {NULL, 0}, // qj (empty)
-        {NULL, 0}, // qk (empty)
+        {dict_qj, DICT_QJ_SIZE}, // qj
+        {dict_qk, DICT_QK_SIZE}, // qk
         {dict_ql, DICT_QL_SIZE}, // ql
-        {NULL, 0}, // qm (empty)
-        {NULL, 0}, // qn (empty)
+        {dict_qm, DICT_QM_SIZE}, // qm
+        {dict_qn, DICT_QN_SIZE}, // qn
         {dict_qo, DICT_QO_SIZE}, // qo
-        {NULL, 0}, // qp (empty)
+        {dict_qp, DICT_QP_SIZE}, // qp
         {dict_qq, DICT_QQ_SIZE}, // qq
         {dict_qr, DICT_QR_SIZE}, // qr
-        {NULL, 0}, // qs (empty)
+        {dict_qs, DICT_QS_SIZE}, // qs
         {dict_qt, DICT_QT_SIZE}, // qt
         {dict_qu, DICT_QU_SIZE}, // qu
-        {NULL, 0}, // qv (empty)
+        {dict_qv, DICT_QV_SIZE}, // qv
         {dict_qw, DICT_QW_SIZE}, // qw
-        {NULL, 0}, // qx (empty)
-        {NULL, 0}, // qy (empty)
-        {NULL, 0}, // qz (empty)
+        {dict_qx, DICT_QX_SIZE}, // qx
+        {dict_qy, DICT_QY_SIZE}, // qy
+        {dict_qz, DICT_QZ_SIZE}, // qz
     },
     { // R*
         {dict_ra, DICT_RA_SIZE}, // ra
@@ -1094,7 +1237,7 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_rn, DICT_RN_SIZE}, // rn
         {dict_ro, DICT_RO_SIZE}, // ro
         {dict_rp, DICT_RP_SIZE}, // rp
-        {NULL, 0}, // rq (empty)
+        {dict_rq, DICT_RQ_SIZE}, // rq
         {dict_rr, DICT_RR_SIZE}, // rr
         {dict_rs, DICT_RS_SIZE}, // rs
         {dict_rt, DICT_RT_SIZE}, // rt
@@ -1103,7 +1246,7 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_rw, DICT_RW_SIZE}, // rw
         {dict_rx, DICT_RX_SIZE}, // rx
         {dict_ry, DICT_RY_SIZE}, // ry
-        {NULL, 0}, // rz (empty)
+        {dict_rz, DICT_RZ_SIZE}, // rz
     },
     { // S*
         {dict_sa, DICT_SA_SIZE}, // sa
@@ -1150,7 +1293,7 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_tn, DICT_TN_SIZE}, // tn
         {dict_to, DICT_TO_SIZE}, // to
         {dict_tp, DICT_TP_SIZE}, // tp
-        {NULL, 0}, // tq (empty)
+        {dict_tq, DICT_TQ_SIZE}, // tq
         {dict_tr, DICT_TR_SIZE}, // tr
         {dict_ts, DICT_TS_SIZE}, // ts
         {dict_tt, DICT_TT_SIZE}, // tt
@@ -1171,14 +1314,14 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_ug, DICT_UG_SIZE}, // ug
         {dict_uh, DICT_UH_SIZE}, // uh
         {dict_ui, DICT_UI_SIZE}, // ui
-        {NULL, 0}, // uj (empty)
+        {dict_uj, DICT_UJ_SIZE}, // uj
         {dict_uk, DICT_UK_SIZE}, // uk
         {dict_ul, DICT_UL_SIZE}, // ul
         {dict_um, DICT_UM_SIZE}, // um
         {dict_un, DICT_UN_SIZE}, // un
-        {NULL, 0}, // uo (empty)
+        {dict_uo, DICT_UO_SIZE}, // uo
         {dict_up, DICT_UP_SIZE}, // up
-        {NULL, 0}, // uq (empty)
+        {dict_uq, DICT_UQ_SIZE}, // uq
         {dict_ur, DICT_UR_SIZE}, // ur
         {dict_us, DICT_US_SIZE}, // us
         {dict_ut, DICT_UT_SIZE}, // ut
@@ -1186,7 +1329,7 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_uv, DICT_UV_SIZE}, // uv
         {dict_uw, DICT_UW_SIZE}, // uw
         {dict_ux, DICT_UX_SIZE}, // ux
-        {NULL, 0}, // uy (empty)
+        {dict_uy, DICT_UY_SIZE}, // uy
         {dict_uz, DICT_UZ_SIZE}, // uz
     },
     { // V*
@@ -1199,14 +1342,14 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_vg, DICT_VG_SIZE}, // vg
         {dict_vh, DICT_VH_SIZE}, // vh
         {dict_vi, DICT_VI_SIZE}, // vi
-        {NULL, 0}, // vj (empty)
-        {NULL, 0}, // vk (empty)
+        {dict_vj, DICT_VJ_SIZE}, // vj
+        {dict_vk, DICT_VK_SIZE}, // vk
         {dict_vl, DICT_VL_SIZE}, // vl
         {dict_vm, DICT_VM_SIZE}, // vm
         {dict_vn, DICT_VN_SIZE}, // vn
         {dict_vo, DICT_VO_SIZE}, // vo
         {dict_vp, DICT_VP_SIZE}, // vp
-        {NULL, 0}, // vq (empty)
+        {dict_vq, DICT_VQ_SIZE}, // vq
         {dict_vr, DICT_VR_SIZE}, // vr
         {dict_vs, DICT_VS_SIZE}, // vs
         {dict_vt, DICT_VT_SIZE}, // vt
@@ -1214,8 +1357,8 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_vv, DICT_VV_SIZE}, // vv
         {dict_vw, DICT_VW_SIZE}, // vw
         {dict_vx, DICT_VX_SIZE}, // vx
-        {NULL, 0}, // vy (empty)
-        {NULL, 0}, // vz (empty)
+        {dict_vy, DICT_VY_SIZE}, // vy
+        {dict_vz, DICT_VZ_SIZE}, // vz
     },
     { // W*
         {dict_wa, DICT_WA_SIZE}, // wa
@@ -1234,7 +1377,7 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_wn, DICT_WN_SIZE}, // wn
         {dict_wo, DICT_WO_SIZE}, // wo
         {dict_wp, DICT_WP_SIZE}, // wp
-        {NULL, 0}, // wq (empty)
+        {dict_wq, DICT_WQ_SIZE}, // wq
         {dict_wr, DICT_WR_SIZE}, // wr
         {dict_ws, DICT_WS_SIZE}, // ws
         {dict_wt, DICT_WT_SIZE}, // wt
@@ -1243,7 +1386,7 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_ww, DICT_WW_SIZE}, // ww
         {dict_wx, DICT_WX_SIZE}, // wx
         {dict_wy, DICT_WY_SIZE}, // wy
-        {NULL, 0}, // wz (empty)
+        {dict_wz, DICT_WZ_SIZE}, // wz
     },
     { // X*
         {dict_xa, DICT_XA_SIZE}, // xa
@@ -1252,105 +1395,134 @@ static const two_letter_dict_entry_t two_letter_dictionaries[26][26] = {
         {dict_xd, DICT_XD_SIZE}, // xd
         {dict_xe, DICT_XE_SIZE}, // xe
         {dict_xf, DICT_XF_SIZE}, // xf
-        {NULL, 0}, // xg (empty)
+        {dict_xg, DICT_XG_SIZE}, // xg
         {dict_xh, DICT_XH_SIZE}, // xh
         {dict_xi, DICT_XI_SIZE}, // xi
-        {NULL, 0}, // xj (empty)
-        {NULL, 0}, // xk (empty)
+        {dict_xj, DICT_XJ_SIZE}, // xj
+        {dict_xk, DICT_XK_SIZE}, // xk
         {dict_xl, DICT_XL_SIZE}, // xl
         {dict_xm, DICT_XM_SIZE}, // xm
         {dict_xn, DICT_XN_SIZE}, // xn
         {dict_xo, DICT_XO_SIZE}, // xo
         {dict_xp, DICT_XP_SIZE}, // xp
-        {NULL, 0}, // xq (empty)
+        {dict_xq, DICT_XQ_SIZE}, // xq
         {dict_xr, DICT_XR_SIZE}, // xr
         {dict_xs, DICT_XS_SIZE}, // xs
         {dict_xt, DICT_XT_SIZE}, // xt
         {dict_xu, DICT_XU_SIZE}, // xu
         {dict_xv, DICT_XV_SIZE}, // xv
-        {NULL, 0}, // xw (empty)
+        {dict_xw, DICT_XW_SIZE}, // xw
         {dict_xx, DICT_XX_SIZE}, // xx
         {dict_xy, DICT_XY_SIZE}, // xy
-        {NULL, 0}, // xz (empty)
+        {dict_xz, DICT_XZ_SIZE}, // xz
     },
     { // Y*
         {dict_ya, DICT_YA_SIZE}, // ya
-        {NULL, 0}, // yb (empty)
-        {NULL, 0}, // yc (empty)
+        {dict_yb, DICT_YB_SIZE}, // yb
+        {dict_yc, DICT_YC_SIZE}, // yc
         {dict_yd, DICT_YD_SIZE}, // yd
         {dict_ye, DICT_YE_SIZE}, // ye
-        {NULL, 0}, // yf (empty)
-        {NULL, 0}, // yg (empty)
-        {NULL, 0}, // yh (empty)
+        {dict_yf, DICT_YF_SIZE}, // yf
+        {dict_yg, DICT_YG_SIZE}, // yg
+        {dict_yh, DICT_YH_SIZE}, // yh
         {dict_yi, DICT_YI_SIZE}, // yi
-        {NULL, 0}, // yj (empty)
-        {NULL, 0}, // yk (empty)
-        {NULL, 0}, // yl (empty)
+        {dict_yj, DICT_YJ_SIZE}, // yj
+        {dict_yk, DICT_YK_SIZE}, // yk
+        {dict_yl, DICT_YL_SIZE}, // yl
         {dict_ym, DICT_YM_SIZE}, // ym
         {dict_yn, DICT_YN_SIZE}, // yn
         {dict_yo, DICT_YO_SIZE}, // yo
-        {NULL, 0}, // yp (empty)
-        {NULL, 0}, // yq (empty)
+        {dict_yp, DICT_YP_SIZE}, // yp
+        {dict_yq, DICT_YQ_SIZE}, // yq
         {dict_yr, DICT_YR_SIZE}, // yr
-        {NULL, 0}, // ys (empty)
-        {NULL, 0}, // yt (empty)
+        {dict_ys, DICT_YS_SIZE}, // ys
+        {dict_yt, DICT_YT_SIZE}, // yt
         {dict_yu, DICT_YU_SIZE}, // yu
         {dict_yv, DICT_YV_SIZE}, // yv
-        {NULL, 0}, // yw (empty)
-        {NULL, 0}, // yx (empty)
+        {dict_yw, DICT_YW_SIZE}, // yw
+        {dict_yx, DICT_YX_SIZE}, // yx
         {dict_yy, DICT_YY_SIZE}, // yy
-        {NULL, 0}, // yz (empty)
+        {dict_yz, DICT_YZ_SIZE}, // yz
     },
     { // Z*
         {dict_za, DICT_ZA_SIZE}, // za
-        {NULL, 0}, // zb (empty)
-        {NULL, 0}, // zc (empty)
+        {dict_zb, DICT_ZB_SIZE}, // zb
+        {dict_zc, DICT_ZC_SIZE}, // zc
         {dict_zd, DICT_ZD_SIZE}, // zd
         {dict_ze, DICT_ZE_SIZE}, // ze
-        {NULL, 0}, // zf (empty)
-        {NULL, 0}, // zg (empty)
+        {dict_zf, DICT_ZF_SIZE}, // zf
+        {dict_zg, DICT_ZG_SIZE}, // zg
         {dict_zh, DICT_ZH_SIZE}, // zh
         {dict_zi, DICT_ZI_SIZE}, // zi
-        {NULL, 0}, // zj (empty)
-        {NULL, 0}, // zk (empty)
-        {NULL, 0}, // zl (empty)
-        {NULL, 0}, // zm (empty)
-        {NULL, 0}, // zn (empty)
+        {dict_zj, DICT_ZJ_SIZE}, // zj
+        {dict_zk, DICT_ZK_SIZE}, // zk
+        {dict_zl, DICT_ZL_SIZE}, // zl
+        {dict_zm, DICT_ZM_SIZE}, // zm
+        {dict_zn, DICT_ZN_SIZE}, // zn
         {dict_zo, DICT_ZO_SIZE}, // zo
-        {NULL, 0}, // zp (empty)
-        {NULL, 0}, // zq (empty)
-        {NULL, 0}, // zr (empty)
+        {dict_zp, DICT_ZP_SIZE}, // zp
+        {dict_zq, DICT_ZQ_SIZE}, // zq
+        {dict_zr, DICT_ZR_SIZE}, // zr
         {dict_zs, DICT_ZS_SIZE}, // zs
-        {NULL, 0}, // zt (empty)
+        {dict_zt, DICT_ZT_SIZE}, // zt
         {dict_zu, DICT_ZU_SIZE}, // zu
-        {NULL, 0}, // zv (empty)
-        {NULL, 0}, // zw (empty)
-        {NULL, 0}, // zx (empty)
+        {dict_zv, DICT_ZV_SIZE}, // zv
+        {dict_zw, DICT_ZW_SIZE}, // zw
+        {dict_zx, DICT_ZX_SIZE}, // zx
         {dict_zy, DICT_ZY_SIZE}, // zy
         {dict_zz, DICT_ZZ_SIZE}, // zz
     },
 };
 
-// Fast two-letter dictionary lookup
+// Get single-letter dictionary
+static inline const two_letter_dict_entry_t* get_single_letter_dict(const char* word) {
+    if (!word || strlen(word) < 1) return NULL;
+    
+    char first = tolower(word[0]);
+    
+    if (first < 'a' || first > 'z') {
+        return NULL;
+    }
+    
+    int first_idx = first - 'a';
+    
+    return &single_letter_dictionaries[first_idx];
+}
+
+// Get dictionary for specific two-letter combination
 static inline const two_letter_dict_entry_t* get_two_letter_dict(const char* word) {
-    if (word == NULL || strlen(word) < 2) return NULL;
+    if (!word || strlen(word) < 2) return NULL;
     
     char first = tolower(word[0]);
     char second = tolower(word[1]);
     
-    if (first < 'a' || first > 'z' || second < 'a' || second > 'z') return NULL;
+    if (first < 'a' || first > 'z' || second < 'a' || second > 'z') {
+        return NULL;
+    }
     
     int first_idx = first - 'a';
     int second_idx = second - 'a';
     
-    const two_letter_dict_entry_t* entry = &two_letter_dictionaries[first_idx][second_idx];
-    return (entry->words != NULL) ? entry : NULL;
+    return &two_letter_dictionaries[first_idx][second_idx];
+}
+
+// Single-letter dictionary lookup
+static inline bool single_letter_dictionary_lookup(const char* word) {
+    const two_letter_dict_entry_t* dict = get_single_letter_dict(word);
+    if (dict == NULL || dict->words == NULL || dict->size == 0) return false;
+    
+    // For single letters, just compare directly
+    if (strlen(word) == 1) {
+        return strcmp(word, dict->words[0]) == 0;
+    }
+    
+    return false;
 }
 
 // Binary search within two-letter dictionary
 static inline bool two_letter_dictionary_lookup(const char* word) {
     const two_letter_dict_entry_t* dict = get_two_letter_dict(word);
-    if (dict == NULL || dict->words == NULL) return false;
+    if (dict == NULL || dict->words == NULL || dict->size == 0) return false;
     
     // Binary search
     size_t left = 0;

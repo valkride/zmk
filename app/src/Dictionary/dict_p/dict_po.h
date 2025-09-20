@@ -2,7 +2,6 @@
 #define DICT_PO_H
 
 static const char* const dict_po[] = {
-    "po",
     "pocket",
     "pocketpc",
     "pockets",
@@ -202,8 +201,8 @@ static const char* const dict_po[] = {
     "powerseller",
     "powershot",
     "poy",
-};
+}
 
-#define DICT_PO_SIZE (sizeof(dict_po) / sizeof(dict_po[0]))
+#define DICT_PO_SIZE 199
 
 #endif // DICT_PO_H

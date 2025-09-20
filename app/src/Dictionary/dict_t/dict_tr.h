@@ -2,7 +2,6 @@
 #define DICT_TR_H
 
 static const char* const dict_tr[] = {
-    "tr",
     "tra",
     "trac",
     "trace",
@@ -244,8 +243,8 @@ static const char* const dict_tr[] = {
     "truths",
     "try",
     "trying",
-};
+}
 
-#define DICT_TR_SIZE (sizeof(dict_tr) / sizeof(dict_tr[0]))
+#define DICT_TR_SIZE 241
 
 #endif // DICT_TR_H

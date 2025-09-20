@@ -2,9 +2,8 @@
 #define DICT_MK_H
 
 static const char* const dict_mk[] = {
-    "mk",
-};
+}
 
-#define DICT_MK_SIZE (sizeof(dict_mk) / sizeof(dict_mk[0]))
+#define DICT_MK_SIZE 0
 
 #endif // DICT_MK_H

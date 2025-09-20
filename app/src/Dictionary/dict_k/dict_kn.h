@@ -2,7 +2,6 @@
 #define DICT_KN_H
 
 static const char* const dict_kn[] = {
-    "kn",
     "knee",
     "knees",
     "knew",
@@ -31,8 +30,8 @@ static const char* const dict_kn[] = {
     "knows",
     "knox",
     "knoxville",
-};
+}
 
-#define DICT_KN_SIZE (sizeof(dict_kn) / sizeof(dict_kn[0]))
+#define DICT_KN_SIZE 28
 
 #endif // DICT_KN_H

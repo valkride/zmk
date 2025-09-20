@@ -2,7 +2,6 @@
 #define DICT_IG_H
 
 static const char* const dict_ig[] = {
-    "ig",
     "ign",
     "ignition",
     "ignorance",
@@ -11,8 +10,8 @@ static const char* const dict_ig[] = {
     "ignored",
     "ignoring",
     "igor",
-};
+}
 
-#define DICT_IG_SIZE (sizeof(dict_ig) / sizeof(dict_ig[0]))
+#define DICT_IG_SIZE 8
 
 #endif // DICT_IG_H

@@ -2,7 +2,6 @@
 #define DICT_WO_H
 
 static const char* const dict_wo[] = {
-    "wo",
     "woes",
     "woke",
     "wolf",
@@ -86,8 +85,8 @@ static const char* const dict_wo[] = {
     "wounds",
     "woven",
     "wow",
-};
+}
 
-#define DICT_WO_SIZE (sizeof(dict_wo) / sizeof(dict_wo[0]))
+#define DICT_WO_SIZE 83
 
 #endif // DICT_WO_H

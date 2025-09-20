@@ -2,7 +2,6 @@
 #define DICT_IO_H
 
 static const char* const dict_io[] = {
-    "io",
     "iomega",
     "ion",
     "ionamin",
@@ -10,8 +9,8 @@ static const char* const dict_io[] = {
     "ions",
     "ios",
     "iowa",
-};
+}
 
-#define DICT_IO_SIZE (sizeof(dict_io) / sizeof(dict_io[0]))
+#define DICT_IO_SIZE 7
 
 #endif // DICT_IO_H

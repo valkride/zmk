@@ -2,7 +2,6 @@
 #define DICT_PI_H
 
 static const char* const dict_pi[] = {
-    "pi",
     "pianist",
     "piano",
     "piazza",
@@ -100,8 +99,8 @@ static const char* const dict_pi[] = {
     "pixels",
     "pixmania",
     "pizza",
-};
+}
 
-#define DICT_PI_SIZE (sizeof(dict_pi) / sizeof(dict_pi[0]))
+#define DICT_PI_SIZE 97
 
 #endif // DICT_PI_H

@@ -2,7 +2,6 @@
 #define DICT_IP_H
 
 static const char* const dict_ip[] = {
-    "ip",
     "ipaq",
     "ipb",
     "ipc",
@@ -13,8 +12,8 @@ static const char* const dict_ip[] = {
     "ipsec",
     "ipswich",
     "iptables",
-};
+}
 
-#define DICT_IP_SIZE (sizeof(dict_ip) / sizeof(dict_ip[0]))
+#define DICT_IP_SIZE 10
 
 #endif // DICT_IP_H

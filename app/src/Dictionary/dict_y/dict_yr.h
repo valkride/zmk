@@ -2,10 +2,9 @@
 #define DICT_YR_H
 
 static const char* const dict_yr[] = {
-    "yr",
     "yrs",
-};
+}
 
-#define DICT_YR_SIZE (sizeof(dict_yr) / sizeof(dict_yr[0]))
+#define DICT_YR_SIZE 1
 
 #endif // DICT_YR_H

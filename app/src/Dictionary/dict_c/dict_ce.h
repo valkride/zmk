@@ -2,7 +2,6 @@
 #define DICT_CE_H
 
 static const char* const dict_ce[] = {
-    "ce",
     "cease",
     "ceased",
     "cecil",
@@ -78,8 +77,8 @@ static const char* const dict_ce[] = {
     "cest",
     "cet",
     "cette",
-};
+}
 
-#define DICT_CE_SIZE (sizeof(dict_ce) / sizeof(dict_ce[0]))
+#define DICT_CE_SIZE 75
 
 #endif // DICT_CE_H

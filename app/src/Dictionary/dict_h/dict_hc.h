@@ -2,10 +2,9 @@
 #define DICT_HC_H
 
 static const char* const dict_hc[] = {
-    "hc",
     "hcl",
-};
+}
 
-#define DICT_HC_SIZE (sizeof(dict_hc) / sizeof(dict_hc[0]))
+#define DICT_HC_SIZE 1
 
 #endif // DICT_HC_H

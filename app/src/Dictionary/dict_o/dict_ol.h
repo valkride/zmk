@@ -2,7 +2,6 @@
 #define DICT_OL_H
 
 static const char* const dict_ol[] = {
-    "ol",
     "old",
     "older",
     "oldest",
@@ -22,8 +21,8 @@ static const char* const dict_ol[] = {
     "olympic",
     "olympics",
     "olympus",
-};
+}
 
-#define DICT_OL_SIZE (sizeof(dict_ol) / sizeof(dict_ol[0]))
+#define DICT_OL_SIZE 19
 
 #endif // DICT_OL_H

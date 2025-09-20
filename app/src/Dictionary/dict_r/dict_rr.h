@@ -2,10 +2,9 @@
 #define DICT_RR_H
 
 static const char* const dict_rr[] = {
-    "rr",
     "rrp",
-};
+}
 
-#define DICT_RR_SIZE (sizeof(dict_rr) / sizeof(dict_rr[0]))
+#define DICT_RR_SIZE 1
 
 #endif // DICT_RR_H

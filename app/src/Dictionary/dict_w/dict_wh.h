@@ -2,7 +2,6 @@
 #define DICT_WH_H
 
 static const char* const dict_wh[] = {
-    "wh",
     "whale",
     "whales",
     "wharf",
@@ -57,8 +56,8 @@ static const char* const dict_wh[] = {
     "whores",
     "whose",
     "why",
-};
+}
 
-#define DICT_WH_SIZE (sizeof(dict_wh) / sizeof(dict_wh[0]))
+#define DICT_WH_SIZE 54
 
 #endif // DICT_WH_H

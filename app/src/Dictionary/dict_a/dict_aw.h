@@ -2,7 +2,6 @@
 #define DICT_AW_H
 
 static const char* const dict_aw[] = {
-    "aw",
     "await",
     "awaited",
     "awaiting",
@@ -20,8 +19,8 @@ static const char* const dict_aw[] = {
     "awful",
     "awhile",
     "awkward",
-};
+}
 
-#define DICT_AW_SIZE (sizeof(dict_aw) / sizeof(dict_aw[0]))
+#define DICT_AW_SIZE 17
 
 #endif // DICT_AW_H

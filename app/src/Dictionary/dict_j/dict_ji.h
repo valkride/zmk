@@ -2,7 +2,6 @@
 #define DICT_JI_H
 
 static const char* const dict_ji[] = {
-    "ji",
     "jigsaw",
     "jihad",
     "jill",
@@ -13,8 +12,8 @@ static const char* const dict_ji[] = {
     "jingle",
     "jira",
     "jive",
-};
+}
 
-#define DICT_JI_SIZE (sizeof(dict_ji) / sizeof(dict_ji[0]))
+#define DICT_JI_SIZE 10
 
 #endif // DICT_JI_H

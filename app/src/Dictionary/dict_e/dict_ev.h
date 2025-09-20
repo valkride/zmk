@@ -2,7 +2,6 @@
 #define DICT_EV_H
 
 static const char* const dict_ev[] = {
-    "ev",
     "eva",
     "evacuation",
     "eval",
@@ -52,8 +51,8 @@ static const char* const dict_ev[] = {
     "evolve",
     "evolved",
     "evolving",
-};
+}
 
-#define DICT_EV_SIZE (sizeof(dict_ev) / sizeof(dict_ev[0]))
+#define DICT_EV_SIZE 49
 
 #endif // DICT_EV_H

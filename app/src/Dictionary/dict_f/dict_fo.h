@@ -2,7 +2,6 @@
 #define DICT_FO_H
 
 static const char* const dict_fo[] = {
-    "fo",
     "foam",
     "fob",
     "focal",
@@ -150,8 +149,8 @@ static const char* const dict_fo[] = {
     "fourth",
     "fowler",
     "fox",
-};
+}
 
-#define DICT_FO_SIZE (sizeof(dict_fo) / sizeof(dict_fo[0]))
+#define DICT_FO_SIZE 147
 
 #endif // DICT_FO_H

@@ -2,7 +2,6 @@
 #define DICT_NE_H
 
 static const char* const dict_ne[] = {
-    "ne",
     "neal",
     "near",
     "nearby",
@@ -128,8 +127,8 @@ static const char* const dict_ne[] = {
     "nextag",
     "nextel",
     "nexus",
-};
+}
 
-#define DICT_NE_SIZE (sizeof(dict_ne) / sizeof(dict_ne[0]))
+#define DICT_NE_SIZE 125
 
 #endif // DICT_NE_H

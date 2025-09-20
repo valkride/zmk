@@ -2,7 +2,6 @@
 #define DICT_RU_H
 
 static const char* const dict_ru[] = {
-    "ru",
     "rub",
     "rubber",
     "rubbing",
@@ -61,8 +60,8 @@ static const char* const dict_ru[] = {
     "ruth",
     "rutherford",
     "rutland",
-};
+}
 
-#define DICT_RU_SIZE (sizeof(dict_ru) / sizeof(dict_ru[0]))
+#define DICT_RU_SIZE 58
 
 #endif // DICT_RU_H

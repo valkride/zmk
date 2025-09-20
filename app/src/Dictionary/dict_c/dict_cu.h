@@ -2,7 +2,6 @@
 #define DICT_CU_H
 
 static const char* const dict_cu[] = {
-    "cu",
     "cub",
     "cuba",
     "cuban",
@@ -89,8 +88,8 @@ static const char* const dict_cu[] = {
     "cutters",
     "cutting",
     "cuz",
-};
+}
 
-#define DICT_CU_SIZE (sizeof(dict_cu) / sizeof(dict_cu[0]))
+#define DICT_CU_SIZE 86
 
 #endif // DICT_CU_H

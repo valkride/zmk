@@ -2,10 +2,9 @@
 #define DICT_CG_H
 
 static const char* const dict_cg[] = {
-    "cg",
     "cgi",
-};
+}
 
-#define DICT_CG_SIZE (sizeof(dict_cg) / sizeof(dict_cg[0]))
+#define DICT_CG_SIZE 1
 
 #endif // DICT_CG_H

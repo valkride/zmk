@@ -2,7 +2,6 @@
 #define DICT_AG_H
 
 static const char* const dict_ag[] = {
-    "ag",
     "again",
     "against",
     "age",
@@ -36,8 +35,8 @@ static const char* const dict_ag[] = {
     "agricultural",
     "agriculture",
     "aguilera",
-};
+}
 
-#define DICT_AG_SIZE (sizeof(dict_ag) / sizeof(dict_ag[0]))
+#define DICT_AG_SIZE 33
 
 #endif // DICT_AG_H

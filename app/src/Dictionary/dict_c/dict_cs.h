@@ -2,7 +2,6 @@
 #define DICT_CS_H
 
 static const char* const dict_cs[] = {
-    "cs",
     "csa",
     "csc",
     "csi",
@@ -11,8 +10,8 @@ static const char* const dict_cs[] = {
     "cst",
     "csu",
     "csv",
-};
+}
 
-#define DICT_CS_SIZE (sizeof(dict_cs) / sizeof(dict_cs[0]))
+#define DICT_CS_SIZE 8
 
 #endif // DICT_CS_H

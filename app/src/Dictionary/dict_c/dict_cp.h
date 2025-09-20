@@ -2,7 +2,6 @@
 #define DICT_CP_H
 
 static const char* const dict_cp[] = {
-    "cp",
     "cpa",
     "cpan",
     "cpc",
@@ -17,8 +16,8 @@ static const char* const dict_cp[] = {
     "cpt",
     "cpu",
     "cpus",
-};
+}
 
-#define DICT_CP_SIZE (sizeof(dict_cp) / sizeof(dict_cp[0]))
+#define DICT_CP_SIZE 14
 
 #endif // DICT_CP_H

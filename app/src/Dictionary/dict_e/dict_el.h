@@ -2,7 +2,6 @@
 #define DICT_EL_H
 
 static const char* const dict_el[] = {
-    "el",
     "elaborate",
     "elaine",
     "elapsed",
@@ -78,8 +77,8 @@ static const char* const dict_el[] = {
     "elsewhere",
     "elton",
     "elvis",
-};
+}
 
-#define DICT_EL_SIZE (sizeof(dict_el) / sizeof(dict_el[0]))
+#define DICT_EL_SIZE 75
 
 #endif // DICT_EL_H

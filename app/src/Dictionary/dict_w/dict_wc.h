@@ -2,9 +2,8 @@
 #define DICT_WC_H
 
 static const char* const dict_wc[] = {
-    "wc",
-};
+}
 
-#define DICT_WC_SIZE (sizeof(dict_wc) / sizeof(dict_wc[0]))
+#define DICT_WC_SIZE 0
 
 #endif // DICT_WC_H

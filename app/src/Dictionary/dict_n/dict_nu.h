@@ -2,7 +2,6 @@
 #define DICT_NU_H
 
 static const char* const dict_nu[] = {
-    "nu",
     "nuclear",
     "nuclei",
     "nucleic",
@@ -39,8 +38,8 @@ static const char* const dict_nu[] = {
     "nutritional",
     "nuts",
     "nutten",
-};
+}
 
-#define DICT_NU_SIZE (sizeof(dict_nu) / sizeof(dict_nu[0]))
+#define DICT_NU_SIZE 36
 
 #endif // DICT_NU_H

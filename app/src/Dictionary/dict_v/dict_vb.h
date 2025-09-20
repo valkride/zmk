@@ -2,10 +2,9 @@
 #define DICT_VB_H
 
 static const char* const dict_vb[] = {
-    "vb",
     "vbulletin",
-};
+}
 
-#define DICT_VB_SIZE (sizeof(dict_vb) / sizeof(dict_vb[0]))
+#define DICT_VB_SIZE 1
 
 #endif // DICT_VB_H

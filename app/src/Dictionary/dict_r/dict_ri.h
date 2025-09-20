@@ -2,7 +2,6 @@
 #define DICT_RI_H
 
 static const char* const dict_ri[] = {
-    "ri",
     "rib",
     "ribbon",
     "ribbons",
@@ -86,8 +85,8 @@ static const char* const dict_ri[] = {
     "rivers",
     "riverside",
     "riviera",
-};
+}
 
-#define DICT_RI_SIZE (sizeof(dict_ri) / sizeof(dict_ri[0]))
+#define DICT_RI_SIZE 83
 
 #endif // DICT_RI_H

@@ -2,7 +2,6 @@
 #define DICT_PL_H
 
 static const char* const dict_pl[] = {
-    "pl",
     "place",
     "placebo",
     "placed",
@@ -103,8 +102,8 @@ static const char* const dict_pl[] = {
     "ply",
     "plymouth",
     "plz",
-};
+}
 
-#define DICT_PL_SIZE (sizeof(dict_pl) / sizeof(dict_pl[0]))
+#define DICT_PL_SIZE 100
 
 #endif // DICT_PL_H

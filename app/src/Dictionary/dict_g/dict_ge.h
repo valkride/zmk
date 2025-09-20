@@ -2,7 +2,6 @@
 #define DICT_GE_H
 
 static const char* const dict_ge[] = {
-    "ge",
     "gear",
     "geared",
     "gears",
@@ -97,8 +96,8 @@ static const char* const dict_ge[] = {
     "getting",
     "getty",
     "gev",
-};
+}
 
-#define DICT_GE_SIZE (sizeof(dict_ge) / sizeof(dict_ge[0]))
+#define DICT_GE_SIZE 94
 
 #endif // DICT_GE_H

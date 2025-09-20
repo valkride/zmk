@@ -2,10 +2,9 @@
 #define DICT_LB_H
 
 static const char* const dict_lb[] = {
-    "lb",
     "lbs",
-};
+}
 
-#define DICT_LB_SIZE (sizeof(dict_lb) / sizeof(dict_lb[0]))
+#define DICT_LB_SIZE 1
 
 #endif // DICT_LB_H

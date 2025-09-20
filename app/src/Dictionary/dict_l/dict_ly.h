@@ -2,7 +2,6 @@
 #define DICT_LY_H
 
 static const char* const dict_ly[] = {
-    "ly",
     "lycos",
     "lydia",
     "lying",
@@ -18,8 +17,8 @@ static const char* const dict_ly[] = {
     "lyric",
     "lyrics",
     "lys",
-};
+}
 
-#define DICT_LY_SIZE (sizeof(dict_ly) / sizeof(dict_ly[0]))
+#define DICT_LY_SIZE 15
 
 #endif // DICT_LY_H

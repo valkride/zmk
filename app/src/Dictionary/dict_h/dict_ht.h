@@ -2,15 +2,14 @@
 #define DICT_HT_H
 
 static const char* const dict_ht[] = {
-    "ht",
     "htdocs",
     "htm",
     "html",
     "http",
     "httpd",
     "https",
-};
+}
 
-#define DICT_HT_SIZE (sizeof(dict_ht) / sizeof(dict_ht[0]))
+#define DICT_HT_SIZE 6
 
 #endif // DICT_HT_H

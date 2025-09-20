@@ -2,11 +2,10 @@
 #define DICT_NW_H
 
 static const char* const dict_nw[] = {
-    "nw",
     "nws",
     "nwt",
-};
+}
 
-#define DICT_NW_SIZE (sizeof(dict_nw) / sizeof(dict_nw[0]))
+#define DICT_NW_SIZE 2
 
 #endif // DICT_NW_H

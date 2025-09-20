@@ -2,7 +2,6 @@
 #define DICT_MC_H
 
 static const char* const dict_mc[] = {
-    "mc",
     "mca",
     "mcafee",
     "mcbride",
@@ -26,8 +25,8 @@ static const char* const dict_mc[] = {
     "mcmahon",
     "mcse",
     "mcsg",
-};
+}
 
-#define DICT_MC_SIZE (sizeof(dict_mc) / sizeof(dict_mc[0]))
+#define DICT_MC_SIZE 23
 
 #endif // DICT_MC_H

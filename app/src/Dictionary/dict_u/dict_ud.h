@@ -2,10 +2,9 @@
 #define DICT_UD_H
 
 static const char* const dict_ud[] = {
-    "ud",
     "udp",
-};
+}
 
-#define DICT_UD_SIZE (sizeof(dict_ud) / sizeof(dict_ud[0]))
+#define DICT_UD_SIZE 1
 
 #endif // DICT_UD_H

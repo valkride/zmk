@@ -2,7 +2,6 @@
 #define DICT_PH_H
 
 static const char* const dict_ph[] = {
-    "ph",
     "phantom",
     "phantomnode",
     "pharma",
@@ -77,8 +76,8 @@ static const char* const dict_ph[] = {
     "physiological",
     "physiology",
     "physiopathology",
-};
+}
 
-#define DICT_PH_SIZE (sizeof(dict_ph) / sizeof(dict_ph[0]))
+#define DICT_PH_SIZE 74
 
 #endif // DICT_PH_H

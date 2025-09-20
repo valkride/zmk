@@ -2,13 +2,12 @@
 #define DICT_CN_H
 
 static const char* const dict_cn[] = {
-    "cn",
     "cnc",
     "cnet",
     "cnn",
     "cns",
-};
+}
 
-#define DICT_CN_SIZE (sizeof(dict_cn) / sizeof(dict_cn[0]))
+#define DICT_CN_SIZE 4
 
 #endif // DICT_CN_H

@@ -2,7 +2,6 @@
 #define DICT_YU_H
 
 static const char* const dict_yu[] = {
-    "yu",
     "yuan",
     "yugoslav",
     "yugoslavia",
@@ -10,8 +9,8 @@ static const char* const dict_yu[] = {
     "yum",
     "yummy",
     "yup",
-};
+}
 
-#define DICT_YU_SIZE (sizeof(dict_yu) / sizeof(dict_yu[0]))
+#define DICT_YU_SIZE 7
 
 #endif // DICT_YU_H

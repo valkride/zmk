@@ -2,7 +2,6 @@
 #define DICT_ED_H
 
 static const char* const dict_ed[] = {
-    "ed",
     "eddie",
     "eddy",
     "eden",
@@ -40,8 +39,8 @@ static const char* const dict_ed[] = {
     "edward",
     "edwards",
     "edwin",
-};
+}
 
-#define DICT_ED_SIZE (sizeof(dict_ed) / sizeof(dict_ed[0]))
+#define DICT_ED_SIZE 37
 
 #endif // DICT_ED_H

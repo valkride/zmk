@@ -2,7 +2,6 @@
 #define DICT_SK_H
 
 static const char* const dict_sk[] = {
-    "sk",
     "ska",
     "skate",
     "skateboard",
@@ -37,8 +36,8 @@ static const char* const dict_sk[] = {
     "skye",
     "skyline",
     "skype",
-};
+}
 
-#define DICT_SK_SIZE (sizeof(dict_sk) / sizeof(dict_sk[0]))
+#define DICT_SK_SIZE 34
 
 #endif // DICT_SK_H

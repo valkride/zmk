@@ -2,7 +2,6 @@
 #define DICT_PE_H
 
 static const char* const dict_pe[] = {
-    "pe",
     "pea",
     "peace",
     "peaceful",
@@ -177,8 +176,8 @@ static const char* const dict_pe[] = {
     "petty",
     "peugeot",
     "pewter",
-};
+}
 
-#define DICT_PE_SIZE (sizeof(dict_pe) / sizeof(dict_pe[0]))
+#define DICT_PE_SIZE 174
 
 #endif // DICT_PE_H

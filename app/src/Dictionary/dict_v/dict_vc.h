@@ -2,11 +2,10 @@
 #define DICT_VC_H
 
 static const char* const dict_vc[] = {
-    "vc",
     "vcd",
     "vcr",
-};
+}
 
-#define DICT_VC_SIZE (sizeof(dict_vc) / sizeof(dict_vc[0]))
+#define DICT_VC_SIZE 2
 
 #endif // DICT_VC_H

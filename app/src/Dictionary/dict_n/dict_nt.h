@@ -2,11 +2,10 @@
 #define DICT_NT_H
 
 static const char* const dict_nt[] = {
-    "nt",
     "ntp",
     "ntsc",
-};
+}
 
-#define DICT_NT_SIZE (sizeof(dict_nt) / sizeof(dict_nt[0]))
+#define DICT_NT_SIZE 2
 
 #endif // DICT_NT_H

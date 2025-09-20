@@ -2,10 +2,9 @@
 #define DICT_KP_H
 
 static const char* const dict_kp[] = {
-    "kp",
     "kpx",
-};
+}
 
-#define DICT_KP_SIZE (sizeof(dict_kp) / sizeof(dict_kp[0]))
+#define DICT_KP_SIZE 1
 
 #endif // DICT_KP_H

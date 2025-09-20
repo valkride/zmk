@@ -2,12 +2,11 @@
 #define DICT_EZ_H
 
 static const char* const dict_ez[] = {
-    "ez",
     "ezekiel",
     "ezine",
     "ezra",
-};
+}
 
-#define DICT_EZ_SIZE (sizeof(dict_ez) / sizeof(dict_ez[0]))
+#define DICT_EZ_SIZE 3
 
 #endif // DICT_EZ_H

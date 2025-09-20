@@ -2,7 +2,6 @@
 #define DICT_SM_H
 
 static const char* const dict_sm[] = {
-    "sm",
     "small",
     "smaller",
     "smallest",
@@ -38,8 +37,8 @@ static const char* const dict_sm[] = {
     "sms",
     "smtp",
     "smugmug",
-};
+}
 
-#define DICT_SM_SIZE (sizeof(dict_sm) / sizeof(dict_sm[0]))
+#define DICT_SM_SIZE 35
 
 #endif // DICT_SM_H

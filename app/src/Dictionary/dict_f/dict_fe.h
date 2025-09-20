@@ -2,7 +2,6 @@
 #define DICT_FE_H
 
 static const char* const dict_fe[] = {
-    "fe",
     "fear",
     "feared",
     "fears",
@@ -84,8 +83,8 @@ static const char* const dict_fe[] = {
     "fever",
     "few",
     "fewer",
-};
+}
 
-#define DICT_FE_SIZE (sizeof(dict_fe) / sizeof(dict_fe[0]))
+#define DICT_FE_SIZE 81
 
 #endif // DICT_FE_H

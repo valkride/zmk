@@ -2,10 +2,9 @@
 #define DICT_XL_H
 
 static const char* const dict_xl[] = {
-    "xl",
     "xlibs",
-};
+}
 
-#define DICT_XL_SIZE (sizeof(dict_xl) / sizeof(dict_xl[0]))
+#define DICT_XL_SIZE 1
 
 #endif // DICT_XL_H

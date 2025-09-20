@@ -2,7 +2,6 @@
 #define DICT_UN_H
 
 static const char* const dict_un[] = {
-    "un",
     "una",
     "unable",
     "unabridged",
@@ -154,8 +153,8 @@ static const char* const dict_un[] = {
     "unwanted",
     "unwilling",
     "unwrap",
-};
+}
 
-#define DICT_UN_SIZE (sizeof(dict_un) / sizeof(dict_un[0]))
+#define DICT_UN_SIZE 151
 
 #endif // DICT_UN_H

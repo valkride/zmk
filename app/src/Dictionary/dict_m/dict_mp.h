@@ -2,7 +2,6 @@
 #define DICT_MP_H
 
 static const char* const dict_mp[] = {
-    "mp",
     "mpa",
     "mpc",
     "mpeg",
@@ -12,8 +11,8 @@ static const char* const dict_mp[] = {
     "mpi",
     "mpls",
     "mps",
-};
+}
 
-#define DICT_MP_SIZE (sizeof(dict_mp) / sizeof(dict_mp[0]))
+#define DICT_MP_SIZE 9
 
 #endif // DICT_MP_H

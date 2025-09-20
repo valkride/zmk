@@ -2,7 +2,6 @@
 #define DICT_MO_H
 
 static const char* const dict_mo[] = {
-    "mo",
     "mob",
     "mobil",
     "mobile",
@@ -205,8 +204,8 @@ static const char* const dict_mo[] = {
     "mozambique",
     "mozart",
     "mozilla",
-};
+}
 
-#define DICT_MO_SIZE (sizeof(dict_mo) / sizeof(dict_mo[0]))
+#define DICT_MO_SIZE 202
 
 #endif // DICT_MO_H

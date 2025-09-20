@@ -2,9 +2,9 @@
 #define DICT_ZZ_H
 
 static const char* const dict_zz[] = {
-    "zz",
-};
+    "zzz",
+}
 
-#define DICT_ZZ_SIZE (sizeof(dict_zz) / sizeof(dict_zz[0]))
+#define DICT_ZZ_SIZE 0
 
 #endif // DICT_ZZ_H

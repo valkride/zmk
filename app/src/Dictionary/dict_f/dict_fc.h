@@ -2,10 +2,9 @@
 #define DICT_FC_H
 
 static const char* const dict_fc[] = {
-    "fc",
     "fcc",
-};
+}
 
-#define DICT_FC_SIZE (sizeof(dict_fc) / sizeof(dict_fc[0]))
+#define DICT_FC_SIZE 1
 
 #endif // DICT_FC_H

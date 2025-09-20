@@ -2,7 +2,6 @@
 #define DICT_YE_H
 
 static const char* const dict_ye[] = {
-    "ye",
     "yea",
     "yeah",
     "year",
@@ -20,8 +19,8 @@ static const char* const dict_ye[] = {
     "yes",
     "yesterday",
     "yet",
-};
+}
 
-#define DICT_YE_SIZE (sizeof(dict_ye) / sizeof(dict_ye[0]))
+#define DICT_YE_SIZE 17
 
 #endif // DICT_YE_H
