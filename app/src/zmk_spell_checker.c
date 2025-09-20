@@ -202,50 +202,45 @@ static const char* find_best_match(const char* word) {
     // Look for similar words using two-letter dictionary approach
     int best_distance = MAX_EDIT_DISTANCE + 1;
     
-    // Helper function to search a specific dictionary
-    auto search_dictionary = [&](const two_letter_dict_entry_t* dict_entry) {
-        if (!dict_entry || !dict_entry->words) return;
-        
-        for (size_t i = 0; i < dict_entry->size; i++) {
-            const char* candidate = dict_entry->words[i];
-            int candidate_len = strlen(candidate);
-            
-            // More restrictive length check - only allow 1 character difference for most words
-            int max_length_diff = (word_len <= 4) ? 1 : 2;
-            if (abs(candidate_len - word_len) > max_length_diff) continue;
-            
-            int distance = levenshtein_distance(word, candidate);
-            
-            // Be much more conservative with corrections
-            bool should_correct = false;
-            if (distance == 1) {
-                // Single character difference - usually safe
-                should_correct = true;
-            } else if (distance == 2 && word_len >= 5) {
-                // Two character difference only for longer words
-                // Additional similarity check - ensure at least 60% of characters match
-                int matching_chars = 0;
-                int min_len = (word_len < candidate_len) ? word_len : candidate_len;
-                for (int j = 0; j < min_len; j++) {
-                    if (j < word_len && j < candidate_len && word[j] == candidate[j]) {
-                        matching_chars++;
-                    }
-                }
-                if (matching_chars >= (min_len * 6 / 10)) {
-                    should_correct = true;
-                }
-            }
-            
-            if (should_correct && distance < best_distance) {
-                best_distance = distance;
-                best_match = candidate;
-            }
-        }
-    };
+    // Helper macro to search a specific dictionary
+    #define SEARCH_DICTIONARY(dict_entry) do { \
+        if ((dict_entry) && (dict_entry)->words) { \
+            for (size_t i = 0; i < (dict_entry)->size; i++) { \
+                const char* candidate = (dict_entry)->words[i]; \
+                int candidate_len = strlen(candidate); \
+                \
+                int max_length_diff = (word_len <= 4) ? 1 : 2; \
+                if (abs(candidate_len - word_len) > max_length_diff) continue; \
+                \
+                int distance = levenshtein_distance(word, candidate); \
+                \
+                bool should_correct = false; \
+                if (distance == 1) { \
+                    should_correct = true; \
+                } else if (distance == 2 && word_len >= 5) { \
+                    int matching_chars = 0; \
+                    int min_len = (word_len < candidate_len) ? word_len : candidate_len; \
+                    for (int j = 0; j < min_len; j++) { \
+                        if (j < word_len && j < candidate_len && word[j] == candidate[j]) { \
+                            matching_chars++; \
+                        } \
+                    } \
+                    if (matching_chars >= (min_len * 6 / 10)) { \
+                        should_correct = true; \
+                    } \
+                } \
+                \
+                if (should_correct && distance < best_distance) { \
+                    best_distance = distance; \
+                    best_match = candidate; \
+                } \
+            } \
+        } \
+    } while(0)
     
     // First, search the primary dictionary (first two letters of the word)
     const two_letter_dict_entry_t* primary_dict = get_two_letter_dict(word);
-    search_dictionary(primary_dict);
+    SEARCH_DICTIONARY(primary_dict);
     
     // If no good match found (distance > 1), search additional dictionaries
     // This handles common typo patterns like "teh" -> "the"
@@ -276,19 +271,21 @@ static const char* find_best_match(const char* word) {
         // Search alternative dictionaries
         if (alt_prefix1[0] && alt_prefix1[1]) {
             const two_letter_dict_entry_t* alt_dict1 = get_two_letter_dict(alt_prefix1);
-            search_dictionary(alt_dict1);
+            SEARCH_DICTIONARY(alt_dict1);
         }
         
         if (alt_prefix2[0] && alt_prefix2[1]) {
             const two_letter_dict_entry_t* alt_dict2 = get_two_letter_dict(alt_prefix2);
-            search_dictionary(alt_dict2);
+            SEARCH_DICTIONARY(alt_dict2);
         }
         
         if (alt_prefix3[0] && alt_prefix3[1]) {
             const two_letter_dict_entry_t* alt_dict3 = get_two_letter_dict(alt_prefix3);
-            search_dictionary(alt_dict3);
+            SEARCH_DICTIONARY(alt_dict3);
         }
     }
+    
+    #undef SEARCH_DICTIONARY
     
     // Cache the result for future lookups
     if (best_match != NULL) {
