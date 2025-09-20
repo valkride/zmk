@@ -77,24 +77,25 @@ static void add_to_cache(const char* word, const char* result) {
     cache_index = (cache_index + 1) % CACHE_SIZE;
 }
 
-// Capitalization correction rules (standalone "i" handled separately in process_word)
+// Capitalization and contraction correction rules only
 static const struct {
     const char* incorrect;
     const char* correct;
-} capitalization_rules[] = {
+} correction_rules[] = {
+    {"i", "I"},          // Standalone lowercase "i"
     {"i'm", "I'm"},
     {"i'll", "I'll"},
     {"i've", "I've"},
     {"i'd", "I'd"},
-    {"im", "I'm"},    // Add common contraction without apostrophe
+    {"im", "I'm"},       // Common contraction without apostrophe
 };
-#define CAPITALIZATION_RULES_SIZE (sizeof(capitalization_rules) / sizeof(capitalization_rules[0]))
+#define CORRECTION_RULES_SIZE (sizeof(correction_rules) / sizeof(correction_rules[0]))
 
-// Check for capitalization/contraction corrections
-static const char* check_capitalization(const char* word) {
-    for (int i = 0; i < CAPITALIZATION_RULES_SIZE; i++) {
-        if (strcmp(word, capitalization_rules[i].incorrect) == 0) {
-            return capitalization_rules[i].correct;
+// Check for common typo and capitalization corrections
+static const char* check_corrections(const char* word) {
+    for (int i = 0; i < CORRECTION_RULES_SIZE; i++) {
+        if (strcmp(word, correction_rules[i].incorrect) == 0) {
+            return correction_rules[i].correct;
         }
     }
     return NULL;
@@ -118,33 +119,6 @@ static char* capitalize_first_letter(const char* word, char* buffer, int buffer_
     }
     
     return buffer;
-}
-
-
-
-// Common word patterns for ultra-fast checking
-static const char* common_patterns[] = {
-    "the", "and", "for", "are", "but", "not", "you", "all", "can", "had", "her", "was", "one", "our", "out", "day", "get", "has", "him", "his", "how", "man", "new", "now", "old", "see", "two", "way", "who", "boy", "did", "its", "let", "put", "say", "she", "too", "use"
-};
-#define COMMON_PATTERNS_SIZE (sizeof(common_patterns) / sizeof(common_patterns[0]))
-
-// Fast check for common words (O(1) for most common typos)
-static const char* check_common_patterns(const char* word) {
-    int word_len = strlen(word);
-    
-    for (int i = 0; i < COMMON_PATTERNS_SIZE; i++) {
-        const char* pattern = common_patterns[i];
-        int pattern_len = strlen(pattern);
-        
-        // Quick length check first
-        if (abs(word_len - pattern_len) <= MAX_EDIT_DISTANCE) {
-            int distance = levenshtein_distance(word, pattern);
-            if (distance <= MAX_EDIT_DISTANCE) {
-                return pattern;
-            }
-        }
-    }
-    return NULL;
 }
 
 // Levenshtein distance calculation
@@ -186,12 +160,12 @@ static int levenshtein_distance(const char* s1, const char* s2) {
     return matrix[len1][len2];
 }
 
-// Check if word needs capitalization correction regardless of dictionary status
-static const char* get_capitalization_correction(const char* word) {
-    // Always check capitalization first, even for valid dictionary words
-    const char* cap_result = check_capitalization(word);
-    if (cap_result != NULL) {
-        return cap_result;
+// Check if word needs common corrections (typos, capitalization, contractions)
+static const char* get_correction(const char* word) {
+    // Always check common corrections first, even for valid dictionary words
+    const char* correction_result = check_corrections(word);
+    if (correction_result != NULL) {
+        return correction_result;
     }
     return NULL;
 }
@@ -205,17 +179,10 @@ static const char* find_best_match(const char* word) {
     }
     
     // Ultra-fast capitalization correction (highest priority) - always check this first
-    const char* cap_result = get_capitalization_correction(word);
-    if (cap_result != NULL) {
-        add_to_cache(word, cap_result);
-        return cap_result;
-    }
-    
-    // Ultra-fast check for common patterns
-    const char* common_result = check_common_patterns(word);
-    if (common_result != NULL) {
-        add_to_cache(word, common_result);
-        return common_result;
+    const char* correction_result = get_correction(word);
+    if (correction_result != NULL) {
+        add_to_cache(word, correction_result);
+        return correction_result;
     }
     
     const char* best_match = NULL;
@@ -405,8 +372,8 @@ static void process_word() {
     
     // If no sentence capitalization needed, check normal correction
     if (final_correction == NULL) {
-        // Always check for capitalization corrections first (like im->I'm, i'm->I'm)
-        final_correction = get_capitalization_correction(current_word);
+        // Always check for common corrections first (typos, capitalization, contractions)
+        final_correction = get_correction(current_word);
         
         // If no capitalization correction and word is valid, don't correct
         if (final_correction == NULL && is_valid_word(current_word)) {
@@ -422,12 +389,12 @@ static void process_word() {
     
     // Apply correction if found, but be extra conservative with final checks
     if (final_correction != NULL && strcmp(current_word, final_correction) != 0) {
-        // Check if this is a capitalization correction (always allow these)
-        const char* cap_correction = get_capitalization_correction(current_word);
-        bool is_capitalization_correction = (cap_correction != NULL && strcmp(final_correction, cap_correction) == 0);
+        // Check if this is a common correction (always allow these)
+        const char* common_correction = get_correction(current_word);
+        bool is_common_correction = (common_correction != NULL && strcmp(final_correction, common_correction) == 0);
         
-        if (is_capitalization_correction) {
-            // Always apply capitalization corrections (im->I'm, i'm->I'm, etc.)
+        if (is_common_correction) {
+            // Always apply common corrections (typos, contractions, capitalization)
             correct_word(final_correction, word_pos);
         } else if (strlen(final_correction) > 0 && !is_valid_word(current_word)) {
             // Multiple safety checks before correcting other words
