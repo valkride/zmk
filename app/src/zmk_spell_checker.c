@@ -25,7 +25,7 @@ static int levenshtein_distance(const char* s1, const char* s2);
 #define MIN_WORD_LENGTH 2    // Don't correct very short words
 #define TYPING_TIMEOUT_MS 500  // Consider word complete after this timeout
 
-// Global enable/disable flag
+// Global enable/disable flag - always enabled for testing
 static bool spell_checker_enabled = true;
 static int64_t last_keypress_time = 0;
 
@@ -564,13 +564,8 @@ bool zmk_spell_checker_is_enabled(void) {
 
 // Main keystroke handler
 int zmk_autocorrect_keyboard_press(zmk_key_t key) {
-    // Check for F24 key (our toggle trigger)
-    if (key == HID_USAGE_KEY_KEYBOARD_F24) {
-        spell_checker_enabled = !spell_checker_enabled;
-        return 0;
-    }
-    
-    if (correcting || !spell_checker_enabled) return 0;
+    // Spell checker is always enabled - no toggle for now
+    if (correcting) return 0;
     
     #if FAST_TYPER_MODE
     // Update timing for potential future features (keeping for compatibility)
@@ -605,7 +600,7 @@ static int spell_checker_init(void) {
     memset(current_word, 0, sizeof(current_word));
     word_pos = 0;
     correcting = false;
-    spell_checker_enabled = true;
+    spell_checker_enabled = true;  // Always enabled
     last_keypress_time = 0;
     
     #if FAST_TYPER_MODE
