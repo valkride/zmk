@@ -51,8 +51,7 @@ static const char* const dict_ev[] = {
     "evolve",
     "evolved",
     "evolving",
-}
-
+};
 #define DICT_EV_SIZE 49
 
 #endif // DICT_EV_H

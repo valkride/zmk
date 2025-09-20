@@ -150,8 +150,7 @@ static const char* const dict_ro[] = {
     "royalties",
     "royalty",
     "royce",
-}
-
+};
 #define DICT_RO_SIZE 148
 
 #endif // DICT_RO_H

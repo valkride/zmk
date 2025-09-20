@@ -132,8 +132,7 @@ static const char* const dict_ar[] = {
     "artwork",
     "aruba",
     "arxiv",
-}
-
+};
 #define DICT_AR_SIZE 130
 
 #endif // DICT_AR_H

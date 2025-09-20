@@ -7,8 +7,7 @@ static const char* const dict_sd[] = {
     "sdn",
     "sdram",
     "sds",
-}
-
+};
 #define DICT_SD_SIZE 5
 
 #endif // DICT_SD_H

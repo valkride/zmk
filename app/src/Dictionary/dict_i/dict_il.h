@@ -22,8 +22,7 @@ static const char* const dict_il[] = {
     "illustrator",
     "ilo",
     "ilug",
-}
-
+};
 #define DICT_IL_SIZE 20
 
 #endif // DICT_IL_H

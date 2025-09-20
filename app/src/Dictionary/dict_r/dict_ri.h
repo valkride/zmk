@@ -85,8 +85,7 @@ static const char* const dict_ri[] = {
     "rivers",
     "riverside",
     "riviera",
-}
-
+};
 #define DICT_RI_SIZE 83
 
 #endif // DICT_RI_H

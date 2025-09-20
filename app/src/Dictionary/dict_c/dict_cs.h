@@ -10,8 +10,7 @@ static const char* const dict_cs[] = {
     "cst",
     "csu",
     "csv",
-}
-
+};
 #define DICT_CS_SIZE 8
 
 #endif // DICT_CS_H

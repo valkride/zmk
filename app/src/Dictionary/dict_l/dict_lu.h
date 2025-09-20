@@ -39,8 +39,7 @@ static const char* const dict_lu[] = {
     "luxembourg",
     "luxurious",
     "luxury",
-}
-
+};
 #define DICT_LU_SIZE 37
 
 #endif // DICT_LU_H

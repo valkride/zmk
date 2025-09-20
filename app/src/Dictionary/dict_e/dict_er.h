@@ -30,8 +30,7 @@ static const char* const dict_er[] = {
     "error",
     "errors",
     "ers",
-}
-
+};
 #define DICT_ER_SIZE 28
 
 #endif // DICT_ER_H

@@ -22,8 +22,7 @@ static const char* const dict_ty[] = {
     "tyres",
     "tyrosine",
     "tyson",
-}
-
+};
 #define DICT_TY_SIZE 20
 
 #endif // DICT_TY_H

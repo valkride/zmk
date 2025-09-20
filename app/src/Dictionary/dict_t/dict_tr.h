@@ -243,8 +243,7 @@ static const char* const dict_tr[] = {
     "truths",
     "try",
     "trying",
-}
-
+};
 #define DICT_TR_SIZE 241
 
 #endif // DICT_TR_H

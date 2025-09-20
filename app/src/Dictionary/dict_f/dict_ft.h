@@ -7,8 +7,7 @@ static const char* const dict_ft[] = {
     "ftd",
     "fte",
     "ftp",
-}
-
+};
 #define DICT_FT_SIZE 5
 
 #endif // DICT_FT_H

@@ -11,8 +11,7 @@ static const char* const dict_mp[] = {
     "mpi",
     "mpls",
     "mps",
-}
-
+};
 #define DICT_MP_SIZE 9
 
 #endif // DICT_MP_H

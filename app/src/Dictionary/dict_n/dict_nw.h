@@ -4,8 +4,7 @@
 static const char* const dict_nw[] = {
     "nws",
     "nwt",
-}
-
+};
 #define DICT_NW_SIZE 2
 
 #endif // DICT_NW_H

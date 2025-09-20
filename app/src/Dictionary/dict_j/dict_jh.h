@@ -2,8 +2,7 @@
 #define DICT_JH_H
 
 static const char* const dict_jh[] = {
-}
-
+};
 #define DICT_JH_SIZE 0
 
 #endif // DICT_JH_H

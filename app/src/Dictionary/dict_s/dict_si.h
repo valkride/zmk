@@ -137,8 +137,7 @@ static const char* const dict_si[] = {
     "sizeof",
     "sizes",
     "sizing",
-}
-
+};
 #define DICT_SI_SIZE 135
 
 #endif // DICT_SI_H

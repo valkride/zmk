@@ -21,8 +21,7 @@ static const char* const dict_ut[] = {
     "utp",
     "utter",
     "utterly",
-}
-
+};
 #define DICT_UT_SIZE 19
 
 #endif // DICT_UT_H

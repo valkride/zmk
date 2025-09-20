@@ -6,8 +6,7 @@ static const char* const dict_ak[] = {
     "akin",
     "akon",
     "akron",
-}
-
+};
 #define DICT_AK_SIZE 4
 
 #endif // DICT_AK_H

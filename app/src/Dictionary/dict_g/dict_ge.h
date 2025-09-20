@@ -96,8 +96,7 @@ static const char* const dict_ge[] = {
     "getting",
     "getty",
     "gev",
-}
-
+};
 #define DICT_GE_SIZE 94
 
 #endif // DICT_GE_H

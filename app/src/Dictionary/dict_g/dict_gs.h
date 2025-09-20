@@ -5,8 +5,7 @@ static const char* const dict_gs[] = {
     "gsa",
     "gsm",
     "gst",
-}
-
+};
 #define DICT_GS_SIZE 3
 
 #endif // DICT_GS_H

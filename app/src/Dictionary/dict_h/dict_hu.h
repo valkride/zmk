@@ -69,8 +69,7 @@ static const char* const dict_hu[] = {
     "hustler",
     "hut",
     "hutchinson",
-}
-
+};
 #define DICT_HU_SIZE 67
 
 #endif // DICT_HU_H

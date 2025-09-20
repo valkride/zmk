@@ -268,8 +268,7 @@ static const char* const dict_su[] = {
     "suvs",
     "suzanne",
     "suzuki",
-}
-
+};
 #define DICT_SU_SIZE 266
 
 #endif // DICT_SU_H

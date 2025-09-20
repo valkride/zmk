@@ -149,8 +149,7 @@ static const char* const dict_cl[] = {
     "clutch",
     "clutter",
     "clyde",
-}
-
+};
 #define DICT_CL_SIZE 147
 
 #endif // DICT_CL_H

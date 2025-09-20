@@ -16,8 +16,7 @@ static const char* const dict_ow[] = {
     "ownership",
     "owning",
     "owns",
-}
-
+};
 #define DICT_OW_SIZE 14
 
 #endif // DICT_OW_H

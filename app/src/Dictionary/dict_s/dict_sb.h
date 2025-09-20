@@ -7,8 +7,7 @@ static const char* const dict_sb[] = {
     "sbin",
     "sbjct",
     "sbs",
-}
-
+};
 #define DICT_SB_SIZE 5
 
 #endif // DICT_SB_H

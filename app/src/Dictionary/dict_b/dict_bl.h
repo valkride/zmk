@@ -100,8 +100,7 @@ static const char* const dict_bl[] = {
     "blur",
     "blush",
     "blvd",
-}
-
+};
 #define DICT_BL_SIZE 98
 
 #endif // DICT_BL_H

@@ -26,8 +26,7 @@ static const char* const dict_wr[] = {
     "wrongful",
     "wrote",
     "wrought",
-}
-
+};
 #define DICT_WR_SIZE 24
 
 #endif // DICT_WR_H

@@ -149,8 +149,7 @@ static const char* const dict_ac[] = {
     "acura",
     "acute",
     "acxiom",
-}
-
+};
 #define DICT_AC_SIZE 147
 
 #endif // DICT_AC_H

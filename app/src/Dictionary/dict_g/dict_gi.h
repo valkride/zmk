@@ -39,8 +39,7 @@ static const char* const dict_gi[] = {
     "given",
     "gives",
     "giving",
-}
-
+};
 #define DICT_GI_SIZE 37
 
 #endif // DICT_GI_H

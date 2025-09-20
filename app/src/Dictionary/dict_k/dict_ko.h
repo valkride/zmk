@@ -17,8 +17,7 @@ static const char* const dict_ko[] = {
     "kos",
     "kosher",
     "kosovo",
-}
-
+};
 #define DICT_KO_SIZE 15
 
 #endif // DICT_KO_H

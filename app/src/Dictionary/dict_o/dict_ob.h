@@ -44,8 +44,7 @@ static const char* const dict_ob[] = {
     "obtaining",
     "obvious",
     "obviously",
-}
-
+};
 #define DICT_OB_SIZE 42
 
 #endif // DICT_OB_H

@@ -158,8 +158,7 @@ static const char* const dict_th[] = {
     "thx",
     "thy",
     "thyroid",
-}
-
+};
 #define DICT_TH_SIZE 156
 
 #endif // DICT_TH_H

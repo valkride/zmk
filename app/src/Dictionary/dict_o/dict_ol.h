@@ -21,8 +21,7 @@ static const char* const dict_ol[] = {
     "olympic",
     "olympics",
     "olympus",
-}
-
+};
 #define DICT_OL_SIZE 19
 
 #endif // DICT_OL_H

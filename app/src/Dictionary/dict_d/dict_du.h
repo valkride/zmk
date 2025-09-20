@@ -60,8 +60,7 @@ static const char* const dict_du[] = {
     "dutch",
     "duties",
     "duty",
-}
-
+};
 #define DICT_DU_SIZE 58
 
 #endif // DICT_DU_H

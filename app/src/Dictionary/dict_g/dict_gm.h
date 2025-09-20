@@ -6,8 +6,7 @@ static const char* const dict_gm[] = {
     "gmbh",
     "gmc",
     "gmt",
-}
-
+};
 #define DICT_GM_SIZE 4
 
 #endif // DICT_GM_H

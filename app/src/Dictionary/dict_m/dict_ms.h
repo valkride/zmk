@@ -18,8 +18,7 @@ static const char* const dict_ms[] = {
     "msrp",
     "mst",
     "msu",
-}
-
+};
 #define DICT_MS_SIZE 16
 
 #endif // DICT_MS_H

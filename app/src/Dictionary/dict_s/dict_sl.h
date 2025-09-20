@@ -69,8 +69,7 @@ static const char* const dict_sl[] = {
     "slug",
     "slut",
     "sluts",
-}
-
+};
 #define DICT_SL_SIZE 67
 
 #endif // DICT_SL_H

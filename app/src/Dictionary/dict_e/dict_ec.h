@@ -30,8 +30,7 @@ static const char* const dict_ec[] = {
     "ecstasy",
     "ect",
     "ecuador",
-}
-
+};
 #define DICT_EC_SIZE 28
 
 #endif // DICT_EC_H

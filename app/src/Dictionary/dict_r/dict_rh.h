@@ -11,8 +11,7 @@ static const char* const dict_rh[] = {
     "rhymes",
     "rhythm",
     "rhythms",
-}
-
+};
 #define DICT_RH_SIZE 9
 
 #endif // DICT_RH_H

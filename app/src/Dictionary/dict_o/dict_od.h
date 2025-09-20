@@ -10,8 +10,7 @@ static const char* const dict_od[] = {
     "odessa",
     "odor",
     "odyssey",
-}
-
+};
 #define DICT_OD_SIZE 8
 
 #endif // DICT_OD_H

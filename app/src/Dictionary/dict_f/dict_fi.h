@@ -157,8 +157,7 @@ static const char* const dict_fi[] = {
     "fixing",
     "fixture",
     "fixtures",
-}
-
+};
 #define DICT_FI_SIZE 155
 
 #endif // DICT_FI_H

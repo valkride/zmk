@@ -6,8 +6,7 @@ static const char* const dict_mf[] = {
     "mfg",
     "mfr",
     "mft",
-}
-
+};
 #define DICT_MF_SIZE 4
 
 #endif // DICT_MF_H

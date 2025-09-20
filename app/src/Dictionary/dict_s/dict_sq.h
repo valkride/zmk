@@ -15,8 +15,7 @@ static const char* const dict_sq[] = {
     "squirrel",
     "squirt",
     "squirting",
-}
-
+};
 #define DICT_SQ_SIZE 13
 
 #endif // DICT_SQ_H

@@ -7,8 +7,7 @@ static const char* const dict_cc[] = {
     "ccd",
     "ccm",
     "cctv",
-}
-
+};
 #define DICT_CC_SIZE 5
 
 #endif // DICT_CC_H

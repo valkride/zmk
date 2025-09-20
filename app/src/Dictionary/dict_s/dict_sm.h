@@ -37,8 +37,7 @@ static const char* const dict_sm[] = {
     "sms",
     "smtp",
     "smugmug",
-}
-
+};
 #define DICT_SM_SIZE 35
 
 #endif // DICT_SM_H

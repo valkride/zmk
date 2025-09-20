@@ -29,8 +29,7 @@ static const char* const dict_ai[] = {
     "airways",
     "aisle",
     "aix",
-}
-
+};
 #define DICT_AI_SIZE 27
 
 #endif // DICT_AI_H

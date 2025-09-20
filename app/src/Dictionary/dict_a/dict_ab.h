@@ -56,7 +56,7 @@ static const char* const dict_ab[] = {
     "abused",
     "abuses",
     "abusive",
-}
+};
 
 #define DICT_AB_SIZE 54
 

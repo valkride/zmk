@@ -3,8 +3,7 @@
 
 static const char* const dict_lt[] = {
     "ltd",
-}
-
+};
 #define DICT_LT_SIZE 1
 
 #endif // DICT_LT_H

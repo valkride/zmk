@@ -332,8 +332,7 @@ static const char* const dict_st[] = {
     "styling",
     "stylish",
     "stylus",
-}
-
+};
 #define DICT_ST_SIZE 330
 
 #endif // DICT_ST_H

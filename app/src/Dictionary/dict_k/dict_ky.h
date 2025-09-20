@@ -7,8 +7,7 @@ static const char* const dict_ky[] = {
     "kyocera",
     "kyoto",
     "kyrgyzstan",
-}
-
+};
 #define DICT_KY_SIZE 5
 
 #endif // DICT_KY_H

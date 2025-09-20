@@ -8,8 +8,7 @@ static const char* const dict_pp[] = {
     "ppp",
     "pps",
     "ppt",
-}
-
+};
 #define DICT_PP_SIZE 6
 
 #endif // DICT_PP_H

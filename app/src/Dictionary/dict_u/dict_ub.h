@@ -6,8 +6,7 @@ static const char* const dict_ub[] = {
     "uber",
     "ubiquitous",
     "ubuntu",
-}
-
+};
 #define DICT_UB_SIZE 4
 
 #endif // DICT_UB_H

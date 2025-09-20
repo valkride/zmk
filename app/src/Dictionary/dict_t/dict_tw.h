@@ -20,8 +20,7 @@ static const char* const dict_tw[] = {
     "twiztid",
     "two",
     "twp",
-}
-
+};
 #define DICT_TW_SIZE 18
 
 #endif // DICT_TW_H

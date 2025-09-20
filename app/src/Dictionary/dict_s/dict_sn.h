@@ -25,8 +25,7 @@ static const char* const dict_sn[] = {
     "snp",
     "snr",
     "snyder",
-}
-
+};
 #define DICT_SN_SIZE 23
 
 #endif // DICT_SN_H

@@ -304,8 +304,7 @@ static const char* const dict_di[] = {
     "dixie",
     "dixon",
     "diy",
-}
-
+};
 #define DICT_DI_SIZE 302
 
 #endif // DICT_DI_H

@@ -17,8 +17,7 @@ static const char* const dict_ep[] = {
     "epsilon",
     "epson",
     "epstein",
-}
-
+};
 #define DICT_EP_SIZE 15
 
 #endif // DICT_EP_H

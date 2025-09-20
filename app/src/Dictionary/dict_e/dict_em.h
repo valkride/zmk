@@ -76,8 +76,7 @@ static const char* const dict_em[] = {
     "emulation",
     "emulator",
     "emule",
-}
-
+};
 #define DICT_EM_SIZE 74
 
 #endif // DICT_EM_H

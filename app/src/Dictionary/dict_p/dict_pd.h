@@ -9,8 +9,7 @@ static const char* const dict_pd[] = {
     "pdfs",
     "pdp",
     "pdt",
-}
-
+};
 #define DICT_PD_SIZE 7
 
 #endif // DICT_PD_H

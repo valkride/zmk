@@ -7,8 +7,7 @@ static const char* const dict_eg[] = {
     "ego",
     "egypt",
     "egyptian",
-}
-
+};
 #define DICT_EG_SIZE 5
 
 #endif // DICT_EG_H

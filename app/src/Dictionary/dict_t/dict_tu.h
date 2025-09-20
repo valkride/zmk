@@ -62,8 +62,7 @@ static const char* const dict_tu[] = {
     "tutoring",
     "tutors",
     "tuvalu",
-}
-
+};
 #define DICT_TU_SIZE 60
 
 #endif // DICT_TU_H

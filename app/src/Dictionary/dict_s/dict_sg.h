@@ -7,8 +7,7 @@ static const char* const dict_sg[] = {
     "sgi",
     "sgml",
     "sgt",
-}
-
+};
 #define DICT_SG_SIZE 5
 
 #endif // DICT_SG_H

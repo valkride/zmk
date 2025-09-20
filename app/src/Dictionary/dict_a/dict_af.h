@@ -40,8 +40,7 @@ static const char* const dict_af[] = {
     "aftermath",
     "afternoon",
     "afterwards",
-}
-
+};
 #define DICT_AF_SIZE 38
 
 #endif // DICT_AF_H

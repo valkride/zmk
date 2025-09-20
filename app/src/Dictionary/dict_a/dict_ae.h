@@ -12,8 +12,7 @@ static const char* const dict_ae[] = {
     "aest",
     "aesthetic",
     "aesthetics",
-}
-
+};
 #define DICT_AE_SIZE 10
 
 #endif // DICT_AE_H

@@ -64,8 +64,7 @@ static const char* const dict_fu[] = {
     "future",
     "futures",
     "fuzzy",
-}
-
+};
 #define DICT_FU_SIZE 62
 
 #endif // DICT_FU_H

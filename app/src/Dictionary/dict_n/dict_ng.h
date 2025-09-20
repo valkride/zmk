@@ -6,8 +6,7 @@ static const char* const dict_ng[] = {
     "ngo",
     "ngos",
     "nguyen",
-}
-
+};
 #define DICT_NG_SIZE 4
 
 #endif // DICT_NG_H

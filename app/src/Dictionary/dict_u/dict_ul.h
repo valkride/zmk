@@ -11,8 +11,7 @@ static const char* const dict_ul[] = {
     "ultrasonic",
     "ultrasound",
     "ultraviolet",
-}
-
+};
 #define DICT_UL_SIZE 9
 
 #endif // DICT_UL_H

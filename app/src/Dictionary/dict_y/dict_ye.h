@@ -19,8 +19,7 @@ static const char* const dict_ye[] = {
     "yes",
     "yesterday",
     "yet",
-}
-
+};
 #define DICT_YE_SIZE 17
 
 #endif // DICT_YE_H

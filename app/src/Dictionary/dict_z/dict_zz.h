@@ -3,8 +3,7 @@
 
 static const char* const dict_zz[] = {
     "zzz",
-}
-
+};
 #define DICT_ZZ_SIZE 0
 
 #endif // DICT_ZZ_H

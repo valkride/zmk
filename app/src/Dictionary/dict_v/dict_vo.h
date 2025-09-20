@@ -59,8 +59,7 @@ static const char* const dict_vo[] = {
     "voyeur",
     "voyeurweb",
     "voyuer",
-}
-
+};
 #define DICT_VO_SIZE 57
 
 #endif // DICT_VO_H

@@ -6,8 +6,7 @@ static const char* const dict_vu[] = {
     "vulnerabilities",
     "vulnerability",
     "vulnerable",
-}
-
+};
 #define DICT_VU_SIZE 4
 
 #endif // DICT_VU_H

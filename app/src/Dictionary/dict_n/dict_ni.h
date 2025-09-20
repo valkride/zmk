@@ -61,8 +61,7 @@ static const char* const dict_ni[] = {
     "nitrogen",
     "niue",
     "nixon",
-}
-
+};
 #define DICT_NI_SIZE 59
 
 #endif // DICT_NI_H

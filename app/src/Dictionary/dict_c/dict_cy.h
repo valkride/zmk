@@ -18,8 +18,7 @@ static const char* const dict_cy[] = {
     "cypress",
     "cyprus",
     "cyrus",
-}
-
+};
 #define DICT_CY_SIZE 16
 
 #endif // DICT_CY_H

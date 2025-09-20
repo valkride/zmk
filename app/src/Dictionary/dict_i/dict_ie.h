@@ -6,8 +6,7 @@ static const char* const dict_ie[] = {
     "ieee",
     "ies",
     "ietf",
-}
-
+};
 #define DICT_IE_SIZE 4
 
 #endif // DICT_IE_H

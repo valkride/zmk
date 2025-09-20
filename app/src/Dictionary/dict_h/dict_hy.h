@@ -23,8 +23,7 @@ static const char* const dict_hy[] = {
     "hypothesis",
     "hypothetical",
     "hyundai",
-}
-
+};
 #define DICT_HY_SIZE 21
 
 #endif // DICT_HY_H

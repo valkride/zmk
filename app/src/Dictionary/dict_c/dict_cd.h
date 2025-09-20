@@ -12,8 +12,7 @@ static const char* const dict_cd[] = {
     "cdrw",
     "cds",
     "cdt",
-}
-
+};
 #define DICT_CD_SIZE 10
 
 #endif // DICT_CD_H

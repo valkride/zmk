@@ -13,8 +13,7 @@ static const char* const dict_ic[] = {
     "icq",
     "ics",
     "ict",
-}
-
+};
 #define DICT_IC_SIZE 11
 
 #endif // DICT_IC_H

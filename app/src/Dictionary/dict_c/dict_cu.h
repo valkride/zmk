@@ -88,8 +88,7 @@ static const char* const dict_cu[] = {
     "cutters",
     "cutting",
     "cuz",
-}
-
+};
 #define DICT_CU_SIZE 86
 
 #endif // DICT_CU_H

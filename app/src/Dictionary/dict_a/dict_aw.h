@@ -19,8 +19,7 @@ static const char* const dict_aw[] = {
     "awful",
     "awhile",
     "awkward",
-}
-
+};
 #define DICT_AW_SIZE 17
 
 #endif // DICT_AW_H

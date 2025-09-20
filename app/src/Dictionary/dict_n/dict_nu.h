@@ -38,8 +38,7 @@ static const char* const dict_nu[] = {
     "nutritional",
     "nuts",
     "nutten",
-}
-
+};
 #define DICT_NU_SIZE 36
 
 #endif // DICT_NU_H

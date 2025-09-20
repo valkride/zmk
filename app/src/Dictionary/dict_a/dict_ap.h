@@ -104,8 +104,7 @@ static const char* const dict_ap[] = {
     "apron",
     "aps",
     "apt",
-}
-
+};
 #define DICT_AP_SIZE 102
 
 #endif // DICT_AP_H

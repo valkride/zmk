@@ -123,8 +123,7 @@ static const char* const dict_fr[] = {
     "frustrating",
     "frustration",
     "fry",
-}
-
+};
 #define DICT_FR_SIZE 121
 
 #endif // DICT_FR_H

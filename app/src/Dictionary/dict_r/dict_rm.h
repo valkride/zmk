@@ -3,8 +3,7 @@
 
 static const char* const dict_rm[] = {
     "rms",
-}
-
+};
 #define DICT_RM_SIZE 1
 
 #endif // DICT_RM_H

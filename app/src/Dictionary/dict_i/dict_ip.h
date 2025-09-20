@@ -12,8 +12,7 @@ static const char* const dict_ip[] = {
     "ipsec",
     "ipswich",
     "iptables",
-}
-
+};
 #define DICT_IP_SIZE 10
 
 #endif // DICT_IP_H

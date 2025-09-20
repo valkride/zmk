@@ -3,8 +3,7 @@
 
 static const char* const dict_fd[] = {
     "fda",
-}
-
+};
 #define DICT_FD_SIZE 1
 
 #endif // DICT_FD_H

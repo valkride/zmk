@@ -47,8 +47,7 @@ static const char* const dict_ke[] = {
     "keystone",
     "keyword",
     "keywords",
-}
-
+};
 #define DICT_KE_SIZE 45
 
 #endif // DICT_KE_H

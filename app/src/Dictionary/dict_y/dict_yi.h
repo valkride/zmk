@@ -7,8 +7,7 @@ static const char* const dict_yi[] = {
     "yielding",
     "yields",
     "yin",
-}
-
+};
 #define DICT_YI_SIZE 5
 
 #endif // DICT_YI_H

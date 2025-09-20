@@ -140,8 +140,7 @@ static const char* const dict_sc[] = {
     "scuba",
     "sculpture",
     "sculptures",
-}
-
+};
 #define DICT_SC_SIZE 138
 
 #endif // DICT_SC_H

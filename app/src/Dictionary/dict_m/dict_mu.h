@@ -71,8 +71,7 @@ static const char* const dict_mu[] = {
     "mutual",
     "mutually",
     "muze",
-}
-
+};
 #define DICT_MU_SIZE 69
 
 #endif // DICT_MU_H

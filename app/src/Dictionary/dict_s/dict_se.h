@@ -252,8 +252,7 @@ static const char* const dict_se[] = {
     "sexy",
     "seychelles",
     "seymour",
-}
-
+};
 #define DICT_SE_SIZE 250
 
 #endif // DICT_SE_H

@@ -30,8 +30,7 @@ static const char* const dict_id[] = {
     "idle",
     "idol",
     "ids",
-}
-
+};
 #define DICT_ID_SIZE 28
 
 #endif // DICT_ID_H

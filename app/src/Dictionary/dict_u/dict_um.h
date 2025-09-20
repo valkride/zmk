@@ -6,8 +6,7 @@ static const char* const dict_um[] = {
     "umbrella",
     "umd",
     "uml",
-}
-
+};
 #define DICT_UM_SIZE 4
 
 #endif // DICT_UM_H

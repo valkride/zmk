@@ -20,8 +20,7 @@ static const char* const dict_ur[] = {
     "urology",
     "uruguay",
     "urw",
-}
-
+};
 #define DICT_UR_SIZE 18
 
 #endif // DICT_UR_H

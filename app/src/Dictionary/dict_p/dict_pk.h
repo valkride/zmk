@@ -3,8 +3,7 @@
 
 static const char* const dict_pk[] = {
     "pkg",
-}
-
+};
 #define DICT_PK_SIZE 1
 
 #endif // DICT_PK_H

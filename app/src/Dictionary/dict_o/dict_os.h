@@ -14,8 +14,7 @@ static const char* const dict_os[] = {
     "ostg",
     "osu",
     "osx",
-}
-
+};
 #define DICT_OS_SIZE 12
 
 #endif // DICT_OS_H

@@ -84,8 +84,7 @@ static const char* const dict_dr[] = {
     "dryer",
     "dryers",
     "drying",
-}
-
+};
 #define DICT_DR_SIZE 82
 
 #endif // DICT_DR_H

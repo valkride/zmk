@@ -48,8 +48,7 @@ static const char* const dict_es[] = {
     "estonia",
     "estonian",
     "estrogen",
-}
-
+};
 #define DICT_ES_SIZE 46
 
 #endif // DICT_ES_H

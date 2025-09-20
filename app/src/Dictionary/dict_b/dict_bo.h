@@ -162,8 +162,7 @@ static const char* const dict_bo[] = {
     "boyle",
     "boys",
     "boyz",
-}
-
+};
 #define DICT_BO_SIZE 160
 
 #endif // DICT_BO_H

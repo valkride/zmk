@@ -111,8 +111,7 @@ static const char* const dict_bi[] = {
     "bizjournalshire",
     "bizkit",
     "bizrate",
-}
-
+};
 #define DICT_BI_SIZE 109
 
 #endif // DICT_BI_H

@@ -6,8 +6,7 @@ static const char* const dict_cf[] = {
     "cfo",
     "cfr",
     "cfs",
-}
-
+};
 #define DICT_CF_SIZE 4
 
 #endif // DICT_CF_H

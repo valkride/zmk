@@ -18,8 +18,7 @@ static const char* const dict_yo[] = {
     "yourselves",
     "youth",
     "youths",
-}
-
+};
 #define DICT_YO_SIZE 16
 
 #endif // DICT_YO_H

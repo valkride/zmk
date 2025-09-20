@@ -6,8 +6,7 @@ static const char* const dict_ns[] = {
     "nsf",
     "nsu",
     "nsw",
-}
-
+};
 #define DICT_NS_SIZE 4
 
 #endif // DICT_NS_H

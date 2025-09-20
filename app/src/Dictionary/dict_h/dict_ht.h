@@ -8,8 +8,7 @@ static const char* const dict_ht[] = {
     "http",
     "httpd",
     "https",
-}
-
+};
 #define DICT_HT_SIZE 6
 
 #endif // DICT_HT_H

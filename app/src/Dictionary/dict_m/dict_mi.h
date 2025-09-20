@@ -183,8 +183,7 @@ static const char* const dict_mi[] = {
     "mixing",
     "mixture",
     "mixtures",
-}
-
+};
 #define DICT_MI_SIZE 181
 
 #endif // DICT_MI_H

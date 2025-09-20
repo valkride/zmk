@@ -45,8 +45,7 @@ static const char* const dict_je[] = {
     "jewels",
     "jewish",
     "jews",
-}
-
+};
 #define DICT_JE_SIZE 43
 
 #endif // DICT_JE_H

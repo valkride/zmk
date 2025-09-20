@@ -7,8 +7,7 @@ static const char* const dict_bb[] = {
     "bbq",
     "bbs",
     "bbw",
-}
-
+};
 #define DICT_BB_SIZE 6
 
 #endif // DICT_BB_H

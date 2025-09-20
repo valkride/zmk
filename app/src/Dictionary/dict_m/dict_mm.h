@@ -6,8 +6,7 @@ static const char* const dict_mm[] = {
     "mmf",
     "mmm",
     "mms",
-}
-
+};
 #define DICT_MM_SIZE 4
 
 #endif // DICT_MM_H

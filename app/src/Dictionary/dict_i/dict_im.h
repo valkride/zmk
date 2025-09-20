@@ -87,8 +87,7 @@ static const char* const dict_im[] = {
     "improving",
     "impulse",
     "ims",
-}
-
+};
 #define DICT_IM_SIZE 85
 
 #endif // DICT_IM_H

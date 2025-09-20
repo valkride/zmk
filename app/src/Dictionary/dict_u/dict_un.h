@@ -153,8 +153,7 @@ static const char* const dict_un[] = {
     "unwanted",
     "unwilling",
     "unwrap",
-}
-
+};
 #define DICT_UN_SIZE 151
 
 #endif // DICT_UN_H

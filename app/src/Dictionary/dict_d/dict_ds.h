@@ -9,8 +9,7 @@ static const char* const dict_ds[] = {
     "dsp",
     "dss",
     "dst",
-}
-
+};
 #define DICT_DS_SIZE 7
 
 #endif // DICT_DS_H

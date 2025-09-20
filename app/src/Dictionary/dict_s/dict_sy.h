@@ -47,8 +47,7 @@ static const char* const dict_sy[] = {
     "systematically",
     "systemic",
     "systems",
-}
-
+};
 #define DICT_SY_SIZE 45
 
 #endif // DICT_SY_H

@@ -6,8 +6,7 @@ static const char* const dict_cn[] = {
     "cnet",
     "cnn",
     "cns",
-}
-
+};
 #define DICT_CN_SIZE 4
 
 #endif // DICT_CN_H

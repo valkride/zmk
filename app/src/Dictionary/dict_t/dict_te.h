@@ -171,8 +171,7 @@ static const char* const dict_te[] = {
     "texture",
     "textured",
     "textures",
-}
-
+};
 #define DICT_TE_SIZE 169
 
 #endif // DICT_TE_H

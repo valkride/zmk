@@ -85,8 +85,7 @@ static const char* const dict_wo[] = {
     "wounds",
     "woven",
     "wow",
-}
-
+};
 #define DICT_WO_SIZE 83
 
 #endif // DICT_WO_H

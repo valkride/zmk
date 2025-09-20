@@ -140,8 +140,7 @@ static const char* const dict_cr[] = {
     "cryptography",
     "crystal",
     "crystals",
-}
-
+};
 #define DICT_CR_SIZE 138
 
 #endif // DICT_CR_H

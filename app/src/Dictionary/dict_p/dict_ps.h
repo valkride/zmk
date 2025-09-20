@@ -21,8 +21,7 @@ static const char* const dict_ps[] = {
     "psychologists",
     "psychology",
     "psychotherapy",
-}
-
+};
 #define DICT_PS_SIZE 19
 
 #endif // DICT_PS_H

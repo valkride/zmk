@@ -14,8 +14,7 @@ static const char* const dict_om[] = {
     "omit",
     "omitted",
     "omni",
-}
-
+};
 #define DICT_OM_SIZE 12
 
 #endif // DICT_OM_H

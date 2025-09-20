@@ -60,8 +60,7 @@ static const char* const dict_ru[] = {
     "ruth",
     "rutherford",
     "rutland",
-}
-
+};
 #define DICT_RU_SIZE 58
 
 #endif // DICT_RU_H

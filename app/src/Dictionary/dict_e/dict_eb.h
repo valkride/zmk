@@ -7,8 +7,7 @@ static const char* const dict_eb[] = {
     "ebook",
     "ebooks",
     "ebusiness",
-}
-
+};
 #define DICT_EB_SIZE 5
 
 #endif // DICT_EB_H

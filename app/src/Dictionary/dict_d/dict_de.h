@@ -390,8 +390,7 @@ static const char* const dict_de[] = {
     "dewey",
     "dex",
     "dexter",
-}
-
+};
 #define DICT_DE_SIZE 388
 
 #endif // DICT_DE_H

@@ -36,8 +36,7 @@ static const char* const dict_sk[] = {
     "skye",
     "skyline",
     "skype",
-}
-
+};
 #define DICT_SK_SIZE 34
 
 #endif // DICT_SK_H

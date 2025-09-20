@@ -90,8 +90,7 @@ static const char* const dict_au[] = {
     "autumn",
     "aux",
     "auxiliary",
-}
-
+};
 #define DICT_AU_SIZE 88
 
 #endif // DICT_AU_H

@@ -7,8 +7,7 @@ static const char* const dict_cm[] = {
     "cmos",
     "cmp",
     "cms",
-}
-
+};
 #define DICT_CM_SIZE 5
 
 #endif // DICT_CM_H

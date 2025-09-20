@@ -7,8 +7,7 @@ static const char* const dict_gh[] = {
     "ghost",
     "ghosts",
     "ghz",
-}
-
+};
 #define DICT_GH_SIZE 5
 
 #endif // DICT_GH_H

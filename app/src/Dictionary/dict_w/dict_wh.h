@@ -56,8 +56,7 @@ static const char* const dict_wh[] = {
     "whores",
     "whose",
     "why",
-}
-
+};
 #define DICT_WH_SIZE 54
 
 #endif // DICT_WH_H

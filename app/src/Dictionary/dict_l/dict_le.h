@@ -144,8 +144,7 @@ static const char* const dict_le[] = {
     "lexisnexis",
     "lexmark",
     "lexus",
-}
-
+};
 #define DICT_LE_SIZE 142
 
 #endif // DICT_LE_H

@@ -182,8 +182,7 @@ static const char* const dict_sh[] = {
     "shutter",
     "shuttle",
     "shy",
-}
-
+};
 #define DICT_SH_SIZE 180
 
 #endif // DICT_SH_H

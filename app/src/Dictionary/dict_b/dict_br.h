@@ -167,8 +167,7 @@ static const char* const dict_br[] = {
     "bryan",
     "bryant",
     "bryce",
-}
-
+};
 #define DICT_BR_SIZE 165
 
 #endif // DICT_BR_H

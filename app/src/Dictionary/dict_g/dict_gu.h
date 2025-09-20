@@ -52,8 +52,7 @@ static const char* const dict_gu[] = {
     "guy",
     "guyana",
     "guys",
-}
-
+};
 #define DICT_GU_SIZE 50
 
 #endif // DICT_GU_H

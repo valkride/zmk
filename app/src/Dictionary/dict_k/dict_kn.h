@@ -30,8 +30,7 @@ static const char* const dict_kn[] = {
     "knows",
     "knox",
     "knoxville",
-}
-
+};
 #define DICT_KN_SIZE 28
 
 #endif // DICT_KN_H

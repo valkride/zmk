@@ -83,8 +83,7 @@ static const char* const dict_fe[] = {
     "fever",
     "few",
     "fewer",
-}
-
+};
 #define DICT_FE_SIZE 81
 
 #endif // DICT_FE_H

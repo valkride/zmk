@@ -89,8 +89,7 @@ static const char* const dict_pu[] = {
     "putting",
     "puzzle",
     "puzzles",
-}
-
+};
 #define DICT_PU_SIZE 87
 
 #endif // DICT_PU_H

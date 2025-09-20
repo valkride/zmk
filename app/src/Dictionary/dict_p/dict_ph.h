@@ -76,8 +76,7 @@ static const char* const dict_ph[] = {
     "physiological",
     "physiology",
     "physiopathology",
-}
-
+};
 #define DICT_PH_SIZE 74
 
 #endif // DICT_PH_H

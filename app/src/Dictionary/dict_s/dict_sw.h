@@ -53,8 +53,7 @@ static const char* const dict_sw[] = {
     "sword",
     "swords",
     "sworn",
-}
-
+};
 #define DICT_SW_SIZE 51
 
 #endif // DICT_SW_H

@@ -132,8 +132,7 @@ static const char* const dict_bu[] = {
     "buying",
     "buys",
     "buzz",
-}
-
+};
 #define DICT_BU_SIZE 130
 
 #endif // DICT_BU_H

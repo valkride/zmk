@@ -13,8 +13,7 @@ static const char* const dict_ei[] = {
     "einstein",
     "eis",
     "either",
-}
-
+};
 #define DICT_EI_SIZE 11
 
 #endif // DICT_EI_H

@@ -99,8 +99,7 @@ static const char* const dict_pi[] = {
     "pixels",
     "pixmania",
     "pizza",
-}
-
+};
 #define DICT_PI_SIZE 97
 
 #endif // DICT_PI_H

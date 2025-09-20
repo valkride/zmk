@@ -200,8 +200,7 @@ static const char* const dict_li[] = {
     "livingston",
     "liz",
     "lizard",
-}
-
+};
 #define DICT_LI_SIZE 198
 
 #endif // DICT_LI_H

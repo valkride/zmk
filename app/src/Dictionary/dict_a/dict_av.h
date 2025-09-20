@@ -36,8 +36,7 @@ static const char* const dict_av[] = {
     "avr",
     "avril",
     "avs",
-}
-
+};
 #define DICT_AV_SIZE 34
 
 #endif // DICT_AV_H

@@ -247,8 +247,7 @@ static const char* const dict_ch[] = {
     "church",
     "churches",
     "churchill",
-}
-
+};
 #define DICT_CH_SIZE 245
 
 #endif // DICT_CH_H

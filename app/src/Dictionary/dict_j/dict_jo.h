@@ -62,8 +62,7 @@ static const char* const dict_jo[] = {
     "joy",
     "joyce",
     "joystick",
-}
-
+};
 #define DICT_JO_SIZE 60
 
 #endif // DICT_JO_H

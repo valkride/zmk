@@ -77,8 +77,7 @@ static const char* const dict_el[] = {
     "elsewhere",
     "elton",
     "elvis",
-}
-
+};
 #define DICT_EL_SIZE 75
 
 #endif // DICT_EL_H

@@ -82,8 +82,7 @@ static const char* const dict_ve[] = {
     "veterinary",
     "veto",
     "vets",
-}
-
+};
 #define DICT_VE_SIZE 80
 
 #endif // DICT_VE_H

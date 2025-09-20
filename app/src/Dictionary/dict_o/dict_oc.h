@@ -31,8 +31,7 @@ static const char* const dict_oc[] = {
     "octave",
     "octet",
     "october",
-}
-
+};
 #define DICT_OC_SIZE 29
 
 #endif // DICT_OC_H

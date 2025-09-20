@@ -21,8 +21,7 @@ static const char* const dict_eq[] = {
     "equivalence",
     "equivalent",
     "equivalents",
-}
-
+};
 #define DICT_EQ_SIZE 19
 
 #endif // DICT_EQ_H

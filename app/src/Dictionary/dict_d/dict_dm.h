@@ -6,8 +6,7 @@ static const char* const dict_dm[] = {
     "dmc",
     "dmoz",
     "dmx",
-}
-
+};
 #define DICT_DM_SIZE 4
 
 #endif // DICT_DM_H

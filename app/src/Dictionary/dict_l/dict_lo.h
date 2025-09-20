@@ -134,8 +134,7 @@ static const char* const dict_lo[] = {
     "loyal",
     "loyalty",
     "loyola",
-}
-
+};
 #define DICT_LO_SIZE 132
 
 #endif // DICT_LO_H

@@ -7,8 +7,7 @@ static const char* const dict_aq[] = {
     "aquarium",
     "aquatic",
     "aqueous",
-}
-
+};
 #define DICT_AQ_SIZE 5
 
 #endif // DICT_AQ_H

@@ -64,8 +64,7 @@ static const char* const dict_op[] = {
     "optionally",
     "options",
     "opus",
-}
-
+};
 #define DICT_OP_SIZE 62
 
 #endif // DICT_OP_H

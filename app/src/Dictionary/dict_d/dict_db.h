@@ -5,8 +5,7 @@ static const char* const dict_db[] = {
     "dba",
     "dblp",
     "dbz",
-}
-
+};
 #define DICT_DB_SIZE 3
 
 #endif // DICT_DB_H

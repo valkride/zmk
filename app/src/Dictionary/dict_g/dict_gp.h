@@ -7,8 +7,7 @@ static const char* const dict_gp[] = {
     "gpo",
     "gprs",
     "gps",
-}
-
+};
 #define DICT_GP_SIZE 5
 
 #endif // DICT_GP_H

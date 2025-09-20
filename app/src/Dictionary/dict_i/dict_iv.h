@@ -8,8 +8,7 @@ static const char* const dict_iv[] = {
     "ivory",
     "ivtools",
     "ivy",
-}
-
+};
 #define DICT_IV_SIZE 6
 
 #endif // DICT_IV_H

@@ -201,8 +201,7 @@ static const char* const dict_po[] = {
     "powerseller",
     "powershot",
     "poy",
-}
-
+};
 #define DICT_PO_SIZE 199
 
 #endif // DICT_PO_H

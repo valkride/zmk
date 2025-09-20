@@ -6,8 +6,7 @@ static const char* const dict_xe[] = {
     "xenical",
     "xeon",
     "xerox",
-}
-
+};
 #define DICT_XE_SIZE 4
 
 #endif // DICT_XE_H

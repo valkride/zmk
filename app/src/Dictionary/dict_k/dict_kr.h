@@ -9,8 +9,7 @@ static const char* const dict_kr[] = {
     "kristen",
     "kristin",
     "kruger",
-}
-
+};
 #define DICT_KR_SIZE 7
 
 #endif // DICT_KR_H

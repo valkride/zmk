@@ -6,8 +6,7 @@ static const char* const dict_sr[] = {
     "sri",
     "srl",
     "srs",
-}
-
+};
 #define DICT_SR_SIZE 4
 
 #endif // DICT_SR_H

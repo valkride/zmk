@@ -46,8 +46,7 @@ static const char* const dict_gl[] = {
     "glucose",
     "glue",
     "gly",
-}
-
+};
 #define DICT_GL_SIZE 44
 
 #endif // DICT_GL_H

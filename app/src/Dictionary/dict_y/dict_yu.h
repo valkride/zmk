@@ -9,8 +9,7 @@ static const char* const dict_yu[] = {
     "yum",
     "yummy",
     "yup",
-}
-
+};
 #define DICT_YU_SIZE 7
 
 #endif // DICT_YU_H

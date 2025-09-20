@@ -11,8 +11,7 @@ static const char* const dict_pc[] = {
     "pcr",
     "pcs",
     "pct",
-}
-
+};
 #define DICT_PC_SIZE 9
 
 #endif // DICT_PC_H

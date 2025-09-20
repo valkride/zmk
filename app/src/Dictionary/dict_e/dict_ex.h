@@ -212,8 +212,7 @@ static const char* const dict_ex[] = {
     "extreme",
     "extremely",
     "extremes",
-}
-
+};
 #define DICT_EX_SIZE 210
 
 #endif // DICT_EX_H

@@ -122,8 +122,7 @@ static const char* const dict_wi[] = {
     "wives",
     "wizard",
     "wizards",
-}
-
+};
 #define DICT_WI_SIZE 120
 
 #endif // DICT_WI_H

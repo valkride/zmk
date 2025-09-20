@@ -11,8 +11,7 @@ static const char* const dict_ot[] = {
     "otter",
     "otto",
     "ottoman",
-}
-
+};
 #define DICT_OT_SIZE 9
 
 #endif // DICT_OT_H

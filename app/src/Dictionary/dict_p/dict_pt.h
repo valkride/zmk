@@ -7,8 +7,7 @@ static const char* const dict_pt[] = {
     "ptr",
     "pts",
     "pty",
-}
-
+};
 #define DICT_PT_SIZE 5
 
 #endif // DICT_PT_H

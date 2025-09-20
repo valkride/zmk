@@ -9,8 +9,7 @@ static const char* const dict_ku[] = {
     "kurdish",
     "kurt",
     "kuwait",
-}
-
+};
 #define DICT_KU_SIZE 7
 
 #endif // DICT_KU_H

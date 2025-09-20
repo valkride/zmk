@@ -102,8 +102,7 @@ static const char* const dict_pl[] = {
     "ply",
     "plymouth",
     "plz",
-}
-
+};
 #define DICT_PL_SIZE 100
 
 #endif // DICT_PL_H

@@ -154,8 +154,7 @@ static const char* const dict_al[] = {
     "alvin",
     "always",
     "alzheimer",
-}
-
+};
 #define DICT_AL_SIZE 152
 
 #endif // DICT_AL_H

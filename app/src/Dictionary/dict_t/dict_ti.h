@@ -86,8 +86,7 @@ static const char* const dict_ti[] = {
     "tive",
     "tivo",
     "tivoli",
-}
-
+};
 #define DICT_TI_SIZE 84
 
 #endif // DICT_TI_H

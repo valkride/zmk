@@ -17,8 +17,7 @@ static const char* const dict_ly[] = {
     "lyric",
     "lyrics",
     "lys",
-}
-
+};
 #define DICT_LY_SIZE 15
 
 #endif // DICT_LY_H

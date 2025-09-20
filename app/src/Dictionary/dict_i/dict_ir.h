@@ -30,8 +30,7 @@ static const char* const dict_ir[] = {
     "irvine",
     "irving",
     "irwin",
-}
-
+};
 #define DICT_IR_SIZE 28
 
 #endif // DICT_IR_H

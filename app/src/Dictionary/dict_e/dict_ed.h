@@ -39,8 +39,7 @@ static const char* const dict_ed[] = {
     "edward",
     "edwards",
     "edwin",
-}
-
+};
 #define DICT_ED_SIZE 37
 
 #endif // DICT_ED_H
