@@ -18,8 +18,6 @@
 #include "Dictionary/spell_dictionary_map.h"
 #define MAX_WORD_LEN 15
 #define MAX_EDIT_DISTANCE 2  // Allow up to 2 character errors (balanced)
-#define FAST_TYPER_MODE 1    // Enable optimizations for fast typing
-#define MIN_WORD_LENGTH 2    // Don't correct very short words
 
 // Global enable/disable flag
 static bool spell_checker_enabled = true;
@@ -30,7 +28,6 @@ static int word_pos = 0;
 static bool correcting = false;
 static uint32_t correction_start_time = 0;
 
-#if FAST_TYPER_MODE
 // Enhanced cache for recent lookups (simple LRU cache)
 #define CACHE_SIZE 16
 static struct {
@@ -144,7 +141,6 @@ static const char* check_common_patterns(const char* word) {
     }
     return NULL;
 }
-#endif
 
 // Levenshtein distance calculation
 static int min3(int a, int b, int c) {
@@ -187,7 +183,6 @@ static int levenshtein_distance(const char* s1, const char* s2) {
 
 // Find best match in dictionary
 static const char* find_best_match(const char* word) {
-    #if FAST_TYPER_MODE
     // Check cache first for fast repeat lookups
     const char* cached_result = check_cache(word);
     if (cached_result != NULL) {
@@ -207,15 +202,9 @@ static const char* find_best_match(const char* word) {
         add_to_cache(word, common_result);
         return common_result;
     }
-    #endif
     
     const char* best_match = NULL;
     int word_len = strlen(word);
-    
-    // Don't correct very short words
-    if (word_len < MIN_WORD_LENGTH) {
-        return NULL;
-    }
     
     // Balanced approach: be careful with longer words but still correct obvious typos
     if (word_len > 8) {
@@ -275,12 +264,10 @@ static const char* find_best_match(const char* word) {
             }
         }
         
-        #if FAST_TYPER_MODE
         // Cache the result for future lookups
         if (best_match != NULL) {
             add_to_cache(word, best_match);
         }
-        #endif
     }
     
     return best_match;
@@ -341,11 +328,7 @@ static void type_string(const char* str) {
                 send_key_event(HID_USAGE_KEY_KEYBOARD_LEFTSHIFT, false);
             }
             
-            #if FAST_TYPER_MODE
             k_msleep(2);  // Reduced delay for faster correction
-            #else
-            k_msleep(5);  // Original delay
-            #endif
         }
     }
 }
@@ -356,23 +339,13 @@ static void correct_word(const char* correct_word, int typo_len) {
     correcting = true;
     correction_start_time = k_uptime_get_32();
     
-    #if FAST_TYPER_MODE
-    // Faster deletion for quick typers
+    // Fast deletion for quick typers
     for (int i = 0; i < typo_len; i++) {
         send_key_event(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE, true);
         k_msleep(1);  // Minimal delay
         send_key_event(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE, false);
         k_msleep(1);  // Minimal delay
     }
-    #else
-    // Original deletion speed
-    for (int i = 0; i < typo_len; i++) {
-        send_key_event(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE, true);
-        k_msleep(5);
-        send_key_event(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE, false);
-        k_msleep(5);
-    }
-    #endif
     
     // Type the correction
     type_string(correct_word);
@@ -389,26 +362,11 @@ static void process_word() {
     
     current_word[word_pos] = '\0';  // Null terminate
     
-    // Special case: always correct standalone "i" to "I" (before length check)
-    if (word_pos == 1 && current_word[0] == 'i') {
-        correct_word("I", 1);  // Correcting 1 character: "i" -> "I"
-        word_pos = 0;  // Reset word buffer after correction
-        return;
-    }
-    
-    #if FAST_TYPER_MODE
-    // For fast typers: don't correct very short words or incomplete fragments  
-    if (word_pos < MIN_WORD_LENGTH || word_pos > MAX_WORD_LEN - 1) {
+    // Skip very long words
+    if (word_pos > MAX_WORD_LEN - 1) {
         word_pos = 0;
         return;
     }
-    #else
-    // Original behavior: skip short and long words
-    if (word_pos < 3 || word_pos > MAX_WORD_LEN - 1) {
-        word_pos = 0;
-        return;
-    }
-    #endif
     
     // Handle sentence capitalization
     const char* final_correction = NULL;
@@ -537,12 +495,10 @@ static int spell_checker_init(void) {
     correction_start_time = 0;
     spell_checker_enabled = true;
     
-    #if FAST_TYPER_MODE
     // Initialize cache
     memset(lookup_cache, 0, sizeof(lookup_cache));
     cache_index = 0;
     cache_access_counter = 0;
-    #endif
     
     return 0;
 }
